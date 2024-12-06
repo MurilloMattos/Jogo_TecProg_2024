@@ -9,11 +9,11 @@ using namespace std;
 
 
 void Gerenciador_colisoes::Incluir_Obstaculo(Obstaculo* p_Obstaculo){
-
+	lista_Obstaculos.push_back(p_Obstaculo);
 }
 
 void Gerenciador_colisoes::Incluir_Inimigo(Inimigo* p_Inimigo){
-
+	lista_Inimigos.push_back(p_Inimigo);
 }
 
 void Gerenciador_colisoes::Incluir_Projetil(Projetil* p_Projetil){
@@ -37,6 +37,6 @@ void Gerenciador_colisoes::Tratar_Colisoes_Jogadores(){
 
 }
 
-void Gerenciador_colisoes::executar(){
+void Gerenciador_colisoes::Executar(){
 
 }

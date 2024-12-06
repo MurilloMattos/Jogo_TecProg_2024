@@ -20,8 +20,8 @@ namespace Fases {
 
 			void Setar_Jogadores_Colisoes(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
 			void Executar();
-			void cria_Piso();
-			Entidades::Personagens::Inimigo_Medio* cria_Inimigos();
+			void Cria_Piso();
+			Entidades::Personagens::Inimigo_Medio* Cria_Inimigos();
 
 	};
 }

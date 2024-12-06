@@ -6,14 +6,14 @@ using namespace Obstaculos;
 using namespace Personagens;
 
 Fase::Fase() {
-	cria_Piso();
+	Cria_Piso();
 
 	lista_Entidades.Incluir(static_cast<Entidade*>(piso));
-	lista_Entidades.Incluir(static_cast<Entidade*>(cria_Inimigos()));
+	lista_Entidades.Incluir(static_cast<Entidade*>(Cria_Inimigos()));
 }
 
 Fase::~Fase() {
-	delete piso;
+
 }
 
 void Fases::Fase::Setar_Jogadores_Colisoes(Jogador* p_jogador1, Jogador* p_jogador2){
@@ -25,13 +25,13 @@ void Fases::Fase::Executar()
 	lista_Entidades.Percorrer();
 }
 
-void Fase::cria_Piso() {
+void Fase::Cria_Piso() {
 	piso = new Piso;
 
 	piso->seta_Piso(50.f, 1000.f);
 }
 
-Personagens::Inimigo_Medio* Fase::cria_Inimigos() {
+Personagens::Inimigo_Medio* Fase::Cria_Inimigos() {
 	Inimigo_Medio* pirata;
 
 	pirata = new Inimigo_Medio;

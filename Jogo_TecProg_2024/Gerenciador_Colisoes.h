@@ -11,8 +11,8 @@
 class Gerenciador_colisoes
 {
 	private:
-		std::vector<Entidades::Personagens::Inimigo*> Lista_Inimigos;
-		std::list<Entidades::Obstaculos::Obstaculo*> Lista_Obstaculos;
+		std::vector<Entidades::Personagens::Inimigo*> lista_Inimigos;
+		std::list<Entidades::Obstaculos::Obstaculo*> lista_Obstaculos;
 		Entidades::Personagens::Jogador* pJogador1;
 		Entidades::Personagens::Jogador* pJogador2;
 
@@ -27,7 +27,7 @@ class Gerenciador_colisoes
 		void Tratar_Colisoes_Obstaculo();
 		void Tratar_Colisoes_Jogadores();
 
-		void executar();
+		void Executar();
 
 
 };
