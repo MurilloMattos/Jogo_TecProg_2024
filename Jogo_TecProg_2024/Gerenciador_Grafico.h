@@ -29,7 +29,7 @@ namespace Gerenciadores
 			sf::RenderWindow* getJanela();
 			sf::Event* getEvent() const;
 
-			//void Desenhar();
+			void Desenhar();
 	};
 
 }

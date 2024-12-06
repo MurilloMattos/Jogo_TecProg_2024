@@ -106,12 +106,12 @@
       </PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalBMIDirectories>%(AdditionalBMIDirectories)</AdditionalBMIDirectories>
-      <AdditionalIncludeDirectories>C:\Users\muril\OneDrive\Documentos\Bibliotecas\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\muril\Documents\Jogo_2024\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\muril\OneDrive\Documentos\Bibliotecas\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\muril\Documents\Jogo_2024\SFML-2.5.1\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-network-d.lib;sfml-system-d.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -124,36 +124,24 @@
       <PreprocessorDefinitions>sfml-graphics.lib;sfml-window.lib;sfml-audio.lib;sfml-network.lib;sfml-system.lib</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalBMIDirectories>%(AdditionalBMIDirectories)</AdditionalBMIDirectories>
-      <AdditionalIncludeDirectories>C:\Users\muril\OneDrive\Documentos\Bibliotecas\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\muril\Documents\Jogo_2024\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\muril\OneDrive\Documentos\Bibliotecas\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\muril\Documents\Jogo_2024\SFML-2.5.1\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-audio.lib;sfml-network.lib;sfml-system.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Entidade.cpp" />
-    <ClCompile Include="Fase.cpp" />
-    <ClCompile Include="Gerenciador_Colisoes.cpp" />
-    <ClCompile Include="Gerenciador_Grafico.cpp" />
-    <ClCompile Include="Inimigo.cpp" />
-    <ClCompile Include="Inimigo_Facil.cpp" />
-    <ClCompile Include="Inimigo_Medio.cpp" />
-    <ClCompile Include="Jogador.cpp" />
-    <ClCompile Include="Jogo.cpp" />
-    <ClCompile Include="Jogo_TecProg_2024.cpp" />
-    <ClCompile Include="Lista_Entidades.cpp" />
-    <ClCompile Include="Obstaculo.cpp" />
-    <ClCompile Include="Obstaculo_Dificil.cpp" />
-    <ClCompile Include="Obstaculo_Facil.cpp" />
-    <ClCompile Include="Obstaculo_Medio.cpp" />
-    <ClCompile Include="Personagem.cpp" />
-    <ClCompile Include="Piso.cpp" />
-    <ClCompile Include="Projetil.cpp" />
+    <None Include="openal32.dll" />
+    <None Include="sfml-audio-2.dll" />
+    <None Include="sfml-graphics-2.dll" />
+    <None Include="sfml-network-2.dll" />
+    <None Include="sfml-system-2.dll" />
+    <None Include="sfml-window-2.dll" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ente.h" />
@@ -175,6 +163,26 @@
     <ClInclude Include="Personagem.h" />
     <ClInclude Include="Piso.h" />
     <ClInclude Include="Projetil.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Entidade.cpp" />
+    <ClCompile Include="Fase.cpp" />
+    <ClCompile Include="Gerenciador_Colisoes.cpp" />
+    <ClCompile Include="Gerenciador_Grafico.cpp" />
+    <ClCompile Include="Inimigo.cpp" />
+    <ClCompile Include="Inimigo_Facil.cpp" />
+    <ClCompile Include="Inimigo_Medio.cpp" />
+    <ClCompile Include="Jogador.cpp" />
+    <ClCompile Include="Jogo.cpp" />
+    <ClCompile Include="Jogo_TecProg_2024.cpp" />
+    <ClCompile Include="Lista_Entidades.cpp" />
+    <ClCompile Include="Obstaculo.cpp" />
+    <ClCompile Include="Obstaculo_Dificil.cpp" />
+    <ClCompile Include="Obstaculo_Facil.cpp" />
+    <ClCompile Include="Obstaculo_Medio.cpp" />
+    <ClCompile Include="Personagem.cpp" />
+    <ClCompile Include="Piso.cpp" />
+    <ClCompile Include="Projetil.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
