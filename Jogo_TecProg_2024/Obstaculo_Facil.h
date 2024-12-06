@@ -14,7 +14,7 @@ namespace Entidades {
 				~Obstaculo_Facil();
 
 				void executar();
-				void danificar(Jogador* p);
+				void danificar(Entidades::Personagens::Jogador* p);
 		};
 	}
 }

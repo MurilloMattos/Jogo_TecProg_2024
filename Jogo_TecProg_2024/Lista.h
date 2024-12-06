@@ -2,8 +2,6 @@
 
 namespace Listas 
 {
-	using namespace Listas;
-	using namespace std;
 
 	template <class TL>
 	class Lista
@@ -52,13 +50,6 @@ namespace Listas
 		Lista();
 		~Lista();
 
-		
-		//Elemento<TL>* getUltimo();
-		//Elemento<TL>* getPrimeiro();
-
-
-		
-
 		Elemento<TL>* getPrimeiro() const{
 
 			return pontPrimeiro;
@@ -72,8 +63,6 @@ namespace Listas
 		void aterrar();
 		void incluiInfoNaLista(TL* info);
 		void deletaLista();
-
-		//void imprimeLista();
 
 		//percorrer a lista, deverá ser implementada por outra classe, no caso, já possuí dentor do UML básico do jogo o listaEntidades
 		//poís é necessário saber oque deve ser buscado.
@@ -94,19 +83,6 @@ namespace Listas
 		pontPrimeiro = nullptr;
 		pontUltimo = nullptr;
 	}
-
-	// como resolve isso?
-	/*
-	template<class TL>
-	Lista<TL>::Elemento<TL>* Lista<TL>::getPrimeiro() {
-		return pontPrimeiro;
-	}
-
-	template<class TL>
-	Lista<TL>::Elemento<TL>* Lista<TL>::getUltimo() {
-		return pontUltimo;
-	}
-	*/
 
 	template<class TL>
 	void Lista<TL>::incluiInfoNaLista(TL* info) {
@@ -173,24 +149,4 @@ namespace Listas
 		}
 
 	}
-
-
-
-
-	//teste
-	/*
-	template<class TL>
-	void Lista<TL>::imprimeLista() {
-
-		Elemento<TL>* aux = nullptr;
-		aux = pontPrimeiro;
-
-		while (aux != nullptr) {
-
-			std::cout << "-> " << *aux->getInfo() << std::endl;
-			aux = aux->getProx();
-
-		}
-	}
-	*/
 }

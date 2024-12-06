@@ -1,5 +1,6 @@
 #include "Gerenciador_Colisoes.h"
 
+
 using namespace Entidades;
 using namespace Obstaculos;
 using namespace Personagens;

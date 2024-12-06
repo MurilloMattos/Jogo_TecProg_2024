@@ -1,5 +1,6 @@
 #include "Piso.h"
 
+using namespace Entidades;
 using namespace Obstaculos;
 
 Piso::Piso()

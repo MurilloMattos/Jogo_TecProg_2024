@@ -2,7 +2,6 @@
 
 #include "Gerenciador_Grafico.h"
 
-using namespace Gerenciadores;
 
 class Ente
 {
@@ -10,14 +9,14 @@ class Ente
 		int id;
 
 		//acesso a biblioteca graf (eveitar includes redundantes)
-		Gerenciador_Grafico* pGG;
+		Gerenciadores::Gerenciador_Grafico* pGG;
 
 		//todo Ente possuí uma figura retangular
 		sf::RectangleShape* pFigura;
 
 	public:
 		Ente() {
-			pGG = Gerenciador_Grafico::getInstance();
+			pGG = Gerenciadores::Gerenciador_Grafico::getInstance();
 
 			id = NULL;
 			pFigura = new sf::RectangleShape;

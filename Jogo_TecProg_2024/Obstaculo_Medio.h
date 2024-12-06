@@ -14,7 +14,7 @@ namespace Entidades {
 
                 void Salvar();
                 void Executar();
-                void danificar(Jogador* p);
+                void danificar(Entidades::Personagens::Jogador* p);
         };
 
     }

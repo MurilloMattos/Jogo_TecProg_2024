@@ -1,6 +1,7 @@
 #include "Obstaculo_Dificil.h"
 
 using namespace Entidades;
+using namespace Personagens;
 using namespace Obstaculos;
 
 Obstaculo_Dificil::Obstaculo_Dificil() {

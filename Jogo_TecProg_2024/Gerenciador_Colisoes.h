@@ -8,11 +8,6 @@
 #include <vector>
 #include <list>
 
-//using namespace std;
-//using namespace Entidades;
-//using namespace Personagens;
-//using namespace Obstaculos;
-
 class Gerenciador_colisoes
 {
 	private:

@@ -1,5 +1,7 @@
 #include "Fase.h"
+
 using namespace Fases;
+using namespace Entidades;
 using namespace Obstaculos;
 using namespace Personagens;
 

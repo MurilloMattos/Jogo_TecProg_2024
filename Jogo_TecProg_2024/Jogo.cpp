@@ -1,5 +1,10 @@
 #include "Jogo.h"
 
+using namespace Gerenciadores;
+using namespace Entidades;
+using namespace Personagens;
+using namespace Fases;
+
 Jogo::Jogo()
 {
     Ger_Graf = Gerenciador_Grafico::getInstance();

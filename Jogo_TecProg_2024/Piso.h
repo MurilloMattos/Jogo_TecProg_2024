@@ -1,27 +1,27 @@
 #pragma once
-#include "Entidade.h"
+#include "Obstaculo.h"
 
-using namespace Entidades;
+namespace Entidades {
+	namespace Obstaculos {
+		class Piso : public Entidade
+		{
+		private:
+			//int boo;
+			//float altura;
+			//float largura;
 
-namespace Obstaculos {
-	class Piso : public Entidade
-	{
-	private:
-		//int boo;
-		//float altura;
-		//float largura;
-		
-		sf::Vector2f tamanho;
+			sf::Vector2f tamanho;
 
-	public:
-		float boo;
+		public:
+			float boo;
 
-		Piso();
-		~Piso();
+			Piso();
+			~Piso();
 
-		void seta_Piso(float alt, float larg);
-		void Executar();
-		void Salvar();
+			void seta_Piso(float alt, float larg);
+			void Executar();
+			void Salvar();
 
-	};
+		};
+	}
 }

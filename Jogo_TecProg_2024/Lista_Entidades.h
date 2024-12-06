@@ -3,13 +3,11 @@
 #include "Lista.h"
 
 namespace Listas {
-	using namespace Listas;
-	using namespace Entidades;
 
 	class Lista_Entidades
 	{
 		private:
-			Lista<Entidade> lista_Ent;
+			Listas::Lista<Entidades::Entidade> lista_Ent;
 
 		public:
 			Lista_Entidades();
@@ -17,7 +15,7 @@ namespace Listas {
 
 			Lista_Entidades* get_Lista_Entidades();
 
-			void Incluir(Entidade* pE);
+			void Incluir(Entidades::Entidade* pE);
 			void Percorrer();
 	};
 
