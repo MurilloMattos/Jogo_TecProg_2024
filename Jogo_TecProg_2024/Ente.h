@@ -25,7 +25,6 @@ class Ente
 
 		~Ente() { delete pFigura; }
 
-		//virtual void executar() = 0;
 		virtual void Executar(){}
 		void Desenhar() { pGG->getJanela()->draw(*pFigura); }
 		

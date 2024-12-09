@@ -18,6 +18,7 @@ Jogo::~Jogo()
 void Jogo::Executar()
 {
 
+
     while (Ger_Graf->getJanela()->isOpen())
     {
         sf::Event evento;

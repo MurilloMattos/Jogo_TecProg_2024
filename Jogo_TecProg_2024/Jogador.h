@@ -15,7 +15,6 @@ namespace Entidades{
 				Jogador();
 				~Jogador();
 
-				void setar_Pos(float x, float y);
 				void Executar();
 				void Salvar();
 		};

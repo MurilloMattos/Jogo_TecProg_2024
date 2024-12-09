@@ -1,8 +1,6 @@
 #include <iostream>
 #include "Jogo.h"
 
-//#include <SFML/graphics.hpp>
-
 
 int main()
 {
