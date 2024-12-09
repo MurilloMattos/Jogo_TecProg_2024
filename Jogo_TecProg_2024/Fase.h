@@ -10,8 +10,11 @@ namespace Fases {
 	class Fase : public Ente
 	{
 		private:
+
+			//tem como a lista_Entidades passar parametros a classe que não necessáriamente entidades?
 			Listas::Lista_Entidades lista_Entidades;
 			Entidades::Obstaculos::Piso* piso;
+			Gerenciadores::Gerenciador_colisoes gerenciador_colisoes;
 
 
 		public:

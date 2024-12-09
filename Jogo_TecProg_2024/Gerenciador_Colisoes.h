@@ -8,13 +8,18 @@
 #include <vector>
 #include <list>
 
-class Gerenciador_colisoes
-{
+
+namespace Gerenciadores {
+	class Gerenciador_colisoes
+	{
 	private:
 		std::vector<Entidades::Personagens::Inimigo*> lista_Inimigos;
 		std::list<Entidades::Obstaculos::Obstaculo*> lista_Obstaculos;
 		Entidades::Personagens::Jogador* pJogador1;
 		Entidades::Personagens::Jogador* pJogador2;
+
+		// contador setado, pra evitar ser criado varias vezes durante a execuçao do programa.
+		int i;
 
 	public:
 		void Incluir_Obstaculo(Entidades::Obstaculos::Obstaculo* p_Obstaculo);
@@ -30,5 +35,6 @@ class Gerenciador_colisoes
 		void Executar();
 
 
-};
+	};
+}
 

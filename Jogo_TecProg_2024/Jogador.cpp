@@ -9,7 +9,7 @@ Jogador::Jogador() {
 
 	setar_Vitalidade(100);
 	setar_Figura();
-	setar_pos(x,y);
+	setar_Pos(x,y);
 	//setar_pos(0.0f, 0.0f);
 
 	//std::cout << "X:" << pFigura->getPosition().x<< " Y:" << pFigura->getOrigin().y << std::endl;
@@ -37,7 +37,7 @@ void Jogador::Executar() {
 		y -= velocidade;
 	}
 
-	setar_pos(x, y);
+	setar_Pos(x, y);
 	Desenhar();
 }
 

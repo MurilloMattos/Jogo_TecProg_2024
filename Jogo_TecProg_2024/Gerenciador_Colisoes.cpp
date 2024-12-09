@@ -1,6 +1,7 @@
 #include "Gerenciador_Colisoes.h"
 
 
+using namespace Gerenciadores;
 using namespace Entidades;
 using namespace Obstaculos;
 using namespace Personagens;
@@ -26,6 +27,16 @@ void Gerenciador_colisoes::Setar_Jogador(Jogador* p_Jogador1, Jogador* p_Jogador
 }
 
 void Gerenciador_colisoes::Tratar_Colisoes_Inimigos(){
+
+	for (i = 0; i < lista_Inimigos.size(); i++) {
+
+		lista_Inimigos[i]->executar_Gravidade();
+
+		if () {
+
+		}
+
+	}
 
 }
 

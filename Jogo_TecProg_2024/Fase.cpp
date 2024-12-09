@@ -17,11 +17,11 @@ Fase::~Fase() {
 }
 
 void Fases::Fase::Setar_Jogadores_Colisoes(Jogador* p_jogador1, Jogador* p_jogador2){
-
+	gerenciador_colisoes.Setar_Jogador(p_jogador1, p_jogador2);
 }
 
-void Fases::Fase::Executar()
-{
+void Fases::Fase::Executar(){
+
 	lista_Entidades.Percorrer();
 }
 
@@ -35,7 +35,7 @@ Personagens::Inimigo_Medio* Fase::Cria_Inimigos() {
 	Inimigo_Medio* pirata;
 
 	pirata = new Inimigo_Medio;
-	pirata->setar_pos(200.f, 159.f);
+	pirata->setar_Pos(200.f, 159.f);
 
 	return pirata;
 	
