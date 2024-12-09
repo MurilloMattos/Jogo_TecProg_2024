@@ -9,6 +9,7 @@ namespace Entidades {
 		{
 		protected:
 			int num_vitalidade;
+			float velocidade;
 
 		public:
 			Personagem();

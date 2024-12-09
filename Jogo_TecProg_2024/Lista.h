@@ -111,14 +111,17 @@ namespace Listas
 		aux = getPrimeiro();
 		aux1 = getPrimeiro()->getProx();
 
-		while (aux1 != nullptr) {
-			
-			delete aux;
-			aux = aux1;
-			aux1 = aux->getProx();
-		}
+		if (aux != nullptr) {
 
-		delete aux;
+			while (aux1 != nullptr) {
+
+				delete aux;
+				aux = aux1;
+				aux1 = aux->getProx();
+			}
+
+			delete aux;
+		}
 		aux = nullptr;
 		aux1 = nullptr;
 		aterrar();

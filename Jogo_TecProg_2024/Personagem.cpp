@@ -5,9 +5,12 @@ using namespace Personagens;
 
 Personagem::Personagem() {
 	num_vitalidade = -1;
+	velocidade = 0.0;
+
 }
 
 Personagem::~Personagem() {
+
 }
 
 void Personagem::setar_Vitalidade(int vida)

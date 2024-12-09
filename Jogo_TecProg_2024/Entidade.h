@@ -7,12 +7,17 @@ namespace Entidades
 	{
 	protected:
 		float x, y;
+		float gravidade;
 
 	public:
 		Entidade();
 		~Entidade();
 
-		void setar_pos(float pos_x, float pos_y);
+		float get_Gravidade() const;
+		void setar_Gravidade(int grav);
+		void executar_Gravidade();
+
+		void setar_Pos(float pos_x, float pos_y);
 
 		virtual void Executar() = 0;
 		virtual void Salvar() = 0;

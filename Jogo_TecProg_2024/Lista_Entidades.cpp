@@ -7,7 +7,39 @@ Lista_Entidades::Lista_Entidades() {
 
 }
 
+
 Lista_Entidades::~Lista_Entidades() {
+
+	//A lista já é deletada pelo template
+
+	/*
+	Lista<Entidade>::Elemento<Entidade>* aux, * aux1;
+
+	aux = nullptr;
+	aux1 = nullptr;
+
+	aux = lista_Ent.getPrimeiro();
+	aux1 = aux->getProx();
+
+	if (aux != nullptr) {
+
+		while (aux1 != nullptr)
+		{
+			delete aux;
+
+			aux = aux1;
+			aux1 = aux->getProx();
+		}
+
+		delete aux;
+
+
+	}
+	else {
+		std::cout << " Lista vazia, nao percorrida. ";
+	}
+
+	*/
 
 }
 
