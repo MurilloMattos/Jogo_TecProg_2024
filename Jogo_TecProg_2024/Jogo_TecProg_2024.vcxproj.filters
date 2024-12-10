@@ -77,9 +77,6 @@
     <ClInclude Include="Obstaculo_Dificil.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Obstaculo_Facil.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
     <ClInclude Include="Obstaculo_Medio.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
@@ -134,9 +131,6 @@
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Obstaculo_Medio.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Obstaculo_Facil.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Personagem.cpp">

@@ -28,6 +28,8 @@ void Fases::Fase::Executar(){
 void Fase::Cria_Piso() {
 	piso = new Piso;
 
+	gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(piso));
+
 	piso->seta_Piso(50.f, 1000.f);
 }
 
@@ -37,6 +39,11 @@ Personagens::Inimigo_Medio* Fase::Cria_Inimigos() {
 	pirata = new Inimigo_Medio;
 	pirata->setar_Pos(200.f, 159.f);
 
+	gerenciador_colisoes.Incluir_Inimigo(pirata);
+
 	return pirata;
-	
+}
+
+void Fase::executa_Colisões(){
+
 }

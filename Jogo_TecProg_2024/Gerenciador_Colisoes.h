@@ -22,6 +22,10 @@ namespace Gerenciadores {
 		int i;
 
 	public:
+
+		Gerenciador_colisoes();
+		~Gerenciador_colisoes();
+
 		void Incluir_Obstaculo(Entidades::Obstaculos::Obstaculo* p_Obstaculo);
 		void Incluir_Inimigo(Entidades::Personagens::Inimigo* p_Inimigo);
 		void Incluir_Projetil(Entidades::Projetil* p_Projetil);

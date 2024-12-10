@@ -23,6 +23,8 @@ void Jogo::Executar()
     {
         sf::Event evento;
 
+        Ger_Graf->getJanela()->setFramerateLimit(60);
+
         while (Ger_Graf->getJanela()->pollEvent(evento))
         {
                 if (evento.type == sf::Event::Closed) {

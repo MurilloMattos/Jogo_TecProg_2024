@@ -2,6 +2,7 @@
 
 using namespace Entidades;
 using namespace Obstaculos;
+using namespace Personagens;
 
 Piso::Piso()
 {
@@ -35,4 +36,8 @@ void Piso::Salvar()
 
 void Piso::Executar() {
 	Desenhar();
+}
+
+void Piso::obstacular(Jogador* p)
+{
 }
