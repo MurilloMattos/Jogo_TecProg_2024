@@ -5,7 +5,7 @@ using namespace Personagens;
 
 Jogador::Jogador() {
 	x = 50.0;
-	y = 159.0;
+	y = 150.0;
 
 	setar_Vitalidade(100);
 	setar_Figura();

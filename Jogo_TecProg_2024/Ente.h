@@ -32,6 +32,6 @@ class Ente
 		void setId(int semente) { id = semente; }
 		int getId() const { return id; }
 		
-		sf::RectangleShape* getFigura() { return pFigura; };
+		//sf::RectangleShape* getFigura() { return pFigura; };
 
 };

@@ -12,3 +12,9 @@ Obstaculo::Obstaculo()
 Obstaculo::~Obstaculo() {
 
 }
+
+//não sei como executar a gravidade aplicada ao obstaculo.
+void Obstaculo::executar_Gravidade(){
+	y += gravidade;
+	y -= gravidade;
+}

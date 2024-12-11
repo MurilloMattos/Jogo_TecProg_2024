@@ -8,18 +8,28 @@ using namespace Personagens;
 using namespace std;
 
 
-Gerenciador_colisoes::Gerenciador_colisoes(){
+Gerenciador_colisoes::Gerenciador_colisoes()
+{
+	cima = false;
+	baixo = false;
+	esquerda = false;
+	direita = false;
+
+
 	lista_Inimigos.clear();
 	lista_Obstaculos.clear();
 	
 	pJogador1 = nullptr;
 	pJogador2 = nullptr;
-
-	i = 0;
 }
 
 Gerenciador_colisoes::~Gerenciador_colisoes(){
 
+	lista_Inimigos.clear();
+	lista_Obstaculos.clear();
+
+	pJogador1 = nullptr;
+	pJogador2 = nullptr;
 }
 
 void Gerenciador_colisoes::Incluir_Obstaculo(Obstaculo* p_Obstaculo){
@@ -39,25 +49,138 @@ void Gerenciador_colisoes::Setar_Jogador(Jogador* p_Jogador1, Jogador* p_Jogador
 	pJogador2 = p_Jogador2;
 }
 
-void Gerenciador_colisoes::Tratar_Colisoes_Inimigos(){
+//classe nova?
+void Gerenciador_colisoes::tratar_Fisica_Inimigos(){
+
+}
+
+void Gerenciador_colisoes::tratar_Fisica_Jogadores() {
+	if (pJogador1)
+		pJogador1->executar_Gravidade();
+
+	if (pJogador2)
+		pJogador2->executar_Gravidade();
+}
+
+void Gerenciador_colisoes::tratar_Fisica_Obstaculos(){
+
+	list<Obstaculo*>::iterator itr;
+
+	itr = lista_Obstaculos.begin();
+
+	while (itr != lista_Obstaculos.end()) {
+
+		(*itr)->executar_Gravidade();
+
+		itr++;
+	}
+
+}
+
+void Gerenciador_colisoes::tratar_Colisoes_Inimigos(){
+
+	int i;
 
 	for (i = 0; i < lista_Inimigos.size(); i++) {
-
-		lista_Inimigos[i]->executar_Gravidade();
-		//lista_Inimigos[i]->getFigura()->
+		
+		lista_Inimigos[i]->get_X();
 
 	}
 
 }
 
-void Gerenciador_colisoes::Tratar_Colisoes_Obstaculo(){
+void Gerenciador_colisoes::tratar_Colisoes_Obstaculo(){
 
 }
 
-void Gerenciador_colisoes::Tratar_Colisoes_Jogadores(){
+void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(){
 
+	list<Obstaculo*>::iterator itr;
+
+	itr = lista_Obstaculos.begin();
+
+	while (itr != lista_Obstaculos.end()) {
+
+		if (verifica_Colisao_Cima(static_cast<Entidade*>(*itr), static_cast<Entidade*>(pJogador1))) {
+			pJogador1->setar_Pos(pJogador1->get_X(), (*itr)->get_Y() - pJogador1->get_Altura());
+		}
+
+		itr++;
+	}
+
+
+}
+
+const bool Gerenciador_colisoes::verifica_Colisao_Cima(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
+	cima = false;
+	float y_ref, y2;
+	y_ref = pEntidade_Ref->get_Y();
+	y2 = pEntidade2->get_Y();
+
+	// (y > y2 + a)
+	if (pEntidade_Ref->get_Y() > (pEntidade2->get_Y() + pEntidade2->get_Altura())) {
+		cima = false;
+	}
+	else {
+
+		// (y <= y2+a) && (y + a/2 >= y2 + a)
+		if ((pEntidade_Ref->get_Y() <= (pEntidade2->get_Y() + pEntidade2->get_Altura())) &&	
+			((pEntidade_Ref->get_Y() + (pEntidade_Ref->get_Altura()/2)) >= (pEntidade2->get_Y()+pEntidade2->get_Altura()))) 
+		{
+
+			// (x> x2+L) ou (x+l< x2)
+			if ((pEntidade_Ref->get_X() > (pEntidade2->get_X() + pEntidade2->get_Largura()))) 
+			{
+				cima = false;
+			}
+			else if ((pEntidade_Ref->get_X() + pEntidade_Ref->get_Largura()) < pEntidade2->get_X()) {
+				cima = false;
+			}
+			else {
+				cima = true;
+			}
+		}
+	}
+	/*
+	if (pEntidade_Ref->get_Y() <= (pEntidade2->get_Y() + pEntidade2->get_Altura()))
+	{
+		if ((pEntidade_Ref->get_X() <= (pEntidade2->get_X() + pEntidade2->get_Largura())) &&
+			(pEntidade_Ref->get_X() >= pEntidade2->get_X()))
+		{
+			cima = true;
+		}
+		else if (((pEntidade_Ref->get_X() + pEntidade_Ref->get_Largura()) >= pEntidade2->get_X()) &&
+			((pEntidade_Ref->get_X() + pEntidade_Ref->get_Largura()) <= (pEntidade2->get_X() + pEntidade2->get_Largura())))
+		{
+			cima = true;
+		}
+	}
+	*/
+
+	return cima;
+}
+
+
+const bool Gerenciador_colisoes::verifica_Colisao_Esquerda(Entidade* pEntidade1, Entidade* pEntidade2) {
+	esquerda = false;
+	return esquerda;
+}
+
+
+const bool Gerenciador_colisoes::verifica_Colisao_Baixo(Entidade* pEntidade1, Entidade* pEntidade2) {
+	baixo = false;
+	return baixo;
+}
+
+const bool Gerenciadores::Gerenciador_colisoes::verifica_Colisao_Direita(Entidade* pEntidade1, Entidade* pEntidade2) {
+	direita = false;
+	return direita;
 }
 
 void Gerenciador_colisoes::Executar(){
+	//tratar_Fisica();
+	tratar_Fisica_Jogadores();
+	tratar_Fisica_Obstaculos();
+	tratar_Colisoes_Jogador_Obstaculo();
 
 }

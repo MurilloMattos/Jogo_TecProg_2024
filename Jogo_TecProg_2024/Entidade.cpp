@@ -6,7 +6,9 @@ Entidade::Entidade() : Ente()
 {
 	x = 0;
 	y = 0;
-	gravidade = 9.807f;
+	//gravidade = 9.807f;
+	gravidade = 2.0f;
+	pFigura->setPosition(x, y);
 }
 
 Entidade::~Entidade(){
@@ -17,14 +19,32 @@ float Entidade::get_Gravidade() const{
 	return gravidade;
 }
 
-void Entidades::Entidade::setar_Gravidade(int grav){
+void Entidades::Entidade::setar_Gravidade(float grav){
 	gravidade = grav;
 }
 
 //irá funcionar?
 void Entidades::Entidade::executar_Gravidade(){
-	y -= gravidade;
-	//pFigura->setPosition(x, y);
+	y += gravidade;
+	pFigura->setPosition(x, y);
+}
+
+float Entidades::Entidade::get_Largura(){
+	return pFigura->getLocalBounds().width;
+}
+
+float Entidades::Entidade::get_Altura(){
+	return pFigura->getLocalBounds().height;
+}
+
+
+//esta é a posição relativa ao canto superior esquerdo da figura em relação a janela (o pixel (0,0))
+float Entidades::Entidade::get_X() const{
+	return x;
+}
+
+float Entidades::Entidade::get_Y() const{
+	return y;
 }
 
 
@@ -35,3 +55,4 @@ void Entidade::setar_Pos(float pos_x, float pos_y)
 
 	pFigura->setPosition(x, y);
 }
+

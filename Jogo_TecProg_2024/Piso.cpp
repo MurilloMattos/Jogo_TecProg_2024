@@ -19,12 +19,14 @@ Piso::~Piso(){
 void Piso::seta_Piso(float alt, float larg)
 {
 	//boo = larg;
+	x = -50.f;
+	y = 200.f;
 	
 	tamanho.x = larg;
 	tamanho.y = alt;
 	pFigura->setFillColor(sf::Color::Green);
 	pFigura->setSize(tamanho);
-	pFigura->setPosition(-50.f, 200.f);
+	pFigura->setPosition(x, y);
 
 }
 

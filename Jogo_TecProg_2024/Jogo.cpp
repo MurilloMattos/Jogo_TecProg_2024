@@ -8,7 +8,7 @@ using namespace Fases;
 Jogo::Jogo()
 {
     Ger_Graf = Gerenciador_Grafico::getInstance();
-
+    fase1.Setar_Jogadores_Colisoes(&jogador_1, nullptr);
 }
 
 Jogo::~Jogo()

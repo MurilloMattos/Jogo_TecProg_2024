@@ -25,7 +25,7 @@ namespace Fases {
 			void Executar();
 			void Cria_Piso();
 			Entidades::Personagens::Inimigo_Medio* Cria_Inimigos();
-			void executa_Colisões();
+			//void executa_Colisões();
 
 	};
 }
