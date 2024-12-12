@@ -111,14 +111,27 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(){
 
 }
 
+const bool Gerenciador_colisoes::mesma_Altura_Para_Colisao(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2)
+{
+	// (y > y2 + a) ou (y + a < y2)
+	if ((pEntidade_Ref->get_Y() > (pEntidade2->get_Y() + pEntidade2->get_Altura())) || 
+		((pEntidade_Ref->get_Y() + pEntidade_Ref->get_Altura()) < pEntidade2->get_Y())) {
+		return false;
+	}
+
+	return true;
+}
+
 const bool Gerenciador_colisoes::verifica_Colisao_Cima(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
 	cima = false;
-	float y_ref, y2;
-	y_ref = pEntidade_Ref->get_Y();
-	y2 = pEntidade2->get_Y();
 
-	// (y > y2 + a)
+	/*
+	// (y > y2 + a) ou (y + a < y2)
 	if (pEntidade_Ref->get_Y() > (pEntidade2->get_Y() + pEntidade2->get_Altura())) {
+		cima = false;
+	}
+	*/
+	if (!mesma_Altura_Para_Colisao(pEntidade_Ref, pEntidade2)) {
 		cima = false;
 	}
 	else {
@@ -141,39 +154,38 @@ const bool Gerenciador_colisoes::verifica_Colisao_Cima(Entidade* pEntidade_Ref, 
 			}
 		}
 	}
-	/*
-	if (pEntidade_Ref->get_Y() <= (pEntidade2->get_Y() + pEntidade2->get_Altura()))
-	{
-		if ((pEntidade_Ref->get_X() <= (pEntidade2->get_X() + pEntidade2->get_Largura())) &&
-			(pEntidade_Ref->get_X() >= pEntidade2->get_X()))
-		{
-			cima = true;
-		}
-		else if (((pEntidade_Ref->get_X() + pEntidade_Ref->get_Largura()) >= pEntidade2->get_X()) &&
-			((pEntidade_Ref->get_X() + pEntidade_Ref->get_Largura()) <= (pEntidade2->get_X() + pEntidade2->get_Largura())))
-		{
-			cima = true;
-		}
-	}
-	*/
 
 	return cima;
 }
 
 
-const bool Gerenciador_colisoes::verifica_Colisao_Esquerda(Entidade* pEntidade1, Entidade* pEntidade2) {
+const bool Gerenciador_colisoes::verifica_Colisao_Esquerda(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
 	esquerda = false;
+
+
+	if (!mesma_Altura_Para_Colisao(pEntidade_Ref, pEntidade2)) {
+		esquerda = false;
+	}
+	else {
+
+	}
+
+
 	return esquerda;
 }
 
 
-const bool Gerenciador_colisoes::verifica_Colisao_Baixo(Entidade* pEntidade1, Entidade* pEntidade2) {
+const bool Gerenciador_colisoes::verifica_Colisao_Baixo(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
 	baixo = false;
+
+
 	return baixo;
 }
 
-const bool Gerenciadores::Gerenciador_colisoes::verifica_Colisao_Direita(Entidade* pEntidade1, Entidade* pEntidade2) {
+const bool Gerenciador_colisoes::verifica_Colisao_Direita(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
 	direita = false;
+
+
 	return direita;
 }
 
