@@ -95,15 +95,26 @@ void Gerenciador_colisoes::tratar_Colisoes_Obstaculo(){
 
 void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(){
 
+	bool pos;
+
 	list<Obstaculo*>::iterator itr;
 
 	itr = lista_Obstaculos.begin();
 
 	while (itr != lista_Obstaculos.end()) {
 
+		pos = verifica_Colisao_Cima(static_cast<Entidade*>(*itr), static_cast<Entidade*>(pJogador1));
+
+		if (pos) {
+			pJogador1->setar_Pos(pJogador1->get_X(), (*itr)->get_Y() - pJogador1->get_Altura());
+		}
+		/*
 		if (verifica_Colisao_Cima(static_cast<Entidade*>(*itr), static_cast<Entidade*>(pJogador1))) {
 			pJogador1->setar_Pos(pJogador1->get_X(), (*itr)->get_Y() - pJogador1->get_Altura());
 		}
+		*/
+		system("CLS");
+		std::cout << pos << std::endl;
 
 		itr++;
 	}
@@ -111,8 +122,28 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(){
 
 }
 
-const bool Gerenciador_colisoes::mesma_Altura_Para_Colisao(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2)
+const bool Gerenciador_colisoes::verifica_Mesma_Pos(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
+
+	bool pos = true;
+
+	// (y > y2 + a) ou (y + a < y2)
+	if ((pEntidade_Ref->get_Y() > (pEntidade2->get_Y() + pEntidade2->get_Altura())) ||
+		((pEntidade_Ref->get_Y() + pEntidade_Ref->get_Altura()) < pEntidade2->get_Y())) {
+		pos = false;
+	}
+	else if ((pEntidade_Ref->get_X() > (pEntidade2->get_X() + pEntidade2->get_Largura()) ||
+		(pEntidade_Ref->get_X() + pEntidade_Ref->get_Largura()) < pEntidade2->get_X())) {
+		pos = false;
+	}
+
+	return pos;
+}
+
+/*
+const bool Gerenciador_colisoes::mesma_Altura_Para_Colisao(Entidade* pEntidade_Ref, Entidade* pEntidade2)
 {
+	bool pos = true;
+
 	// (y > y2 + a) ou (y + a < y2)
 	if ((pEntidade_Ref->get_Y() > (pEntidade2->get_Y() + pEntidade2->get_Altura())) || 
 		((pEntidade_Ref->get_Y() + pEntidade_Ref->get_Altura()) < pEntidade2->get_Y())) {
@@ -122,6 +153,16 @@ const bool Gerenciador_colisoes::mesma_Altura_Para_Colisao(Entidades::Entidade* 
 	return true;
 }
 
+const bool Gerenciador_colisoes::verifica_Mesma_Pos_Em_X(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
+
+	if ((pEntidade_Ref->get_X() > (pEntidade2->get_X() + pEntidade2->get_Largura()) ||
+		(pEntidade_Ref->get_X() + pEntidade_Ref->get_Largura()) < pEntidade2->get_X())) {
+
+	}
+
+}
+*/
+
 const bool Gerenciador_colisoes::verifica_Colisao_Cima(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
 	cima = false;
 
@@ -130,8 +171,13 @@ const bool Gerenciador_colisoes::verifica_Colisao_Cima(Entidade* pEntidade_Ref, 
 	if (pEntidade_Ref->get_Y() > (pEntidade2->get_Y() + pEntidade2->get_Altura())) {
 		cima = false;
 	}
-	*/
+	
 	if (!mesma_Altura_Para_Colisao(pEntidade_Ref, pEntidade2)) {
+		cima = false;
+	}
+	*/
+
+	if (!verifica_Mesma_Pos(pEntidade_Ref, pEntidade2)) {
 		cima = false;
 	}
 	else {
@@ -140,7 +186,8 @@ const bool Gerenciador_colisoes::verifica_Colisao_Cima(Entidade* pEntidade_Ref, 
 		if ((pEntidade_Ref->get_Y() <= (pEntidade2->get_Y() + pEntidade2->get_Altura())) &&	
 			((pEntidade_Ref->get_Y() + (pEntidade_Ref->get_Altura()/2)) >= (pEntidade2->get_Y()+pEntidade2->get_Altura()))) 
 		{
-
+			cima = true;
+			/*
 			// (x> x2+L) ou (x+l< x2)
 			if ((pEntidade_Ref->get_X() > (pEntidade2->get_X() + pEntidade2->get_Largura()))) 
 			{
@@ -152,6 +199,7 @@ const bool Gerenciador_colisoes::verifica_Colisao_Cima(Entidade* pEntidade_Ref, 
 			else {
 				cima = true;
 			}
+			*/
 		}
 	}
 
@@ -163,7 +211,7 @@ const bool Gerenciador_colisoes::verifica_Colisao_Esquerda(Entidade* pEntidade_R
 	esquerda = false;
 
 
-	if (!mesma_Altura_Para_Colisao(pEntidade_Ref, pEntidade2)) {
+	if (!verifica_Mesma_Pos(pEntidade_Ref, pEntidade2)) {
 		esquerda = false;
 	}
 	else {
@@ -177,6 +225,18 @@ const bool Gerenciador_colisoes::verifica_Colisao_Esquerda(Entidade* pEntidade_R
 
 const bool Gerenciador_colisoes::verifica_Colisao_Baixo(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
 	baixo = false;
+
+	if (!verifica_Mesma_Pos(pEntidade_Ref, pEntidade2)) {
+		baixo = false;
+	}
+	else {
+
+		//( y+a >= y2 ) && ( y+a/2 <= y2 )
+		if (((pEntidade_Ref->get_Y() + pEntidade_Ref->get_Altura()) <= pEntidade2->get_Y()) &&
+			((pEntidade_Ref->get_Y() + (pEntidade_Ref->get_Altura() / 2)) <= pEntidade2->get_Y())) {
+			baixo = true;
+		}
+	}
 
 
 	return baixo;
