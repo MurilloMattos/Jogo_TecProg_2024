@@ -38,6 +38,7 @@ namespace Gerenciadores {
 		void tratar_Colisoes_Inimigos();
 		void tratar_Colisoes_Obstaculo();
 		void tratar_Colisoes_Jogador_Obstaculo();
+		void tratar_Colisoes_Jogador_Inimigos();
 
 		const bool verifica_Mesma_Pos(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
 
