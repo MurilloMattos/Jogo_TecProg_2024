@@ -105,23 +105,27 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(){
 	while (itr != lista_Obstaculos.end()) {
 
 		
-		if ( verifica_Colisao_Cima( static_cast<Entidade*>(*itr), static_cast<Entidade*>(pJogador1) ) ) {
-			pJogador1->setar_Pos( pJogador1->get_X(), (*itr)->get_Y() - pJogador1->get_Altura() );
+		if ( verifica_Colisao_Cima( static_cast<Entidade*>(pJogador1) , static_cast<Entidade*>(*itr) ) ) {
+			pJogador1->setar_Pos(pJogador1->get_X(), ((*itr)->get_Y() + (*itr)->get_Altura()) + pJogador1->get_Altura());
+			//pJogador1->setar_Pos( pJogador1->get_X(), (*itr)->get_Y() - pJogador1->get_Altura() );
 
+			//system("pause");
 			std::cout << "colisao em Cima." << std::endl;
 		}
-		if ( verifica_Colisao_Baixo( static_cast<Entidade*>(*itr), static_cast<Entidade*>(pJogador1) ) ) {
-			pJogador1->setar_Pos( pJogador1->get_X(), ((*itr)->get_Y() + (*itr)->get_Altura()) + pJogador1->get_Altura() );
+		if ( verifica_Colisao_Baixo( static_cast<Entidade*>(pJogador1), static_cast<Entidade*>(*itr) ) ) {
+			//pJogador1->setar_Pos( pJogador1->get_X(), ((*itr)->get_Y() + (*itr)->get_Altura()) + pJogador1->get_Altura() );
+			pJogador1->setar_Pos(pJogador1->get_X(), (*itr)->get_Y() - pJogador1->get_Altura());
 
+			//system("pause");
 			std::cout << "colisao em Baixo." << std::endl;
 		}
-		if ( verifica_Colisao_Direita( static_cast<Entidade*>(*itr), static_cast<Entidade*>(pJogador1) ) ) {
-			pJogador1->setar_Pos( );
+		if ( verifica_Colisao_Direita( static_cast<Entidade*>(pJogador1), static_cast<Entidade*>(*itr) ) ) {
+			//pJogador1->setar_Pos( );
 
 			std::cout << "colisao a Direita." << std::endl;
 		}
-		if ( verifica_Colisao_Esquerda( static_cast<Entidade*>(*itr), static_cast<Entidade*>(pJogador1) ) ) {
-			pJogador1->setar_Pos( );
+		if ( verifica_Colisao_Esquerda( static_cast<Entidade*>(pJogador1), static_cast<Entidade*>(*itr) ) ) {
+			//pJogador1->setar_Pos( );
 
 			std::cout << "colisao a Esquerda." << std::endl;
 		}
