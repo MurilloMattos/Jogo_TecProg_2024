@@ -8,15 +8,24 @@ namespace Entidades
 	protected:
 		float x, y;
 		float gravidade;
+		bool agressivo;
+		//bool colisao;
 
 	public:
 		Entidade();
 		~Entidade();
 
 		float get_Gravidade() const;
-		void setar_Gravidade(int grav);
-		void executar_Gravidade();
+		void setar_Gravidade(float grav);
+		virtual void executar_Gravidade();
 
+
+		// escolhi deixar o pFigura mais restrito.
+		float get_Largura();
+		float get_Altura();
+
+		float get_X() const;
+		float get_Y() const;
 		void setar_Pos(float pos_x, float pos_y);
 
 		virtual void Executar() = 0;

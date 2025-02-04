@@ -31,6 +31,7 @@ class Ente
 		//todo ente deve ter um id distinto
 		void setId(int semente) { id = semente; }
 		int getId() const { return id; }
-
+		
+		//sf::RectangleShape* getFigura() { return pFigura; };
 
 };

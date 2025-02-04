@@ -106,7 +106,7 @@
       </PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalBMIDirectories>%(AdditionalBMIDirectories)</AdditionalBMIDirectories>
-      <AdditionalIncludeDirectories>C:\Users\muril\OneDrive\Documentos\Jogo_2024\Jogo_TecProg_2024\SFML-2.5.1\include;C:\Users\muril\OneDrive\Documentos\Jogo_2024\Jogo_TecProg_2024\SFML-2.5.1\include;C:\Users\muril\Documents\Jogo_2024\SFML-2.5.1\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\muril\OneDrive\Documentos\Jogo_2024\Jogo_TecProg_2024\SFML-2.5.1\include;C:\Users\muril\Documents\Jogo_2024\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -158,7 +158,6 @@
     <ClInclude Include="Lista_Entidades.h" />
     <ClInclude Include="Obstaculo.h" />
     <ClInclude Include="Obstaculo_Dificil.h" />
-    <ClInclude Include="Obstaculo_Facil.h" />
     <ClInclude Include="Obstaculo_Medio.h" />
     <ClInclude Include="Personagem.h" />
     <ClInclude Include="Piso.h" />
@@ -178,7 +177,6 @@
     <ClCompile Include="Lista_Entidades.cpp" />
     <ClCompile Include="Obstaculo.cpp" />
     <ClCompile Include="Obstaculo_Dificil.cpp" />
-    <ClCompile Include="Obstaculo_Facil.cpp" />
     <ClCompile Include="Obstaculo_Medio.cpp" />
     <ClCompile Include="Personagem.cpp" />
     <ClCompile Include="Piso.cpp" />

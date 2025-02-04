@@ -19,18 +19,34 @@ namespace Gerenciadores {
 		Entidades::Personagens::Jogador* pJogador2;
 
 		// contador setado, pra evitar ser criado varias vezes durante a execuçao do programa.
-		int i;
+		bool cima, baixo, esquerda, direita;
 
 	public:
+
+		Gerenciador_colisoes();
+		~Gerenciador_colisoes();
+
 		void Incluir_Obstaculo(Entidades::Obstaculos::Obstaculo* p_Obstaculo);
 		void Incluir_Inimigo(Entidades::Personagens::Inimigo* p_Inimigo);
 		void Incluir_Projetil(Entidades::Projetil* p_Projetil);
 		void Setar_Jogador(Entidades::Personagens::Jogador* p_Jogador1, Entidades::Personagens::Jogador* p_Jogador2);
 
+		void tratar_Fisica_Jogadores();
+		void tratar_Fisica_Obstaculos();
+		void tratar_Fisica_Inimigos();
 
-		void Tratar_Colisoes_Inimigos();
-		void Tratar_Colisoes_Obstaculo();
-		void Tratar_Colisoes_Jogadores();
+		void tratar_Colisoes_Inimigos();
+		void tratar_Colisoes_Obstaculo(Entidades::Entidade* pEntidadeRef);
+		//void tratar_Colisoes_Jogador_Obstaculo(Entidades::Personagens::Jogador* pJogador);
+		void tratar_Colisoes_Jogador_Inimigos(Entidades::Personagens::Jogador* p_Jogador, Entidades::Personagens::Inimigo* pInimigo);
+
+		const bool verifica_Mesma_Pos(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
+
+		//const bool mesma_Altura_Para_Colisao(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
+		const bool verifica_Colisao_Cima(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2 );
+		const bool verifica_Colisao_Esquerda(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
+		const bool verifica_Colisao_Baixo(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
+		const bool verifica_Colisao_Direita(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
 
 		void Executar();
 

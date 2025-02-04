@@ -7,8 +7,10 @@ using namespace Fases;
 
 Jogo::Jogo()
 {
-    Ger_Graf = Gerenciador_Grafico::getInstance();
+    jogador_2.setar_Dois_Jogadores(true);
 
+    Ger_Graf = Gerenciador_Grafico::getInstance();
+    fase1.Setar_Jogadores_Colisoes(&jogador_1, &jogador_2);
 }
 
 Jogo::~Jogo()
@@ -22,6 +24,8 @@ void Jogo::Executar()
     while (Ger_Graf->getJanela()->isOpen())
     {
         sf::Event evento;
+
+        Ger_Graf->getJanela()->setFramerateLimit(60);
 
         while (Ger_Graf->getJanela()->pollEvent(evento))
         {
@@ -48,6 +52,7 @@ void Jogo::Executar()
 void Jogo::Atualiza() {
 
     jogador_1.Executar();
+    jogador_2.Executar();
     fase1.Executar();
 
 }

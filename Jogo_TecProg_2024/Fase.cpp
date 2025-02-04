@@ -22,21 +22,36 @@ void Fases::Fase::Setar_Jogadores_Colisoes(Jogador* p_jogador1, Jogador* p_jogad
 
 void Fases::Fase::Executar(){
 
+	gerenciador_colisoes.Executar();
 	lista_Entidades.Percorrer();
 }
 
 void Fase::Cria_Piso() {
 	piso = new Piso;
 
-	piso->seta_Piso(50.f, 1000.f);
+	gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(piso));
+
+	piso->seta_Piso(75.f, 1000.f);
 }
 
 Personagens::Inimigo_Medio* Fase::Cria_Inimigos() {
 	Inimigo_Medio* pirata;
 
 	pirata = new Inimigo_Medio;
-	pirata->setar_Pos(200.f, 159.f);
+	pirata->setar_Pos(200.f, 120.f);
+
+	gerenciador_colisoes.Incluir_Inimigo(pirata);
+
+	//std::cout << pirata->
+	std::cout << pirata->get_X() << "," << pirata->get_Y() << std::endl;
+	std::cout << pirata->get_Largura() << "," << pirata->get_Altura() << std::endl;
+	
 
 	return pirata;
-	
 }
+
+/*
+void Fase::executa_Colisões(){
+
+}
+*/
