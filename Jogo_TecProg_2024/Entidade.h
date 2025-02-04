@@ -8,6 +8,7 @@ namespace Entidades
 	protected:
 		float x, y;
 		float gravidade;
+		bool agressivo;
 		//bool colisao;
 
 	public:

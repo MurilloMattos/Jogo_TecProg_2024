@@ -7,7 +7,9 @@ Entidade::Entidade() : Ente()
 	x = 0;
 	y = 0;
 	//gravidade = 9.807f;
-	gravidade = 2.0f;
+
+	agressivo = false;
+	gravidade = 9.8f;
 	pFigura->setPosition(x, y);
 }
 

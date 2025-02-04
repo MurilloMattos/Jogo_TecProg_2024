@@ -4,6 +4,9 @@ using namespace Entidades;
 using namespace Personagens;
 
 Jogador::Jogador() {
+
+	segundo_jogador = false;
+
 	x = 50.0;
 	y = 150.0;
 
@@ -14,7 +17,7 @@ Jogador::Jogador() {
 
 	//std::cout << "X:" << pFigura->getPosition().x<< " Y:" << pFigura->getOrigin().y << std::endl;
 
-	velocidade = 5.0;
+	velocidade = 10.0;
 
 	pontos = 0;
 
@@ -26,19 +29,38 @@ Jogador::~Jogador() {
 
 void Jogador::Executar() {
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-	{
-		x += velocidade;
+	if (!segundo_jogador) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		{
+			x += velocidade;
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+			x -= velocidade;
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+			y -= velocidade;
+		}
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-		x -= velocidade;
+	else {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		{
+			x += velocidade;
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+			x -= velocidade;
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+			y -= velocidade;
+		}
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-		y -= velocidade;
-	}
-
 	setar_Pos(x, y);
 	Desenhar();
+}
+
+void Jogador::setar_Dois_Jogadores(bool jogador_dois) {
+	segundo_jogador = jogador_dois;
+	pFigura->setFillColor(sf::Color::Magenta);
+	setar_Pos(x + 25,y);
 }
 
 void Jogador::Salvar(){
@@ -49,11 +71,9 @@ void Jogador::Salvar(){
 void Jogador::setar_Figura() {
 
 	sf::Vector2f boo(20.f, 40.f);
-	
 
 	pFigura->setSize(boo);
 	pFigura->setFillColor(sf::Color::Blue);
-
 }
 
 /*

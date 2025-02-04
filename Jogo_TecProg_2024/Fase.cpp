@@ -38,7 +38,7 @@ Personagens::Inimigo_Medio* Fase::Cria_Inimigos() {
 	Inimigo_Medio* pirata;
 
 	pirata = new Inimigo_Medio;
-	pirata->setar_Pos(200.f, 159.f);
+	pirata->setar_Pos(200.f, 120.f);
 
 	gerenciador_colisoes.Incluir_Inimigo(pirata);
 
