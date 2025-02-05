@@ -19,7 +19,8 @@ namespace Gerenciadores {
 		Entidades::Personagens::Jogador* pJogador2;
 
 		// contador setado, pra evitar ser criado varias vezes durante a execuçao do programa.
-		bool cima, baixo, esquerda, direita;
+		const int cima, baixo, esquerda, direita;
+		//bool cima, baixo, esquerda, direita;
 
 	public:
 
@@ -42,7 +43,7 @@ namespace Gerenciadores {
 
 		const bool verifica_Mesma_Pos(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
 
-		
+		const int verifica_Tipo_De_Colisao(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
 		const bool verifica_Colisao_Cima(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2 );
 		const bool verifica_Colisao_Esquerda(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
 		const bool verifica_Colisao_Baixo(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
