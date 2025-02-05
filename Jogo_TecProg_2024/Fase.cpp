@@ -17,7 +17,20 @@ Fase::~Fase() {
 }
 
 void Fases::Fase::Setar_Jogadores_Colisoes(Jogador* p_jogador1, Jogador* p_jogador2){
-	gerenciador_colisoes.Setar_Jogador(p_jogador1, p_jogador2);
+
+	if (p_jogador2 == nullptr) {
+
+		gerenciador_colisoes.Setar_Jogador(p_jogador1, nullptr);
+	}
+	else if (p_jogador1 != nullptr) {
+
+		gerenciador_colisoes.Setar_Jogador(p_jogador1, p_jogador2);
+
+	}
+	else {
+		std::cout << "ERRO, SEM REF DE JOGADOR fase.cpp" << std::endl;
+		system("pause");
+	}
 }
 
 void Fases::Fase::Executar(){
@@ -38,7 +51,7 @@ Personagens::Inimigo_Medio* Fase::Cria_Inimigos() {
 	Inimigo_Medio* pirata;
 
 	pirata = new Inimigo_Medio;
-	pirata->setar_Pos(200.f, 120.f);
+	pirata->setar_Pos(200.f, 100.f);
 
 	gerenciador_colisoes.Incluir_Inimigo(pirata);
 

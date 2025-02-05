@@ -5,7 +5,7 @@ using namespace Personagens;
 
 Inimigo_Medio::Inimigo_Medio() {
 
-	sf::Vector2f boo(20.f, 40.f);
+	sf::Vector2f boo(25.f, 45.f);
 
 	pFigura->setFillColor(sf::Color::Red);
 

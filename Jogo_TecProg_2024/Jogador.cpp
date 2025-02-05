@@ -8,7 +8,7 @@ Jogador::Jogador() {
 	segundo_jogador = false;
 
 	x = 50.0;
-	y = 150.0;
+	y = 100.0;
 
 	setar_Vitalidade(100);
 	setar_Figura();
@@ -17,7 +17,7 @@ Jogador::Jogador() {
 
 	//std::cout << "X:" << pFigura->getPosition().x<< " Y:" << pFigura->getOrigin().y << std::endl;
 
-	velocidade = 10.0;
+	velocidade = 5.0;
 
 	pontos = 0;
 
@@ -40,6 +40,11 @@ void Jogador::Executar() {
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 			y -= velocidade;
 		}
+		
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+			y += velocidade;
+		}
+		
 	}
 	else {
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))

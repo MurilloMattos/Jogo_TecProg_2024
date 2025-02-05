@@ -42,7 +42,7 @@ namespace Gerenciadores {
 
 		const bool verifica_Mesma_Pos(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
 
-		//const bool mesma_Altura_Para_Colisao(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
+		
 		const bool verifica_Colisao_Cima(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2 );
 		const bool verifica_Colisao_Esquerda(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
 		const bool verifica_Colisao_Baixo(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
