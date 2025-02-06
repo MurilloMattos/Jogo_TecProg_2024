@@ -49,6 +49,17 @@ float Entidades::Entidade::get_Y() const{
 	return y;
 }
 
+//retorna Y + A
+float Entidades::Entidade::get_Comprimento_A() {
+
+	return get_Y() + get_Altura();
+}
+
+//retorna X + L
+float Entidades::Entidade::get_Comprimento_L() {
+	return get_X() + get_Largura();
+}
+
 
 void Entidade::setar_Pos(float pos_x, float pos_y)
 {

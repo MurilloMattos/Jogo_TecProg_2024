@@ -24,6 +24,9 @@ namespace Entidades
 		float get_Largura();
 		float get_Altura();
 
+		float get_Comprimento_A();
+		float get_Comprimento_L();
+
 		float get_X() const;
 		float get_Y() const;
 		void setar_Pos(float pos_x, float pos_y);

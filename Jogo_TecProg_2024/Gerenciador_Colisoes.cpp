@@ -160,20 +160,24 @@ void Gerenciador_colisoes::tratar_Colisoes_Inimigos(){
 
 }
 
-
+// 
 void Gerenciador_colisoes::tratar_Colisoes_Jogador_Inimigos(Jogador* pJogador, Inimigo* pInimigo) {
 
 	int lado = verifica_Tipo_De_Colisao(pJogador, pInimigo);
 
+	//direita
 	if (lado == 1) {
 		pJogador->setar_Pos((pInimigo->get_X() - pJogador->get_Largura()), pJogador->get_Y());
 	}
+	//cima
 	else if (lado == 2) {
-		pJogador->setar_Pos(pJogador->get_X(), (pInimigo->get_Altura() + pInimigo->get_Y()));
+		pJogador->setar_Pos(pJogador->get_X(), (pInimigo->get_Y() + pInimigo->get_Altura()));
 	}
+	//esquerda
 	else if (lado == 3) {
 		pJogador->setar_Pos((pInimigo->get_X() + pInimigo->get_Largura()), pJogador->get_Y());
 	}
+	//baixo
 	else if (lado == 4) {
 		pJogador->setar_Pos(pJogador->get_X(), (pInimigo->get_Y() - pJogador->get_Altura()));
 	}
@@ -218,74 +222,106 @@ const int Gerenciador_colisoes::verifica_Tipo_De_Colisao(Entidade* pEntidade_Ref
 	float comprimento_direita = 0;
 	float comprimento_esquerda = 0;
 
+
 	if (verifica_Colisao_Baixo(static_cast<Entidade*>(pEntidade_Ref), static_cast<Entidade*>(pEntidade2))) {
 
 		//comprimento_baixo = ((pEntidade_Ref->get_X() + pEntidade_Ref->get_Largura()) - pEntidade2->get_X());
 
-		if (pEntidade_Ref->get_X() < pEntidade2->get_X()) {
+		if ((pEntidade_Ref->get_X() < pEntidade2->get_X()) && (pEntidade_Ref->get_Comprimento_L() > pEntidade2->get_X())) {
 
-			comprimento_baixo = ((pEntidade_Ref->get_X() + pEntidade_Ref->get_Largura()) - pEntidade2->get_X());
+			comprimento_baixo = pEntidade_Ref->get_Comprimento_L() - pEntidade2->get_X();
+			colisao = true;
+		}
+		else if ((pEntidade_Ref->get_X() >= pEntidade2->get_X()) && (pEntidade_Ref->get_Comprimento_L() <= pEntidade2->get_Comprimento_L())) {
+
+			comprimento_baixo = pEntidade_Ref->get_Largura();
+			colisao = true;
 		}
 
-		else {
+		else if ((pEntidade_Ref->get_X() > pEntidade2->get_X()) && (pEntidade_Ref->get_Comprimento_L() > pEntidade2->get_Comprimento_L())) {
 			
-			comprimento_baixo = ((pEntidade2->get_X() + pEntidade2->get_Largura()) - pEntidade_Ref->get_X());
+			comprimento_baixo = pEntidade2->get_Comprimento_L() - pEntidade_Ref->get_X();
+			colisao = true;
 		}
 
-		colisao = true;
 	}
-
+	
+	
 	if (verifica_Colisao_Cima(static_cast<Entidade*>(pEntidade_Ref), static_cast<Entidade*>(pEntidade2))) {
 
-		if (pEntidade_Ref->get_X() < pEntidade2->get_X()) {
+		if ((pEntidade_Ref->get_X() < pEntidade2->get_X()) && (pEntidade_Ref->get_Comprimento_L() > pEntidade2->get_X())) {
 
-			comprimento_cima = ((pEntidade_Ref->get_X() + pEntidade_Ref->get_Largura()) - pEntidade2->get_X());
+			comprimento_cima = pEntidade_Ref->get_Comprimento_L() - pEntidade2->get_X();
+			colisao = true;
 		}
-		else {
+		else if ((pEntidade_Ref->get_X() >= pEntidade2->get_X()) && (pEntidade_Ref->get_Comprimento_L() <= pEntidade2->get_Comprimento_L())){
 
-			comprimento_cima = ((pEntidade2->get_X() + pEntidade2->get_Largura()) - pEntidade_Ref->get_X());
+			comprimento_cima = pEntidade_Ref->get_Largura();
+			colisao = true;
+		}
+		else if ((pEntidade_Ref->get_X() > pEntidade2->get_X()) && (pEntidade_Ref->get_Comprimento_L() > pEntidade2->get_Comprimento_L())) {
+
+			comprimento_cima = pEntidade2->get_Comprimento_L() - pEntidade_Ref->get_X();
+			colisao = true;
 		}
 
-		colisao = true;
 	}
 
+
+	//arrumar a hordem dos ponteiros nos IFS
 	if (verifica_Colisao_Direita(static_cast<Entidade*>(pEntidade_Ref), static_cast<Entidade*>(pEntidade2))) {
 
-		if (pEntidade_Ref->get_Y() > pEntidade2->get_Y()) {
+		if ((pEntidade_Ref->get_Y() < pEntidade2->get_Y()) && (pEntidade2->get_Y() < pEntidade_Ref->get_Comprimento_A())) {
 
-			comprimento_direita = ((pEntidade_Ref->get_Y() + pEntidade_Ref->get_Altura()) - pEntidade2->get_Y());
+			comprimento_direita = pEntidade_Ref->get_Comprimento_A() - pEntidade2->get_Y();
+			colisao = true;
 		}
-		else if (((pEntidade2->get_Y() + pEntidade2->get_Altura()) - pEntidade_Ref->get_Y()) >= 1.0f) {
+		else if ((pEntidade_Ref->get_Y() >= pEntidade2->get_Y()) && (pEntidade_Ref->get_Comprimento_A() <= pEntidade2->get_Comprimento_A()) ) {
 			
-			comprimento_direita = ((pEntidade2->get_Y() + pEntidade2->get_Altura()) - pEntidade_Ref->get_Y());
+			comprimento_direita = pEntidade_Ref->get_Altura();
+			colisao = true;
+		}
+		else if ((pEntidade_Ref->get_Y() > pEntidade2->get_Y()) && (pEntidade_Ref->get_Comprimento_A() > pEntidade2->get_Comprimento_A())) {
+
+			comprimento_direita = pEntidade2->get_Comprimento_A() - pEntidade_Ref->get_Y();
+			colisao = true;
 		}
 
-		colisao = true;
+		
 	}
 
+	
 	if (verifica_Colisao_Esquerda(static_cast<Entidade*>(pEntidade_Ref), static_cast<Entidade*>(pEntidade2))) {
 
+		if ((pEntidade_Ref->get_Y() < pEntidade2->get_Y()) && (pEntidade2->get_Y() < pEntidade_Ref->get_Comprimento_A())) {
 
-		if (pEntidade_Ref->get_Y() > pEntidade2->get_Y()) {
-			
-			comprimento_esquerda = ((pEntidade_Ref->get_Y() + pEntidade_Ref->get_Altura()) - pEntidade2->get_Y());
+			comprimento_esquerda = pEntidade_Ref->get_Comprimento_A() - pEntidade2->get_Y();
+			colisao = true;
 		}
-		else {
-			
-			comprimento_esquerda = ((pEntidade2->get_Y() + pEntidade2->get_Altura()) - pEntidade_Ref->get_Y());
+		else if ((pEntidade_Ref->get_Y() >= pEntidade2->get_Y()) && (pEntidade_Ref->get_Comprimento_A() <= pEntidade2->get_Comprimento_A())) {
+
+			comprimento_esquerda = pEntidade_Ref->get_Altura();
+			colisao = true;
+		}
+		else if ((pEntidade_Ref->get_Y() > pEntidade2->get_Y()) && (pEntidade_Ref->get_Comprimento_A() > pEntidade2->get_Comprimento_A())) {
+
+			comprimento_esquerda = pEntidade2->get_Comprimento_A() - pEntidade_Ref->get_Y();
+			colisao = true;
 		}
 
-		colisao = true;
+
 	}
+	
+	
 
 	if (colisao) {
-		maior = comprimento_cima;
-		lado = cima;
+		maior = comprimento_baixo;
+		lado = baixo;
 
-		if (maior < comprimento_baixo) {
+		if (maior < comprimento_cima) {
 
-			maior = comprimento_baixo;
-			lado = baixo;
+			maior = comprimento_cima;
+			lado = cima;
 		}
 		if (maior < comprimento_direita) {
 
@@ -351,7 +387,7 @@ const bool Gerenciador_colisoes::verifica_Colisao_Esquerda(Entidade* pEntidade_R
 	}
 	else {
 
-		// (x <= x2 + l) && (x + l/2 >= x2 + l)
+		// (x <= x2 + l) && (x + l >= x2 + l)
 		if ((pEntidade_Ref->get_X() < (pEntidade2->get_X() + pEntidade2->get_Largura())) &&
 			((pEntidade_Ref->get_X() + (pEntidade_Ref->get_Largura())) > (pEntidade2->get_X() + pEntidade2->get_Largura())))
 		{
@@ -371,9 +407,9 @@ const bool Gerenciador_colisoes::verifica_Colisao_Baixo(Entidade* pEntidade_Ref,
 	}
 	else {
 
-		//(y + a >= y2) && (y + a <= y2 + h/2)
-		if (((pEntidade_Ref->get_Y() + pEntidade_Ref->get_Altura()) > (pEntidade2->get_Y())) &&
-			((pEntidade_Ref->get_Y() + pEntidade_Ref->get_Altura()) < (pEntidade2->get_Y() + pEntidade2->get_Altura())))
+		//(y + a >= y2) && (y + a <= y2 + h)
+		if (((pEntidade_Ref->get_Y() + pEntidade_Ref->get_Altura()) >= (pEntidade2->get_Y())) &&
+			((pEntidade_Ref->get_Y() + pEntidade_Ref->get_Altura()) <= (pEntidade2->get_Y() + pEntidade2->get_Altura())))
 		{
 			return true;
 
@@ -396,7 +432,7 @@ const bool Gerenciador_colisoes::verifica_Colisao_Direita(Entidade* pEntidade_Re
 
 		// (x < x2) && (x + l > x2)
 		if ((pEntidade_Ref->get_X() < pEntidade2->get_X()) &&
-			((pEntidade_Ref->get_X() + pEntidade_Ref->get_Largura()) > pEntidade2->get_X()))
+			((pEntidade_Ref->get_X() + pEntidade_Ref->get_Largura()) >= pEntidade2->get_X()))
 		{
 			return true;
 		}
