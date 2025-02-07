@@ -10,6 +10,7 @@ namespace Gerenciadores
 		private:
 			sf::RenderWindow* janela;
 			sf::Event* evento;
+			sf::View* camera;
 
 			static Gerenciador_Grafico* GenGraf;
 
@@ -28,6 +29,7 @@ namespace Gerenciadores
 
 			sf::RenderWindow* getJanela();
 			sf::Event* getEvent() const;
+			sf::View* getCamera() const;
 
 			//talvez?
 			//void Desenhar();

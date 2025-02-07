@@ -16,7 +16,7 @@ class Jogo
 		Jogo();
 		~Jogo();
 		void Executar();
-		void Atualiza_cam();
+		void atualiza_Camera();
 		void Atualiza();
 
 };

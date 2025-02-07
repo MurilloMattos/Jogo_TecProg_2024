@@ -128,15 +128,20 @@ void Gerenciador_colisoes::tratar_Colisoes_Inimigos(){
 		std::cout << pJogador1->get_X() << ", " << pJogador1->get_Y() << " altura: " << (pJogador1->get_Altura() + pJogador1->get_Y()) << std::endl;
 		system("CLS");
 
+
 		if (pJogador2 != nullptr) {
 			tratar_Colisoes_Obstaculo(static_cast<Entidade*>(lista_Inimigos[i]));
 			tratar_Colisoes_Jogador_Inimigos(pJogador1, lista_Inimigos[i]);
 			tratar_Colisoes_Jogador_Inimigos(pJogador2, lista_Inimigos[i]);
 
+			lista_Inimigos[i]->andar_ate(pJogador1->get_Centro().x, pJogador1->get_Centro().y);
+			lista_Inimigos[i]->andar_ate(pJogador2->get_Centro().x, pJogador2->get_Centro().y);
 		}
 		else {
 			tratar_Colisoes_Obstaculo(static_cast<Entidade*>(lista_Inimigos[i]));
 			tratar_Colisoes_Jogador_Inimigos(pJogador1, lista_Inimigos[i]);
+
+			lista_Inimigos[i]->andar_ate(pJogador1->get_Centro().x, pJogador1->get_Centro().y);
 
 		}
 
@@ -395,9 +400,11 @@ const bool Gerenciador_colisoes::verifica_Colisao_Direita(Entidade* pEntidade_Re
 
 void Gerenciador_colisoes::Executar(){
 
-	//tratar_Fisica_Jogadores();
-	//tratar_Fisica_Obstaculos();
-	//tratar_Fisica_Inimigos();
+	tratar_Fisica_Jogadores();
+	tratar_Fisica_Obstaculos();
+	tratar_Fisica_Inimigos();
+
+
 
 
 	tratar_Colisoes_Obstaculo(static_cast<Entidade*>(pJogador1));

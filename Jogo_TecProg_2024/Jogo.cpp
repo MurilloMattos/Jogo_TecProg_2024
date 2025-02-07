@@ -12,6 +12,9 @@ Jogo::Jogo()
 
     Ger_Graf = Gerenciador_Grafico::getInstance();
     fase1.Setar_Jogadores_Colisoes(&jogador_1, nullptr);
+
+
+    //Ger_Graf->getJanela()->setView(Ger_Graf->getCamera());
     //fase1.Setar_Jogadores_Colisoes(&jogador_1, &jogador_2);
 }
 
@@ -21,7 +24,6 @@ Jogo::~Jogo()
 
 void Jogo::Executar()
 {
-
 
     while (Ger_Graf->getJanela()->isOpen())
     {
@@ -53,13 +55,24 @@ void Jogo::Executar()
 
 void Jogo::Atualiza() {
 
+    
 
     fase1.Executar();
     jogador_1.Executar();
+    atualiza_Camera();
+
+    //descomentar essa execução caso não achar interessante a movimentação da camera ao colidir.
+    //fase1.Executar();
+    
+    //Ger_Graf->getCamera()->setCenter(jogador_1.get_Centro());
+    //Ger_Graf->getCamera()->move(jogador_1.get_Centro());
+
     //jogador_2.Executar();
 
 }
 
-void Jogo::Atualiza_cam() {
-    //Ger_Graf->getJanela()->
+void Jogo::atualiza_Camera() {
+    Ger_Graf->getJanela()->setView(*Ger_Graf->getCamera());
+    Ger_Graf->getCamera()->setCenter(jogador_1.get_Centro());
+
 }

@@ -6,6 +6,7 @@ using namespace Personagens;
 Jogador::Jogador() {
 
 	segundo_jogador = false;
+	num_vitalidade = 100;
 
 	x = 50.0;
 	y = 100.0;
@@ -28,6 +29,8 @@ Jogador::~Jogador() {
 }
 
 void Jogador::Executar() {
+	Desenhar();
+	setar_Pos(x, y);
 
 	if (!segundo_jogador) {
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
@@ -58,8 +61,8 @@ void Jogador::Executar() {
 			y -= velocidade;
 		}
 	}
-	setar_Pos(x, y);
-	Desenhar();
+	
+	
 }
 
 void Jogador::setar_Dois_Jogadores(bool jogador_dois) {

@@ -7,6 +7,8 @@ Inimigo_Medio::Inimigo_Medio() {
 
 	sf::Vector2f boo(25.f, 45.f);
 
+	velocidade = 2.0f;
+
 	pFigura->setFillColor(sf::Color::Red);
 
 	pFigura->setSize(boo);
@@ -31,14 +33,39 @@ Inimigo_Medio::~Inimigo_Medio() {
 }
 
 void Inimigo_Medio::Executar() {
+
 	Desenhar();
+	setar_Pos(x, y);
+
+	if ((pos_final.x != x) && (pos_final.y != y)) {
+
+		if (pos_final.x > x) {
+			x += velocidade;
+		}
+		else if (pos_final.x < x) {
+			x -= velocidade;
+		}
+		/*
+		if (pos_final.y > y) {
+			y += velocidade;
+		}
+		else if (pos_final.y < y) {
+			y -= velocidade;
+		}
+		*/
+	}
 }
 
-/*
-void Inimigo_Medio::Danificar() {
+
+void Inimigo_Medio::Danificar(){
 
 }
-*/
+
+void Inimigo_Medio::andar_ate(float em_x, float em_y){
+
+	pos_final.x = em_x;
+	pos_final.y = em_y;
+}
 
 void Inimigo_Medio::Salvar() {
 

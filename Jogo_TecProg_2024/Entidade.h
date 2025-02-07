@@ -9,6 +9,7 @@ namespace Entidades
 		float x, y;
 		float gravidade;
 		bool agressivo;
+		sf::Vector2f centro;
 		//bool colisao;
 
 	public:
@@ -21,6 +22,8 @@ namespace Entidades
 
 
 		// escolhi deixar o pFigura mais restrito.
+		sf::Vector2f get_Centro();
+
 		float get_Largura();
 		float get_Altura();
 

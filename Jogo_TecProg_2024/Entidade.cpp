@@ -31,6 +31,15 @@ void Entidades::Entidade::executar_Gravidade(){
 	//pFigura->setPosition(x, y);
 }
 
+sf::Vector2f Entidades::Entidade::get_Centro()
+{
+	
+	centro.x = x + (get_Largura() / 2);
+	centro.y = y + (get_Altura() / 2);
+
+	return sf::Vector2f(centro);
+}
+
 float Entidades::Entidade::get_Largura(){
 	return pFigura->getLocalBounds().width;
 }
