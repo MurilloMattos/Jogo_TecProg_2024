@@ -20,7 +20,6 @@ namespace Gerenciadores {
 
 		// contador setado, pra evitar ser criado varias vezes durante a execuçao do programa.
 		const int cima, baixo, esquerda, direita;
-		//bool cima, baixo, esquerda, direita;
 
 	public:
 
@@ -38,12 +37,10 @@ namespace Gerenciadores {
 
 		void tratar_Colisoes_Inimigos();
 		void tratar_Colisoes_Obstaculo(Entidades::Entidade* pEntidadeRef);
-		//void tratar_Colisoes_Jogador_Obstaculo(Entidades::Personagens::Jogador* pJogador);
 		void tratar_Colisoes_Jogador_Inimigos(Entidades::Personagens::Jogador* p_Jogador, Entidades::Personagens::Inimigo* pInimigo);
 
-		const bool verifica_Mesma_Pos(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
-
 		const int verifica_Tipo_De_Colisao(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
+		const bool verifica_Mesma_Pos(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
 		const bool verifica_Colisao_Cima(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2 );
 		const bool verifica_Colisao_Esquerda(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
 		const bool verifica_Colisao_Baixo(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);

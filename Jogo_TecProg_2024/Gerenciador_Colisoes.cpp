@@ -10,12 +10,6 @@ using namespace std;
 
 Gerenciador_colisoes::Gerenciador_colisoes() : direita(1),cima(2),esquerda(3),baixo(4)
 {
-	/*
-	cima = false;
-	baixo = false;
-	esquerda = false;
-	direita = false;
-	*/
 
 	lista_Inimigos.clear();
 	lista_Obstaculos.clear();
@@ -85,7 +79,6 @@ void Gerenciador_colisoes::tratar_Fisica_Obstaculos(){
 
 		itr++;
 	}
-
 }
 
 void Gerenciador_colisoes::tratar_Colisoes_Obstaculo(Entidade* pEntidadeRef) {
@@ -93,37 +86,33 @@ void Gerenciador_colisoes::tratar_Colisoes_Obstaculo(Entidade* pEntidadeRef) {
 	list<Obstaculo*>::iterator itr;
 
 	itr = lista_Obstaculos.begin();
-	//system("CLS");
+
 
 	//verifica o tipo de colisão especificamente com objetos.
 	while (itr != lista_Obstaculos.end()) {
 
+		int lado = verifica_Tipo_De_Colisao(static_cast<Entidade*>(pEntidadeRef), static_cast<Entidade*>(*itr));
 
-		if (verifica_Colisao_Cima(static_cast<Entidade*>(pEntidadeRef), static_cast<Entidade*>(*itr))) {
+		//direita
+		if (lado == 1) {
 
-			pEntidadeRef->setar_Pos(pEntidadeRef->get_X(), ((*itr)->get_Y() + (*itr)->get_Altura()) + pEntidadeRef->get_Altura());
-
-			std::cout << "colisao em Cima." << std::endl;
+			pEntidadeRef->setar_Pos(((*itr)->get_X() - pEntidadeRef->get_Largura()), pEntidadeRef->get_Y());
 		}
-		if (verifica_Colisao_Baixo(static_cast<Entidade*>(pEntidadeRef), static_cast<Entidade*>(*itr))) {
+		//cima
+		else if (lado == 2) {
+
+			pEntidadeRef->setar_Pos(pEntidadeRef->get_X(), (*itr)->get_Comprimento_A());
+		}
+		//esquerda
+		else if (lado == 3) {
+
+			pEntidadeRef->setar_Pos((*itr)->get_Comprimento_L(), pEntidadeRef->get_Y());
+		}
+		//baixo
+		else if (lado == 4) {
 
 			pEntidadeRef->setar_Pos(pEntidadeRef->get_X(), ((*itr)->get_Y() - pEntidadeRef->get_Altura()));
-
-			//std::cout << "colisao em Baixo." << std::endl;
 		}
-		if (verifica_Colisao_Direita(static_cast<Entidade*>(pEntidadeRef), static_cast<Entidade*>(*itr))) {
-
-			pEntidadeRef->setar_Pos(((*itr)->get_X() + (*itr)->get_Largura()), pEntidadeRef->get_Y());
-
-			std::cout << "colisao a Direita." << std::endl;
-		}
-		if (verifica_Colisao_Esquerda(static_cast<Entidade*>(pEntidadeRef), static_cast<Entidade*>(*itr))) {
-
-			pEntidadeRef->setar_Pos(((*itr)->get_X() + pEntidadeRef->get_X() + pEntidadeRef->get_Largura()), pEntidadeRef->get_Y());
-
-			std::cout << "colisao a Esquerda." << std::endl;
-		}
-
 
 		itr++;
 	}
@@ -133,15 +122,11 @@ void Gerenciador_colisoes::tratar_Colisoes_Inimigos(){
 
 	int i;
 
-	//std::cout << lista_Inimigos.size() << endl;
-	//system("pause");
-
 	for (i = 0; i < lista_Inimigos.size(); i++) {
 
 		std::cout << lista_Inimigos[i]->get_X() << ", " << lista_Inimigos[i]->get_Y() << " altura: " << (lista_Inimigos[i]->get_Altura()+lista_Inimigos[i]->get_Y()) << std::endl;
 		std::cout << pJogador1->get_X() << ", " << pJogador1->get_Y() << " altura: " << (pJogador1->get_Altura() + pJogador1->get_Y()) << std::endl;
 		system("CLS");
-		//std::cout << pJogador1->get_X();
 
 		if (pJogador2 != nullptr) {
 			tratar_Colisoes_Obstaculo(static_cast<Entidade*>(lista_Inimigos[i]));
@@ -167,54 +152,32 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Inimigos(Jogador* pJogador, I
 
 	//direita
 	if (lado == 1) {
+
 		pJogador->setar_Pos((pInimigo->get_X() - pJogador->get_Largura()), pJogador->get_Y());
 	}
 	//cima
 	else if (lado == 2) {
-		pJogador->setar_Pos(pJogador->get_X(), (pInimigo->get_Y() + pInimigo->get_Altura()));
+
+		pJogador->setar_Pos(pJogador->get_X(), pInimigo->get_Comprimento_A());
 	}
 	//esquerda
 	else if (lado == 3) {
-		pJogador->setar_Pos((pInimigo->get_X() + pInimigo->get_Largura()), pJogador->get_Y());
+
+		pJogador->setar_Pos(pInimigo->get_Comprimento_L(), pJogador->get_Y());
 	}
 	//baixo
 	else if (lado == 4) {
-		pJogador->setar_Pos(pJogador->get_X(), (pInimigo->get_Y() - pJogador->get_Altura()));
-	}
-
-	/*
-	//em relação ao jogador, se a colisão for em baixo dele em inimigos, aplica dano do jogador para inimigo
-	//ademais aplica dano ao jogador
-	if (verifica_Colisao_Baixo(static_cast<Entidade*>(pJogador), static_cast<Entidade*>(pInimigo))) {
 
 		pJogador->setar_Pos(pJogador->get_X(), (pInimigo->get_Y() - pJogador->get_Altura()));
-
-		//system("pause");
-
 	}
-	else if (verifica_Colisao_Direita(static_cast<Entidade*>(pJogador), static_cast<Entidade*>(pInimigo))) {
 
-		pJogador->setar_Pos((pInimigo->get_X() - pJogador->get_Largura()), pJogador->get_Y());
-
-		//system("pause");
-
-	}
-	else if (verifica_Colisao_Esquerda(static_cast<Entidade*>(pJogador), static_cast<Entidade*>(pInimigo))) {
-
-		pJogador->setar_Pos((pInimigo->get_X() + pInimigo->get_Largura()), pJogador->get_Y());
-
-	}
-	else if (verifica_Colisao_Cima(static_cast<Entidade*>(pJogador), static_cast<Entidade*>(pInimigo))) {
-
-		pJogador->setar_Pos(pJogador->get_X(), (pInimigo->get_Altura() + pInimigo->get_Y()));
-
-	}
-	*/
 }
 
+//Essa classe tem como objetivo Garantir corretamente o lado colidido da entidade referência.
+//Primeiro ela verifica as coordenadas principais, depois confirma com as secundárias, referente a colisão respectivamente.
 const int Gerenciador_colisoes::verifica_Tipo_De_Colisao(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
 	
-	float maior = -FLT_MAX;
+	float maior = 0;
 	int lado = 0;
 	bool colisao = false;
 	float comprimento_baixo = 0;
@@ -222,10 +185,8 @@ const int Gerenciador_colisoes::verifica_Tipo_De_Colisao(Entidade* pEntidade_Ref
 	float comprimento_direita = 0;
 	float comprimento_esquerda = 0;
 
-
+	//Baixo
 	if (verifica_Colisao_Baixo(static_cast<Entidade*>(pEntidade_Ref), static_cast<Entidade*>(pEntidade2))) {
-
-		//comprimento_baixo = ((pEntidade_Ref->get_X() + pEntidade_Ref->get_Largura()) - pEntidade2->get_X());
 
 		if ((pEntidade_Ref->get_X() < pEntidade2->get_X()) && (pEntidade_Ref->get_Comprimento_L() > pEntidade2->get_X())) {
 
@@ -245,8 +206,8 @@ const int Gerenciador_colisoes::verifica_Tipo_De_Colisao(Entidade* pEntidade_Ref
 		}
 
 	}
-	
-	
+
+	//Cima
 	if (verifica_Colisao_Cima(static_cast<Entidade*>(pEntidade_Ref), static_cast<Entidade*>(pEntidade2))) {
 
 		if ((pEntidade_Ref->get_X() < pEntidade2->get_X()) && (pEntidade_Ref->get_Comprimento_L() > pEntidade2->get_X())) {
@@ -264,11 +225,9 @@ const int Gerenciador_colisoes::verifica_Tipo_De_Colisao(Entidade* pEntidade_Ref
 			comprimento_cima = pEntidade2->get_Comprimento_L() - pEntidade_Ref->get_X();
 			colisao = true;
 		}
-
 	}
-
-
-	//arrumar a hordem dos ponteiros nos IFS
+	
+	//Direita
 	if (verifica_Colisao_Direita(static_cast<Entidade*>(pEntidade_Ref), static_cast<Entidade*>(pEntidade2))) {
 
 		if ((pEntidade_Ref->get_Y() < pEntidade2->get_Y()) && (pEntidade2->get_Y() < pEntidade_Ref->get_Comprimento_A())) {
@@ -286,11 +245,9 @@ const int Gerenciador_colisoes::verifica_Tipo_De_Colisao(Entidade* pEntidade_Ref
 			comprimento_direita = pEntidade2->get_Comprimento_A() - pEntidade_Ref->get_Y();
 			colisao = true;
 		}
-
-		
 	}
 
-	
+	//Esquerda
 	if (verifica_Colisao_Esquerda(static_cast<Entidade*>(pEntidade_Ref), static_cast<Entidade*>(pEntidade2))) {
 
 		if ((pEntidade_Ref->get_Y() < pEntidade2->get_Y()) && (pEntidade2->get_Y() < pEntidade_Ref->get_Comprimento_A())) {
@@ -308,15 +265,15 @@ const int Gerenciador_colisoes::verifica_Tipo_De_Colisao(Entidade* pEntidade_Ref
 			comprimento_esquerda = pEntidade2->get_Comprimento_A() - pEntidade_Ref->get_Y();
 			colisao = true;
 		}
-
-
 	}
 	
-	
-
+	// verifica o maior lado em contato da entidade Referência com a colidida e retorna o lado colidido.
 	if (colisao) {
-		maior = comprimento_baixo;
-		lado = baixo;
+		if (maior < comprimento_baixo) {
+
+			maior = comprimento_baixo;
+			lado = baixo;
+		}
 
 		if (maior < comprimento_cima) {
 
@@ -333,26 +290,24 @@ const int Gerenciador_colisoes::verifica_Tipo_De_Colisao(Entidade* pEntidade_Ref
 			maior = comprimento_esquerda;
 			lado = esquerda;
 		}
-
 	}
 
 	return lado;
 }
 
-
-//verifica se está em colisão
+//verifica se o objeto esta com possibilidade de colisão.
 const bool Gerenciador_colisoes::verifica_Mesma_Pos(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
 
 	bool pos = true;
 
 	// (y > y2 + a) ou (y + a < y2)
-	if ((pEntidade_Ref->get_Y() > (pEntidade2->get_Y() + pEntidade2->get_Altura())) ||
-		((pEntidade_Ref->get_Y() + pEntidade_Ref->get_Altura()) < pEntidade2->get_Y())) {
+	if ((pEntidade_Ref->get_Y() > pEntidade2->get_Comprimento_A()) ||
+		(pEntidade_Ref->get_Comprimento_A() < pEntidade2->get_Y())) {
 		pos = false;
 	}
 	// (x > x2 + l) ou (x + l < x2)
-	else if ((pEntidade_Ref->get_X() > (pEntidade2->get_X() + pEntidade2->get_Largura()) ||
-		(pEntidade_Ref->get_X() + pEntidade_Ref->get_Largura()) < pEntidade2->get_X())) {
+	else if ((pEntidade_Ref->get_X() > pEntidade2->get_Comprimento_L()) ||
+		(pEntidade_Ref->get_Comprimento_L() < pEntidade2->get_X())) {
 		pos = false;
 	}
 
@@ -368,8 +323,8 @@ const bool Gerenciador_colisoes::verifica_Colisao_Cima(Entidade* pEntidade_Ref, 
 	else {
 
 		// (y <= y2 + a) && (y + a >= y2 + a)
-		if (((pEntidade_Ref->get_Y()) < (pEntidade2->get_Y() + pEntidade2->get_Altura())) &&
-			((pEntidade_Ref->get_Y() + (pEntidade_Ref->get_Altura())) > (pEntidade2->get_Y() + pEntidade2->get_Altura())))
+		if ((pEntidade_Ref->get_Y() <= pEntidade2->get_Comprimento_A()) &&
+			(pEntidade_Ref->get_Comprimento_A() >= pEntidade2->get_Comprimento_A()))
 		{
 			return true;
 		}
@@ -388,8 +343,8 @@ const bool Gerenciador_colisoes::verifica_Colisao_Esquerda(Entidade* pEntidade_R
 	else {
 
 		// (x <= x2 + l) && (x + l >= x2 + l)
-		if ((pEntidade_Ref->get_X() < (pEntidade2->get_X() + pEntidade2->get_Largura())) &&
-			((pEntidade_Ref->get_X() + (pEntidade_Ref->get_Largura())) > (pEntidade2->get_X() + pEntidade2->get_Largura())))
+		if ((pEntidade_Ref->get_X() <= pEntidade2->get_Comprimento_L()) &&
+			(pEntidade_Ref->get_Comprimento_L() >= pEntidade2->get_Comprimento_L()))
 		{
 			return true;
 		}
@@ -408,8 +363,8 @@ const bool Gerenciador_colisoes::verifica_Colisao_Baixo(Entidade* pEntidade_Ref,
 	else {
 
 		//(y + a >= y2) && (y + a <= y2 + h)
-		if (((pEntidade_Ref->get_Y() + pEntidade_Ref->get_Altura()) >= (pEntidade2->get_Y())) &&
-			((pEntidade_Ref->get_Y() + pEntidade_Ref->get_Altura()) <= (pEntidade2->get_Y() + pEntidade2->get_Altura())))
+		if ((pEntidade_Ref->get_Comprimento_A() >= pEntidade2->get_Y()) &&
+			(pEntidade_Ref->get_Comprimento_A() <= pEntidade2->get_Comprimento_A()))
 		{
 			return true;
 
@@ -419,45 +374,37 @@ const bool Gerenciador_colisoes::verifica_Colisao_Baixo(Entidade* pEntidade_Ref,
 	return false;
 }
 
-
-
 //Auto explicativo
 const bool Gerenciador_colisoes::verifica_Colisao_Direita(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
-
 
 	if (!verifica_Mesma_Pos(pEntidade_Ref, pEntidade2)) {
 		return false;
 	}
 	else {
 
-		// (x < x2) && (x + l > x2)
-		if ((pEntidade_Ref->get_X() < pEntidade2->get_X()) &&
-			((pEntidade_Ref->get_X() + pEntidade_Ref->get_Largura()) >= pEntidade2->get_X()))
+		// (x <= x2) && (x + l => x2)
+		if ((pEntidade_Ref->get_X() <= pEntidade2->get_X()) &&
+			(pEntidade_Ref->get_Comprimento_L() >= pEntidade2->get_X()))
 		{
 			return true;
 		}
-
 	}
 
 	return false;
 }
 
 void Gerenciador_colisoes::Executar(){
-	//tratar_Fisica();
 
 	//tratar_Fisica_Jogadores();
-	tratar_Fisica_Obstaculos();
+	//tratar_Fisica_Obstaculos();
 	//tratar_Fisica_Inimigos();
-	
+
 
 	tratar_Colisoes_Obstaculo(static_cast<Entidade*>(pJogador1));
-
 	if (pJogador2) {
 		tratar_Colisoes_Obstaculo(static_cast<Entidade*>(pJogador2));
 	}
-	tratar_Colisoes_Inimigos();
 
-	//tratar_Colisoes_Jogador_Obstaculo(pJogador1);
-	//tratar_Colisoes_Jogador_Obstaculo(pJogador2);
+	tratar_Colisoes_Inimigos();
 
 }

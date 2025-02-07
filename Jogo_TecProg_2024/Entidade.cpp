@@ -28,7 +28,7 @@ void Entidades::Entidade::setar_Gravidade(float grav){
 //irá funcionar?
 void Entidades::Entidade::executar_Gravidade(){
 	y += gravidade;
-	pFigura->setPosition(x, y);
+	//pFigura->setPosition(x, y);
 }
 
 float Entidades::Entidade::get_Largura(){

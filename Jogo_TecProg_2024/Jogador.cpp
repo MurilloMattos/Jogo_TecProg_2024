@@ -17,7 +17,7 @@ Jogador::Jogador() {
 
 	//std::cout << "X:" << pFigura->getPosition().x<< " Y:" << pFigura->getOrigin().y << std::endl;
 
-	velocidade = 1.0;
+	velocidade = 5.0;
 
 	pontos = 0;
 

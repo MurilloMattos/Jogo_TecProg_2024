@@ -7,13 +7,17 @@ using namespace Personagens;
 
 Fase::Fase() {
 	Cria_Piso();
+	//Cria_Plataforma();
 
 	lista_Entidades.Incluir(static_cast<Entidade*>(piso));
+	//lista_Entidades.Incluir(static_cast<Entidade*>(plataforma));
 	lista_Entidades.Incluir(static_cast<Entidade*>(Cria_Inimigos()));
 }
 
 Fase::~Fase() {
 
+	delete plataforma;
+	delete piso;
 }
 
 void Fases::Fase::Setar_Jogadores_Colisoes(Jogador* p_jogador1, Jogador* p_jogador2){
@@ -41,13 +45,24 @@ void Fases::Fase::Executar(){
 
 void Fase::Cria_Piso() {
 	piso = new Piso;
+	piso->seta_Piso(75.f, 1000.f, -50.f, 200.f);
 
 	gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(piso));
 
-	piso->seta_Piso(75.f, 1000.f);
+	
+}
+
+void Fases::Fase::Cria_Plataforma() {
+	
+	plataforma = new Piso;
+
+	plataforma->seta_Piso(50.f, 50.f, 0.f, 0.f);
+	gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(plataforma));
+	
 }
 
 Personagens::Inimigo_Medio* Fase::Cria_Inimigos() {
+
 	Inimigo_Medio* pirata;
 
 	pirata = new Inimigo_Medio;
@@ -55,7 +70,7 @@ Personagens::Inimigo_Medio* Fase::Cria_Inimigos() {
 
 	gerenciador_colisoes.Incluir_Inimigo(pirata);
 
-	//std::cout << pirata->
+
 	std::cout << pirata->get_X() << "," << pirata->get_Y() << std::endl;
 	std::cout << pirata->get_Largura() << "," << pirata->get_Altura() << std::endl;
 	
@@ -63,8 +78,3 @@ Personagens::Inimigo_Medio* Fase::Cria_Inimigos() {
 	return pirata;
 }
 
-/*
-void Fase::executa_Colisões(){
-
-}
-*/

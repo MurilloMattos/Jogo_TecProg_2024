@@ -7,6 +7,7 @@ using namespace Fases;
 
 Jogo::Jogo()
 {
+
     //jogador_2.setar_Dois_Jogadores(true);
 
     Ger_Graf = Gerenciador_Grafico::getInstance();
@@ -52,9 +53,10 @@ void Jogo::Executar()
 
 void Jogo::Atualiza() {
 
+
+    fase1.Executar();
     jogador_1.Executar();
     //jogador_2.Executar();
-    fase1.Executar();
 
 }
 

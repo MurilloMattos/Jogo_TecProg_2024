@@ -16,22 +16,19 @@ Piso::~Piso(){
 
 }
 
-void Piso::seta_Piso(float alt, float larg)
+void Piso::seta_Piso(float alt, float larg, float origem_x, float origem_y)
 {
-	//boo = larg;
-	x = -50.f;
-	y = 200.f;
-	
+
 	tamanho.x = larg;
 	tamanho.y = alt;
+
 	pFigura->setFillColor(sf::Color::Green);
 	pFigura->setSize(tamanho);
-	pFigura->setPosition(x, y);
-
+	this->setar_Pos(origem_x, origem_y);
 }
 
-void Piso::Salvar()
-{
+void Piso::Salvar(){
+
 }
 
 
@@ -40,6 +37,6 @@ void Piso::Executar() {
 	Desenhar();
 }
 
-void Piso::obstacular(Jogador* p)
-{
+void Piso::obstacular(Jogador* p) {
+
 }
