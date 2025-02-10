@@ -9,8 +9,13 @@ namespace Entidades
 		float x, y;
 		float gravidade;
 		bool agressivo;
+		//const int semente_id_jogador;
+		//const int id_set;
+
+		sf::Vector2f aceleracao;
+		sf::Vector2f velocidade;
+		sf::Vector2f velocidade_inicial;
 		sf::Vector2f centro;
-		//bool colisao;
 
 	public:
 		Entidade();

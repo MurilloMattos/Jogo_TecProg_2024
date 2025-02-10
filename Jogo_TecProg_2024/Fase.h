@@ -9,25 +9,46 @@
 namespace Fases {
 	class Fase : public Ente
 	{
-		private:
+		protected:
 
 			//tem como a lista_Entidades passar parametros a classe que não necessáriamente entidades?
+			bool ganhou;
 			Listas::Lista_Entidades lista_Entidades;
 			Entidades::Obstaculos::Piso* piso;
 			Entidades::Obstaculos::Piso* plataforma;
 			Gerenciadores::Gerenciador_colisoes gerenciador_colisoes;
+
+			sf::Vector2f tam_Piso_Fase;
+			sf::Vector2f pos_Piso;
+
+			int num_plataformas;
+
+			sf::Vector2f tam_plataforma;
+
+			sf::Vector2f pos_original;
 
 
 		public:
 			Fase();
 			~Fase();
 
+			/*
+			//int get_Num_Plataformas();
+			Gerenciadores::Gerenciador_colisoes* get_Gerenciador_Colisoes();
+			Listas::Lista_Entidades* get_Lista_Entidades();
+			*/
+
 			void Setar_Jogadores_Colisoes(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
-			void Executar();
+			virtual void Executar();
 			void Cria_Piso();
 			void Cria_Plataforma();
+			void Cria_Inimigos_Piratas();
+			//void Cria_Inimigos_Capitao;
 
-			Entidades::Personagens::Inimigo_Medio* Cria_Inimigos();
+			bool get_Ganhou();
+
+			virtual void Cria_Inimigos();
+			void verifica_Inimigos_Neutralizados();
 
 			//void executa_Colisões();
 

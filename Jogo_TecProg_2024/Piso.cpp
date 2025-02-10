@@ -8,8 +8,8 @@ Piso::Piso()
 {
 	boo = 0;
 
-	tamanho.x = 0.0;
-	tamanho.y = 0.0;
+	tamanho.x = 0;
+	tamanho.y = 0;
 }
 
 Piso::~Piso(){

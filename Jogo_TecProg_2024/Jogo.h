@@ -2,7 +2,7 @@
 
 #include "Gerenciador_Grafico.h"
 #include "Jogador.h"
-#include "Fase.h"
+#include "Fase_1.h"
 
 class Jogo
 {
@@ -10,7 +10,8 @@ class Jogo
 		Gerenciadores::Gerenciador_Grafico* Ger_Graf;
 		Entidades::Personagens::Jogador jogador_1;
 		//Entidades::Personagens::Jogador jogador_2;
-		Fases::Fase fase1;
+		Fases::Fase_1 fase1;
+		//sf::Clock tempo_principal;
 
 	public:
 		Jogo();

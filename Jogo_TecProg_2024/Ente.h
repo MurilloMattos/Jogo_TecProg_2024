@@ -5,33 +5,54 @@
 
 class Ente
 {
-	protected:
-		int id;
+protected:
+	int id;
+	static int id_contador;
 
-		//acesso a biblioteca graf (eveitar includes redundantes)
-		Gerenciadores::Gerenciador_Grafico* pGG;
+	//acesso a biblioteca graf (eveitar includes redundantes)
+	Gerenciadores::Gerenciador_Grafico* pGG;
 
-		//todo Ente possuí uma figura retangular
-		sf::RectangleShape* pFigura;
+	//todo Ente possuí uma figura retangular
+	sf::RectangleShape* pFigura;
 
-	public:
-		Ente() {
-			pGG = Gerenciadores::Gerenciador_Grafico::getInstance();
+public:
 
-			id = NULL;
-			pFigura = new sf::RectangleShape;
+	Ente();
+	~Ente();
+	virtual void Executar() = 0;
+	void Desenhar();
 
-		}
+	//virtual void set_Id_Contador() = 0;
+	//todo ente deve ter um id distinto
+	void setId(int semente);
+	int getId() const;
+	//sf::RectangleShape* getFigura();
 
-		~Ente() { delete pFigura; }
+	//sf::RectangleShape* getFigura() { return pFigura; };
+	/*
+	Ente() {
+		pGG = Gerenciadores::Gerenciador_Grafico::getInstance();
 
-		virtual void Executar(){}
-		void Desenhar() { pGG->getJanela()->draw(*pFigura); }
-		
-		//todo ente deve ter um id distinto
-		void setId(int semente) { id = semente; }
-		int getId() const { return id; }
-		
-		//sf::RectangleShape* getFigura() { return pFigura; };
+		id_contador++;
+
+		id = NULL;
+		pFigura = new sf::RectangleShape;
+
+	}
+
+	~Ente() { delete pFigura; }
+
+	virtual void Executar(){}
+	void Desenhar() { pGG->getJanela()->draw(*pFigura); }
+
+	//virtual void set_Id_Contador() = 0;
+	//todo ente deve ter um id distinto
+	void setId(int semente) { id = semente; }
+	int getId() const { return id; }
+
+	//sf::RectangleShape* getFigura() { return pFigura; };
+	*/
 
 };
+
+//int Ente::id_contador = 0;

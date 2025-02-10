@@ -11,6 +11,8 @@ using namespace std;
 Gerenciador_colisoes::Gerenciador_colisoes() : direita(1),cima(2),esquerda(3),baixo(4)
 {
 
+	empurrao = 50.0f;
+
 	lista_Inimigos.clear();
 	lista_Obstaculos.clear();
 	
@@ -36,7 +38,7 @@ void Gerenciador_colisoes::Incluir_Inimigo(Inimigo* p_Inimigo){
 }
 
 void Gerenciador_colisoes::Incluir_Projetil(Projetil* p_Projetil){
-
+	lista_Projeteis.insert(p_Projetil);
 }
 
 void Gerenciador_colisoes::Setar_Jogador(Jogador* p_Jogador1, Jogador* p_Jogador2){
@@ -49,6 +51,45 @@ void Gerenciador_colisoes::Setar_Jogador(Jogador* p_Jogador1, Jogador* p_Jogador
 	}
 }
 
+/*
+Entidades::Entidade* Gerenciadores::Gerenciador_colisoes::projetil_Destruido()
+{
+
+
+	return nullptr;
+}
+*/
+
+// Definitivamente uma melhor solução seria colocar essa fução na classe fase
+Entidade* Gerenciador_colisoes::Inimigo_neutralizado()
+{
+	int i;
+
+	Entidade* aux;
+
+	for (i = 0; i < lista_Inimigos.size(); i++) {
+
+		if (lista_Inimigos[i]->get_Vitalidade() <= 0) {
+
+ 			aux = lista_Inimigos[i];
+			lista_Inimigos.erase(lista_Inimigos.begin() + i);
+			
+			return aux;
+		}
+	}
+	return nullptr;
+}
+
+bool Gerenciador_colisoes::verifica_Lista_Inimigos_Vazia()
+{
+	if (lista_Inimigos.size() == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 //classe nova?
 void Gerenciador_colisoes::tratar_Fisica_Inimigos(){
 
@@ -56,6 +97,19 @@ void Gerenciador_colisoes::tratar_Fisica_Inimigos(){
 
 	for (i = 0; i < lista_Inimigos.size(); i++) {
 		lista_Inimigos[i]->executar_Gravidade();
+	}
+}
+
+void Gerenciador_colisoes::tratar_Fisica_Projeteis(){
+
+	
+	set<Projetil*>::iterator itr;
+
+	for (itr = lista_Projeteis.begin(); itr != lista_Projeteis.end(); itr++) {
+
+		(*itr)->executar_Gravidade();
+
+		itr++;
 	}
 }
 
@@ -79,6 +133,64 @@ void Gerenciador_colisoes::tratar_Fisica_Obstaculos(){
 
 		itr++;
 	}
+}
+
+void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(Jogador* p_Jogador) {
+
+	list<Obstaculo*>::iterator itr;
+
+	itr = lista_Obstaculos.begin();
+
+
+	//verifica o tipo de colisão especificamente com objetos.
+	while (itr != lista_Obstaculos.end()) {
+
+		int lado = verifica_Tipo_De_Colisao(static_cast<Entidade*>(p_Jogador), static_cast<Entidade*>(*itr));
+
+		//direita
+		if (lado == 1) {
+
+			p_Jogador->setar_Pos(((*itr)->get_X() - p_Jogador->get_Largura()), p_Jogador->get_Y());
+		}
+		//cima
+		else if (lado == 2) {
+
+			p_Jogador->setar_Pos(p_Jogador->get_X(), (*itr)->get_Comprimento_A());
+		}
+		//esquerda
+		else if (lado == 3) {
+
+			p_Jogador->setar_Pos((*itr)->get_Comprimento_L(), p_Jogador->get_Y());
+		}
+		//baixo
+		else if (lado == 4) {
+
+			p_Jogador->setar_Pos(p_Jogador->get_X(), ((*itr)->get_Y() - p_Jogador->get_Altura()));
+			p_Jogador->setar_Estado(false);
+		}
+
+		itr++;
+	}
+}
+
+bool Gerenciador_colisoes::tratar_Colisoes_Jogador_Projeteis(Jogador* p_Jogador){
+
+	set<Projetil*>::iterator itr;
+
+	itr = lista_Projeteis.begin();
+
+	while (itr != lista_Projeteis.end()) {
+
+		int lado = verifica_Tipo_De_Colisao(static_cast<Entidade*>(p_Jogador), static_cast<Entidade*>(*itr));
+
+		if (lado != 0) {
+			return true;
+		}
+
+		itr++;
+	}
+
+	return false;
 }
 
 void Gerenciador_colisoes::tratar_Colisoes_Obstaculo(Entidade* pEntidadeRef) {
@@ -118,15 +230,41 @@ void Gerenciador_colisoes::tratar_Colisoes_Obstaculo(Entidade* pEntidadeRef) {
 	}
 }
 
+void Gerenciador_colisoes::tratar_Colisoes_Projeteis(){
+
+	set<Projetil*>::iterator itr_proj;
+	list<Obstaculo*>::iterator itr_obst;
+
+	itr_proj = lista_Projeteis.begin();
+
+	while (itr_proj != lista_Projeteis.end()) {
+
+		itr_obst = lista_Obstaculos.begin();
+
+		while (itr_obst != lista_Obstaculos.end()) {
+
+			int lado = verifica_Tipo_De_Colisao(static_cast<Entidade*>(*itr_proj), static_cast<Entidade*>(*itr_obst));
+
+			if (lado != 0) {
+
+			}
+
+			itr_obst++;
+		}
+
+		itr_proj++;
+	}
+}
+
 void Gerenciador_colisoes::tratar_Colisoes_Inimigos(){
 
 	int i;
 
 	for (i = 0; i < lista_Inimigos.size(); i++) {
 
-		std::cout << lista_Inimigos[i]->get_X() << ", " << lista_Inimigos[i]->get_Y() << " altura: " << (lista_Inimigos[i]->get_Altura()+lista_Inimigos[i]->get_Y()) << std::endl;
-		std::cout << pJogador1->get_X() << ", " << pJogador1->get_Y() << " altura: " << (pJogador1->get_Altura() + pJogador1->get_Y()) << std::endl;
-		system("CLS");
+		if (lista_Inimigos[i]->get_Vitalidade() < 0) {
+			std::cout << "entidade " << i << " foi neutralizada" << std::endl;
+		}
 
 
 		if (pJogador2 != nullptr) {
@@ -145,7 +283,6 @@ void Gerenciador_colisoes::tratar_Colisoes_Inimigos(){
 
 		}
 
-
 	}
 
 }
@@ -158,22 +295,28 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Inimigos(Jogador* pJogador, I
 	//direita
 	if (lado == 1) {
 
-		pJogador->setar_Pos((pInimigo->get_X() - pJogador->get_Largura()), pJogador->get_Y());
+		pJogador->setar_Pos((pInimigo->get_X() - pJogador->get_Largura() - empurrao), pJogador->get_Y());
+		pJogador->diminuir_Vitalidade(pInimigo->danificar());
 	}
 	//cima
 	else if (lado == 2) {
 
-		pJogador->setar_Pos(pJogador->get_X(), pInimigo->get_Comprimento_A());
+		pJogador->setar_Pos(pJogador->get_X(), pInimigo->get_Comprimento_A() + empurrao);
+		pJogador->diminuir_Vitalidade(pInimigo->danificar());
 	}
 	//esquerda
 	else if (lado == 3) {
 
-		pJogador->setar_Pos(pInimigo->get_Comprimento_L(), pJogador->get_Y());
+		pJogador->setar_Pos(pInimigo->get_Comprimento_L() + empurrao, pJogador->get_Y());
+		pJogador->diminuir_Vitalidade(pInimigo->danificar());
 	}
 	//baixo
 	else if (lado == 4) {
 
 		pJogador->setar_Pos(pJogador->get_X(), (pInimigo->get_Y() - pJogador->get_Altura()));
+		pJogador->setar_Estado(false);
+		pJogador->executando_Pulo();
+		pInimigo->diminuir_Vitalidade(pJogador->danificar());
 	}
 
 }
@@ -403,15 +546,18 @@ void Gerenciador_colisoes::Executar(){
 	tratar_Fisica_Jogadores();
 	tratar_Fisica_Obstaculos();
 	tratar_Fisica_Inimigos();
+	tratar_Fisica_Projeteis();
 
 
-
-
-	tratar_Colisoes_Obstaculo(static_cast<Entidade*>(pJogador1));
+	tratar_Colisoes_Jogador_Obstaculo(pJogador1);
+	tratar_Colisoes_Jogador_Projeteis(pJogador1);
 	if (pJogador2) {
-		tratar_Colisoes_Obstaculo(static_cast<Entidade*>(pJogador2));
+		tratar_Colisoes_Jogador_Obstaculo(pJogador2);
+		tratar_Colisoes_Jogador_Projeteis(pJogador2);
 	}
 
 	tratar_Colisoes_Inimigos();
+	tratar_Colisoes_Projeteis();
+
 
 }

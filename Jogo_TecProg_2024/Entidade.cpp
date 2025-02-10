@@ -8,8 +8,18 @@ Entidade::Entidade() : Ente()
 	y = 0;
 	//gravidade = 9.807f;
 
+	velocidade.x = 0;
+	velocidade.y = 0;
+
+	velocidade_inicial.y = 0;
+	velocidade_inicial.x = 0;
+
 	agressivo = false;
-	gravidade = 9.8f;
+	gravidade = 5.0f;
+
+	aceleracao.x = 0;
+	aceleracao.y = gravidade;
+
 	pFigura->setPosition(x, y);
 }
 
@@ -28,7 +38,7 @@ void Entidades::Entidade::setar_Gravidade(float grav){
 //irá funcionar?
 void Entidades::Entidade::executar_Gravidade(){
 	y += gravidade;
-	//pFigura->setPosition(x, y);
+
 }
 
 sf::Vector2f Entidades::Entidade::get_Centro()

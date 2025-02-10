@@ -10,6 +10,7 @@ namespace Entidades {
 		{
 			protected:
 				bool agressivo;
+				const int semente_id_entidade;
 
 			public:
 				Obstaculo();

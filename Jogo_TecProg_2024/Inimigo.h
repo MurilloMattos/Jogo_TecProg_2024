@@ -9,10 +9,10 @@ namespace Entidades {
 		{
 			protected:
 				int nivel_raiva;
-				int dano;
-				//Entidades::Personagens::Jogador* pJogador_1;
-				//Entidades::Personagens::Jogador* pJogador_2;
+				const int semente_id_entidade;
+				//int dano;
 
+				sf::Vector2f pos_inicial;
 				sf::Vector2f pos_final;
 
 			public:
@@ -23,7 +23,7 @@ namespace Entidades {
 
 				virtual void andar_ate(float em_x, float em_y);
 				virtual void Salvar() = 0;
-				virtual void Danificar() = 0;
+				//virtual void Danificar() = 0;
 				virtual void Executar();
 
 		};
