@@ -1,0 +1,3 @@
+/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/sfml-app.dir
+/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/edit_cache.dir
+/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/rebuild_cache.dir
