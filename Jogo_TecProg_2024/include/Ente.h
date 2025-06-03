@@ -11,29 +11,23 @@ class Ente
 		//acesso a biblioteca graf (eveitar includes redundantes)
 		Gerenciadores::Gerenciador_Grafico* pGG;
 
-		//todo Ente possuí uma figura retangular
-		sf::RectangleShape* pFigura;
+		//todo Ente possuï¿½ uma figura retangular
+		//sf::RectangleShape* pFigura;
+		sf::Sprite *pFigura;
+		sf::Texture *figura;
 
 	public:
-		Ente() {
-			pGG = Gerenciadores::Gerenciador_Grafico::getInstance();
+		Ente();
 
-			id = -1;//id = NULL;
-			pFigura = new sf::RectangleShape;
-
-		}
-
-		~Ente() { delete pFigura; }
-
-		virtual void Executar(){}
-		void Desenhar() { 
-			//
-			pGG->getJanela()->draw(*pFigura); }
+		~Ente();
+		virtual void Executar() = 0;
+		void Desenhar();
+		void desenhar();
 		
 		//todo ente deve ter um id distinto
-		void setId(int semente) { id = semente; }
-		int getId() const { return id; }
-		
-		//sf::RectangleShape* getFigura() { return pFigura; };
+		void setId(int semente);
+		int getId() const;
+		void setpGG(Gerenciadores::Gerenciador_Grafico *G);
+		sf::Sprite *getFigura();
 
 };
