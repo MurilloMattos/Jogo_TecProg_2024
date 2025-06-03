@@ -8,15 +8,26 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/elienai/Documentos/TEC/PROJETO_GAME/my_dev/tec_prog_c-_game/main.cpp" "CMakeFiles/sfml-app.dir/main.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/main.cpp.o.d"
-  "/home/elienai/Documentos/TEC/PROJETO_GAME/my_dev/tec_prog_c-_game/src/Ente.cpp" "CMakeFiles/sfml-app.dir/src/Ente.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Ente.cpp.o.d"
-  "/home/elienai/Documentos/TEC/PROJETO_GAME/my_dev/tec_prog_c-_game/src/Entes/Entidade.cpp" "CMakeFiles/sfml-app.dir/src/Entes/Entidade.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Entes/Entidade.cpp.o.d"
-  "/home/elienai/Documentos/TEC/PROJETO_GAME/my_dev/tec_prog_c-_game/src/Entes/Entidades/Personagem.cpp" "CMakeFiles/sfml-app.dir/src/Entes/Entidades/Personagem.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Entes/Entidades/Personagem.cpp.o.d"
-  "/home/elienai/Documentos/TEC/PROJETO_GAME/my_dev/tec_prog_c-_game/src/Entes/Entidades/Personagens/Jao_Zika_Jogador.cpp" "CMakeFiles/sfml-app.dir/src/Entes/Entidades/Personagens/Jao_Zika_Jogador.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Entes/Entidades/Personagens/Jao_Zika_Jogador.cpp.o.d"
-  "/home/elienai/Documentos/TEC/PROJETO_GAME/my_dev/tec_prog_c-_game/src/Entes/Fase.cpp" "CMakeFiles/sfml-app.dir/src/Entes/Fase.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Entes/Fase.cpp.o.d"
-  "/home/elienai/Documentos/TEC/PROJETO_GAME/my_dev/tec_prog_c-_game/src/Gerenciadores/Atribuidor_Figuras.cpp" "CMakeFiles/sfml-app.dir/src/Gerenciadores/Atribuidor_Figuras.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Gerenciadores/Atribuidor_Figuras.cpp.o.d"
-  "/home/elienai/Documentos/TEC/PROJETO_GAME/my_dev/tec_prog_c-_game/src/Gerenciadores/Gerenciador_Grafico.cpp" "CMakeFiles/sfml-app.dir/src/Gerenciadores/Gerenciador_Grafico.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Gerenciadores/Gerenciador_Grafico.cpp.o.d"
-  "/home/elienai/Documentos/TEC/PROJETO_GAME/my_dev/tec_prog_c-_game/src/Jao_Zika_Jogo.cpp" "CMakeFiles/sfml-app.dir/src/Jao_Zika_Jogo.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Jao_Zika_Jogo.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Ente.cpp" "CMakeFiles/sfml-app.dir/src/Ente.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Ente.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Entidade.cpp" "CMakeFiles/sfml-app.dir/src/Entidade.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Entidade.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Fase.cpp" "CMakeFiles/sfml-app.dir/src/Fase.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Fase.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Gerenciador_Colisoes.cpp" "CMakeFiles/sfml-app.dir/src/Gerenciador_Colisoes.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Gerenciador_Colisoes.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Gerenciador_Grafico.cpp" "CMakeFiles/sfml-app.dir/src/Gerenciador_Grafico.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Gerenciador_Grafico.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Inimigo.cpp" "CMakeFiles/sfml-app.dir/src/Inimigo.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Inimigo.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Inimigo_Facil.cpp" "CMakeFiles/sfml-app.dir/src/Inimigo_Facil.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Inimigo_Facil.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Inimigo_Medio.cpp" "CMakeFiles/sfml-app.dir/src/Inimigo_Medio.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Inimigo_Medio.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Jogador.cpp" "CMakeFiles/sfml-app.dir/src/Jogador.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Jogador.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Jogo.cpp" "CMakeFiles/sfml-app.dir/src/Jogo.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Jogo.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Jogo_TecProg_2024.cpp" "CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Lista_Entidades.cpp" "CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Menu.cpp" "CMakeFiles/sfml-app.dir/src/Menu.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Menu.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Obstaculo.cpp" "CMakeFiles/sfml-app.dir/src/Obstaculo.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Obstaculo.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Obstaculo_Dificil.cpp" "CMakeFiles/sfml-app.dir/src/Obstaculo_Dificil.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Obstaculo_Dificil.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Obstaculo_Facil.cpp" "CMakeFiles/sfml-app.dir/src/Obstaculo_Facil.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Obstaculo_Facil.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Obstaculo_Medio.cpp" "CMakeFiles/sfml-app.dir/src/Obstaculo_Medio.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Obstaculo_Medio.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Personagem.cpp" "CMakeFiles/sfml-app.dir/src/Personagem.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Personagem.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Piso.cpp" "CMakeFiles/sfml-app.dir/src/Piso.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Piso.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Projetil.cpp" "CMakeFiles/sfml-app.dir/src/Projetil.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Projetil.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

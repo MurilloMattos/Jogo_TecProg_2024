@@ -68,6 +68,7 @@ void Lista_Entidades::Percorrer() {
 		}
 
 		aux->getInfo()->Executar();
+
 	}
 	else {
 		std::cout << " Lista vazia, nao percorrida. ";

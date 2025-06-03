@@ -58,13 +58,11 @@ Personagens::Inimigo_Medio* Fase::Cria_Inimigos() {
 	//std::cout << pirata->
 	std::cout << pirata->get_X() << "," << pirata->get_Y() << std::endl;
 	std::cout << pirata->get_Largura() << "," << pirata->get_Altura() << std::endl;
-	
 
 	return pirata;
 }
-
 /*
 void Fase::executa_Colisões(){
-
+	
 }
 */

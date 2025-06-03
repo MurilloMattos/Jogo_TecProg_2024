@@ -20,6 +20,8 @@ file(GLOB_RECURSE SOURCES ${SRC_DIR}/*.cpp)
 
 # Criar o executável
 add_executable(sfml-app ${SOURCES})
+#move dados da pasta para o destino onde esta o executavel build/bin 
+file(COPY ${CMAKE_SOURCE_DIR}/assets DESTINATION ${CMAKE_BINARY_DIR})
 
 # Linkar com as bibliotecas da SFML
 target_link_libraries(sfml-app sfml-graphics sfml-window sfml-system)

@@ -28,7 +28,6 @@ Jogador::~Jogador() {
 }
 
 void Jogador::Executar() {
-
 	if (!segundo_jogador) {
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
@@ -59,12 +58,12 @@ void Jogador::Executar() {
 		}
 	}
 	setar_Pos(x, y);
-	Desenhar();
+	desenhar();
 }
 
 void Jogador::setar_Dois_Jogadores(bool jogador_dois) {
 	segundo_jogador = jogador_dois;
-	pFigura->setFillColor(sf::Color::Magenta);
+	pFigura->setColor(sf::Color::Magenta);
 	setar_Pos(x + 25,y);
 }
 
@@ -77,8 +76,11 @@ void Jogador::setar_Figura() {
 
 	sf::Vector2f boo(20.f, 40.f);
 
-	pFigura->setSize(boo);
-	pFigura->setFillColor(sf::Color::Blue);
+	//pFigura->setSize(boo);
+	//pFigura->setColor(sf::Color::Blue);
+	pFigura->setScale(0.1 , 0.01);
+	figura->loadFromFile("./assets/sprite.png");
+	pFigura->setTexture(*figura);
 }
 
 /*

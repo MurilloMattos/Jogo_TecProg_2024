@@ -1,18 +1,18 @@
 #pragma once
 #include <iostream>
 #include <SFML/Graphics.hpp>
-
+//#include "Ente.h"
+class Menu;
+class Jogo;
+class Ente;
 namespace Gerenciadores
 {
 	//singleton, só existe UM gerenciador grafico, em resumo, serve para que tenha apenas uma janela executável do jogo
 	class Gerenciador_Grafico
 	{
 		private:
-			sf::RenderWindow* janela;
-			sf::Event* evento;
-
 			static Gerenciador_Grafico* GenGraf;
-
+			sf::RenderWindow *j;
 			Gerenciador_Grafico();
 
 		public:
@@ -25,13 +25,14 @@ namespace Gerenciadores
 				}
 				return GenGraf;
 			}
-
-			sf::RenderWindow* getJanela();
-			sf::Event* getEvent() const;
-
+			sf::RenderWindow* criaJanela(const char *name, int xx, int yy);	
+			void loopEventos(Menu *m);
+			void executar(Menu *m);
+			void setJanela(sf::RenderWindow *janela);
+			sf::RenderWindow *getJanela();
 			//talvez?
-			//void Desenhar();
-	};
+			void desenharEnte(Ente *pE);
 
+	};
 }
 

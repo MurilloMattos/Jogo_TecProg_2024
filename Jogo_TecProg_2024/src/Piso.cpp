@@ -24,8 +24,8 @@ void Piso::seta_Piso(float alt, float larg)
 	
 	tamanho.x = larg;
 	tamanho.y = alt;
-	pFigura->setFillColor(sf::Color::Green);
-	pFigura->setSize(tamanho);
+	pFigura->setColor(sf::Color::Green);
+	//pFigura->setSize(tamanho);
 	pFigura->setPosition(x, y);
 
 }
@@ -37,7 +37,8 @@ void Piso::Salvar()
 
 
 void Piso::Executar() {
-	Desenhar();
+	//Desenhar();
+	desenhar();
 }
 
 void Piso::obstacular(Jogador* p)

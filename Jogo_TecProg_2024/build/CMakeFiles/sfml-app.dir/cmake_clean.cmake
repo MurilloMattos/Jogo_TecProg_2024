@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/sfml-app.dir/src/Ente.cpp.o"
+  "CMakeFiles/sfml-app.dir/src/Ente.cpp.o.d"
   "CMakeFiles/sfml-app.dir/src/Entidade.cpp.o"
   "CMakeFiles/sfml-app.dir/src/Entidade.cpp.o.d"
   "CMakeFiles/sfml-app.dir/src/Fase.cpp.o"
@@ -21,6 +23,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.o.d"
   "CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.o"
   "CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.o.d"
+  "CMakeFiles/sfml-app.dir/src/Menu.cpp.o"
+  "CMakeFiles/sfml-app.dir/src/Menu.cpp.o.d"
   "CMakeFiles/sfml-app.dir/src/Obstaculo.cpp.o"
   "CMakeFiles/sfml-app.dir/src/Obstaculo.cpp.o.d"
   "CMakeFiles/sfml-app.dir/src/Obstaculo_Dificil.cpp.o"

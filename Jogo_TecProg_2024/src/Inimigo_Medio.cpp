@@ -7,9 +7,9 @@ Inimigo_Medio::Inimigo_Medio() {
 
 	sf::Vector2f boo(25.f, 45.f);
 
-	pFigura->setFillColor(sf::Color::Red);
+	pFigura->setColor(sf::Color::Red);
 
-	pFigura->setSize(boo);
+	//pFigura->setSize(boo);
 	pFigura->setPosition(200.f, 159.f);
 
 }

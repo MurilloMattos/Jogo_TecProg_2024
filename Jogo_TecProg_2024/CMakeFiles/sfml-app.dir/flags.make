@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/elienai/Documentos/TEC/PROJETO_GAME/my_dev/tec_prog_c-_game/include
+CXX_INCLUDES = -I/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/include
 
 CXX_FLAGS = -std=gnu++14
 

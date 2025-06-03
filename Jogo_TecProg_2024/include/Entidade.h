@@ -10,7 +10,6 @@ namespace Entidades
 		float gravidade;
 		bool agressivo;
 		//bool colisao;
-
 	public:
 		Entidade();
 		~Entidade();
@@ -30,7 +29,6 @@ namespace Entidades
 
 		virtual void Executar() = 0;
 		virtual void Salvar() = 0;
-
 	};
 
 }
