@@ -1,5 +1,7 @@
 #include "Jogo.h"
-
+//#include "Jogador.h"
+//#include "Fase.h"
+#include "Menu.h"
 using namespace Gerenciadores;
 using namespace Entidades;
 using namespace Personagens;
@@ -10,54 +12,42 @@ Jogo::Jogo()
     //jogador_2.setar_Dois_Jogadores(true);
 
     Ger_Graf = Gerenciador_Grafico::getInstance();
+    janelaJogo = Ger_Graf->criaJanela("Jogo", 1360, 768);
+    Ger_Graf->setJanela(this->janelaJogo);
+
     fase1.Setar_Jogadores_Colisoes(&jogador_1, nullptr);
+    m = new Menu();
+    m->setpGG(Ger_Graf);
+    m->set_pJog(this);
+
+    incluirEntes((Ente*)m);
+    //m->Executar(); 
     //fase1.Setar_Jogadores_Colisoes(&jogador_1, &jogador_2);
 }
-
 Jogo::~Jogo()
 {
 }
-
+void Jogo::setJanelaJogo(sf::RenderWindow *j) {  janelaJogo = j; }
+sf::RenderWindow * Jogo::getJanela() {	return janelaJogo;	}
 void Jogo::Executar()
 {
-
-
-    while (Ger_Graf->getJanela()->isOpen())
-    {
-        sf::Event evento;
-
-        Ger_Graf->getJanela()->setFramerateLimit(60);
-
-        while (Ger_Graf->getJanela()->pollEvent(evento))
-        {
-                if (evento.type == sf::Event::Closed) {
-                    Ger_Graf->getJanela()->close();
-                }
-        }
-
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-        {
-            // deve ser modificado para encaixar o menu de pause.
-            Ger_Graf->getJanela()->close();
-        }
-
-        Ger_Graf->getJanela()->clear();
-
-        Atualiza();
-
-        Ger_Graf->getJanela()->display();
-
-    }
+    entes[0]->Executar();     	
 }
 
-void Jogo::Atualiza() {
-
+void Jogo::Atualiza()
+{
+    
     jogador_1.Executar();
-    //jogador_2.Executar();
+    jogador_2.Executar();
     fase1.Executar();
 
 }
 
 void Jogo::Atualiza_cam() {
     //Ger_Graf->getJanela()->
+}
+void Jogo::incluirEntes(Ente *ente) {
+	if(ente) {
+		entes.push_back(ente);
+	}
 }
