@@ -30,6 +30,18 @@ class Menu : public Ente {
 		void executar();
 		void atualizar();
 		sf::RenderWindow * getJanelaMenu();
+		bool getPressionado();
+		void setPressionado(bool valor);
+		void setSelecionado(bool valor);
+		bool getSelecionado();
+		sf::Vector2i getPosicaoMouse();
+		void setPosicaoMouse(sf::Vector2i pos);
+		sf::Vector2f getCoordsMouse();
+		void setCoordsMouse(sf::Vector2f coords);
+
+		void setPosicaoMenu(int pos);
+		int getPosicaoMenu();
+		std::vector<sf::Text>* getTextos();
 		void set_pJog(Jogo *pJ);
 		Jogo* get_pJog(); 
 };
