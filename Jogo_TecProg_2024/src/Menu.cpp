@@ -39,6 +39,7 @@ void Menu::atribuir() {
 		textos[i].setString(opcoes[i]);
 		textos[i].setCharacterSize(tam[i]);
 		//textos[i].setOutlineColor(sf::Color::Red);
+	
 		textos[i].setPosition(coords[i]);
 	}
 }
