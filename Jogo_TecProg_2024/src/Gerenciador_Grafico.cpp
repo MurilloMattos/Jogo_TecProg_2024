@@ -28,14 +28,51 @@ void Gerenciador_Grafico::loopEventos(Menu *m) {
 			getJanela()->close();
 		}
 	}
+	int pos = m->getPosicaoMenu();
+	std::vector<sf::Text> *bucket = m->getTextos();
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !m->getPressionado()) {	
+		if(pos < 6) {
+			m->setPressionado(true);
+			m->setPosicaoMenu(++pos);
+			(*bucket)[m->getPosicaoMenu()].setOutlineThickness(4);
+			(*bucket)[m->getPosicaoMenu() - 1].setOutlineThickness(0);
+			m->setPressionado(false);
+			std::cout << "pos: " << m->getPosicaoMenu() << std::endl;
+
+		}
+
+	}
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !m->getPressionado()) {	
+		if(pos >= 0) {
+			m->setPressionado(true);
+			m->setPosicaoMenu(--pos);
+			(*bucket)[m->getPosicaoMenu()].setOutlineThickness(4);
+			(*bucket)[m->getPosicaoMenu() + 1].setOutlineThickness(0);
+			m->setPressionado(false);
+	std::cout << "pos: " << m->getPosicaoMenu() << std::endl;
+
+
+		}
+	}
+		if(m->getPosicaoMenu() == -1) { 
+			(*bucket)[5].setOutlineThickness(4);
+			(*bucket)[0].setOutlineThickness(0);
+			m->setPosicaoMenu(5);
+ 		}
+		if(m->getPosicaoMenu() == 6) { 
+			(*bucket)[0].setOutlineThickness(4);
+			(*bucket)[5].setOutlineThickness(0);
+			m->setPosicaoMenu(0);
+		}
 }
 void Gerenciador_Grafico::executar(Menu *m){
 		while((getJanela())->isOpen()) {
 			loopEventos(m);
 			//desenharEnte(pE);
 			(getJanela())->clear();
-			m->atualizar(); //switch case e atualizar() { m->jogo.atualizar(menu->jogo); }  
 			m->desenhar();
+			m->atualizar(); //switch case e atualizar() { m->jogo.atualizar(menu->jogo); }  
+			//m->desenhar();
 			getJanela()->display();
 
 		}
