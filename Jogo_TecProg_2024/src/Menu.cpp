@@ -1,6 +1,6 @@
 #include "Jogo.h"
 #include "Menu.h"
-Menu::Menu():Ente() {
+Menu::Menu():Ente(), posicaoMenu(0) {
 	pJog = NULL;
 	//menu = pGG->criaJanela("Menu", 500, 500);
 	exitMenu = new sf::RectangleShape();
