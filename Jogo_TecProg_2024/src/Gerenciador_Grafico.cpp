@@ -28,9 +28,11 @@ void Gerenciador_Grafico::loopEventos(Menu *m) {
 			getJanela()->close();
 		}
 	}
+
+     if(evento.type == sf::Event::KeyPressed) {
 	int pos = m->getPosicaoMenu();
 	std::vector<sf::Text> *bucket = m->getTextos();
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !m->getPressionado()) {	
+	if((evento.key.code == sf::Keyboard::Down) && !m->getPressionado()) {	
 		if(pos < 6) {
 			m->setPressionado(true);
 			m->setPosicaoMenu(++pos);
@@ -42,7 +44,7 @@ void Gerenciador_Grafico::loopEventos(Menu *m) {
 		}
 
 	}
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !m->getPressionado()) {	
+	if((evento.key.code == sf::Keyboard::Up) && !m->getPressionado()) {	
 		if(pos >= 0) {
 			m->setPressionado(true);
 			m->setPosicaoMenu(--pos);
@@ -50,7 +52,6 @@ void Gerenciador_Grafico::loopEventos(Menu *m) {
 			(*bucket)[m->getPosicaoMenu() + 1].setOutlineThickness(0);
 			m->setPressionado(false);
 	std::cout << "pos: " << m->getPosicaoMenu() << std::endl;
-
 
 		}
 	}
@@ -64,6 +65,7 @@ void Gerenciador_Grafico::loopEventos(Menu *m) {
 			(*bucket)[5].setOutlineThickness(0);
 			m->setPosicaoMenu(0);
 		}
+      }
 }
 void Gerenciador_Grafico::executar(Menu *m){
 		while((getJanela())->isOpen()) {
