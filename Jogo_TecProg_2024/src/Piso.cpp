@@ -19,14 +19,17 @@ Piso::~Piso(){
 void Piso::seta_Piso(float alt, float larg)
 {
 	//boo = larg;
-	x = -50.f;
-	y = 200.f;
+	x = -500.f;
+	y = 400.f;
 	
 	tamanho.x = larg;
 	tamanho.y = alt;
-	pFigura->setColor(sf::Color::Green);
+	//pFigura->setColor(sf::Color::Green);
 	//pFigura->setSize(tamanho);
 	pFigura->setPosition(x, y);
+	pFigura->setScale(1.0, 0.5);
+	figura->loadFromFile("./assets/piso.png");
+	pFigura->setTexture(*figura);		
 
 }
 
