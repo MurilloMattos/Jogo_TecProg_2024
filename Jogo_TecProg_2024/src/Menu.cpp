@@ -42,9 +42,9 @@ void Menu::atribuir() {
 
 	//pFigura->setScale(escalaX, escalaY);
 			
-	opcoes = {"Menu","Continuar","Fases","Salvar jogada","Rank","Salvar pontuacao"};
-	coords = {{600 * escalaX, 150 * escalaY},{520 * escalaX, 240 * escalaY},{520 * escalaX , 318 * escalaY},{520 * escalaX, 396 * escalaY},{520 * escalaX, 474 * escalaY},{520 * escalaX, 552 * escalaY} };
-	tam = {44, 20,20,20,20,20};
+	opcoes = {"Continuar", "Fase 1", "Fase 2","Salvar jogada","Rank","Salvar pontuacao"};
+	coords = {{450 * escalaX, 140 * escalaY},{520 * escalaX, 240 * escalaY},{520 * escalaX , 318 * escalaY}, {520 * escalaX, 396 * escalaY},{520 * escalaX, 474 * escalaY},{520 * escalaX, 552 * escalaY} };
+	tam = {40, 20,20,20,20,20};
 	textos.resize(6);
         for(size_t i = 0; i < textos.size(); i++) {
 		textos[i].setFont(*fonte);
@@ -196,16 +196,12 @@ void Menu::atualizar() {
 	//pJog->Atualiza();	
 	if(selecionado) {
 		switch (getPosicaoMenu()) {
-			case 1: {
-			
+			case 0: {
+				pGG->getJanela()->close();		
 			}
 				
 			break;
-			case 2: { 
-					//if(pJog->getEntes()->entes[2]) { chama gerenciador de texto, salva, apaga; } 
-					//
-					//exemplo fase_1
-					std::cout << "ENTROUUUUUU" << std::endl; 
+			case 1: {  
 					Fase_1 *f = new Fase_1();
 					Jogador *j = new Jogador();
 					pJog->setJogador(j);				
@@ -215,8 +211,19 @@ void Menu::atualizar() {
 					
 			}
 			break;
+			case 2: {
+						
+				/*	TorreFogo *t = new TorreFogo();
+					Jogador *j = new Jogador();
+					pJog->setJogador(j);				
+					t->Setar_Jogadores_Colisoes(j, nullptr);
+					pJog->incluirEntes(static_cast<Ente*>(t));
+					pJog->incluirEntes(static_cast<Ente*>(j));
+				 */	
+			}
+			break;
 			case 3: {
-			 
+			
 			}
 			break;
 			case 4: {
@@ -224,7 +231,7 @@ void Menu::atualizar() {
 			}
 			break;
 			case 5: {
-			
+
 			}
 			break;
 			default: { 
