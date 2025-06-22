@@ -81,7 +81,6 @@ void Fases::Fase::Cria_Plataforma() {
 	}
 	//num_plataformas = 7;
 	std::cout << num_plataformas << std::endl;
-
 	int i;
 	float espaco = static_cast<float>(rand() % 100);
 
@@ -99,7 +98,6 @@ void Fases::Fase::Cria_Plataforma() {
 		gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(plataforma));
 		lista_Entidades.Incluir(static_cast<Entidade*>(plataforma));
 	}
-	
 }
 
 void Fases::Fase::Cria_Inimigos_Piratas(){

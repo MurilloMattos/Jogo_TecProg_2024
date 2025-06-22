@@ -14,8 +14,11 @@ Obstaculo_Facil::~Obstaculo_Facil() {
 
 void Obstaculo_Facil::executar()
 {
+	//Desenhar();
+		
 }
 
 void Obstaculo_Facil::danificar(Jogador* p)
 {
+	
 }

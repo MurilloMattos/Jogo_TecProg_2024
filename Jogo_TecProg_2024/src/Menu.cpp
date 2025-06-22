@@ -213,13 +213,13 @@ void Menu::atualizar() {
 			break;
 			case 2: {
 						
-				/*	TorreFogo *t = new TorreFogo();
+					TorreFogo *t = new TorreFogo();
 					Jogador *j = new Jogador();
 					pJog->setJogador(j);				
 					t->Setar_Jogadores_Colisoes(j, nullptr);
 					pJog->incluirEntes(static_cast<Ente*>(t));
 					pJog->incluirEntes(static_cast<Ente*>(j));
-				 */	
+				 	
 			}
 			break;
 			case 3: {

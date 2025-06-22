@@ -657,6 +657,30 @@ src/Projetil.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/src/Projetil.cpp.s
 .PHONY : src/Projetil.cpp.s
 
+src/TorreFogo.o: src/TorreFogo.cpp.o
+.PHONY : src/TorreFogo.o
+
+# target to build an object file
+src/TorreFogo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.o
+.PHONY : src/TorreFogo.cpp.o
+
+src/TorreFogo.i: src/TorreFogo.cpp.i
+.PHONY : src/TorreFogo.i
+
+# target to preprocess a source file
+src/TorreFogo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.i
+.PHONY : src/TorreFogo.cpp.i
+
+src/TorreFogo.s: src/TorreFogo.cpp.s
+.PHONY : src/TorreFogo.s
+
+# target to generate assembly for a file
+src/TorreFogo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.s
+.PHONY : src/TorreFogo.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -732,6 +756,9 @@ help:
 	@echo "... src/Projetil.o"
 	@echo "... src/Projetil.i"
 	@echo "... src/Projetil.s"
+	@echo "... src/TorreFogo.o"
+	@echo "... src/TorreFogo.i"
+	@echo "... src/TorreFogo.s"
 .PHONY : help
 
 

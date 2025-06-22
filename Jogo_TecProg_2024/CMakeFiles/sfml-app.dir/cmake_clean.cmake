@@ -43,6 +43,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/sfml-app.dir/src/Piso.cpp.o.d"
   "CMakeFiles/sfml-app.dir/src/Projetil.cpp.o"
   "CMakeFiles/sfml-app.dir/src/Projetil.cpp.o.d"
+  "CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.o"
+  "CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.o.d"
   "sfml-app"
   "sfml-app.pdb"
 )

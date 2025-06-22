@@ -1,7 +1,7 @@
 #pragma once
 #include "Fase.h"
 #include "Capitao.h"
-
+#include "Obstaculo_Medio.h"
 namespace Fases{
 
 	class Fase_1 : public Fase
@@ -18,6 +18,7 @@ namespace Fases{
 		void Executar();
 		void Cria_Inimigos();
 		void Cria_Inimigos_Capitao();
+		void Cria_Obstaculos_Medios(); 
 
 	};
 }

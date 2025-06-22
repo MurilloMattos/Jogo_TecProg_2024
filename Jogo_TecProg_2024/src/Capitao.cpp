@@ -25,7 +25,7 @@ Capitao::Capitao():Inimigo(){
         setFile("./assets/ladrao_centered.png");
         atribuirFigura();
 	pFigura->setScale(0.3f, 0.3f);	
-	pFigura->setPosition(pos_inicial);
+	pFigura->setPosition(pos_inicial.x, pos_inicial.y);
 
 }
 

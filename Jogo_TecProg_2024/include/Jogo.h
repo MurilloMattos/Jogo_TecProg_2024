@@ -7,7 +7,7 @@
 //class Fase;
 
 #include "Fase_1.h"
-
+#include "TorreFogo.h"
 class Jogo
 {
 	private:
@@ -19,6 +19,7 @@ class Jogo
 		std::vector<Ente*> entes;
 		//Entidades::Personagens::Jogador jogador_2;
 		Fases::Fase_1 *fase1;
+		Fases::TorreFogo *t;
 		//sf::Clock tempo_principal;
 	public:
 		Jogo();

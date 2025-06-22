@@ -30,6 +30,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Personagem.cpp" "CMakeFiles/sfml-app.dir/src/Personagem.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Personagem.cpp.o.d"
   "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Piso.cpp" "CMakeFiles/sfml-app.dir/src/Piso.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Piso.cpp.o.d"
   "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Projetil.cpp" "CMakeFiles/sfml-app.dir/src/Projetil.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Projetil.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/TorreFogo.cpp" "CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
