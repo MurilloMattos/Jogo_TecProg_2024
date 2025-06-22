@@ -1,17 +1,27 @@
 #include "Gerenciador_Grafico.h"
 #include "Ente.h"
-#include "Jogo.h"
-#include "Menu.h"
+#include "Jogador.h"
 using namespace Gerenciadores;
 
 Gerenciador_Grafico* Gerenciador_Grafico::GenGraf = NULL;
 
 Gerenciador_Grafico::Gerenciador_Grafico() {
+	janela = new sf::RenderWindow(sf::VideoMode(500, 500),"Jogo");
+        evento = new sf::Event();
+        camera = new sf::View();
+	cameraDefault = janela->getDefaultView(); 	
+        //camera->setSize(700.f, 700.f);
+        //janela->setView(*camera);
+        //
+       camera->setSize(static_cast<float>(janela->getSize().x), static_cast<float>(janela->getSize().y));
 
 }
 
 Gerenciador_Grafico::~Gerenciador_Grafico(){
 	//delete janela;
+        delete janela;
+        delete evento;
+        delete camera;
 }
 sf::RenderWindow* Gerenciador_Grafico::criaJanela(const char *name, int xx, int yy) {
 	sf::RenderWindow *w = new sf::RenderWindow();
@@ -21,69 +31,19 @@ sf::RenderWindow* Gerenciador_Grafico::criaJanela(const char *name, int xx, int 
 /*sf::RenderWindow* Gerenciador_Grafico::getJanela(){	
 	return janela;
 }*/
-void Gerenciador_Grafico::loopEventos(Menu *m) {
-	sf::Event evento;
-	while((getJanela())->pollEvent(evento)) {
-		if(evento.type == sf::Event::Closed){
-			getJanela()->close();
-		}
-	}
 
-     if(evento.type == sf::Event::KeyPressed) {
-	int pos = m->getPosicaoMenu();
-	std::vector<sf::Text> *bucket = m->getTextos();
-	if((evento.key.code == sf::Keyboard::Down) && !m->getPressionado()) {	
-		if(pos < 6) {
-			m->setPressionado(true);
-			m->setPosicaoMenu(++pos);
-			(*bucket)[m->getPosicaoMenu()].setOutlineThickness(4);
-			(*bucket)[m->getPosicaoMenu() - 1].setOutlineThickness(0);
-			m->setPressionado(false);
-			std::cout << "pos: " << m->getPosicaoMenu() << std::endl;
-
-		}
-
-	}
-	if((evento.key.code == sf::Keyboard::Up) && !m->getPressionado()) {	
-		if(pos >= 0) {
-			m->setPressionado(true);
-			m->setPosicaoMenu(--pos);
-			(*bucket)[m->getPosicaoMenu()].setOutlineThickness(4);
-			(*bucket)[m->getPosicaoMenu() + 1].setOutlineThickness(0);
-			m->setPressionado(false);
-	std::cout << "pos: " << m->getPosicaoMenu() << std::endl;
-
-		}
-	}
-		if(m->getPosicaoMenu() == -1) { 
-			(*bucket)[5].setOutlineThickness(4);
-			(*bucket)[0].setOutlineThickness(0);
-			m->setPosicaoMenu(5);
- 		}
-		if(m->getPosicaoMenu() == 6) { 
-			(*bucket)[0].setOutlineThickness(4);
-			(*bucket)[5].setOutlineThickness(0);
-			m->setPosicaoMenu(0);
-		}
-      }
-}
-void Gerenciador_Grafico::executar(Menu *m){
-		while((getJanela())->isOpen()) {
-			loopEventos(m);
-			//desenharEnte(pE);
-			(getJanela())->clear();
-			m->desenhar();
-			m->atualizar(); //switch case e atualizar() { m->jogo.atualizar(menu->jogo); }  
-			//m->desenhar();
-			getJanela()->display();
-
-		}
-}
-void Gerenciador_Grafico::setJanela(sf::RenderWindow *janela) {
-	if(janela) { j = janela; } 
+void Gerenciador_Grafico::setJanela(sf::RenderWindow *j) {
+	if(j) { janela = j; } 
 }
 sf::RenderWindow *Gerenciador_Grafico::getJanela() {
-	return j;
+	return janela;
+}
+sf::Event* Gerenciador_Grafico::getEvent() const {
+        return evento;
+}
+
+sf::View *Gerenciador_Grafico::getCamera() const {
+        return camera;
 }
 void Gerenciador_Grafico::desenharEnte(Ente *pE) {
 				if(pE == NULL) {
@@ -95,3 +55,6 @@ void Gerenciador_Grafico::desenharEnte(Ente *pE) {
 			//renderiza aqui draw(sprite) (textura);
 			getJanela()->draw(*(pE->getFigura()));
 }
+const sf::View Gerenciador_Grafico::getCameraDefault() {
+        return cameraDefault;
+}				

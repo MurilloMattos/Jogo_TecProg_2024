@@ -15,9 +15,10 @@ namespace Entidades {
                 //Inimigo_Medio(float pos_x, float pos_y);
                 ~Inimigo_Medio();
 
+                void andar_ate(float em_x, float em_y);
                 void Salvar();
                 void Executar();
-                //void Danificar();
+                void Danificar();
 
         };
     }

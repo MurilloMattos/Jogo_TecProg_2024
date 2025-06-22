@@ -129,6 +129,30 @@ sfml-app/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/build
 .PHONY : sfml-app/fast
 
+src/Capitao.o: src/Capitao.cpp.o
+.PHONY : src/Capitao.o
+
+# target to build an object file
+src/Capitao.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/src/Capitao.cpp.o
+.PHONY : src/Capitao.cpp.o
+
+src/Capitao.i: src/Capitao.cpp.i
+.PHONY : src/Capitao.i
+
+# target to preprocess a source file
+src/Capitao.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/src/Capitao.cpp.i
+.PHONY : src/Capitao.cpp.i
+
+src/Capitao.s: src/Capitao.cpp.s
+.PHONY : src/Capitao.s
+
+# target to generate assembly for a file
+src/Capitao.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/src/Capitao.cpp.s
+.PHONY : src/Capitao.cpp.s
+
 src/Ente.o: src/Ente.cpp.o
 .PHONY : src/Ente.o
 
@@ -200,6 +224,30 @@ src/Fase.s: src/Fase.cpp.s
 src/Fase.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/src/Fase.cpp.s
 .PHONY : src/Fase.cpp.s
+
+src/Fase_1.o: src/Fase_1.cpp.o
+.PHONY : src/Fase_1.o
+
+# target to build an object file
+src/Fase_1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/src/Fase_1.cpp.o
+.PHONY : src/Fase_1.cpp.o
+
+src/Fase_1.i: src/Fase_1.cpp.i
+.PHONY : src/Fase_1.i
+
+# target to preprocess a source file
+src/Fase_1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/src/Fase_1.cpp.i
+.PHONY : src/Fase_1.cpp.i
+
+src/Fase_1.s: src/Fase_1.cpp.s
+.PHONY : src/Fase_1.s
+
+# target to generate assembly for a file
+src/Fase_1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/src/Fase_1.cpp.s
+.PHONY : src/Fase_1.cpp.s
 
 src/Gerenciador_Colisoes.o: src/Gerenciador_Colisoes.cpp.o
 .PHONY : src/Gerenciador_Colisoes.o
@@ -618,6 +666,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... sfml-app"
+	@echo "... src/Capitao.o"
+	@echo "... src/Capitao.i"
+	@echo "... src/Capitao.s"
 	@echo "... src/Ente.o"
 	@echo "... src/Ente.i"
 	@echo "... src/Ente.s"
@@ -627,6 +678,9 @@ help:
 	@echo "... src/Fase.o"
 	@echo "... src/Fase.i"
 	@echo "... src/Fase.s"
+	@echo "... src/Fase_1.o"
+	@echo "... src/Fase_1.i"
+	@echo "... src/Fase_1.s"
 	@echo "... src/Gerenciador_Colisoes.o"
 	@echo "... src/Gerenciador_Colisoes.i"
 	@echo "... src/Gerenciador_Colisoes.s"

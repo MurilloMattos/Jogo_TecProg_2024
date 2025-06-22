@@ -9,18 +9,18 @@ class Menu : public Ente {
 		sf::RectangleShape *exitMenu;
 		sf::Font *fonte;
 		//sf::Text *texto;
+		//
 		sf::Vector2i posicaoMouse;
 		sf::Vector2f coordMouse;
+
 		int posicaoMenu;
 		bool pressionado, selecionado;
+		bool emMenu;
 
 		std::vector<const char*> opcoes;
 		std::vector<sf::Vector2f> coords;
 		std::vector<sf::Text> textos;
-		std::vector<std::size_t> tam;	
-
-
-		
+		std::vector<std::size_t> tam;				
 				
 	public:
 		Menu();
@@ -43,5 +43,9 @@ class Menu : public Ente {
 		int getPosicaoMenu();
 		std::vector<sf::Text>* getTextos();
 		void set_pJog(Jogo *pJ);
-		Jogo* get_pJog(); 
+		Jogo* get_pJog();
+		void loopEventos();
+		void set_emMenu(bool v);
+		bool get_emMenu()const;
+
 };

@@ -4,9 +4,11 @@ using namespace Entidades;
 using namespace Personagens;
 using namespace Obstaculos;
 
-Obstaculo::Obstaculo()
+Obstaculo::Obstaculo() : semente_id_entidade(1000), Entidade()
 {
 	agressivo = false;
+	setId(semente_id_entidade);
+	
 }
 
 Obstaculo::~Obstaculo() {

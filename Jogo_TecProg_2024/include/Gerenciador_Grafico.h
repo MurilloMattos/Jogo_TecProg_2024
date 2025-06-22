@@ -11,8 +11,14 @@ namespace Gerenciadores
 	class Gerenciador_Grafico
 	{
 		private:
+
+			sf::RenderWindow* janela;
+			sf::Event* evento;
+			sf::View *camera;
+			sf::View cameraDefault;
+
 			static Gerenciador_Grafico* GenGraf;
-			sf::RenderWindow *j;
+		
 			Gerenciador_Grafico();
 
 		public:
@@ -25,13 +31,16 @@ namespace Gerenciadores
 				}
 				return GenGraf;
 			}
+
 			sf::RenderWindow* criaJanela(const char *name, int xx, int yy);	
-			void loopEventos(Menu *m);
-			void executar(Menu *m);
-			void setJanela(sf::RenderWindow *janela);
+
+			void setJanela(sf::RenderWindow *j);
 			sf::RenderWindow *getJanela();
-			//talvez?
+			sf::Event* getEvent() const;
+			sf::View *getCamera() const;
+
 			void desenharEnte(Ente *pE);
+			const sf::View getCameraDefault();
 
 	};
 }

@@ -8,9 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Capitao.cpp" "CMakeFiles/sfml-app.dir/src/Capitao.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Capitao.cpp.o.d"
   "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Ente.cpp" "CMakeFiles/sfml-app.dir/src/Ente.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Ente.cpp.o.d"
   "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Entidade.cpp" "CMakeFiles/sfml-app.dir/src/Entidade.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Entidade.cpp.o.d"
   "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Fase.cpp" "CMakeFiles/sfml-app.dir/src/Fase.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Fase.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Fase_1.cpp" "CMakeFiles/sfml-app.dir/src/Fase_1.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Fase_1.cpp.o.d"
   "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Gerenciador_Colisoes.cpp" "CMakeFiles/sfml-app.dir/src/Gerenciador_Colisoes.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Gerenciador_Colisoes.cpp.o.d"
   "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Gerenciador_Grafico.cpp" "CMakeFiles/sfml-app.dir/src/Gerenciador_Grafico.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Gerenciador_Grafico.cpp.o.d"
   "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Inimigo.cpp" "CMakeFiles/sfml-app.dir/src/Inimigo.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Inimigo.cpp.o.d"
