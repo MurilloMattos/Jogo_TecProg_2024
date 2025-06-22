@@ -53,7 +53,7 @@ void Fases::Fase_1::Cria_Obstaculos_Medios() {
 	int random = ((rand()%(8 - 3)) + 3);
 	for(int i = 0; i < random; i++) {
 		Obstaculo_Medio *lama = new Obstaculo_Medio;
-		lama->setar_Pos(250.0f, 250.0f);
+		lama->setar_Pos(250.0f+i+50, 250.0f);
 		gerenciador_colisoes.Incluir_Obstaculo(lama);
 		lista_Entidades.Incluir(static_cast<Entidade*>(lama));
 	}
