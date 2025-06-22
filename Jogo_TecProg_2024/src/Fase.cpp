@@ -17,11 +17,11 @@ Fase::Fase():Ente() {
 	pos_Piso.x = -600.f; //10.f;
 	pos_Piso.y = 200.f; //80.f;
 
-	tam_plataforma.x = 1.0f;//150.f;
-	tam_plataforma.y = 0.3f;
+	tam_plataforma.x = 0.3f;//150.f;
+	tam_plataforma.y = 0.5f;
 
 	pos_original.x = 100.f;
-	pos_original.y = 0.f;
+	pos_original.y = 30.f;
 
 	Cria_Piso();
 	Cria_Plataforma();
@@ -80,9 +80,11 @@ void Fases::Fase::Cria_Plataforma() {
 		num_plataformas = 4;
 	}
 	//num_plataformas = 7;
+	srand(static_cast<unsigned int>(time(0)));
+
 	std::cout << num_plataformas << std::endl;
 	int i;
-	float espaco = static_cast<float>(rand() % 100);
+	float espaco = static_cast<float>((rand() % (700 - 200 + 1)) + 200);
 
 	for (i = 0; i < num_plataformas; i++) {
 
@@ -94,7 +96,6 @@ void Fases::Fase::Cria_Plataforma() {
 		if (espaco > tam_Piso_Fase.x) {
 			espaco = tam_Piso_Fase.x;
 		}
-
 		gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(plataforma));
 		lista_Entidades.Incluir(static_cast<Entidade*>(plataforma));
 	}
