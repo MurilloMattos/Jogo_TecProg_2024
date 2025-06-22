@@ -56,7 +56,7 @@ float Entidades::Entidade::get_Largura(){
 
 float Entidades::Entidade::get_Altura(){
 	//return (pFigura->getGlobalBounds().height - (pFigura->getGlobalBounds().height - pFigura->getLocalBounds().height));	  
-	return (pFigura->getGlobalBounds().height / 2.0f);
+	return ((pFigura->getGlobalBounds().height / 2.0f)+50.0f);
 }
 
 
