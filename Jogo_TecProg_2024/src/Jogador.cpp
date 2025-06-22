@@ -27,10 +27,10 @@ Jogador::Jogador() : semente_id_entidade(10), Personagem() {
 	atribuirFigura();
 	pFigura->setScale(0.3f, 0.3f);
 	setar_Pos(x,y);
-	forca_de_impulso = -7.5;
+	forca_de_impulso = -8.0;
 	acelerando = false;
 	//altura_de_pulo = 50.0;	
-	velocidade.y = -5.0;
+	velocidade.y = -7.5;
 	velocidade.x = 5.0;
 	//velocidade.y = 5.0;
 	pontos = 0;
