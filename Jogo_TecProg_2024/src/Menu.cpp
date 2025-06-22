@@ -169,7 +169,7 @@ void Menu::executar(){
                         //desenharEnte(pE);
                         (pGG->getJanela())->clear();
                         atualizar(); //switch case e atualizar() {  jogo.atualizar(menu->jogo); }  
- 			//pGG->getJanela()->setView(pGG->getCameraDefault());
+ 			pGG->getJanela()->setView(pGG->getCameraDefault());
 			Desenhar();
 
 			for(int i = 0; i < textos.size(); i++) {
