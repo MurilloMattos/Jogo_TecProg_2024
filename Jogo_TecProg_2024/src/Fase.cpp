@@ -84,23 +84,22 @@ void Fases::Fase::Cria_Plataforma() {
 
 	std::cout << num_plataformas << std::endl;
 	int i;
-	float espaco = static_cast<float>((rand() % (700 - 200 + 1)) + 200);
-
+	float aux = static_cast<float>((rand() % (700 - 200 + 1)) + 200);
+	float espaco = aux;
+	
 	for (i = 0; i < num_plataformas; i++) {
 
 		plataforma = new Piso;
 		plataforma->seta_Piso(tam_plataforma.y, tam_plataforma.x, pos_original.x + espaco, pos_original.y);
-
-		
-		espaco += (tam_plataforma.x*2.5f + rand()%200);
-		if (espaco > tam_Piso_Fase.x) {
-			espaco = tam_Piso_Fase.x;
-		}
+	        aux = static_cast<float>((rand() % (700 - 200 + 1)) + 200);
+		espaco += (tam_plataforma.x*2.5f + aux);//rand()%200);
+		//if (espaco > tam_Piso_Fase.x) {
+		//	espaco = tam_Piso_Fase.x;
+		//}
 		gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(plataforma));
 		lista_Entidades.Incluir(static_cast<Entidade*>(plataforma));
 	}
 }
-
 void Fases::Fase::Cria_Inimigos_Piratas(){
 	Inimigo_Medio* pirata;
 
