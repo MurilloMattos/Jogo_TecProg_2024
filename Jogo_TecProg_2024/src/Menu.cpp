@@ -197,7 +197,9 @@ void Menu::atualizar() {
 	if(selecionado) {
 		switch (getPosicaoMenu()) {
 			case 0: {
-				pGG->getJanela()->close();		
+				//pGG->getJanela()->close();		
+				this->set_emMenu(false);
+
 			}
 				
 			break;
