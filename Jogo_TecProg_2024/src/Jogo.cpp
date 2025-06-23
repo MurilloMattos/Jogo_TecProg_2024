@@ -98,7 +98,10 @@ void Jogo::Atualiza()
 }
 void Jogo::Atualiza_Camera() {	
     Ger_Graf->getJanela()->setView(*Ger_Graf->getCamera());
-    Ger_Graf->getCamera()->setCenter(jogador_1->get_Centro());	
+    sf::Vector2f v;
+    v = jogador_1->get_Centro();
+    v.y += 110.0f;
+    Ger_Graf->getCamera()->setCenter(v);	
     //Ger_Graf->getJanela()->setView(m->getCamera());
      //setar o sf::View no modo default 	
 }
