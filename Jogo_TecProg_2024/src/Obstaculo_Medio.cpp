@@ -9,7 +9,7 @@ Obstaculo_Medio::Obstaculo_Medio():Obstaculo() {
 	atribuirFigura();
 	//setar_Pos(230.0, 159.0);
 	pFigura->setOrigin(pFigura->getGlobalBounds().width/2.0f, pFigura->getGlobalBounds().height/2.0f);
-
+	agressivo = true;
 }
 
 Obstaculo_Medio::~Obstaculo_Medio() {
@@ -40,5 +40,7 @@ void Obstaculo_Medio::Executar()
 }
 
 void Obstaculo_Medio::obstacular(Entidades::Personagens::Jogador* p) {
-	
+	if(agressivo) {
+		p->diminuir_Vitalidade(10);
+	}
 }
