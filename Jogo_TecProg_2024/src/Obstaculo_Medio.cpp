@@ -5,7 +5,7 @@ using namespace Personagens;
 using namespace Obstaculos;
 
 Obstaculo_Medio::Obstaculo_Medio():Obstaculo() {
-	setFile("./assets/lama.png");
+	setFile("./assets/crocodilo.png");
 	atribuirFigura();
 	//setar_Pos(230.0, 159.0);
 	pFigura->setOrigin(pFigura->getGlobalBounds().width/2.0f, pFigura->getGlobalBounds().height/2.0f);

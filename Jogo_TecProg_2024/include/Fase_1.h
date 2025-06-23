@@ -2,6 +2,7 @@
 #include "Fase.h"
 #include "Capitao.h"
 #include "Obstaculo_Medio.h"
+#include "Obstaculo_Dificil.h"
 namespace Fases{
 
 	class Fase_1 : public Fase
