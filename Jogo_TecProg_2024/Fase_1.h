@@ -8,13 +8,15 @@ namespace Fases{
 	{
 	private:
 
-		//Entidades::Personagens::Capitao *capitao;
+		const int maxChefoes;
 
 	public:
 
 		Fase_1();
 		~Fase_1();
 
+
+		void Cria_Obstaculos();
 		void Executar();
 		void Cria_Inimigos();
 		void Cria_Inimigos_Capitao();

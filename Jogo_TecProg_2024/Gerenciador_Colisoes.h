@@ -20,8 +20,7 @@ namespace Gerenciadores {
 		Entidades::Personagens::Jogador* pJogador1;
 		Entidades::Personagens::Jogador* pJogador2;
 
-		float empurrao;
-		//sf::Time 
+		float empurrao; 
 
 		// contador setado, pra evitar ser criado varias vezes durante a execuçao do programa.
 		const int cima, baixo, esquerda, direita;

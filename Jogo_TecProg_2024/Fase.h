@@ -13,10 +13,14 @@ namespace Fases {
 
 			//tem como a lista_Entidades passar parametros a classe que não necessáriamente entidades?
 			bool ganhou;
+			bool perdeu;
 			Listas::Lista_Entidades lista_Entidades;
+			Gerenciadores::Gerenciador_colisoes gerenciador_colisoes;
+
 			Entidades::Obstaculos::Piso* piso;
 			Entidades::Obstaculos::Piso* plataforma;
-			Gerenciadores::Gerenciador_colisoes gerenciador_colisoes;
+			
+
 
 			sf::Vector2f tam_Piso_Fase;
 			sf::Vector2f pos_Piso;
@@ -38,16 +42,23 @@ namespace Fases {
 			Listas::Lista_Entidades* get_Lista_Entidades();
 			*/
 
+
 			void Setar_Jogadores_Colisoes(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
 			virtual void Executar();
+
+			//piso é inerente as fases e a plataforma é obstáculo nas 2 fases.
 			void Cria_Piso();
 			void Cria_Plataforma();
+
+			//inimigos fáceis
 			void Cria_Inimigos_Piratas();
-			//void Cria_Inimigos_Capitao;
+			//void Cria_Inimigos_Capitao();
 
 			bool get_Ganhou();
 
-			virtual void Cria_Inimigos();
+			virtual void Cria_Inimigos() = 0;
+			virtual void Cria_Obstaculos() = 0;
+			void criar_cenario();
 			void verifica_Inimigos_Neutralizados();
 
 			//void executa_Colisões();

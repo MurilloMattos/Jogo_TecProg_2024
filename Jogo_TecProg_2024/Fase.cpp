@@ -126,6 +126,12 @@ void Fase::Cria_Inimigos() {
 	Cria_Inimigos_Piratas();
 }
 
+void Fases::Fase::criar_cenario()
+{
+
+
+}
+
 void Fases::Fase::verifica_Inimigos_Neutralizados(){
 
 	lista_Entidades.Remover(gerenciador_colisoes.Inimigo_neutralizado());

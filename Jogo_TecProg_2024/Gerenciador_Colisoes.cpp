@@ -15,7 +15,7 @@ Gerenciador_colisoes::Gerenciador_colisoes() : direita(1),cima(2),esquerda(3),ba
 
 	lista_Inimigos.clear();
 	lista_Obstaculos.clear();
-	
+
 	pJogador1 = nullptr;
 	pJogador2 = nullptr;
 }
@@ -267,7 +267,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Inimigos(){
 		}
 
 
-		if (pJogador2 != nullptr) {
+		if (pJogador2->get_Dois_Jogadores()) {
 			tratar_Colisoes_Obstaculo(static_cast<Entidade*>(lista_Inimigos[i]));
 			tratar_Colisoes_Jogador_Inimigos(pJogador1, lista_Inimigos[i]);
 			tratar_Colisoes_Jogador_Inimigos(pJogador2, lista_Inimigos[i]);

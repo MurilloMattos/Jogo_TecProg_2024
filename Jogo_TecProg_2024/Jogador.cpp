@@ -112,9 +112,18 @@ void Entidades::Personagens::Jogador::executar_Gravidade() {
 
 
 void Jogador::setar_Dois_Jogadores(bool jogador_dois) {
-	segundo_jogador = jogador_dois;
-	pFigura->setFillColor(sf::Color::Cyan);
-	setar_Pos(x + 25,y);
+
+	if (jogador_dois) {
+		segundo_jogador = jogador_dois;
+		pFigura->setFillColor(sf::Color::Cyan);
+		setar_Pos(x + 25, y);
+	}
+}
+
+bool Jogador::get_Dois_Jogadores() {
+
+
+	return segundo_jogador;
 }
 
 void Entidades::Personagens::Jogador::executando_Pulo()

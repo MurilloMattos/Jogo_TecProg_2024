@@ -18,14 +18,15 @@ protected:
 public:
 
 	Ente();
-	~Ente();
+	virtual ~Ente();
 	virtual void Executar() = 0;
 	void Desenhar();
+	void setId(int semente);
+	int getId() const;
 
 	//virtual void set_Id_Contador() = 0;
 	//todo ente deve ter um id distinto
-	void setId(int semente);
-	int getId() const;
+	
 	//sf::RectangleShape* getFigura();
 
 	//sf::RectangleShape* getFigura() { return pFigura; };
