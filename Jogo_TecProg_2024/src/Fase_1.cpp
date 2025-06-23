@@ -11,7 +11,8 @@ Fases::Fase_1::Fase_1(): Fase(){
 	setFile("./assets/faselama.png");
 	atribuirFigura();
 	pFigura->setPosition(0.0f, 0.0f);
-
+	pos_original.x = 250.0f ;
+	pos_original.y = 250.0f ;
         //sf::Vector2u tamanhoJanela = pGG->getJanela()->getSize();
         //sf::Vector2u tamanhoTextura = figura->getSize();
 
@@ -51,9 +52,14 @@ void Fases::Fase_1::Cria_Inimigos_Capitao(){
 void Fases::Fase_1::Cria_Obstaculos_Medios() {
 	srand(time(NULL));
 	int random = ((rand()%(8 - 3)) + 3);
+	std::cout << "random " << random << std::endl;
+	int dist = ((rand()%(350 - 100)) + 100);
+	int diff = dist;	
 	for(int i = 0; i < random; i++) {
 		Obstaculo_Medio *lama = new Obstaculo_Medio;
-		lama->setar_Pos(250.0f+i+50, 250.0f);
+		lama->setar_Pos(pos_original.x + diff, 250.0f);
+		dist  = ((rand()%(350 - 100)) + 100);
+		diff += ((lama->getFigura()->getGlobalBounds().width) + dist);
 		gerenciador_colisoes.Incluir_Obstaculo(lama);
 		lista_Entidades.Incluir(static_cast<Entidade*>(lama));
 	}
