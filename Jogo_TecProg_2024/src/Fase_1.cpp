@@ -32,6 +32,10 @@ void Fases::Fase_1::Executar(){
 	verifica_Inimigos_Neutralizados();
 	gerenciador_colisoes.Executar();
 	lista_Entidades.Percorrer();
+
+	if(gerenciador_colisoes.get_Jogador1()->get_Vitalidade() <= 0) {
+		std::cout << "#############JOGADOR LOOSER!!!!############" << std::endl;
+	}
 }
 
 void Fases::Fase_1::Cria_Inimigos(){
