@@ -150,21 +150,25 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(Jogador* p_Jogador)
  		if (lado == 1) {
 
 			p_Jogador->setar_Pos(((*itr)->get_X() - p_Jogador->get_Largura()), p_Jogador->get_Y());
+			//(*itr)->obstacular(p_Jogador);
 		}
 		//cima
 		else if (lado == 2) {
 
 			p_Jogador->setar_Pos(p_Jogador->get_X(), (*itr)->get_Comprimento_A());
+			//(*itr)->obstacular(p_Jogador);
 		}
 		//esquerda
 		else if (lado == 3) {
 
 			p_Jogador->setar_Pos((*itr)->get_Comprimento_L(), p_Jogador->get_Y());
+			//(*itr)->obstacular(p_Jogador);
 		}
 		//baixo
 		else if (lado == 4) {
 
 			p_Jogador->setar_Pos(p_Jogador->get_X(), ((*itr)->get_Y() - p_Jogador->get_Altura()));
+			//(*itr)->obstacular(p_Jogador);
 			p_Jogador->setar_Estado(false);
 		}
 
@@ -203,28 +207,29 @@ void Gerenciador_colisoes::tratar_Colisoes_Obstaculo(Entidade* pEntidadeRef) {
 	while (itr != lista_Obstaculos.end()) {
 
 		int lado = verifica_Tipo_De_Colisao(static_cast<Entidade*>(pEntidadeRef), static_cast<Entidade*>(*itr));
-
 		//direita
 		if (lado == 1) {
 
 			pEntidadeRef->setar_Pos(((*itr)->get_X() - pEntidadeRef->get_Largura()), pEntidadeRef->get_Y());
+			//(*itr)->obstacular(static_cast<Jogador*>(pEntidadeRef));
+
 		}
 		//cima
 		else if (lado == 2) {
 
 			pEntidadeRef->setar_Pos(pEntidadeRef->get_X(), (*itr)->get_Comprimento_A());
+			//(*itr)->obstacular(static_cast<Jogador*>(pEntidadeRef));
 		}
 		//esquerda
 		else if (lado == 3) {
-
-			pEntidadeRef->setar_Pos((*itr)->get_Comprimento_L(), pEntidadeRef->get_Y());
+			pEntidadeRef->setar_Pos((*itr)->get_Comprimento_L(), pEntidadeRef->get_Y());	
+			//(*itr)->obstacular(static_cast<Jogador*>(pEntidadeRef));
 		}
 		//baixo
 		else if (lado == 4) {
-
 			pEntidadeRef->setar_Pos(pEntidadeRef->get_X(), ((*itr)->get_Y() - pEntidadeRef->get_Altura()));
+			//(*itr)->obstacular(static_cast<Jogador*>(pEntidadeRef));
 		}
-
 		itr++;
 	}
 }
@@ -541,12 +546,10 @@ const bool Gerenciador_colisoes::verifica_Colisao_Direita(Entidade* pEntidade_Re
 }
 
 void Gerenciador_colisoes::Executar(){
-
 	tratar_Fisica_Jogadores();
 	tratar_Fisica_Obstaculos();
 	tratar_Fisica_Inimigos();
 	tratar_Fisica_Projeteis();
-
 
 	tratar_Colisoes_Jogador_Obstaculo(pJogador1);
 	tratar_Colisoes_Jogador_Projeteis(pJogador1);
@@ -554,9 +557,12 @@ void Gerenciador_colisoes::Executar(){
 		tratar_Colisoes_Jogador_Obstaculo(pJogador2);
 		tratar_Colisoes_Jogador_Projeteis(pJogador2);
 	}
-
 	tratar_Colisoes_Inimigos();
 	tratar_Colisoes_Projeteis();
-
-
+}
+Entidades::Personagens::Jogador* Gerenciador_colisoes::get_Jogador1() {
+	return pJogador1;
+}
+Entidades::Personagens::Jogador* Gerenciador_colisoes::get_Jogador2() {
+	return pJogador2;
 }

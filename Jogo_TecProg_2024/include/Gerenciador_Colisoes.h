@@ -60,7 +60,8 @@ namespace Gerenciadores {
 		const bool verifica_Colisao_Direita(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
 
 		void Executar();
-
+		Entidades::Personagens::Jogador* get_Jogador1();
+		Entidades::Personagens::Jogador* get_Jogador2();
 
 	};
 }
