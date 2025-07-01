@@ -19,6 +19,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Inimigo_Facil.cpp" "CMakeFiles/sfml-app.dir/src/Inimigo_Facil.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Inimigo_Facil.cpp.o.d"
   "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Inimigo_Medio.cpp" "CMakeFiles/sfml-app.dir/src/Inimigo_Medio.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Inimigo_Medio.cpp.o.d"
   "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Jogador.cpp" "CMakeFiles/sfml-app.dir/src/Jogador.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Jogador.cpp.o.d"
+  "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Jogador1.cpp" "CMakeFiles/sfml-app.dir/src/Jogador1.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Jogador1.cpp.o.d"
   "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Jogo.cpp" "CMakeFiles/sfml-app.dir/src/Jogo.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Jogo.cpp.o.d"
   "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Jogo_TecProg_2024.cpp" "CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.o.d"
   "/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Lista_Entidades.cpp" "CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.o.d"

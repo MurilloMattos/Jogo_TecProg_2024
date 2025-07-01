@@ -1,9 +1,10 @@
- #include "Jogador.h"
+ 
+ #include "Jogador1.h"
 
 using namespace Entidades;
 using namespace Personagens;
 
-Jogador::Jogador() : semente_id_entidade(10), Personagem() {
+Jogador1::Jogador1() : semente_id_entidade(10), Personagem() {
 	//arrumar isso posteriormente
 	setId(semente_id_entidade);
 
@@ -35,31 +36,12 @@ Jogador::Jogador() : semente_id_entidade(10), Personagem() {
 	//velocidade.y = 5.0;
 	pontos = 0;
 }
-Jogador::~Jogador() {
+Jogador1::~Jogador1() {
 
 }
-void Jogador::Executar() {
+void Jogador1::Executar() {
 	Desenhar();
 	setar_Pos(x, y);
-	if (segundo_jogador != true) {
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-		{
-			x += velocidade.x;
-		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-			x -= velocidade.x;
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-
-			executando_Pulo();
-		}
-		
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-			y += 5.0f;
-		}
-		
-	}
-	else {
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		{
 			x += velocidade.x;
@@ -68,19 +50,17 @@ void Jogador::Executar() {
 			x -= velocidade.x;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-			//y -= velocidade.y;
-			executando_Pulo();
+			y -= velocidade.y;
 		}
-	}
-std::cout << "Executando Jogador em posicao: " << x << ", " << y << std::endl;
-//std::cout << "Executando Jogador em posicao: " << pFigura->getPosition().x << ", " << pFigura->getPosition().y << std::endl;
+std::cout << "Executando Jogador1 em posicao: " << x << ", " << y << std::endl;
+//std::cout << "Executando Jogador1 em posicao: " << pFigura->getPosition().x << ", " << pFigura->getPosition().y << std::endl;
 }
 
-void Jogador::setar_Estado(bool estado){
+void Jogador1::setar_Estado(bool estado){
 	estado_pulando = estado;
 }
 
-void Entidades::Personagens::Jogador::executar_Gravidade() {
+void Entidades::Personagens::Jogador1::executar_Gravidade() {
 
 	if (velocidade.y <= forca_de_impulso) {
 		acelerando = false;
@@ -107,12 +87,12 @@ void Entidades::Personagens::Jogador::executar_Gravidade() {
 	y += velocidade.y;
 	
 }
-void Jogador::setar_Dois_Jogadores(bool jogador_dois) {
+void Jogador1::setar_Dois_Jogador1es(bool jogador_dois) {
 	segundo_jogador = jogador_dois;
-	//pFigura->setColor(sf::Color::Magenta);
-	//setar_Pos(x + 25,y);
+	pFigura->setColor(sf::Color::Magenta);
+	setar_Pos(x + 25,y);
 }
-void Entidades::Personagens::Jogador::executando_Pulo()
+void Entidades::Personagens::Jogador1::executando_Pulo()
 {
 	if (!estado_pulando) {
 		velocidade.y = forca_de_impulso + 3.0f;
@@ -120,18 +100,18 @@ void Entidades::Personagens::Jogador::executando_Pulo()
 		acelerando = true;
 	}
 }
-void Jogador::Salvar(){
+void Jogador1::Salvar(){
 
 }
 // adicionar em classes primordiais? tais como Ente ou Entidades?
-void Jogador::setar_Figura() {
+void Jogador1::setar_Figura() {
 	
 	//sf::Vector2f boo(20.f, 40.f);
 	//pFigura->setSize(boo);
 	//pFigura->setColor(sf::Color::Blue);
 }
 /*
-void Jogador::setar_Pos(float x, float y) {
+void Jogador1::setar_Pos(float x, float y) {
 
 	pFigura->setPosition(x, y);
 }
@@ -141,4 +121,5 @@ void Jogador::setar_Pos(float x, float y) {
 	pFigura->setSize(tamanho);
 	pFigura->setFillColor(sf::Color::Blue);
 }	
->>>>>>> origin/Teste_Colisao:Jogo_TecProg_2024/Jogador.cpp*/
+>>>>>>> origin/Teste_Colisao:Jogo_TecProg_2024/Jogador1.cpp*/
+

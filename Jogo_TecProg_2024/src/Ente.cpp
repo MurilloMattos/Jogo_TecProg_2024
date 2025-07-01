@@ -86,3 +86,6 @@ sf::Vector2f Ente:: get_Centro()
 
 	return sf::Vector2f(centro);
 }
+sf::Texture* Ente::get_Textura() {
+	return figura;
+}

@@ -27,11 +27,22 @@ void Personagem::diminuir_Vitalidade(int dano) {
 }
 
 
-int Entidades::Personagens::Personagem::get_Vitalidade()
+int Personagens::Personagem::get_Vitalidade()
 {
 	return num_vitalidade;
 }
 
 int Personagem::danificar() {
 	return dano;
+}
+sf::Vector2f Personagem::coordenada_Polar(Personagem *p) {
+	if(!p) { std::cout << "personagen nao existente " << std::endl;}
+	float dx = p->get_X() - get_X();
+	float dy = p->get_Y() - get_Y();
+	float dist = std::sqrt((dx * dx) + (dy * dy));
+	angulo = std::atan2(dy, dx);
+	return sf::Vector2f(dist, angulo);
+}
+float Personagem::get_Angulo()const {
+	return angulo;
 }

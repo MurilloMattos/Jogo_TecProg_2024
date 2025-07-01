@@ -37,5 +37,6 @@ class Ente
 		const char* getFile() const;
 		void atribuirFigura();
 		sf::Vector2f get_Centro();
+		sf::Texture* get_Textura(); 
 	
 };

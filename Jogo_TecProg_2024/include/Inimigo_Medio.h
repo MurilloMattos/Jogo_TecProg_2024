@@ -19,6 +19,7 @@ namespace Entidades {
                 void Salvar();
                 void Executar();
                 void Danificar();
+		virtual void Atualizar();
 
         };
     }

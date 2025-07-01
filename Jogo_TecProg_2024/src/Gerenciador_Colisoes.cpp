@@ -1,6 +1,4 @@
 #include "Gerenciador_Colisoes.h"
-
-
 using namespace Gerenciadores;
 using namespace Entidades;
 using namespace Obstaculos;
@@ -296,6 +294,18 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Inimigos(Jogador* pJogador, I
 
 	int lado = verifica_Tipo_De_Colisao(pJogador, pInimigo);
 
+
+
+	pInimigo->coordenada_Polar(static_cast<Personagem*>(pJogador));
+	if(visar_Personagem(static_cast<Personagem*>(pInimigo), static_cast<Personagem*>(pJogador))) {
+		const bool &e = true;
+		try {
+  			pInimigo->set_Atacar(false);		
+		} catch (const bool &e) {
+			pInimigo->set_Atacar(false);
+		}	
+	}
+	
 	//direita
 	if (lado == 1) {
 
@@ -565,4 +575,49 @@ Entidades::Personagens::Jogador* Gerenciador_colisoes::get_Jogador1() {
 }
 Entidades::Personagens::Jogador* Gerenciador_colisoes::get_Jogador2() {
 	return pJogador2;
+}
+float Gerenciador_colisoes::produto_Escalar(sf::Vector2f v1, sf::Vector2f v2) {
+	return v1.x * v2.x + v1.y * v2.y;	
+}
+float Gerenciador_colisoes::cosseno_Entre(sf::Vector2f v1, sf::Vector2f v2) {
+	float d = produto_Escalar(v1, v2);
+	float norma1 = std::sqrt(produto_Escalar(v1, v1));
+	float norma2 = std::sqrt(produto_Escalar(v2, v2));
+	if(norma1 == 0 || norma2 == 0) { return 0; }
+	
+	return (d / (norma1 * norma2));
+}
+bool Gerenciador_colisoes::visar_Personagem(Personagem *p1, Personagem *p2) {
+    	sf::Vector2f frente(std::cos(p1->get_Angulo()), std::sin(p1->get_Angulo()));
+    	sf::Vector2f ateAlvo(p2->get_X() - p1->get_X(), p2->get_Y() - p1->get_Y());
+    float cosen = cosseno_Entre(frente, ateAlvo);
+
+ 	if(cosen > 0) {
+		return true; // no angulo de visao do inimigo
+	}
+	return false;
+}
+int Gerenciador_colisoes::lado_DoAlvo(Personagem* atual, Personagem* alvo) {
+    if (!alvo || !atual) return 0;
+
+    sf::Vector2f dirFrente(std::cos(atual->get_Angulo()), std::sin(atual->get_Angulo()));
+    sf::Vector2f ateAlvo(alvo->get_X() - atual->get_X(), alvo->get_Y() - atual->get_Y());
+
+    float cruz = dirFrente.x * ateAlvo.y - dirFrente.y * ateAlvo.x;
+
+    if (cruz > 0) return -1; // esquerda
+    if (cruz < 0) return 1;  // direita
+    return 0; // alinhado
+}
+void Gerenciador_colisoes::limpar_Projeteis() {
+	std::set<Projetil*>::iterator it;
+  if(lista_Projeteis.size() >= 10) {
+	for(it = lista_Projeteis.begin(); it != lista_Projeteis.end(); it++) {
+		if(*it) {
+			delete *it;
+			lista_Projeteis.erase(it);
+		}
+
+	}
+  }	
 }

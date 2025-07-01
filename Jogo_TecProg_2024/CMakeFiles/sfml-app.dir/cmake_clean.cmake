@@ -21,6 +21,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/sfml-app.dir/src/Inimigo_Medio.cpp.o.d"
   "CMakeFiles/sfml-app.dir/src/Jogador.cpp.o"
   "CMakeFiles/sfml-app.dir/src/Jogador.cpp.o.d"
+  "CMakeFiles/sfml-app.dir/src/Jogador1.cpp.o"
+  "CMakeFiles/sfml-app.dir/src/Jogador1.cpp.o.d"
   "CMakeFiles/sfml-app.dir/src/Jogo.cpp.o"
   "CMakeFiles/sfml-app.dir/src/Jogo.cpp.o.d"
   "CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.o"

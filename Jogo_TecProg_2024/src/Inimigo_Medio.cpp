@@ -23,7 +23,7 @@ Inimigo_Medio::Inimigo_Medio(): Inimigo() {
 	//pFigura->setSize(tamanho);
 
 
-	setFile("./assets/ladrao_centered.png");
+	setFile("./assets/ladraopirata.png");
 	atribuirFigura();
 	pFigura->setScale(0.3f, 0.3f);
 	setar_Pos(pos_inicial.x, pos_inicial.y);
@@ -69,5 +69,8 @@ void Inimigo_Medio::andar_ate(float em_x, float em_y){
 }
 
 void Inimigo_Medio::Salvar() {
+
+}
+void Inimigo_Medio::Atualizar() {
 
 }

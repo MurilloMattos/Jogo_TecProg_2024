@@ -1,6 +1,6 @@
 #pragma once
 #include "Entidade.h"
-
+#include <cmath>
 namespace Entidades {
 
 	namespace Personagens {
@@ -10,8 +10,8 @@ namespace Entidades {
 		protected:
 			int num_vitalidade;
 			int dano;
-
 			sf::Vector2f tamanho;
+			float angulo;
 
 		public:
 			Personagem();
@@ -24,6 +24,10 @@ namespace Entidades {
 
 			virtual void Salvar() = 0;
 			virtual void Executar() = 0;
+			unsigned int coordenada_Polar();
+			unsigned int distancia(Personagem *p); 
+			sf::Vector2f coordenada_Polar(Personagem *p);
+			float get_Angulo()const;
 		};
 	}
 }

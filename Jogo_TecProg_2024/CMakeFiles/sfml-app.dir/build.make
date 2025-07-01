@@ -223,10 +223,24 @@ CMakeFiles/sfml-app.dir/src/Jogador.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sfml-app.dir/src/Jogador.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Jogador.cpp -o CMakeFiles/sfml-app.dir/src/Jogador.cpp.s
 
+CMakeFiles/sfml-app.dir/src/Jogador1.cpp.o: CMakeFiles/sfml-app.dir/flags.make
+CMakeFiles/sfml-app.dir/src/Jogador1.cpp.o: src/Jogador1.cpp
+CMakeFiles/sfml-app.dir/src/Jogador1.cpp.o: CMakeFiles/sfml-app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/sfml-app.dir/src/Jogador1.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sfml-app.dir/src/Jogador1.cpp.o -MF CMakeFiles/sfml-app.dir/src/Jogador1.cpp.o.d -o CMakeFiles/sfml-app.dir/src/Jogador1.cpp.o -c /home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Jogador1.cpp
+
+CMakeFiles/sfml-app.dir/src/Jogador1.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sfml-app.dir/src/Jogador1.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Jogador1.cpp > CMakeFiles/sfml-app.dir/src/Jogador1.cpp.i
+
+CMakeFiles/sfml-app.dir/src/Jogador1.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sfml-app.dir/src/Jogador1.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Jogador1.cpp -o CMakeFiles/sfml-app.dir/src/Jogador1.cpp.s
+
 CMakeFiles/sfml-app.dir/src/Jogo.cpp.o: CMakeFiles/sfml-app.dir/flags.make
 CMakeFiles/sfml-app.dir/src/Jogo.cpp.o: src/Jogo.cpp
 CMakeFiles/sfml-app.dir/src/Jogo.cpp.o: CMakeFiles/sfml-app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/sfml-app.dir/src/Jogo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/sfml-app.dir/src/Jogo.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sfml-app.dir/src/Jogo.cpp.o -MF CMakeFiles/sfml-app.dir/src/Jogo.cpp.o.d -o CMakeFiles/sfml-app.dir/src/Jogo.cpp.o -c /home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Jogo.cpp
 
 CMakeFiles/sfml-app.dir/src/Jogo.cpp.i: cmake_force
@@ -240,7 +254,7 @@ CMakeFiles/sfml-app.dir/src/Jogo.cpp.s: cmake_force
 CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.o: CMakeFiles/sfml-app.dir/flags.make
 CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.o: src/Jogo_TecProg_2024.cpp
 CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.o: CMakeFiles/sfml-app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.o -MF CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.o.d -o CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.o -c /home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Jogo_TecProg_2024.cpp
 
 CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.i: cmake_force
@@ -254,7 +268,7 @@ CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.s: cmake_force
 CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.o: CMakeFiles/sfml-app.dir/flags.make
 CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.o: src/Lista_Entidades.cpp
 CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.o: CMakeFiles/sfml-app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.o -MF CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.o.d -o CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.o -c /home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Lista_Entidades.cpp
 
 CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.i: cmake_force
@@ -268,7 +282,7 @@ CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.s: cmake_force
 CMakeFiles/sfml-app.dir/src/Menu.cpp.o: CMakeFiles/sfml-app.dir/flags.make
 CMakeFiles/sfml-app.dir/src/Menu.cpp.o: src/Menu.cpp
 CMakeFiles/sfml-app.dir/src/Menu.cpp.o: CMakeFiles/sfml-app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/sfml-app.dir/src/Menu.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/sfml-app.dir/src/Menu.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sfml-app.dir/src/Menu.cpp.o -MF CMakeFiles/sfml-app.dir/src/Menu.cpp.o.d -o CMakeFiles/sfml-app.dir/src/Menu.cpp.o -c /home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Menu.cpp
 
 CMakeFiles/sfml-app.dir/src/Menu.cpp.i: cmake_force
@@ -282,7 +296,7 @@ CMakeFiles/sfml-app.dir/src/Menu.cpp.s: cmake_force
 CMakeFiles/sfml-app.dir/src/Obstaculo.cpp.o: CMakeFiles/sfml-app.dir/flags.make
 CMakeFiles/sfml-app.dir/src/Obstaculo.cpp.o: src/Obstaculo.cpp
 CMakeFiles/sfml-app.dir/src/Obstaculo.cpp.o: CMakeFiles/sfml-app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/sfml-app.dir/src/Obstaculo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/sfml-app.dir/src/Obstaculo.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sfml-app.dir/src/Obstaculo.cpp.o -MF CMakeFiles/sfml-app.dir/src/Obstaculo.cpp.o.d -o CMakeFiles/sfml-app.dir/src/Obstaculo.cpp.o -c /home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Obstaculo.cpp
 
 CMakeFiles/sfml-app.dir/src/Obstaculo.cpp.i: cmake_force
@@ -296,7 +310,7 @@ CMakeFiles/sfml-app.dir/src/Obstaculo.cpp.s: cmake_force
 CMakeFiles/sfml-app.dir/src/Obstaculo_Dificil.cpp.o: CMakeFiles/sfml-app.dir/flags.make
 CMakeFiles/sfml-app.dir/src/Obstaculo_Dificil.cpp.o: src/Obstaculo_Dificil.cpp
 CMakeFiles/sfml-app.dir/src/Obstaculo_Dificil.cpp.o: CMakeFiles/sfml-app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/sfml-app.dir/src/Obstaculo_Dificil.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/sfml-app.dir/src/Obstaculo_Dificil.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sfml-app.dir/src/Obstaculo_Dificil.cpp.o -MF CMakeFiles/sfml-app.dir/src/Obstaculo_Dificil.cpp.o.d -o CMakeFiles/sfml-app.dir/src/Obstaculo_Dificil.cpp.o -c /home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Obstaculo_Dificil.cpp
 
 CMakeFiles/sfml-app.dir/src/Obstaculo_Dificil.cpp.i: cmake_force
@@ -310,7 +324,7 @@ CMakeFiles/sfml-app.dir/src/Obstaculo_Dificil.cpp.s: cmake_force
 CMakeFiles/sfml-app.dir/src/Obstaculo_Facil.cpp.o: CMakeFiles/sfml-app.dir/flags.make
 CMakeFiles/sfml-app.dir/src/Obstaculo_Facil.cpp.o: src/Obstaculo_Facil.cpp
 CMakeFiles/sfml-app.dir/src/Obstaculo_Facil.cpp.o: CMakeFiles/sfml-app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/sfml-app.dir/src/Obstaculo_Facil.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/sfml-app.dir/src/Obstaculo_Facil.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sfml-app.dir/src/Obstaculo_Facil.cpp.o -MF CMakeFiles/sfml-app.dir/src/Obstaculo_Facil.cpp.o.d -o CMakeFiles/sfml-app.dir/src/Obstaculo_Facil.cpp.o -c /home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Obstaculo_Facil.cpp
 
 CMakeFiles/sfml-app.dir/src/Obstaculo_Facil.cpp.i: cmake_force
@@ -324,7 +338,7 @@ CMakeFiles/sfml-app.dir/src/Obstaculo_Facil.cpp.s: cmake_force
 CMakeFiles/sfml-app.dir/src/Obstaculo_Medio.cpp.o: CMakeFiles/sfml-app.dir/flags.make
 CMakeFiles/sfml-app.dir/src/Obstaculo_Medio.cpp.o: src/Obstaculo_Medio.cpp
 CMakeFiles/sfml-app.dir/src/Obstaculo_Medio.cpp.o: CMakeFiles/sfml-app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/sfml-app.dir/src/Obstaculo_Medio.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/sfml-app.dir/src/Obstaculo_Medio.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sfml-app.dir/src/Obstaculo_Medio.cpp.o -MF CMakeFiles/sfml-app.dir/src/Obstaculo_Medio.cpp.o.d -o CMakeFiles/sfml-app.dir/src/Obstaculo_Medio.cpp.o -c /home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Obstaculo_Medio.cpp
 
 CMakeFiles/sfml-app.dir/src/Obstaculo_Medio.cpp.i: cmake_force
@@ -338,7 +352,7 @@ CMakeFiles/sfml-app.dir/src/Obstaculo_Medio.cpp.s: cmake_force
 CMakeFiles/sfml-app.dir/src/Personagem.cpp.o: CMakeFiles/sfml-app.dir/flags.make
 CMakeFiles/sfml-app.dir/src/Personagem.cpp.o: src/Personagem.cpp
 CMakeFiles/sfml-app.dir/src/Personagem.cpp.o: CMakeFiles/sfml-app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/sfml-app.dir/src/Personagem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/sfml-app.dir/src/Personagem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sfml-app.dir/src/Personagem.cpp.o -MF CMakeFiles/sfml-app.dir/src/Personagem.cpp.o.d -o CMakeFiles/sfml-app.dir/src/Personagem.cpp.o -c /home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Personagem.cpp
 
 CMakeFiles/sfml-app.dir/src/Personagem.cpp.i: cmake_force
@@ -352,7 +366,7 @@ CMakeFiles/sfml-app.dir/src/Personagem.cpp.s: cmake_force
 CMakeFiles/sfml-app.dir/src/Piso.cpp.o: CMakeFiles/sfml-app.dir/flags.make
 CMakeFiles/sfml-app.dir/src/Piso.cpp.o: src/Piso.cpp
 CMakeFiles/sfml-app.dir/src/Piso.cpp.o: CMakeFiles/sfml-app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/sfml-app.dir/src/Piso.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/sfml-app.dir/src/Piso.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sfml-app.dir/src/Piso.cpp.o -MF CMakeFiles/sfml-app.dir/src/Piso.cpp.o.d -o CMakeFiles/sfml-app.dir/src/Piso.cpp.o -c /home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Piso.cpp
 
 CMakeFiles/sfml-app.dir/src/Piso.cpp.i: cmake_force
@@ -366,7 +380,7 @@ CMakeFiles/sfml-app.dir/src/Piso.cpp.s: cmake_force
 CMakeFiles/sfml-app.dir/src/Projetil.cpp.o: CMakeFiles/sfml-app.dir/flags.make
 CMakeFiles/sfml-app.dir/src/Projetil.cpp.o: src/Projetil.cpp
 CMakeFiles/sfml-app.dir/src/Projetil.cpp.o: CMakeFiles/sfml-app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/sfml-app.dir/src/Projetil.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/sfml-app.dir/src/Projetil.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sfml-app.dir/src/Projetil.cpp.o -MF CMakeFiles/sfml-app.dir/src/Projetil.cpp.o.d -o CMakeFiles/sfml-app.dir/src/Projetil.cpp.o -c /home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/Projetil.cpp
 
 CMakeFiles/sfml-app.dir/src/Projetil.cpp.i: cmake_force
@@ -380,7 +394,7 @@ CMakeFiles/sfml-app.dir/src/Projetil.cpp.s: cmake_force
 CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.o: CMakeFiles/sfml-app.dir/flags.make
 CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.o: src/TorreFogo.cpp
 CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.o: CMakeFiles/sfml-app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.o -MF CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.o.d -o CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.o -c /home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/src/TorreFogo.cpp
 
 CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.i: cmake_force
@@ -404,6 +418,7 @@ sfml__app_OBJECTS = \
 "CMakeFiles/sfml-app.dir/src/Inimigo_Facil.cpp.o" \
 "CMakeFiles/sfml-app.dir/src/Inimigo_Medio.cpp.o" \
 "CMakeFiles/sfml-app.dir/src/Jogador.cpp.o" \
+"CMakeFiles/sfml-app.dir/src/Jogador1.cpp.o" \
 "CMakeFiles/sfml-app.dir/src/Jogo.cpp.o" \
 "CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.o" \
 "CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.o" \
@@ -431,6 +446,7 @@ sfml-app: CMakeFiles/sfml-app.dir/src/Inimigo.cpp.o
 sfml-app: CMakeFiles/sfml-app.dir/src/Inimigo_Facil.cpp.o
 sfml-app: CMakeFiles/sfml-app.dir/src/Inimigo_Medio.cpp.o
 sfml-app: CMakeFiles/sfml-app.dir/src/Jogador.cpp.o
+sfml-app: CMakeFiles/sfml-app.dir/src/Jogador1.cpp.o
 sfml-app: CMakeFiles/sfml-app.dir/src/Jogo.cpp.o
 sfml-app: CMakeFiles/sfml-app.dir/src/Jogo_TecProg_2024.cpp.o
 sfml-app: CMakeFiles/sfml-app.dir/src/Lista_Entidades.cpp.o
@@ -445,7 +461,7 @@ sfml-app: CMakeFiles/sfml-app.dir/src/Projetil.cpp.o
 sfml-app: CMakeFiles/sfml-app.dir/src/TorreFogo.cpp.o
 sfml-app: CMakeFiles/sfml-app.dir/build.make
 sfml-app: CMakeFiles/sfml-app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable sfml-app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/elienai/JogoTec/Jogo_TecProg_2024/Jogo_TecProg_2024/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable sfml-app"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sfml-app.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -1,0 +1,10 @@
+Sistema operacioal utilizado: Linux
+Versão do Compilador: gcc version 13.2.0 (Ubuntu 13.2.0-4ubuntu3)
+Biblioteca gráfica: SFML
+Gerar Executável:
+Criar um diretorio build caso nao exista
+-mkdir build
+-cd build
+-cmake ..
+-make
+-./sfml

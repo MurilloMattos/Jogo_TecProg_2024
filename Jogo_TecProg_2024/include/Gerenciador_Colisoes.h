@@ -1,5 +1,5 @@
 #pragma once
-
+#include <cmath>
 #include "Jogador.h"
 #include "Inimigo.h"
 #include "Obstaculo.h"
@@ -8,7 +8,7 @@
 #include <vector>
 #include <list>
 #include <set>
-
+using namespace Entidades::Personagens;
 
 namespace Gerenciadores {
 	class Gerenciador_colisoes
@@ -62,7 +62,11 @@ namespace Gerenciadores {
 		void Executar();
 		Entidades::Personagens::Jogador* get_Jogador1();
 		Entidades::Personagens::Jogador* get_Jogador2();
-
+		float produto_Escalar(sf::Vector2f v1, sf::Vector2f v2); 
+		float cosseno_Entre(sf::Vector2f v1, sf::Vector2f v2); 
+		bool visar_Personagem(Personagem *p1, Personagem *p2); 
+		int lado_DoAlvo(Personagem* atual, Personagem *alvo);
+		void limpar_Projeteis();
 	};
 }
 

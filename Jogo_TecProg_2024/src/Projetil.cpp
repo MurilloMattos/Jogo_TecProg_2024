@@ -2,7 +2,7 @@
 
 using namespace Entidades;
 
-Projetil::Projetil(): direita(1),cima(2),esquerda(3),baixo(4), semente_id_entidade(10000) {
+Projetil::Projetil():Entidade(), direita(1),cima(2),esquerda(3),baixo(4), semente_id_entidade(10000) {
 
 	setId(semente_id_entidade);
 
@@ -11,23 +11,23 @@ Projetil::Projetil(): direita(1),cima(2),esquerda(3),baixo(4), semente_id_entida
 	tamanho.y = 15.f;
 
 
-	x = 0;
-	y = 0;
+	x = 50.f;
+	y = 159.f;
 
 	ativo = false;
 	lado = 0;
 
 	//pFigura->setFillColor(sf::Color(222, 120, 31));
 	//pFigura->setSize(tamanho);
-        pFigura->setScale(0.1 , 0.01);
-        figura->loadFromFile("./assets/sprite.png");
-        pFigura->setTexture(*figura);
-	
+	setFile("./assets/projetil.png");
+	atribuirFigura();
+        pFigura->setScale(0.3f , 0.3f);	
 	pFigura->setPosition(x, y);
+	setar_Pos(x , y);
 }
 
 
-Projetil::Projetil(float saida_x, float saida_y, int direcao) : direita(1),cima(2),esquerda(3),baixo(4), semente_id_entidade(10000) {
+Projetil::Projetil(float saida_x, float saida_y, int direcao) : Entidade(), direita(1),cima(2),esquerda(3),baixo(4), semente_id_entidade(10000) {
 
 	setId(semente_id_entidade);
 
@@ -42,9 +42,12 @@ Projetil::Projetil(float saida_x, float saida_y, int direcao) : direita(1),cima(
 	ativo = false;
 	lado = direcao;
 
-	pFigura->setColor(sf::Color(222, 120, 31));
-	//pFigura->setSize(tamanho);
+	//pFigura->setColor(sf::Color(222, 120, 31));
+	setFile("./assets/projetil.png");
+	atribuirFigura();
+        pFigura->setScale(0.3f , 0.3f);	
 	pFigura->setPosition(x, y);
+
 }
 
 Projetil::~Projetil(){
@@ -71,8 +74,7 @@ void Projetil::executar_Gravidade() {
 
 void Projetil::Executar() {
 
-	setar_Pos(x, y);
-	Desenhar();
+	Ente::Desenhar();
 
 	if (ativo) {
 
@@ -89,6 +91,8 @@ void Projetil::Executar() {
 			y += velocidade.y;
 		}
 	}
+	x -= velocidade.x;
+	setar_Pos(x, y);
 }
 
 void Projetil::Salvar() {

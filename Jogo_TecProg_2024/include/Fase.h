@@ -3,9 +3,12 @@
 #include "Lista_Entidades.h"
 #include "Piso.h"
 #include "Inimigo_Medio.h"
+//class Inimigo_Medio;
 #include "Jogador.h"
-#include "Gerenciador_Colisoes.h"
-
+//#include "Gerenciador_Colisoes.h"
+namespace Gerenciadores {
+	class Gerenciador_colisoes;
+}
 namespace Fases {
 	class Fase : public Ente
 	{
@@ -16,8 +19,7 @@ namespace Fases {
 			Listas::Lista_Entidades lista_Entidades;
 			Entidades::Obstaculos::Piso* piso;
 			Entidades::Obstaculos::Piso* plataforma;
-			Gerenciadores::Gerenciador_colisoes gerenciador_colisoes;
-
+			Gerenciadores::Gerenciador_colisoes *gerenciador_colisoes;
 			sf::Vector2f tam_Piso_Fase;
 			sf::Vector2f pos_Piso;
 
@@ -26,6 +28,7 @@ namespace Fases {
 			sf::Vector2f tam_plataforma;
 
 			sf::Vector2f pos_original;
+			//Entidades::Personagens::Inimigo *inimigo;
 
 
 		public:
@@ -52,6 +55,9 @@ namespace Fases {
 			void verifica_Inimigos_Neutralizados();
 
 			//void executa_Colisões();
-
+			Gerenciadores::Gerenciador_colisoes * get_Gerenciador();
+			Listas::Lista_Entidades *get_Lista();
+			void associa_Inimigo(Entidades::Personagens::Inimigo *i);
+			void Cria_Plataforma_Baixo();
 	};
 }

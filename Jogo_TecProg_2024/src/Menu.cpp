@@ -206,10 +206,14 @@ void Menu::atualizar() {
 			case 1: {  
 					Fase_1 *f = new Fase_1();
 					Jogador *j = new Jogador();
+					Jogador *j1 = new Jogador();
+					j1->setar_Dois_Jogadores(true);
+					j1->setar_Pos(200.0f, 100.0f);
 					pJog->setJogador(j);				
-					f->Setar_Jogadores_Colisoes(j, nullptr);
+					f->Setar_Jogadores_Colisoes(j, j1);
 					pJog->incluirEntes(static_cast<Ente*>(f));
 					pJog->incluirEntes(static_cast<Ente*>(j));
+					pJog->incluirEntes(static_cast<Ente*>(j1));
 					
 			}
 			break;
@@ -217,10 +221,14 @@ void Menu::atualizar() {
 						
 					TorreFogo *t = new TorreFogo();
 					Jogador *j = new Jogador();
+					Jogador *j1 = new Jogador();
+					j1->setar_Dois_Jogadores(true);
+					j1->setar_Pos(200.0f, 100.0f);
 					pJog->setJogador(j);				
-					t->Setar_Jogadores_Colisoes(j, nullptr);
+					t->Setar_Jogadores_Colisoes(j, j1);
 					pJog->incluirEntes(static_cast<Ente*>(t));
 					pJog->incluirEntes(static_cast<Ente*>(j));
+					pJog->incluirEntes(static_cast<Ente*>(j1));
 				 	
 			}
 			break;

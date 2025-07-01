@@ -393,6 +393,30 @@ src/Jogador.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/src/Jogador.cpp.s
 .PHONY : src/Jogador.cpp.s
 
+src/Jogador1.o: src/Jogador1.cpp.o
+.PHONY : src/Jogador1.o
+
+# target to build an object file
+src/Jogador1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/src/Jogador1.cpp.o
+.PHONY : src/Jogador1.cpp.o
+
+src/Jogador1.i: src/Jogador1.cpp.i
+.PHONY : src/Jogador1.i
+
+# target to preprocess a source file
+src/Jogador1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/src/Jogador1.cpp.i
+.PHONY : src/Jogador1.cpp.i
+
+src/Jogador1.s: src/Jogador1.cpp.s
+.PHONY : src/Jogador1.s
+
+# target to generate assembly for a file
+src/Jogador1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/src/Jogador1.cpp.s
+.PHONY : src/Jogador1.cpp.s
+
 src/Jogo.o: src/Jogo.cpp.o
 .PHONY : src/Jogo.o
 
@@ -723,6 +747,9 @@ help:
 	@echo "... src/Jogador.o"
 	@echo "... src/Jogador.i"
 	@echo "... src/Jogador.s"
+	@echo "... src/Jogador1.o"
+	@echo "... src/Jogador1.i"
+	@echo "... src/Jogador1.s"
 	@echo "... src/Jogo.o"
 	@echo "... src/Jogo.i"
 	@echo "... src/Jogo.s"
