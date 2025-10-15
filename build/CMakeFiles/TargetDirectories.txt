@@ -1,0 +1,9 @@
+E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/JOGO_TECPROG_2024.dir
+E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/Experimental.dir
+E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/Nightly.dir
+E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/Continuous.dir
+E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/NightlyMemoryCheck.dir
+E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/PACKAGE.dir
+E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/RUN_TESTS.dir
+E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/ALL_BUILD.dir
+E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/ZERO_CHECK.dir

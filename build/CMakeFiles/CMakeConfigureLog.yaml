@@ -1,0 +1,1665 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Windows - 10.0.19045 - AMD64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\MinGW\\bin"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\MinGW\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\PC\\Desktop\\kaue\\buckshot"
+        - "C:\\Users\\PC\\AppData\\Roaming\\npm"
+        - "C:\\Users\\PC\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\PC\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Vers├úo do MSBuild 17.14.18+a338add32 para .NET Framework
+      Compila├º├úo de 14/10/2025 18:54:21 iniciada.
+      
+      Projeto "E:\\Users\\Default\\kaue\\TecProg\\Jogo_TecProg_2024\\Jogo_TecProg_2024\\build\\CMakeFiles\\4.1.0\\CompilerIdC\\CompilerIdC.vcxproj" no n├│ 1 (destinos padr├úo).
+      PrepareForBuild:
+        Criando o diret├│rio "Debug\\".
+        A sa├¡da estruturada est├í habilitada. A formata├º├úo do diagn├│stico do compilador refletir├í a hierarquia de erros. Consulte https://aka.ms/cpp/structured-output para obter mais detalhes.
+        Criando o diret├│rio "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Criando "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
+        Tocando "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> E:\\Users\\Default\\kaue\\TecProg\\Jogo_TecProg_2024\\Jogo_TecProg_2024\\build\\CMakeFiles\\4.1.0\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Excluindo o arquivo "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Tocando "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Projeto de compila├º├úo pronto "E:\\Users\\Default\\kaue\\TecProg\\Jogo_TecProg_2024\\Jogo_TecProg_2024\\build\\CMakeFiles\\4.1.0\\CompilerIdC\\CompilerIdC.vcxproj" (destinos padr├úo).
+      
+      Compila├º├úo com ├¬xito.
+          0 Aviso(s)
+          0 Erro(s)
+      
+      Tempo Decorrido 00:00:01.34
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/4.1.0/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:103 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/MinGW/bin/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/PC/Desktop/kaue/buckshot/"
+      - "C:/Users/PC/AppData/Roaming/npm/"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\MinGW\\bin"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\MinGW\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\PC\\Desktop\\kaue\\buckshot"
+        - "C:\\Users\\PC\\AppData\\Roaming\\npm"
+        - "C:\\Users\\PC\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\PC\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/MinGW/bin/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/PC/Desktop/kaue/buckshot/"
+      - "C:/Users/PC/AppData/Roaming/npm/"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link"
+      - "C:/MinGW/bin/lld-link.com"
+      - "C:/MinGW/bin/lld-link.exe"
+      - "C:/MinGW/bin/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Program Files/nodejs/lld-link.com"
+      - "C:/Program Files/nodejs/lld-link.exe"
+      - "C:/Program Files/nodejs/lld-link"
+      - "C:/Program Files/Git/cmd/lld-link.com"
+      - "C:/Program Files/Git/cmd/lld-link.exe"
+      - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Program Files/CMake/bin/lld-link.com"
+      - "C:/Program Files/CMake/bin/lld-link.exe"
+      - "C:/Program Files/CMake/bin/lld-link"
+      - "C:/Users/PC/Desktop/kaue/buckshot/lld-link.com"
+      - "C:/Users/PC/Desktop/kaue/buckshot/lld-link.exe"
+      - "C:/Users/PC/Desktop/kaue/buckshot/lld-link"
+      - "C:/Users/PC/AppData/Roaming/npm/lld-link.com"
+      - "C:/Users/PC/AppData/Roaming/npm/lld-link.exe"
+      - "C:/Users/PC/AppData/Roaming/npm/lld-link"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/lld-link.com"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/lld-link.exe"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/lld-link"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\MinGW\\bin"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\MinGW\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\PC\\Desktop\\kaue\\buckshot"
+        - "C:\\Users\\PC\\AppData\\Roaming\\npm"
+        - "C:\\Users\\PC\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\PC\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/MinGW/bin/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/PC/Desktop/kaue/buckshot/"
+      - "C:/Users/PC/AppData/Roaming/npm/"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\MinGW\\bin"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\MinGW\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\PC\\Desktop\\kaue\\buckshot"
+        - "C:\\Users\\PC\\AppData\\Roaming\\npm"
+        - "C:\\Users\\PC\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\PC\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_MT"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "mt"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/MinGW/bin/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/PC/Desktop/kaue/buckshot/"
+      - "C:/Users/PC/AppData/Roaming/npm/"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt"
+      - "C:/MinGW/bin/mt.com"
+      - "C:/MinGW/bin/mt.exe"
+      - "C:/MinGW/bin/mt"
+      - "C:/Windows/mt.com"
+      - "C:/Windows/mt.exe"
+      - "C:/Windows/mt"
+      - "C:/Windows/System32/wbem/mt.com"
+      - "C:/Windows/System32/wbem/mt.exe"
+      - "C:/Windows/System32/wbem/mt"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt"
+      - "C:/Windows/System32/OpenSSH/mt.com"
+      - "C:/Windows/System32/OpenSSH/mt.exe"
+      - "C:/Windows/System32/OpenSSH/mt"
+      - "C:/Program Files/dotnet/mt.com"
+      - "C:/Program Files/dotnet/mt.exe"
+      - "C:/Program Files/dotnet/mt"
+      - "C:/Program Files/nodejs/mt.com"
+      - "C:/Program Files/nodejs/mt.exe"
+      - "C:/Program Files/nodejs/mt"
+      - "C:/Program Files/Git/cmd/mt.com"
+      - "C:/Program Files/Git/cmd/mt.exe"
+      - "C:/Program Files/Git/cmd/mt"
+      - "C:/Program Files/CMake/bin/mt.com"
+      - "C:/Program Files/CMake/bin/mt.exe"
+      - "C:/Program Files/CMake/bin/mt"
+      - "C:/Users/PC/Desktop/kaue/buckshot/mt.com"
+      - "C:/Users/PC/Desktop/kaue/buckshot/mt.exe"
+      - "C:/Users/PC/Desktop/kaue/buckshot/mt"
+      - "C:/Users/PC/AppData/Roaming/npm/mt.com"
+      - "C:/Users/PC/AppData/Roaming/npm/mt.exe"
+      - "C:/Users/PC/AppData/Roaming/npm/mt"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/mt.com"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/mt.exe"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/mt"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/mt.com"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/mt.exe"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/mt"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\MinGW\\bin"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\MinGW\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\PC\\Desktop\\kaue\\buckshot"
+        - "C:\\Users\\PC\\AppData\\Roaming\\npm"
+        - "C:\\Users\\PC\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\PC\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lib"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/MinGW/bin/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/PC/Desktop/kaue/buckshot/"
+      - "C:/Users/PC/AppData/Roaming/npm/"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\MinGW\\bin"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\MinGW\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\PC\\Desktop\\kaue\\buckshot"
+        - "C:\\Users\\PC\\AppData\\Roaming\\npm"
+        - "C:\\Users\\PC\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\PC\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\MinGW\\bin"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\MinGW\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\PC\\Desktop\\kaue\\buckshot"
+        - "C:\\Users\\PC\\AppData\\Roaming\\npm"
+        - "C:\\Users\\PC\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\PC\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Vers├úo do MSBuild 17.14.18+a338add32 para .NET Framework
+      Compila├º├úo de 14/10/2025 18:54:23 iniciada.
+      
+      Projeto "E:\\Users\\Default\\kaue\\TecProg\\Jogo_TecProg_2024\\Jogo_TecProg_2024\\build\\CMakeFiles\\4.1.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" no n├│ 1 (destinos padr├úo).
+      PrepareForBuild:
+        Criando o diret├│rio "Debug\\".
+        A sa├¡da estruturada est├í habilitada. A formata├º├úo do diagn├│stico do compilador refletir├í a hierarquia de erros. Consulte https://aka.ms/cpp/structured-output para obter mais detalhes.
+        Criando o diret├│rio "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Criando "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
+        Tocando "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> E:\\Users\\Default\\kaue\\TecProg\\Jogo_TecProg_2024\\Jogo_TecProg_2024\\build\\CMakeFiles\\4.1.0\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Excluindo o arquivo "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Tocando "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Projeto de compila├º├úo pronto "E:\\Users\\Default\\kaue\\TecProg\\Jogo_TecProg_2024\\Jogo_TecProg_2024\\build\\CMakeFiles\\4.1.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (destinos padr├úo).
+      
+      Compila├º├úo com ├¬xito.
+          0 Aviso(s)
+          0 Erro(s)
+      
+      Tempo Decorrido 00:00:01.18
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/4.1.0/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/MinGW/bin/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/PC/Desktop/kaue/buckshot/"
+      - "C:/Users/PC/AppData/Roaming/npm/"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link"
+      - "C:/MinGW/bin/lld-link.com"
+      - "C:/MinGW/bin/lld-link.exe"
+      - "C:/MinGW/bin/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Program Files/nodejs/lld-link.com"
+      - "C:/Program Files/nodejs/lld-link.exe"
+      - "C:/Program Files/nodejs/lld-link"
+      - "C:/Program Files/Git/cmd/lld-link.com"
+      - "C:/Program Files/Git/cmd/lld-link.exe"
+      - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Program Files/CMake/bin/lld-link.com"
+      - "C:/Program Files/CMake/bin/lld-link.exe"
+      - "C:/Program Files/CMake/bin/lld-link"
+      - "C:/Users/PC/Desktop/kaue/buckshot/lld-link.com"
+      - "C:/Users/PC/Desktop/kaue/buckshot/lld-link.exe"
+      - "C:/Users/PC/Desktop/kaue/buckshot/lld-link"
+      - "C:/Users/PC/AppData/Roaming/npm/lld-link.com"
+      - "C:/Users/PC/AppData/Roaming/npm/lld-link.exe"
+      - "C:/Users/PC/AppData/Roaming/npm/lld-link"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/lld-link.com"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/lld-link.exe"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/lld-link"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\MinGW\\bin"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\MinGW\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\PC\\Desktop\\kaue\\buckshot"
+        - "C:\\Users\\PC\\AppData\\Roaming\\npm"
+        - "C:\\Users\\PC\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\PC\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineRCCompiler.cmake:40 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/Platform/Windows-MSVC.cmake:574 (enable_language)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/Platform/Windows-MSVC.cmake:547 (__windows_compiler_msvc_enable_rc)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/Platform/Windows-MSVC-C.cmake:5 (__windows_compiler_msvc)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCInformation.cmake:48 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_RC_COMPILER"
+    description: "RC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rc"
+    candidate_directories:
+      - "C:/MinGW/bin/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/PC/Desktop/kaue/buckshot/"
+      - "C:/Users/PC/AppData/Roaming/npm/"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/"
+    searched_directories:
+      - "C:/MinGW/bin/rc.com"
+      - "C:/MinGW/bin/rc.exe"
+      - "C:/MinGW/bin/rc"
+      - "C:/Windows/rc.com"
+      - "C:/Windows/rc.exe"
+      - "C:/Windows/rc"
+      - "C:/Windows/System32/wbem/rc.com"
+      - "C:/Windows/System32/wbem/rc.exe"
+      - "C:/Windows/System32/wbem/rc"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc"
+      - "C:/Windows/System32/OpenSSH/rc.com"
+      - "C:/Windows/System32/OpenSSH/rc.exe"
+      - "C:/Windows/System32/OpenSSH/rc"
+      - "C:/Program Files/dotnet/rc.com"
+      - "C:/Program Files/dotnet/rc.exe"
+      - "C:/Program Files/dotnet/rc"
+      - "C:/Program Files/nodejs/rc.com"
+      - "C:/Program Files/nodejs/rc.exe"
+      - "C:/Program Files/nodejs/rc"
+      - "C:/Program Files/Git/cmd/rc.com"
+      - "C:/Program Files/Git/cmd/rc.exe"
+      - "C:/Program Files/Git/cmd/rc"
+      - "C:/Program Files/CMake/bin/rc.com"
+      - "C:/Program Files/CMake/bin/rc.exe"
+      - "C:/Program Files/CMake/bin/rc"
+      - "C:/Users/PC/Desktop/kaue/buckshot/rc.com"
+      - "C:/Users/PC/Desktop/kaue/buckshot/rc.exe"
+      - "C:/Users/PC/Desktop/kaue/buckshot/rc"
+      - "C:/Users/PC/AppData/Roaming/npm/rc.com"
+      - "C:/Users/PC/AppData/Roaming/npm/rc.exe"
+      - "C:/Users/PC/AppData/Roaming/npm/rc"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/rc.com"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/rc.exe"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/rc"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/rc.com"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/rc.exe"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/rc"
+      - "C:/Program Files/bin/rc.com"
+      - "C:/Program Files/bin/rc.exe"
+      - "C:/Program Files/bin/rc"
+      - "C:/Program Files/sbin/rc.com"
+      - "C:/Program Files/sbin/rc.exe"
+      - "C:/Program Files/sbin/rc"
+      - "C:/Program Files/rc.com"
+      - "C:/Program Files/rc.exe"
+      - "C:/Program Files/rc"
+      - "C:/Program Files (x86)/bin/rc.com"
+      - "C:/Program Files (x86)/bin/rc.exe"
+      - "C:/Program Files (x86)/bin/rc"
+      - "C:/Program Files (x86)/sbin/rc.com"
+      - "C:/Program Files (x86)/sbin/rc.exe"
+      - "C:/Program Files (x86)/sbin/rc"
+      - "C:/Program Files (x86)/rc.com"
+      - "C:/Program Files (x86)/rc.exe"
+      - "C:/Program Files (x86)/rc"
+      - "C:/Program Files/CMake/bin/rc.com"
+      - "C:/Program Files/CMake/bin/rc.exe"
+      - "C:/Program Files/CMake/bin/rc"
+      - "C:/Program Files/CMake/sbin/rc.com"
+      - "C:/Program Files/CMake/sbin/rc.exe"
+      - "C:/Program Files/CMake/sbin/rc"
+      - "C:/Program Files/CMake/rc.com"
+      - "C:/Program Files/CMake/rc.exe"
+      - "C:/Program Files/CMake/rc"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/rc.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/rc.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/rc"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/rc.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/rc.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/rc"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/rc.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/rc.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/rc"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\MinGW\\bin"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\MinGW\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\PC\\Desktop\\kaue\\buckshot"
+        - "C:\\Users\\PC\\AppData\\Roaming\\npm"
+        - "C:\\Users\\PC\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\PC\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/JOGO_TECPROG_2024"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/JOGO_TECPROG_2024"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/CMakeScratch/TryCompile-764sou"
+      binary: "E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/CMakeScratch/TryCompile-764sou"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/CMakeScratch/TryCompile-764sou'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_cc9a8.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Vers├úo do MSBuild 17.14.18+a338add32 para .NET Framework
+        Compila├º├úo de 14/10/2025 18:54:25 iniciada.
+        
+        Projeto "E:\\Users\\Default\\kaue\\TecProg\\Jogo_TecProg_2024\\Jogo_TecProg_2024\\build\\CMakeFiles\\CMakeScratch\\TryCompile-764sou\\cmTC_cc9a8.vcxproj" no n├│ 1 (destinos padr├úo).
+        PrepareForBuild:
+          Criando o diret├│rio "cmTC_cc9a8.dir\\Debug\\".
+          A sa├¡da estruturada est├í habilitada. A formata├º├úo do diagn├│stico do compilador refletir├í a hierarquia de erros. Consulte https://aka.ms/cpp/structured-output para obter mais detalhes.
+          Criando o diret├│rio "E:\\Users\\Default\\kaue\\TecProg\\Jogo_TecProg_2024\\Jogo_TecProg_2024\\build\\CMakeFiles\\CMakeScratch\\TryCompile-764sou\\Debug\\".
+          Criando o diret├│rio "cmTC_cc9a8.dir\\Debug\\cmTC_cc9a8.tlog\\".
+        InitializeBuildStatus:
+          Criando "cmTC_cc9a8.dir\\Debug\\cmTC_cc9a8.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
+          Tocando "cmTC_cc9a8.dir\\Debug\\cmTC_cc9a8.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_cc9a8.dir\\Debug\\\\" /Fd"cmTC_cc9a8.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Vers├úo 19.44.35214 para x64
+          Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_cc9a8.dir\\Debug\\\\" /Fd"cmTC_cc9a8.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"E:\\Users\\Default\\kaue\\TecProg\\Jogo_TecProg_2024\\Jogo_TecProg_2024\\build\\CMakeFiles\\CMakeScratch\\TryCompile-764sou\\Debug\\cmTC_cc9a8.exe" /INCREMENTAL /ILK:"cmTC_cc9a8.dir\\Debug\\cmTC_cc9a8.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/CMakeScratch/TryCompile-764sou/Debug/cmTC_cc9a8.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/CMakeScratch/TryCompile-764sou/Debug/cmTC_cc9a8.lib" /MACHINE:X64  /machine:x64 cmTC_cc9a8.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_cc9a8.vcxproj -> E:\\Users\\Default\\kaue\\TecProg\\Jogo_TecProg_2024\\Jogo_TecProg_2024\\build\\CMakeFiles\\CMakeScratch\\TryCompile-764sou\\Debug\\cmTC_cc9a8.exe
+        FinalizeBuildStatus:
+          Excluindo o arquivo "cmTC_cc9a8.dir\\Debug\\cmTC_cc9a8.tlog\\unsuccessfulbuild".
+          Tocando "cmTC_cc9a8.dir\\Debug\\cmTC_cc9a8.tlog\\cmTC_cc9a8.lastbuildstate".
+        Projeto de compila├º├úo pronto "E:\\Users\\Default\\kaue\\TecProg\\Jogo_TecProg_2024\\Jogo_TecProg_2024\\build\\CMakeFiles\\CMakeScratch\\TryCompile-764sou\\cmTC_cc9a8.vcxproj" (destinos padr├úo).
+        
+        Compila├º├úo com ├¬xito.
+            0 Aviso(s)
+            0 Erro(s)
+        
+        Tempo Decorrido 00:00:01.06
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the C compiler's linker: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35214.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/CMakeScratch/TryCompile-jje4fj"
+      binary: "E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/CMakeScratch/TryCompile-jje4fj"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/CMakeScratch/TryCompile-jje4fj'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_771ef.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Vers├úo do MSBuild 17.14.18+a338add32 para .NET Framework
+        Compila├º├úo de 14/10/2025 18:54:27 iniciada.
+        
+        Projeto "E:\\Users\\Default\\kaue\\TecProg\\Jogo_TecProg_2024\\Jogo_TecProg_2024\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jje4fj\\cmTC_771ef.vcxproj" no n├│ 1 (destinos padr├úo).
+        PrepareForBuild:
+          Criando o diret├│rio "cmTC_771ef.dir\\Debug\\".
+          A sa├¡da estruturada est├í habilitada. A formata├º├úo do diagn├│stico do compilador refletir├í a hierarquia de erros. Consulte https://aka.ms/cpp/structured-output para obter mais detalhes.
+          Criando o diret├│rio "E:\\Users\\Default\\kaue\\TecProg\\Jogo_TecProg_2024\\Jogo_TecProg_2024\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jje4fj\\Debug\\".
+          Criando o diret├│rio "cmTC_771ef.dir\\Debug\\cmTC_771ef.tlog\\".
+        InitializeBuildStatus:
+          Criando "cmTC_771ef.dir\\Debug\\cmTC_771ef.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
+          Tocando "cmTC_771ef.dir\\Debug\\cmTC_771ef.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /Fo"cmTC_771ef.dir\\Debug\\\\" /Fd"cmTC_771ef.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Vers├úo 19.44.35214 para x64
+          Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /Fo"cmTC_771ef.dir\\Debug\\\\" /Fd"cmTC_771ef.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+          CMakeCXXCompilerABI.cpp
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"E:\\Users\\Default\\kaue\\TecProg\\Jogo_TecProg_2024\\Jogo_TecProg_2024\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jje4fj\\Debug\\cmTC_771ef.exe" /INCREMENTAL /ILK:"cmTC_771ef.dir\\Debug\\cmTC_771ef.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/CMakeScratch/TryCompile-jje4fj/Debug/cmTC_771ef.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build/CMakeFiles/CMakeScratch/TryCompile-jje4fj/Debug/cmTC_771ef.lib" /MACHINE:X64  /machine:x64 cmTC_771ef.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_771ef.vcxproj -> E:\\Users\\Default\\kaue\\TecProg\\Jogo_TecProg_2024\\Jogo_TecProg_2024\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jje4fj\\Debug\\cmTC_771ef.exe
+        FinalizeBuildStatus:
+          Excluindo o arquivo "cmTC_771ef.dir\\Debug\\cmTC_771ef.tlog\\unsuccessfulbuild".
+          Tocando "cmTC_771ef.dir\\Debug\\cmTC_771ef.tlog\\cmTC_771ef.lastbuildstate".
+        Projeto de compila├º├úo pronto "E:\\Users\\Default\\kaue\\TecProg\\Jogo_TecProg_2024\\Jogo_TecProg_2024\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jje4fj\\cmTC_771ef.vcxproj" (destinos padr├úo).
+        
+        Compila├º├úo com ├¬xito.
+            0 Aviso(s)
+            0 Erro(s)
+        
+        Tempo Decorrido 00:00:01.02
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'CXX': C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35214.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CTest.cmake:171 (find_program)"
+      - "CMakeLists.txt:32 (include)"
+    mode: "program"
+    variable: "GITCOMMAND"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "git"
+    candidate_directories:
+      - "C:/MinGW/bin/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/PC/Desktop/kaue/buckshot/"
+      - "C:/Users/PC/AppData/Roaming/npm/"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/"
+    searched_directories:
+      - "C:/MinGW/bin/git.com"
+      - "C:/MinGW/bin/git.exe"
+      - "C:/MinGW/bin/git"
+      - "C:/Windows/git.com"
+      - "C:/Windows/git.exe"
+      - "C:/Windows/git"
+      - "C:/Windows/System32/wbem/git.com"
+      - "C:/Windows/System32/wbem/git.exe"
+      - "C:/Windows/System32/wbem/git"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/git.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/git.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/git"
+      - "C:/Windows/System32/OpenSSH/git.com"
+      - "C:/Windows/System32/OpenSSH/git.exe"
+      - "C:/Windows/System32/OpenSSH/git"
+      - "C:/Program Files/dotnet/git.com"
+      - "C:/Program Files/dotnet/git.exe"
+      - "C:/Program Files/dotnet/git"
+      - "C:/Program Files/nodejs/git.com"
+      - "C:/Program Files/nodejs/git.exe"
+      - "C:/Program Files/nodejs/git"
+      - "C:/Program Files/Git/cmd/git.com"
+    found: "C:/Program Files/Git/cmd/git.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\MinGW\\bin"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\MinGW\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\PC\\Desktop\\kaue\\buckshot"
+        - "C:\\Users\\PC\\AppData\\Roaming\\npm"
+        - "C:\\Users\\PC\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\PC\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/JOGO_TECPROG_2024"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/JOGO_TECPROG_2024"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CTest.cmake:188 (find_program)"
+      - "CMakeLists.txt:32 (include)"
+    mode: "program"
+    variable: "MEMORYCHECK_COMMAND"
+    description: "Path to the memory checking command, used for memory error detection."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "purify"
+      - "valgrind"
+      - "boundscheck"
+      - "drmemory"
+      - "cuda-memcheck"
+      - "compute-sanitizer"
+    candidate_directories:
+      - "C:/MinGW/bin/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/PC/Desktop/kaue/buckshot/"
+      - "C:/Users/PC/AppData/Roaming/npm/"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/"
+      - "/REGISTRY-NOTFOUND/"
+    searched_directories:
+      - "C:/MinGW/bin/purify.com"
+      - "C:/MinGW/bin/purify.exe"
+      - "C:/MinGW/bin/purify"
+      - "C:/Windows/purify.com"
+      - "C:/Windows/purify.exe"
+      - "C:/Windows/purify"
+      - "C:/Windows/System32/wbem/purify.com"
+      - "C:/Windows/System32/wbem/purify.exe"
+      - "C:/Windows/System32/wbem/purify"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/purify.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/purify.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/purify"
+      - "C:/Windows/System32/OpenSSH/purify.com"
+      - "C:/Windows/System32/OpenSSH/purify.exe"
+      - "C:/Windows/System32/OpenSSH/purify"
+      - "C:/Program Files/dotnet/purify.com"
+      - "C:/Program Files/dotnet/purify.exe"
+      - "C:/Program Files/dotnet/purify"
+      - "C:/Program Files/nodejs/purify.com"
+      - "C:/Program Files/nodejs/purify.exe"
+      - "C:/Program Files/nodejs/purify"
+      - "C:/Program Files/Git/cmd/purify.com"
+      - "C:/Program Files/Git/cmd/purify.exe"
+      - "C:/Program Files/Git/cmd/purify"
+      - "C:/Program Files/CMake/bin/purify.com"
+      - "C:/Program Files/CMake/bin/purify.exe"
+      - "C:/Program Files/CMake/bin/purify"
+      - "C:/Users/PC/Desktop/kaue/buckshot/purify.com"
+      - "C:/Users/PC/Desktop/kaue/buckshot/purify.exe"
+      - "C:/Users/PC/Desktop/kaue/buckshot/purify"
+      - "C:/Users/PC/AppData/Roaming/npm/purify.com"
+      - "C:/Users/PC/AppData/Roaming/npm/purify.exe"
+      - "C:/Users/PC/AppData/Roaming/npm/purify"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/purify.com"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/purify.exe"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/purify"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/purify.com"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/purify.exe"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/purify"
+      - "C:/Program Files/bin/purify.com"
+      - "C:/Program Files/bin/purify.exe"
+      - "C:/Program Files/bin/purify"
+      - "C:/Program Files/sbin/purify.com"
+      - "C:/Program Files/sbin/purify.exe"
+      - "C:/Program Files/sbin/purify"
+      - "C:/Program Files/purify.com"
+      - "C:/Program Files/purify.exe"
+      - "C:/Program Files/purify"
+      - "C:/Program Files (x86)/bin/purify.com"
+      - "C:/Program Files (x86)/bin/purify.exe"
+      - "C:/Program Files (x86)/bin/purify"
+      - "C:/Program Files (x86)/sbin/purify.com"
+      - "C:/Program Files (x86)/sbin/purify.exe"
+      - "C:/Program Files (x86)/sbin/purify"
+      - "C:/Program Files (x86)/purify.com"
+      - "C:/Program Files (x86)/purify.exe"
+      - "C:/Program Files (x86)/purify"
+      - "C:/Program Files/CMake/bin/purify.com"
+      - "C:/Program Files/CMake/bin/purify.exe"
+      - "C:/Program Files/CMake/bin/purify"
+      - "C:/Program Files/CMake/sbin/purify.com"
+      - "C:/Program Files/CMake/sbin/purify.exe"
+      - "C:/Program Files/CMake/sbin/purify"
+      - "C:/Program Files/CMake/purify.com"
+      - "C:/Program Files/CMake/purify.exe"
+      - "C:/Program Files/CMake/purify"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/purify.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/purify.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/purify"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/purify.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/purify.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/purify"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/purify.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/purify.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/purify"
+      - "/REGISTRY-NOTFOUND/purify.com"
+      - "/REGISTRY-NOTFOUND/purify.exe"
+      - "/REGISTRY-NOTFOUND/purify"
+      - "C:/MinGW/bin/valgrind.com"
+      - "C:/MinGW/bin/valgrind.exe"
+      - "C:/MinGW/bin/valgrind"
+      - "C:/Windows/valgrind.com"
+      - "C:/Windows/valgrind.exe"
+      - "C:/Windows/valgrind"
+      - "C:/Windows/System32/wbem/valgrind.com"
+      - "C:/Windows/System32/wbem/valgrind.exe"
+      - "C:/Windows/System32/wbem/valgrind"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/valgrind.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/valgrind.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/valgrind"
+      - "C:/Windows/System32/OpenSSH/valgrind.com"
+      - "C:/Windows/System32/OpenSSH/valgrind.exe"
+      - "C:/Windows/System32/OpenSSH/valgrind"
+      - "C:/Program Files/dotnet/valgrind.com"
+      - "C:/Program Files/dotnet/valgrind.exe"
+      - "C:/Program Files/dotnet/valgrind"
+      - "C:/Program Files/nodejs/valgrind.com"
+      - "C:/Program Files/nodejs/valgrind.exe"
+      - "C:/Program Files/nodejs/valgrind"
+      - "C:/Program Files/Git/cmd/valgrind.com"
+      - "C:/Program Files/Git/cmd/valgrind.exe"
+      - "C:/Program Files/Git/cmd/valgrind"
+      - "C:/Program Files/CMake/bin/valgrind.com"
+      - "C:/Program Files/CMake/bin/valgrind.exe"
+      - "C:/Program Files/CMake/bin/valgrind"
+      - "C:/Users/PC/Desktop/kaue/buckshot/valgrind.com"
+      - "C:/Users/PC/Desktop/kaue/buckshot/valgrind.exe"
+      - "C:/Users/PC/Desktop/kaue/buckshot/valgrind"
+      - "C:/Users/PC/AppData/Roaming/npm/valgrind.com"
+      - "C:/Users/PC/AppData/Roaming/npm/valgrind.exe"
+      - "C:/Users/PC/AppData/Roaming/npm/valgrind"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/valgrind.com"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/valgrind.exe"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/valgrind"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/valgrind.com"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/valgrind.exe"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/valgrind"
+      - "C:/Program Files/bin/valgrind.com"
+      - "C:/Program Files/bin/valgrind.exe"
+      - "C:/Program Files/bin/valgrind"
+      - "C:/Program Files/sbin/valgrind.com"
+      - "C:/Program Files/sbin/valgrind.exe"
+      - "C:/Program Files/sbin/valgrind"
+      - "C:/Program Files/valgrind.com"
+      - "C:/Program Files/valgrind.exe"
+      - "C:/Program Files/valgrind"
+      - "C:/Program Files (x86)/bin/valgrind.com"
+      - "C:/Program Files (x86)/bin/valgrind.exe"
+      - "C:/Program Files (x86)/bin/valgrind"
+      - "C:/Program Files (x86)/sbin/valgrind.com"
+      - "C:/Program Files (x86)/sbin/valgrind.exe"
+      - "C:/Program Files (x86)/sbin/valgrind"
+      - "C:/Program Files (x86)/valgrind.com"
+      - "C:/Program Files (x86)/valgrind.exe"
+      - "C:/Program Files (x86)/valgrind"
+      - "C:/Program Files/CMake/bin/valgrind.com"
+      - "C:/Program Files/CMake/bin/valgrind.exe"
+      - "C:/Program Files/CMake/bin/valgrind"
+      - "C:/Program Files/CMake/sbin/valgrind.com"
+      - "C:/Program Files/CMake/sbin/valgrind.exe"
+      - "C:/Program Files/CMake/sbin/valgrind"
+      - "C:/Program Files/CMake/valgrind.com"
+      - "C:/Program Files/CMake/valgrind.exe"
+      - "C:/Program Files/CMake/valgrind"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/valgrind.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/valgrind.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/valgrind"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/valgrind.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/valgrind.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/valgrind"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/valgrind.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/valgrind.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/valgrind"
+      - "/REGISTRY-NOTFOUND/valgrind.com"
+      - "/REGISTRY-NOTFOUND/valgrind.exe"
+      - "/REGISTRY-NOTFOUND/valgrind"
+      - "C:/MinGW/bin/boundscheck.com"
+      - "C:/MinGW/bin/boundscheck.exe"
+      - "C:/MinGW/bin/boundscheck"
+      - "C:/Windows/boundscheck.com"
+      - "C:/Windows/boundscheck.exe"
+      - "C:/Windows/boundscheck"
+      - "C:/Windows/System32/wbem/boundscheck.com"
+      - "C:/Windows/System32/wbem/boundscheck.exe"
+      - "C:/Windows/System32/wbem/boundscheck"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/boundscheck.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/boundscheck.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/boundscheck"
+      - "C:/Windows/System32/OpenSSH/boundscheck.com"
+      - "C:/Windows/System32/OpenSSH/boundscheck.exe"
+      - "C:/Windows/System32/OpenSSH/boundscheck"
+      - "C:/Program Files/dotnet/boundscheck.com"
+      - "C:/Program Files/dotnet/boundscheck.exe"
+      - "C:/Program Files/dotnet/boundscheck"
+      - "C:/Program Files/nodejs/boundscheck.com"
+      - "C:/Program Files/nodejs/boundscheck.exe"
+      - "C:/Program Files/nodejs/boundscheck"
+      - "C:/Program Files/Git/cmd/boundscheck.com"
+      - "C:/Program Files/Git/cmd/boundscheck.exe"
+      - "C:/Program Files/Git/cmd/boundscheck"
+      - "C:/Program Files/CMake/bin/boundscheck.com"
+      - "C:/Program Files/CMake/bin/boundscheck.exe"
+      - "C:/Program Files/CMake/bin/boundscheck"
+      - "C:/Users/PC/Desktop/kaue/buckshot/boundscheck.com"
+      - "C:/Users/PC/Desktop/kaue/buckshot/boundscheck.exe"
+      - "C:/Users/PC/Desktop/kaue/buckshot/boundscheck"
+      - "C:/Users/PC/AppData/Roaming/npm/boundscheck.com"
+      - "C:/Users/PC/AppData/Roaming/npm/boundscheck.exe"
+      - "C:/Users/PC/AppData/Roaming/npm/boundscheck"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/boundscheck.com"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/boundscheck.exe"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/boundscheck"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/boundscheck.com"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/boundscheck.exe"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/boundscheck"
+      - "C:/Program Files/bin/boundscheck.com"
+      - "C:/Program Files/bin/boundscheck.exe"
+      - "C:/Program Files/bin/boundscheck"
+      - "C:/Program Files/sbin/boundscheck.com"
+      - "C:/Program Files/sbin/boundscheck.exe"
+      - "C:/Program Files/sbin/boundscheck"
+      - "C:/Program Files/boundscheck.com"
+      - "C:/Program Files/boundscheck.exe"
+      - "C:/Program Files/boundscheck"
+      - "C:/Program Files (x86)/bin/boundscheck.com"
+      - "C:/Program Files (x86)/bin/boundscheck.exe"
+      - "C:/Program Files (x86)/bin/boundscheck"
+      - "C:/Program Files (x86)/sbin/boundscheck.com"
+      - "C:/Program Files (x86)/sbin/boundscheck.exe"
+      - "C:/Program Files (x86)/sbin/boundscheck"
+      - "C:/Program Files (x86)/boundscheck.com"
+      - "C:/Program Files (x86)/boundscheck.exe"
+      - "C:/Program Files (x86)/boundscheck"
+      - "C:/Program Files/CMake/bin/boundscheck.com"
+      - "C:/Program Files/CMake/bin/boundscheck.exe"
+      - "C:/Program Files/CMake/bin/boundscheck"
+      - "C:/Program Files/CMake/sbin/boundscheck.com"
+      - "C:/Program Files/CMake/sbin/boundscheck.exe"
+      - "C:/Program Files/CMake/sbin/boundscheck"
+      - "C:/Program Files/CMake/boundscheck.com"
+      - "C:/Program Files/CMake/boundscheck.exe"
+      - "C:/Program Files/CMake/boundscheck"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/boundscheck.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/boundscheck.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/boundscheck"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/boundscheck.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/boundscheck.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/boundscheck"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/boundscheck.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/boundscheck.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/boundscheck"
+      - "/REGISTRY-NOTFOUND/boundscheck.com"
+      - "/REGISTRY-NOTFOUND/boundscheck.exe"
+      - "/REGISTRY-NOTFOUND/boundscheck"
+      - "C:/MinGW/bin/drmemory.com"
+      - "C:/MinGW/bin/drmemory.exe"
+      - "C:/MinGW/bin/drmemory"
+      - "C:/Windows/drmemory.com"
+      - "C:/Windows/drmemory.exe"
+      - "C:/Windows/drmemory"
+      - "C:/Windows/System32/wbem/drmemory.com"
+      - "C:/Windows/System32/wbem/drmemory.exe"
+      - "C:/Windows/System32/wbem/drmemory"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/drmemory.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/drmemory.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/drmemory"
+      - "C:/Windows/System32/OpenSSH/drmemory.com"
+      - "C:/Windows/System32/OpenSSH/drmemory.exe"
+      - "C:/Windows/System32/OpenSSH/drmemory"
+      - "C:/Program Files/dotnet/drmemory.com"
+      - "C:/Program Files/dotnet/drmemory.exe"
+      - "C:/Program Files/dotnet/drmemory"
+      - "C:/Program Files/nodejs/drmemory.com"
+      - "C:/Program Files/nodejs/drmemory.exe"
+      - "C:/Program Files/nodejs/drmemory"
+      - "C:/Program Files/Git/cmd/drmemory.com"
+      - "C:/Program Files/Git/cmd/drmemory.exe"
+      - "C:/Program Files/Git/cmd/drmemory"
+      - "C:/Program Files/CMake/bin/drmemory.com"
+      - "C:/Program Files/CMake/bin/drmemory.exe"
+      - "C:/Program Files/CMake/bin/drmemory"
+      - "C:/Users/PC/Desktop/kaue/buckshot/drmemory.com"
+      - "C:/Users/PC/Desktop/kaue/buckshot/drmemory.exe"
+      - "C:/Users/PC/Desktop/kaue/buckshot/drmemory"
+      - "C:/Users/PC/AppData/Roaming/npm/drmemory.com"
+      - "C:/Users/PC/AppData/Roaming/npm/drmemory.exe"
+      - "C:/Users/PC/AppData/Roaming/npm/drmemory"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/drmemory.com"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/drmemory.exe"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/drmemory"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/drmemory.com"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/drmemory.exe"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/drmemory"
+      - "C:/Program Files/bin/drmemory.com"
+      - "C:/Program Files/bin/drmemory.exe"
+      - "C:/Program Files/bin/drmemory"
+      - "C:/Program Files/sbin/drmemory.com"
+      - "C:/Program Files/sbin/drmemory.exe"
+      - "C:/Program Files/sbin/drmemory"
+      - "C:/Program Files/drmemory.com"
+      - "C:/Program Files/drmemory.exe"
+      - "C:/Program Files/drmemory"
+      - "C:/Program Files (x86)/bin/drmemory.com"
+      - "C:/Program Files (x86)/bin/drmemory.exe"
+      - "C:/Program Files (x86)/bin/drmemory"
+      - "C:/Program Files (x86)/sbin/drmemory.com"
+      - "C:/Program Files (x86)/sbin/drmemory.exe"
+      - "C:/Program Files (x86)/sbin/drmemory"
+      - "C:/Program Files (x86)/drmemory.com"
+      - "C:/Program Files (x86)/drmemory.exe"
+      - "C:/Program Files (x86)/drmemory"
+      - "C:/Program Files/CMake/bin/drmemory.com"
+      - "C:/Program Files/CMake/bin/drmemory.exe"
+      - "C:/Program Files/CMake/bin/drmemory"
+      - "C:/Program Files/CMake/sbin/drmemory.com"
+      - "C:/Program Files/CMake/sbin/drmemory.exe"
+      - "C:/Program Files/CMake/sbin/drmemory"
+      - "C:/Program Files/CMake/drmemory.com"
+      - "C:/Program Files/CMake/drmemory.exe"
+      - "C:/Program Files/CMake/drmemory"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/drmemory.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/drmemory.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/drmemory"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/drmemory.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/drmemory.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/drmemory"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/drmemory.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/drmemory.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/drmemory"
+      - "/REGISTRY-NOTFOUND/drmemory.com"
+      - "/REGISTRY-NOTFOUND/drmemory.exe"
+      - "/REGISTRY-NOTFOUND/drmemory"
+      - "C:/MinGW/bin/cuda-memcheck.com"
+      - "C:/MinGW/bin/cuda-memcheck.exe"
+      - "C:/MinGW/bin/cuda-memcheck"
+      - "C:/Windows/cuda-memcheck.com"
+      - "C:/Windows/cuda-memcheck.exe"
+      - "C:/Windows/cuda-memcheck"
+      - "C:/Windows/System32/wbem/cuda-memcheck.com"
+      - "C:/Windows/System32/wbem/cuda-memcheck.exe"
+      - "C:/Windows/System32/wbem/cuda-memcheck"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/cuda-memcheck.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/cuda-memcheck.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/cuda-memcheck"
+      - "C:/Windows/System32/OpenSSH/cuda-memcheck.com"
+      - "C:/Windows/System32/OpenSSH/cuda-memcheck.exe"
+      - "C:/Windows/System32/OpenSSH/cuda-memcheck"
+      - "C:/Program Files/dotnet/cuda-memcheck.com"
+      - "C:/Program Files/dotnet/cuda-memcheck.exe"
+      - "C:/Program Files/dotnet/cuda-memcheck"
+      - "C:/Program Files/nodejs/cuda-memcheck.com"
+      - "C:/Program Files/nodejs/cuda-memcheck.exe"
+      - "C:/Program Files/nodejs/cuda-memcheck"
+      - "C:/Program Files/Git/cmd/cuda-memcheck.com"
+      - "C:/Program Files/Git/cmd/cuda-memcheck.exe"
+      - "C:/Program Files/Git/cmd/cuda-memcheck"
+      - "C:/Program Files/CMake/bin/cuda-memcheck.com"
+      - "C:/Program Files/CMake/bin/cuda-memcheck.exe"
+      - "C:/Program Files/CMake/bin/cuda-memcheck"
+      - "C:/Users/PC/Desktop/kaue/buckshot/cuda-memcheck.com"
+      - "C:/Users/PC/Desktop/kaue/buckshot/cuda-memcheck.exe"
+      - "C:/Users/PC/Desktop/kaue/buckshot/cuda-memcheck"
+      - "C:/Users/PC/AppData/Roaming/npm/cuda-memcheck.com"
+      - "C:/Users/PC/AppData/Roaming/npm/cuda-memcheck.exe"
+      - "C:/Users/PC/AppData/Roaming/npm/cuda-memcheck"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/cuda-memcheck.com"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/cuda-memcheck.exe"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/cuda-memcheck"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/cuda-memcheck.com"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/cuda-memcheck.exe"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/cuda-memcheck"
+      - "C:/Program Files/bin/cuda-memcheck.com"
+      - "C:/Program Files/bin/cuda-memcheck.exe"
+      - "C:/Program Files/bin/cuda-memcheck"
+      - "C:/Program Files/sbin/cuda-memcheck.com"
+      - "C:/Program Files/sbin/cuda-memcheck.exe"
+      - "C:/Program Files/sbin/cuda-memcheck"
+      - "C:/Program Files/cuda-memcheck.com"
+      - "C:/Program Files/cuda-memcheck.exe"
+      - "C:/Program Files/cuda-memcheck"
+      - "C:/Program Files (x86)/bin/cuda-memcheck.com"
+      - "C:/Program Files (x86)/bin/cuda-memcheck.exe"
+      - "C:/Program Files (x86)/bin/cuda-memcheck"
+      - "C:/Program Files (x86)/sbin/cuda-memcheck.com"
+      - "C:/Program Files (x86)/sbin/cuda-memcheck.exe"
+      - "C:/Program Files (x86)/sbin/cuda-memcheck"
+      - "C:/Program Files (x86)/cuda-memcheck.com"
+      - "C:/Program Files (x86)/cuda-memcheck.exe"
+      - "C:/Program Files (x86)/cuda-memcheck"
+      - "C:/Program Files/CMake/bin/cuda-memcheck.com"
+      - "C:/Program Files/CMake/bin/cuda-memcheck.exe"
+      - "C:/Program Files/CMake/bin/cuda-memcheck"
+      - "C:/Program Files/CMake/sbin/cuda-memcheck.com"
+      - "C:/Program Files/CMake/sbin/cuda-memcheck.exe"
+      - "C:/Program Files/CMake/sbin/cuda-memcheck"
+      - "C:/Program Files/CMake/cuda-memcheck.com"
+      - "C:/Program Files/CMake/cuda-memcheck.exe"
+      - "C:/Program Files/CMake/cuda-memcheck"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/cuda-memcheck.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/cuda-memcheck.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/cuda-memcheck"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/cuda-memcheck.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/cuda-memcheck.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/cuda-memcheck"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/cuda-memcheck.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/cuda-memcheck.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/cuda-memcheck"
+      - "/REGISTRY-NOTFOUND/cuda-memcheck.com"
+      - "/REGISTRY-NOTFOUND/cuda-memcheck.exe"
+      - "/REGISTRY-NOTFOUND/cuda-memcheck"
+      - "C:/MinGW/bin/compute-sanitizer.com"
+      - "C:/MinGW/bin/compute-sanitizer.exe"
+      - "C:/MinGW/bin/compute-sanitizer"
+      - "C:/Windows/compute-sanitizer.com"
+      - "C:/Windows/compute-sanitizer.exe"
+      - "C:/Windows/compute-sanitizer"
+      - "C:/Windows/System32/wbem/compute-sanitizer.com"
+      - "C:/Windows/System32/wbem/compute-sanitizer.exe"
+      - "C:/Windows/System32/wbem/compute-sanitizer"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/compute-sanitizer.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/compute-sanitizer.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/compute-sanitizer"
+      - "C:/Windows/System32/OpenSSH/compute-sanitizer.com"
+      - "C:/Windows/System32/OpenSSH/compute-sanitizer.exe"
+      - "C:/Windows/System32/OpenSSH/compute-sanitizer"
+      - "C:/Program Files/dotnet/compute-sanitizer.com"
+      - "C:/Program Files/dotnet/compute-sanitizer.exe"
+      - "C:/Program Files/dotnet/compute-sanitizer"
+      - "C:/Program Files/nodejs/compute-sanitizer.com"
+      - "C:/Program Files/nodejs/compute-sanitizer.exe"
+      - "C:/Program Files/nodejs/compute-sanitizer"
+      - "C:/Program Files/Git/cmd/compute-sanitizer.com"
+      - "C:/Program Files/Git/cmd/compute-sanitizer.exe"
+      - "C:/Program Files/Git/cmd/compute-sanitizer"
+      - "C:/Program Files/CMake/bin/compute-sanitizer.com"
+      - "C:/Program Files/CMake/bin/compute-sanitizer.exe"
+      - "C:/Program Files/CMake/bin/compute-sanitizer"
+      - "C:/Users/PC/Desktop/kaue/buckshot/compute-sanitizer.com"
+      - "C:/Users/PC/Desktop/kaue/buckshot/compute-sanitizer.exe"
+      - "C:/Users/PC/Desktop/kaue/buckshot/compute-sanitizer"
+      - "C:/Users/PC/AppData/Roaming/npm/compute-sanitizer.com"
+      - "C:/Users/PC/AppData/Roaming/npm/compute-sanitizer.exe"
+      - "C:/Users/PC/AppData/Roaming/npm/compute-sanitizer"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/compute-sanitizer.com"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/compute-sanitizer.exe"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/compute-sanitizer"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/compute-sanitizer.com"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/compute-sanitizer.exe"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/compute-sanitizer"
+      - "C:/Program Files/bin/compute-sanitizer.com"
+      - "C:/Program Files/bin/compute-sanitizer.exe"
+      - "C:/Program Files/bin/compute-sanitizer"
+      - "C:/Program Files/sbin/compute-sanitizer.com"
+      - "C:/Program Files/sbin/compute-sanitizer.exe"
+      - "C:/Program Files/sbin/compute-sanitizer"
+      - "C:/Program Files/compute-sanitizer.com"
+      - "C:/Program Files/compute-sanitizer.exe"
+      - "C:/Program Files/compute-sanitizer"
+      - "C:/Program Files (x86)/bin/compute-sanitizer.com"
+      - "C:/Program Files (x86)/bin/compute-sanitizer.exe"
+      - "C:/Program Files (x86)/bin/compute-sanitizer"
+      - "C:/Program Files (x86)/sbin/compute-sanitizer.com"
+      - "C:/Program Files (x86)/sbin/compute-sanitizer.exe"
+      - "C:/Program Files (x86)/sbin/compute-sanitizer"
+      - "C:/Program Files (x86)/compute-sanitizer.com"
+      - "C:/Program Files (x86)/compute-sanitizer.exe"
+      - "C:/Program Files (x86)/compute-sanitizer"
+      - "C:/Program Files/CMake/bin/compute-sanitizer.com"
+      - "C:/Program Files/CMake/bin/compute-sanitizer.exe"
+      - "C:/Program Files/CMake/bin/compute-sanitizer"
+      - "C:/Program Files/CMake/sbin/compute-sanitizer.com"
+      - "C:/Program Files/CMake/sbin/compute-sanitizer.exe"
+      - "C:/Program Files/CMake/sbin/compute-sanitizer"
+      - "C:/Program Files/CMake/compute-sanitizer.com"
+      - "C:/Program Files/CMake/compute-sanitizer.exe"
+      - "C:/Program Files/CMake/compute-sanitizer"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/compute-sanitizer.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/compute-sanitizer.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/compute-sanitizer"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/compute-sanitizer.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/compute-sanitizer.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/compute-sanitizer"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/compute-sanitizer.com"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/compute-sanitizer.exe"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/compute-sanitizer"
+      - "/REGISTRY-NOTFOUND/compute-sanitizer.com"
+      - "/REGISTRY-NOTFOUND/compute-sanitizer.exe"
+      - "/REGISTRY-NOTFOUND/compute-sanitizer"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\MinGW\\bin"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\MinGW\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\PC\\Desktop\\kaue\\buckshot"
+        - "C:\\Users\\PC\\AppData\\Roaming\\npm"
+        - "C:\\Users\\PC\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\PC\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/JOGO_TECPROG_2024"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/JOGO_TECPROG_2024"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CTest.cmake:196 (find_program)"
+      - "CMakeLists.txt:32 (include)"
+    mode: "program"
+    variable: "COVERAGE_COMMAND"
+    description: "Path to the coverage program that CTest uses for performing coverage inspection"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcov"
+    candidate_directories:
+      - "C:/MinGW/bin/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/PC/Desktop/kaue/buckshot/"
+      - "C:/Users/PC/AppData/Roaming/npm/"
+      - "C:/Users/PC/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/PC/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/bin/"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/sbin/"
+      - "C:/Program Files (x86)/JOGO_TECPROG_2024/"
+    searched_directories:
+      - "C:/MinGW/bin/gcov.com"
+    found: "C:/MinGW/bin/gcov.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\MinGW\\bin"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\MinGW\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\PC\\Desktop\\kaue\\buckshot"
+        - "C:\\Users\\PC\\AppData\\Roaming\\npm"
+        - "C:\\Users\\PC\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\PC\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/JOGO_TECPROG_2024"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/JOGO_TECPROG_2024"
+...

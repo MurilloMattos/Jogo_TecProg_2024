@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Users\Default\kaue\TecProg\Jogo_TecProg_2024\Jogo_TecProg_2024\build\CMakeFiles\4705793366d70abe78f900c3755ce1c5\Experimental.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Users\Default\kaue\TecProg\Jogo_TecProg_2024\Jogo_TecProg_2024\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\Users\Default\kaue\TecProg\Jogo_TecProg_2024\Jogo_TecProg_2024\build\CMakeFiles\Experimental" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A1A232F0-D5AE-3CEC-9D69-1E94977B3697}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
