@@ -16,6 +16,7 @@ Jogo::Jogo()
 
     //Ger_Graf->getJanela()->setView(Ger_Graf->getCamera());
     fase1.Setar_Jogadores_Colisoes(&jogador_1, &jogador_2);
+    estado_atual = EstadoJogo::MENU_PRINCIPAL;
 }
 
 Jogo::~Jogo()
@@ -83,7 +84,7 @@ void Jogo::Atualiza() {
     
     atualiza_Camera();
 
-    //descomentar essa execução caso não achar interessante a movimentação da camera ao colidir.
+    //descomentar essa execuï¿½ï¿½o caso nï¿½o achar interessante a movimentaï¿½ï¿½o da camera ao colidir.
     //fase1.Executar();
     
     //Ger_Graf->getCamera()->setCenter(jogador_1.get_Centro());

@@ -1,6 +1,7 @@
 #pragma once
 #include "Ente.h"
 #include "SFML/Graphics.hpp"
+
 class Jogo;
 class Menu : public Ente {
 	private:
@@ -29,6 +30,7 @@ class Menu : public Ente {
 		void Executar();
 		void executar();
 		void atualizar();
+		void desenhar();
 		sf::RenderWindow * getJanelaMenu();
 		bool getPressionado();
 		void setPressionado(bool valor);

@@ -4,6 +4,12 @@
 #include "Jogador.h"
 #include "Fase_1.h"
 
+enum class EstadoJogo{
+	MENU_PRINCIPAL,
+	JOGANDO,
+	PAUSADO,
+	FIM_DE_JOGO
+};
 class Jogo
 {
 	private:
@@ -12,6 +18,7 @@ class Jogo
 		Entidades::Personagens::Jogador jogador_2;
 		Fases::Fase_1 fase1;
 		//sf::Clock tempo_principal;
+		EstadoJogo estado_atual;
 
 	public:
 		Jogo();
