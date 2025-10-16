@@ -25,25 +25,21 @@ void Menu::atribuir() {
 
 	pressionado = selecionado = false;
 
-	// DENTRO DE Menu::atribuir()
-
 	std::cout << "--- Iniciando o carregamento de assets do Menu ---" << std::endl;
 
-	// ---- VERIFICANDO A FONTE ----
-	if (fonte->loadFromFile("./assets/tropifonte.ttf")) {
-		std::cout << "[SUCESSO] Fonte 'tropifonte.ttf' carregada." << std::endl;
+	if (fonte->loadFromFile("./assets/Jersey25-Regular.ttf")) {
+		std::cout << "[SUCESSO] Fonte 'Jersey25-Regular.ttf' carregada." << std::endl;
 	} else {
-		std::cout << "[ERRO FATAL] Nao foi possivel encontrar ou carregar a fonte './assets/tropifonte.ttf'" << std::endl;
+		std::cout << "[ERRO FATAL] Nao foi possivel encontrar ou carregar a fonte './assets/Jersey25-Regular.ttf'" << std::endl;
 	}
 
-	// ---- VERIFICANDO A IMAGEM ----
 	if (figura->loadFromFile("./assets/menu.jpg")) { // <--- CONFIRME SE O NOME É .jpg ou .png
 		std::cout << "[SUCESSO] Imagem 'menu.jpg' carregada." << std::endl;
 		pFigura->setTexture(figura);
 	}
 	else {
 		std::cout << "[ERRO FATAL] Nao foi possivel encontrar ou carregar a imagem './assets/menu.jpg'" << std::endl;
-    // Se a imagem não carregar, vamos pelo menos pintar o fundo de uma cor para ver algo.
+		
     pFigura->setFillColor(sf::Color::Magenta); // Magenta é uma cor feia que chama a atenção
     pFigura->setSize(sf::Vector2f(800.0f, 600.0f));
 	}

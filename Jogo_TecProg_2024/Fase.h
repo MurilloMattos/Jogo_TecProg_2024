@@ -11,7 +11,7 @@ namespace Fases {
 	{
 		protected:
 
-			//tem como a lista_Entidades passar parametros a classe que não necessáriamente entidades?
+			//tem como a lista_Entidades passar parametros a classe que nï¿½o necessï¿½riamente entidades?
 			bool ganhou;
 			bool perdeu;
 			Listas::Lista_Entidades lista_Entidades;
@@ -46,11 +46,11 @@ namespace Fases {
 			void Setar_Jogadores_Colisoes(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
 			virtual void Executar();
 
-			//piso é inerente as fases e a plataforma é obstáculo nas 2 fases.
+			//piso ï¿½ inerente as fases e a plataforma ï¿½ obstï¿½culo nas 2 fases.
 			void Cria_Piso();
 			void Cria_Plataforma();
 
-			//inimigos fáceis
+			//inimigos fï¿½ceis
 			void Cria_Inimigos_Piratas();
 			//void Cria_Inimigos_Capitao();
 
@@ -61,7 +61,7 @@ namespace Fases {
 			void criar_cenario();
 			void verifica_Inimigos_Neutralizados();
 
-			//void executa_Colisões();
+			//void executa_Colisoes();
 
 	};
 }

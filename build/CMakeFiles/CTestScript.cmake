@@ -5,8 +5,8 @@
 cmake_minimum_required(VERSION 4.1.0)
 
 # CTest Start Step
-set(CTEST_SOURCE_DIRECTORY "E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024")
-set(CTEST_BINARY_DIRECTORY "E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build")
+set(CTEST_SOURCE_DIRECTORY "E:/Users/Default/kaue/TecProg/JOGO_TECPROG_2024")
+set(CTEST_BINARY_DIRECTORY "E:/Users/Default/kaue/TecProg/JOGO_TECPROG_2024/build")
 
 # CTest Update Step
 set(CTEST_UPDATE_COMMAND "C:/Program Files/Git/cmd/git.exe")

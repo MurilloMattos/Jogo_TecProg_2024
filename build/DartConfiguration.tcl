@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024
-BuildDirectory: E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024/build
+SourceDirectory: E:/Users/Default/kaue/TecProg/JOGO_TECPROG_2024
+BuildDirectory: E:/Users/Default/kaue/TecProg/JOGO_TECPROG_2024/build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -27,7 +27,7 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "C:/Program Files/CMake/bin/cmake.exe" "E:/Users/Default/kaue/TecProg/Jogo_TecProg_2024/Jogo_TecProg_2024"
+ConfigureCommand: "C:/Program Files/CMake/bin/cmake.exe" "E:/Users/Default/kaue/TecProg/JOGO_TECPROG_2024"
 MakeCommand: "C:\Program Files\CMake\bin\cmake.exe" --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 

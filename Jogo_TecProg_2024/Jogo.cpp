@@ -7,23 +7,19 @@ using namespace Fases;
 
 Jogo::Jogo()
 {
-    std::cout << "--- PONTO DE CONTROLE 2: Construtor de Jogo iniciou. ---" << std::endl;
+    pMenu = nullptr;
+    pFase_Atual = nullptr;
+    pFase1 = nullptr;
+    pJogador1 = nullptr;
+    pJogador2 = nullptr;
 
-    jogador_2.setar_Dois_Jogadores(false);
-
-    Ger_Graf = Gerenciador_Grafico::getInstance();
-    //fase1.Setar_Jogadores_Colisoes(&jogador_1, nullptr);
-
+    pGer_Graf = Gerenciador_Grafico::getInstance();
+    //pfase1->Setar_Jogadores_Colisoes(&jogador_1, nullptr);
 
     //Ger_Graf->getJanela()->setView(Ger_Graf->getCamera());
-    fase1.Setar_Jogadores_Colisoes(&jogador_1, &jogador_2);
     estado_atual = EstadoJogo::MENU_PRINCIPAL;
 
-    std::cout << "--- PONTO DE CONTROLE 3: Preste a criar o Menu... ---" << std::endl;
-
     pMenu = new Menu();
-
-    std::cout << "--- PONTO DE CONTROLE 4: Menu criado com sucesso. ---" << std::endl;
 
     pMenu->set_pJog(this);
 }
@@ -39,57 +35,70 @@ void Jogo::Executar()
     //tempo_principal.restart();
     //tempo.getElapsedTime().asSeconds();
 
-    while (Ger_Graf->getJanela()->isOpen())
+    while (pGer_Graf->getJanela()->isOpen())
     {
-        
-
         sf::Event evento;
 
-        Ger_Graf->getJanela()->setFramerateLimit(60);
+        pGer_Graf->getJanela()->setFramerateLimit(60);
 
         //tempo.restart();
 
-        while (Ger_Graf->getJanela()->pollEvent(evento))
+        while (pGer_Graf->getJanela()->pollEvent(evento))//trata eventos
         {
-                if (evento.type == sf::Event::Closed) {
-                    Ger_Graf->getJanela()->close();
+                if (evento.type == sf::Event::Closed) {//se o evento for fechar a janela
+                    pGer_Graf->getJanela()->close();
                 }
         }
 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))//se a tecla ESC for pressionada
         {
             // deve ser modificado para encaixar o menu de pause.
-            Ger_Graf->getJanela()->close();
+            pGer_Graf->getJanela()->close();
         }
 
-        Ger_Graf->getJanela()->clear();
+        pGer_Graf->getJanela()->clear();
 
         //std::cout << i << std::endl;
         //i++;
         //std::cout << tempo_principal.getElapsedTime().asSeconds(); //<< std::endl;
         //tempo.restart();
+        
+        switch (estado_atual) {
+            case EstadoJogo::MENU_PRINCIPAL:{
+                if(pMenu){
+                    pMenu->Executar();
+                }
+                break;
+            }
+            case EstadoJogo::JOGANDO:{
+                Atualiza();
+                break;
+            }
+            case EstadoJogo::FIM_DE_JOGO:{
+                pGer_Graf->getJanela()->close();
+                break;
+            }
+        }
 
-        Atualiza();
+        pGer_Graf->getJanela()->display();
 
-        Ger_Graf->getJanela()->display();
-
-        if (fase1.get_Ganhou()) {
-            Ger_Graf->getJanela()->close();
+        if (pFase1->get_Ganhou()) {
+            pGer_Graf->getJanela()->close();
         }
     }
 }
 
 void Jogo::Atualiza() {
 
+    if (pFase_Atual) {
+        pFase_Atual->Executar();
+    }
+    if (pJogador1) {
+        pJogador1->Executar();
+    }
+    if (pJogador2->get_Dois_Jogadores()) {
 
-
-
-    fase1.Executar();
-    jogador_1.Executar();
-
-    if (jogador_2.get_Dois_Jogadores()) {
-        
-        jogador_2.Executar();
+        pJogador2->Executar();
     }
     
     atualiza_Camera();
@@ -105,7 +114,7 @@ void Jogo::Atualiza() {
 }
 
 void Jogo::atualiza_Camera() {
-    Ger_Graf->getJanela()->setView(*Ger_Graf->getCamera());
-    Ger_Graf->getCamera()->setCenter(jogador_1.get_Centro());
+    pGer_Graf->getJanela()->setView(*pGer_Graf->getCamera());
+    pGer_Graf->getCamera()->setCenter(pJogador1->get_Centro());
 
 }

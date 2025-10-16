@@ -2,6 +2,7 @@
 
 #include "Gerenciador_Grafico.h"
 #include "Jogador.h"
+#include "Fase.h"
 #include "Fase_1.h"
 #include "Menu.h"
 
@@ -14,13 +15,14 @@ enum class EstadoJogo{
 class Jogo
 {
 	private:
-		Gerenciadores::Gerenciador_Grafico* Ger_Graf;
-		Entidades::Personagens::Jogador jogador_1;
-		Entidades::Personagens::Jogador jogador_2;
-		Fases::Fase_1 fase1;
+		Gerenciadores::Gerenciador_Grafico* pGer_Graf;
+		Entidades::Personagens::Jogador* pJogador1;
+		Entidades::Personagens::Jogador* pJogador2;
+		Fases::Fase_1* pFase1;
 		//sf::Clock tempo_principal;
 		EstadoJogo estado_atual;
 		Menu* pMenu;
+		Fases::Fase* pFase_Atual;
 
 	public:
 		Jogo();
