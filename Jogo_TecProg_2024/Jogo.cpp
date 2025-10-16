@@ -7,6 +7,7 @@ using namespace Fases;
 
 Jogo::Jogo()
 {
+    std::cout << "--- PONTO DE CONTROLE 2: Construtor de Jogo iniciou. ---" << std::endl;
 
     jogador_2.setar_Dois_Jogadores(false);
 
@@ -17,10 +18,19 @@ Jogo::Jogo()
     //Ger_Graf->getJanela()->setView(Ger_Graf->getCamera());
     fase1.Setar_Jogadores_Colisoes(&jogador_1, &jogador_2);
     estado_atual = EstadoJogo::MENU_PRINCIPAL;
+
+    std::cout << "--- PONTO DE CONTROLE 3: Preste a criar o Menu... ---" << std::endl;
+
+    pMenu = new Menu();
+
+    std::cout << "--- PONTO DE CONTROLE 4: Menu criado com sucesso. ---" << std::endl;
+
+    pMenu->set_pJog(this);
 }
 
 Jogo::~Jogo()
 {
+    delete pMenu;
 }
 
 void Jogo::Executar()

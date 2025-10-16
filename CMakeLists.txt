@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10.0)
 project(JOGO_TECPROG_2024 VERSION 0.1.0 LANGUAGES C CXX)
 
 file(GLOB_RECURSE SOURCES "Jogo_TecProg_2024/*.cpp")
-file(GLOB_RECURSE HEADER_FILES "Jogo_TecProg_2024/*.h *.hpp")
+file(GLOB_RECURSE HEADER_FILES "Jogo_TecProg_2024/*.h" "Jogo_TecProg_2024/*.hpp")
 
 set(INCLUDE_DIRECTORIES "")
 
@@ -26,7 +26,7 @@ target_link_libraries(JOGO_TECPROG_2024
     sfml-window
     sfml-system
     sfml-audio
-    sfml-networkGit
+    sfml-network
 )
 
 include(CTest)

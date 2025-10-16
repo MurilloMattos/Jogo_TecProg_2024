@@ -9,10 +9,10 @@ protected:
 	int id;
 	static int id_contador;
 
-	//acesso a biblioteca graf (eveitar includes redundantes)
+	//acesso a biblioteca graf (evitar includes redundantes)
 	Gerenciadores::Gerenciador_Grafico* pGG;
 
-	//todo Ente possuí uma figura retangular
+	//todo Ente possui uma figura retangular
 	sf::RectangleShape* pFigura;
 
 public:

@@ -10,6 +10,7 @@ class Menu : public Ente {
 		sf::RectangleShape *exitMenu;
 		sf::Font *fonte;
 		//sf::Text *texto;
+		sf::Texture *figura;
 		sf::Vector2i posicaoMouse;
 		sf::Vector2f coordMouse;
 		int posicaoMenu;
@@ -28,8 +29,6 @@ class Menu : public Ente {
 		~Menu();
 		void atribuir();
 		void Executar();
-		void executar();
-		void atualizar();
 		void desenhar();
 		sf::RenderWindow * getJanelaMenu();
 		bool getPressionado();

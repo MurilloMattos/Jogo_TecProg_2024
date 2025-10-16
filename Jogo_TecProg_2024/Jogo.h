@@ -3,6 +3,7 @@
 #include "Gerenciador_Grafico.h"
 #include "Jogador.h"
 #include "Fase_1.h"
+#include "Menu.h"
 
 enum class EstadoJogo{
 	MENU_PRINCIPAL,
@@ -19,6 +20,7 @@ class Jogo
 		Fases::Fase_1 fase1;
 		//sf::Clock tempo_principal;
 		EstadoJogo estado_atual;
+		Menu* pMenu;
 
 	public:
 		Jogo();
