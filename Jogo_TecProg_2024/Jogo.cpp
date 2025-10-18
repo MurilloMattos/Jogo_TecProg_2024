@@ -10,8 +10,8 @@ Jogo::Jogo()
     pMenu = nullptr;
     pFase_Atual = nullptr;
     pFase1 = nullptr;
-    pJogador1 = nullptr;
-    pJogador2 = nullptr;
+    pJog1 = NULL;
+    pJog2 = NULL;
 
     pGer_Graf = Gerenciador_Grafico::getInstance();
     //pfase1->Setar_Jogadores_Colisoes(&jogador_1, nullptr);
@@ -93,12 +93,12 @@ void Jogo::Atualiza() {
     if (pFase_Atual) {
         pFase_Atual->Executar();
     }
-    if (pJogador1) {
-        pJogador1->Executar();
+    if (pJog1) {
+        pJog1.Executar();
     }
-    if (pJogador2->get_Dois_Jogadores()) {
+    if (pJog2.get_Dois_Jogadores()) {
 
-        pJogador2->Executar();
+        pJog2.Executar();
     }
     
     atualiza_Camera();
@@ -115,6 +115,6 @@ void Jogo::Atualiza() {
 
 void Jogo::atualiza_Camera() {
     pGer_Graf->getJanela()->setView(*pGer_Graf->getCamera());
-    pGer_Graf->getCamera()->setCenter(pJogador1->get_Centro());
+    pGer_Graf->getCamera()->setCenter(pJog1.get_Centro());
 
 }

@@ -16,8 +16,8 @@ class Jogo
 {
 	private:
 		Gerenciadores::Gerenciador_Grafico* pGer_Graf;
-		Entidades::Personagens::Jogador* pJogador1;
-		Entidades::Personagens::Jogador* pJogador2;
+		Entidades::Personagens::Jogador pJog1;
+		Entidades::Personagens::Jogador pJog2;
 		Fases::Fase_1* pFase1;
 		//sf::Clock tempo_principal;
 		EstadoJogo estado_atual;
