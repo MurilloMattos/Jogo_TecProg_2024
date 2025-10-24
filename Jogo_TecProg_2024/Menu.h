@@ -5,7 +5,7 @@
 class Jogo;
 class Menu : public Ente {
 	private:
-		Jogo *pJog;
+		Jogo *pJogo;
 		sf::RenderWindow *menu;
 		sf::RectangleShape *exitMenu;
 		sf::Font *fonte;
@@ -25,7 +25,7 @@ class Menu : public Ente {
 		
 				
 	public:
-		Menu();
+		Menu(Jogo *pJogo);
 		~Menu();
 		void atribuir();
 		void Executar();
@@ -43,6 +43,5 @@ class Menu : public Ente {
 		void setPosicaoMenu(int pos);
 		int getPosicaoMenu();
 		std::vector<sf::Text>* getTextos();
-		void set_pJog(Jogo *pJ);
 		Jogo* get_pJog(); 
 };

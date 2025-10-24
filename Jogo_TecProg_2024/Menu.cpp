@@ -1,7 +1,7 @@
 #include "Jogo.h"
 #include "Menu.h"
-Menu::Menu():Ente(), posicaoMenu(0) {
-	pJog = NULL;
+Menu::Menu(Jogo *pJogo):Ente(), posicaoMenu(0) {
+	pJogo = NULL;
 	//menu = pGG->criaJanela("Menu", 500, 500);
 	exitMenu = new sf::RectangleShape();
  	fonte = new sf::Font();
@@ -10,7 +10,7 @@ Menu::Menu():Ente(), posicaoMenu(0) {
 	atribuir();	
 }
 Menu::~Menu() {
-	pJog = NULL;
+	pJogo = NULL;
 	//delete menu;
 	delete exitMenu;
 	delete fonte;
@@ -146,13 +146,6 @@ int Menu::getPosicaoMenu() {
 std::vector<sf::Text>* Menu::getTextos() {
 	return &textos;
 }
-void Menu::set_pJog(Jogo *pJ) {
-	if(pJ) {
-		pJog = pJ;
-	}else{
-	  	std::cout << "tentando acessar ponteiro nullo" << std::endl;
-	}	
-}
 Jogo* Menu::get_pJog() {
-return pJog;
+return pJogo;
 }

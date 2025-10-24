@@ -5,28 +5,19 @@ using namespace Entidades;
 using namespace Personagens;
 using namespace Fases;
 
-Jogo::Jogo()
+Jogo::Jogo() : pGer_Graf(Gerenciador_Grafico::getInstance()),
+menu(this),//menu com ponteiro para Jogo
+fase1(),
+pJog1(),
+pJog2()
 {
-    pMenu = nullptr;
-    pFase_Atual = nullptr;
-    pFase1 = nullptr;
-    pJog1 = NULL;
-    pJog2 = NULL;
-
-    pGer_Graf = Gerenciador_Grafico::getInstance();
-    //pfase1->Setar_Jogadores_Colisoes(&jogador_1, nullptr);
-
     //Ger_Graf->getJanela()->setView(Ger_Graf->getCamera());
     estado_atual = EstadoJogo::MENU_PRINCIPAL;
-
-    pMenu = new Menu();
-
-    pMenu->set_pJog(this);
 }
 
 Jogo::~Jogo()
 {
-    delete pMenu;
+    menu = NULL;
 }
 
 void Jogo::Executar()
@@ -65,24 +56,30 @@ void Jogo::Executar()
         
         switch (estado_atual) {
             case EstadoJogo::MENU_PRINCIPAL:{
-                if(pMenu){
-                    pMenu->Executar();
-                }
+                menu.Executar();
                 break;
             }
-            case EstadoJogo::JOGANDO:{
-                Atualiza();
+            case EstadoJogo::FASE_1:{
+                fase1.Executar();
+                break;
+            }
+            case EstadoJogo::FASE_2:{
+                //fazer depois
+                break;
+            }
+            case EstadoJogo::PAUSADO:{
+                //fazer depois
                 break;
             }
             case EstadoJogo::FIM_DE_JOGO:{
-                pGer_Graf->getJanela()->close();
+                //fazer depois
                 break;
             }
         }
 
         pGer_Graf->getJanela()->display();
 
-        if (pFase1->get_Ganhou()) {
+        if (fase1.get_Ganhou()) {
             pGer_Graf->getJanela()->close();
         }
     }
@@ -90,14 +87,11 @@ void Jogo::Executar()
 
 void Jogo::Atualiza() {
 
-    if (pFase_Atual) {
-        pFase_Atual->Executar();
-    }
-    if (pJog1) {
-        pJog1.Executar();
-    }
-    if (pJog2.get_Dois_Jogadores()) {
+    fase1.Executar();
+    
+    pJog1.Executar();
 
+    if (pJog2.get_Dois_Jogadores()) {
         pJog2.Executar();
     }
     
@@ -117,4 +111,8 @@ void Jogo::atualiza_Camera() {
     pGer_Graf->getJanela()->setView(*pGer_Graf->getCamera());
     pGer_Graf->getCamera()->setCenter(pJog1.get_Centro());
 
+}
+
+void Jogo::set_Estado_Atual(EstadoJogo estado) {
+    estado_atual = estado;
 }
