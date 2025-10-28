@@ -8,14 +8,14 @@ using namespace Fases;
 Jogo::Jogo()
 {
 
-    //jogador_2.setar_Dois_Jogadores(true);
+    jogador_2.setar_Dois_Jogadores(true);
 
     Ger_Graf = Gerenciador_Grafico::getInstance();
-    fase1.Setar_Jogadores_Colisoes(&jogador_1, nullptr);
+    //fase1.Setar_Jogadores_Colisoes(&jogador_1, nullptr);
 
 
     //Ger_Graf->getJanela()->setView(Ger_Graf->getCamera());
-    //fase1.Setar_Jogadores_Colisoes(&jogador_1, &jogador_2);
+    fase1.Setar_Jogadores_Colisoes(&jogador_1, &jogador_2);
 }
 
 Jogo::~Jogo()
@@ -24,6 +24,9 @@ Jogo::~Jogo()
 
 void Jogo::Executar()
 {
+    //int i = 0;
+    //tempo_principal.restart();
+    //tempo.getElapsedTime().asSeconds();
 
     while (Ger_Graf->getJanela()->isOpen())
     {
@@ -33,6 +36,7 @@ void Jogo::Executar()
 
         Ger_Graf->getJanela()->setFramerateLimit(60);
 
+        //tempo.restart();
 
         while (Ger_Graf->getJanela()->pollEvent(evento))
         {
@@ -49,6 +53,10 @@ void Jogo::Executar()
 
         Ger_Graf->getJanela()->clear();
 
+        //std::cout << i << std::endl;
+        //i++;
+        //std::cout << tempo_principal.getElapsedTime().asSeconds(); //<< std::endl;
+        //tempo.restart();
 
         Atualiza();
 
@@ -62,10 +70,17 @@ void Jogo::Executar()
 
 void Jogo::Atualiza() {
 
-    
+
+
 
     fase1.Executar();
     jogador_1.Executar();
+
+    if (jogador_2.get_Dois_Jogadores()) {
+        
+        jogador_2.Executar();
+    }
+    
     atualiza_Camera();
 
     //descomentar essa execução caso não achar interessante a movimentação da camera ao colidir.
@@ -74,7 +89,7 @@ void Jogo::Atualiza() {
     //Ger_Graf->getCamera()->setCenter(jogador_1.get_Centro());
     //Ger_Graf->getCamera()->move(jogador_1.get_Centro());
 
-    //jogador_2.Executar();
+    
 
 }
 

@@ -10,8 +10,6 @@ Fase::Fase() {
 	srand(static_cast<unsigned int>(time(0)));
 	num_plataformas = rand() % 7;
 
-	lista_id_inimigos.clear();
-
 	ganhou = false;
 
 	tam_Piso_Fase.x = 2500.f;
@@ -37,13 +35,21 @@ Fase::~Fase() {
 	delete piso;
 }
 
-
-void Fases::Fase::Setar_Jogadores(Jogador* p_jogador1,Jogador* p_jogador2)
+/*
+Gerenciadores::Gerenciador_colisoes* Fase::get_Gerenciador_Colisoes()
 {
-	Setar_Jogadores_Colisoes(p_jogador1, p_jogador2);
-	Setar_Jogadores_Inimigos(p_jogador1, p_jogador2);
+	return &gerenciador_colisoes;
+}
+Listas::Lista_Entidades* Fase::get_Lista_Entidades()
+{
+	return &lista_Entidades;
 }
 
+int Fases::Fase::get_Num_Plataformas()
+{
+	return num_plataformas;
+}
+*/
 void Fases::Fase::Setar_Jogadores_Colisoes(Jogador* p_jogador1, Jogador* p_jogador2){
 
 	if ((p_jogador1 != nullptr) && (p_jogador2 == nullptr)) {
@@ -56,33 +62,18 @@ void Fases::Fase::Setar_Jogadores_Colisoes(Jogador* p_jogador1, Jogador* p_jogad
 	}
 
 	else {
-		std::cout << "ERRO, SEM REF DE JOGADOR fase1.cpp" << std::endl;
+		std::cout << "ERRO, SEM REF DE JOGADOR fase.cpp" << std::endl;
 		system("pause");
 	}
 }
 
-void Fases::Fase::Setar_Jogadores_Inimigos(Jogador* p_jogador1, Jogador* p_jogador2)
-{
-	std::list<int>::iterator itr;
-
-	itr = lista_id_inimigos.begin();
-
-	while (itr != lista_id_inimigos.end()) {
-		
-		static_cast<Inimigo*>(lista_Entidades.get_Entidade_Por_Id(*itr))->setar_Jogador_No_Inimigo(p_jogador1, p_jogador2);
-
-		itr++;
-	}
-
-}
-
 void Fase::Cria_Piso() {
-
-	piso = new Plataforma;
-	piso->seta_Plataforma(tam_Piso_Fase.y, tam_Piso_Fase.x, pos_Piso.x, pos_Piso.y);
+	piso = new Piso;
+	piso->seta_Piso(tam_Piso_Fase.y, tam_Piso_Fase.x, pos_Piso.x, pos_Piso.y);
 
 	gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(piso));
 	lista_Entidades.Incluir(static_cast<Entidade*>(piso));
+	
 }
 
 void Fases::Fase::Cria_Plataforma() {
@@ -91,8 +82,8 @@ void Fases::Fase::Cria_Plataforma() {
 	if (num_plataformas < 4){
 		num_plataformas = 4;
 	}
-
-
+	
+	//num_plataformas = 7;
 	std::cout << num_plataformas << std::endl;
 
 	int i;
@@ -100,8 +91,8 @@ void Fases::Fase::Cria_Plataforma() {
 
 	for (i = 0; i < num_plataformas; i++) {
 
-		plataforma = new Plataforma;
-		plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x, pos_original.x + espaco, pos_original.y);
+		plataforma = new Piso;
+		plataforma->seta_Piso(tam_plataforma.y, tam_plataforma.x, pos_original.x + espaco, pos_original.y);
 
 		
 		espaco += (tam_plataforma.x*2.5f + rand()%200);
@@ -115,13 +106,12 @@ void Fases::Fase::Cria_Plataforma() {
 	
 }
 
-void Fases::Fase::Cria_Inimigos_Piratas(){
+void Fases::Fase::Cria_Inimigos_Piratas(float x, float y){
 	Inimigo_Medio* pirata;
 
 	pirata = new Inimigo_Medio;
-	pirata->setar_Pos(290.f, 100.f);
+	pirata->setar_Pos(x, y);
 
-	lista_id_inimigos.push_front(pirata->getId());
 	gerenciador_colisoes.Incluir_Inimigo(pirata);
 	lista_Entidades.Incluir(static_cast<Entidade*>(pirata));
 }
@@ -131,45 +121,39 @@ bool Fases::Fase::get_Ganhou()
 	return ganhou;
 }
 
+/*
 void Fase::Cria_Inimigos() {
 
-	Cria_Inimigos_Piratas();
+	//Cria_Inimigos_Piratas(290.f, 100.f);
+}
+*/
+
+void Fases::Fase::criar_cenario()
+{
+
+
 }
 
 void Fases::Fase::verifica_Inimigos_Neutralizados(){
 
 
-	Entidade* pInimigo_Neutralizado = gerenciador_colisoes.Inimigo_neutralizado();
-
-	std::list<int>::iterator itr;
-
-	itr = lista_id_inimigos.begin();
-
-	while(itr != lista_id_inimigos.end()) {
-		if (*itr == pInimigo_Neutralizado->getId()) {
-			lista_id_inimigos.erase(itr);
-			break;
-		}
-
-		itr++;
-	}
-
-	lista_Entidades.Remover(pInimigo_Neutralizado);
+	lista_Entidades.Remover(gerenciador_colisoes.Inimigo_neutralizado());
 
 	if (gerenciador_colisoes.verifica_Lista_Inimigos_Vazia()) {
 
 		std::cout << "todos os inimigos foram eliminados!" << std::endl;
 		ganhou = true;
 	}
-
 }
 
 void Fases::Fase::Executar() {
 
 
+	
 	verifica_Inimigos_Neutralizados();
 	gerenciador_colisoes.Executar();
 	lista_Entidades.Percorrer();
 }
+
 
 

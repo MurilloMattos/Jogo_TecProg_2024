@@ -81,6 +81,7 @@ Entidade* Gerenciador_colisoes::Inimigo_neutralizado()
 
 		if (lista_Inimigos[i]->get_Vitalidade() <= 0) {
 
+
  			aux = lista_Inimigos[i];
 			lista_Inimigos.erase(lista_Inimigos.begin() + i);
 			
@@ -510,7 +511,7 @@ void Gerenciador_colisoes::Executar(){
 
 	tratar_Colisoes_Jogador_Obstaculo(pJogador1);
 	tratar_Colisoes_Jogador_Projeteis(pJogador1);
-	if (pJogador2) {
+	if (pJogador2->get_Dois_Jogadores()) {
 		tratar_Colisoes_Jogador_Obstaculo(pJogador2);
 		tratar_Colisoes_Jogador_Projeteis(pJogador2);
 	}

@@ -75,7 +75,7 @@ void Jogador::Executar() {
 			x -= velocidade.x;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-			y -= velocidade.y;
+			executando_Pulo();
 		}
 	}
 	
