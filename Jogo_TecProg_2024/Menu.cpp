@@ -33,7 +33,7 @@ void Menu::atribuir() {
 		std::cout << "[ERRO FATAL] Nao foi possivel encontrar ou carregar a fonte './assets/Jersey25-Regular.ttf'" << std::endl;
 	}
 
-	if (figura->loadFromFile("./assets/menu.jpg")) { // <--- CONFIRME SE O NOME É .jpg ou .png
+	if (figura->loadFromFile("./assets/menu.jpg")) { 
 		std::cout << "[SUCESSO] Imagem 'menu.jpg' carregada." << std::endl;
 		pFigura->setTexture(figura);
 	}
@@ -45,8 +45,6 @@ void Menu::atribuir() {
 	}
 
 	std::cout << "--- Fim do carregamento de assets ---" << std::endl;
-
-	// O resto do código (configuração de textos, etc.) continua aqui...
 
 	pFigura->setScale(0.7680f, 0.500f);
 	pFigura->setPosition(290.0f,140.0f);
@@ -90,7 +88,6 @@ void Menu::Executar() {
 			selecionado = true;
 			if(sf::Mouse::isButtonPressed(sf::Mouse::Left)) {//se o botão esquerdo do mouse estiver pressionado
 				pressionado = true;
-				//std::cout << "opcao " << i << " selecionada" << std::endl;
 			}
 		}
 		else{

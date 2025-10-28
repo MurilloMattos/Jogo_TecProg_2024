@@ -5,7 +5,7 @@ using namespace Entidades;
 using namespace Personagens;
 using namespace Fases;
 
-Jogo::Jogo() : pGer_Graf(Gerenciador_Grafico::getInstance()),
+Jogo::Jogo() : GG(Gerenciador_Grafico::getInstance()),
 menu(this),//menu com ponteiro para Jogo
 fase1(),
 pJog1(),
@@ -26,28 +26,28 @@ void Jogo::Executar()
     //tempo_principal.restart();
     //tempo.getElapsedTime().asSeconds();
 
-    while (pGer_Graf->getJanela()->isOpen())
+    while (GG->getJanela()->isOpen())
     {
         sf::Event evento;
 
-        pGer_Graf->getJanela()->setFramerateLimit(60);
+        GG->getJanela()->setFramerateLimit(60);
 
         //tempo.restart();
 
-        while (pGer_Graf->getJanela()->pollEvent(evento))//trata eventos
+        while (GG->getJanela()->pollEvent(evento))//trata eventos
         {
                 if (evento.type == sf::Event::Closed) {//se o evento for fechar a janela
-                    pGer_Graf->getJanela()->close();
+                    GG->getJanela()->close();
                 }
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))//se a tecla ESC for pressionada
         {
             // deve ser modificado para encaixar o menu de pause.
-            pGer_Graf->getJanela()->close();
+            GG->getJanela()->close();
         }
 
-        pGer_Graf->getJanela()->clear();
+        GG->getJanela()->clear();
 
         //std::cout << i << std::endl;
         //i++;
@@ -77,10 +77,10 @@ void Jogo::Executar()
             }
         }
 
-        pGer_Graf->getJanela()->display();
+        GG->getJanela()->display();
 
         if (fase1.get_Ganhou()) {
-            pGer_Graf->getJanela()->close();
+            GG->getJanela()->close();
         }
     }
 }
@@ -108,8 +108,8 @@ void Jogo::Atualiza() {
 }
 
 void Jogo::atualiza_Camera() {
-    pGer_Graf->getJanela()->setView(*pGer_Graf->getCamera());
-    pGer_Graf->getCamera()->setCenter(pJog1.get_Centro());
+    GG->getJanela()->setView(*GG->getCamera());
+    GG->getCamera()->setCenter(pJog1.get_Centro());
 
 }
 

@@ -39,7 +39,6 @@ class Menu : public Ente {
 		void setPosicaoMouse(sf::Vector2i pos);
 		sf::Vector2f getCoordsMouse();
 		void setCoordsMouse(sf::Vector2f coords);
-
 		void setPosicaoMenu(int pos);
 		int getPosicaoMenu();
 		std::vector<sf::Text>* getTextos();

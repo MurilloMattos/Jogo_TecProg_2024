@@ -4,7 +4,7 @@
 
 namespace Gerenciadores
 {
-	//singleton, só existe UM gerenciador grafico, em resumo, serve para que tenha apenas uma janela executável do jogo
+	//singleton, so existe UM gerenciador grafico, em resumo, serve para que tenha apenas uma janela executavel do jogo
 	class Gerenciador_Grafico
 	{
 		private:

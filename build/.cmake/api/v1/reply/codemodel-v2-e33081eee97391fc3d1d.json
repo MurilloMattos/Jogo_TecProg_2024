@@ -51,7 +51,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-Debug-85f608f1ed7521c669b7.json",
+					"jsonFile" : "target-ALL_BUILD-Debug-d9e3668f9bf8b5cd4d01.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -72,7 +72,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "JOGO_TECPROG_2024::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-JOGO_TECPROG_2024-Debug-f489ba3c26e6e06a3af0.json",
+					"jsonFile" : "target-JOGO_TECPROG_2024-Debug-c5d1abc7ef70ad5f76b0.json",
 					"name" : "JOGO_TECPROG_2024",
 					"projectIndex" : 0
 				},
@@ -149,7 +149,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-Release-85f608f1ed7521c669b7.json",
+					"jsonFile" : "target-ALL_BUILD-Release-d9e3668f9bf8b5cd4d01.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -170,7 +170,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "JOGO_TECPROG_2024::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-JOGO_TECPROG_2024-Release-01dbce745cc816b6b7f5.json",
+					"jsonFile" : "target-JOGO_TECPROG_2024-Release-212e3aef93067b0ab000.json",
 					"name" : "JOGO_TECPROG_2024",
 					"projectIndex" : 0
 				},
@@ -247,7 +247,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-MinSizeRel-85f608f1ed7521c669b7.json",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-d9e3668f9bf8b5cd4d01.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -268,7 +268,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "JOGO_TECPROG_2024::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-JOGO_TECPROG_2024-MinSizeRel-7b3529ba9fa8faa48961.json",
+					"jsonFile" : "target-JOGO_TECPROG_2024-MinSizeRel-4cfef149cce9773adbc7.json",
 					"name" : "JOGO_TECPROG_2024",
 					"projectIndex" : 0
 				},
@@ -345,7 +345,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-85f608f1ed7521c669b7.json",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-d9e3668f9bf8b5cd4d01.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -366,7 +366,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "JOGO_TECPROG_2024::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-JOGO_TECPROG_2024-RelWithDebInfo-90cd772f34a397ec4a6c.json",
+					"jsonFile" : "target-JOGO_TECPROG_2024-RelWithDebInfo-2297d3457b401ab3f90b.json",
 					"name" : "JOGO_TECPROG_2024",
 					"projectIndex" : 0
 				},

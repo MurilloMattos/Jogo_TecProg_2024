@@ -5,16 +5,10 @@
 #include "Fase_1.h"
 #include "Menu.h"
 
-enum class EstadoJogo{
-	MENU_PRINCIPAL,
-	JOGANDO,
-	PAUSADO,
-	FIM_DE_JOGO
-};
 class Jogo
 {
 	private:
-		Gerenciadores::Gerenciador_Grafico* pGer_Graf;
+		Gerenciadores::Gerenciador_Grafico* GG;
 		Entidades::Personagens::Jogador pJog1;
 		Entidades::Personagens::Jogador pJog2;
 		Fases::Fase_1 fase1;
