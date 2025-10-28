@@ -9,7 +9,9 @@ namespace Entidades {
 		{
 		protected:
 			int num_vitalidade;
-			float velocidade;
+			int dano;
+
+			sf::Vector2f tamanho;
 
 		public:
 			Personagem();
@@ -17,6 +19,8 @@ namespace Entidades {
 
 			void setar_Vitalidade(int vida);
 			void diminuir_Vitalidade(int dano);
+			int get_Vitalidade();
+			int danificar();
 
 			virtual void Salvar() = 0;
 			virtual void Executar() = 0;

@@ -144,9 +144,12 @@
     <None Include="sfml-window-2.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Capitao.h" />
     <ClInclude Include="Ente.h" />
     <ClInclude Include="Entidade.h" />
     <ClInclude Include="Fase.h" />
+    <ClInclude Include="Fase_1.h" />
+    <ClInclude Include="Fase_2.h" />
     <ClInclude Include="Gerenciador_Colisoes.h" />
     <ClInclude Include="Gerenciador_Grafico.h" />
     <ClInclude Include="Inimigo.h" />
@@ -164,8 +167,11 @@
     <ClInclude Include="Projetil.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Capitao.cpp" />
     <ClCompile Include="Entidade.cpp" />
     <ClCompile Include="Fase.cpp" />
+    <ClCompile Include="Fase_1.cpp" />
+    <ClCompile Include="Fase_2.cpp" />
     <ClCompile Include="Gerenciador_Colisoes.cpp" />
     <ClCompile Include="Gerenciador_Grafico.cpp" />
     <ClCompile Include="Inimigo.cpp" />
@@ -178,6 +184,7 @@
     <ClCompile Include="Obstaculo.cpp" />
     <ClCompile Include="Obstaculo_Dificil.cpp" />
     <ClCompile Include="Obstaculo_Medio.cpp" />
+    <ClCompile Include="Ente.cpp" />
     <ClCompile Include="Personagem.cpp" />
     <ClCompile Include="Piso.cpp" />
     <ClCompile Include="Projetil.cpp" />

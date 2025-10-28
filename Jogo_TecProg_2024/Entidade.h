@@ -9,7 +9,16 @@ namespace Entidades
 		float x, y;
 		float gravidade;
 		bool agressivo;
-		//bool colisao;
+		//const int semente_id_jogador;
+		//const int id_set;
+
+
+		//está faltando o ostream para escrever em arquivos, utilizado para salvar e carregar um bloco de notas por exemplo.
+
+		sf::Vector2f aceleracao;
+		sf::Vector2f velocidade;
+		sf::Vector2f velocidade_inicial;
+		sf::Vector2f centro;
 
 	public:
 		Entidade();
@@ -21,8 +30,13 @@ namespace Entidades
 
 
 		// escolhi deixar o pFigura mais restrito.
+		sf::Vector2f get_Centro();
+
 		float get_Largura();
 		float get_Altura();
+
+		float get_Comprimento_A();
+		float get_Comprimento_L();
 
 		float get_X() const;
 		float get_Y() const;

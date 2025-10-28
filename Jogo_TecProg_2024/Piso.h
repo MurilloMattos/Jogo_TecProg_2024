@@ -18,7 +18,7 @@ namespace Entidades {
 			Piso();
 			~Piso();
 
-			void seta_Piso(float alt, float larg);
+			void seta_Piso(float alt, float larg, float origem_x, float origem_y);
 			void Executar();
 			void obstacular(Entidades::Personagens::Jogador* p);
 			void Salvar();
