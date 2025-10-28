@@ -8,7 +8,7 @@ using namespace Fases;
 Jogo::Jogo()
 {
 
-    jogador_2.setar_Dois_Jogadores(false);
+    jogador_2.setar_Dois_Jogadores(true);
 
     Ger_Graf = Gerenciador_Grafico::getInstance();
     //fase1.Setar_Jogadores_Colisoes(&jogador_1, nullptr);

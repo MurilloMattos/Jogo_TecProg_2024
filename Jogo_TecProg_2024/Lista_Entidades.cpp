@@ -17,6 +17,7 @@ void Lista_Entidades::Remover(Entidade* pE) {
 
 	Lista<Entidade>::Elemento<Entidade>* aux_anterior, * aux_proximo, *aux_atual;
 
+
 	aux_anterior = nullptr;
 	aux_atual = nullptr;
 	aux_proximo = nullptr;
@@ -41,6 +42,8 @@ void Lista_Entidades::Remover(Entidade* pE) {
 		}
 
 		if (aux_atual != nullptr) {
+
+			std::cout << "eliminando o inimigo " << aux_atual->getInfo()->getId() << std::endl;
 
 			aux_anterior->setProximo(aux_atual->getProx());
 			delete aux_atual;

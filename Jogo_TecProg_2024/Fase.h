@@ -34,7 +34,7 @@ namespace Fases {
 
 		public:
 			Fase();
-			~Fase();
+			virtual ~Fase();
 
 			/*
 			//int get_Num_Plataformas();
@@ -51,7 +51,7 @@ namespace Fases {
 			void Cria_Plataforma();
 
 			//inimigos fáceis
-			void Cria_Inimigos_Piratas();
+			void Cria_Inimigos_Piratas(float x, float y);
 			//void Cria_Inimigos_Capitao();
 
 			bool get_Ganhou();

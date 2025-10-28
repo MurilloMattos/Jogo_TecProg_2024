@@ -9,6 +9,8 @@ namespace Fases{
 	private:
 
 		const int maxChefoes;
+		const int n_Inimigos;
+
 
 	public:
 

@@ -12,6 +12,9 @@ namespace Entidades
 		//const int semente_id_jogador;
 		//const int id_set;
 
+
+		//está faltando o ostream para escrever em arquivos, utilizado para salvar e carregar um bloco de notas por exemplo.
+
 		sf::Vector2f aceleracao;
 		sf::Vector2f velocidade;
 		sf::Vector2f velocidade_inicial;
