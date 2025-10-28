@@ -6,7 +6,7 @@ Fase_1::Fase_1() : Fase() , max_inimigos_medios(3) {
 
 
 
-	Criar_Inimigos();
+	Cria_Inimigos();
 }
 
 Fase_1::~Fase_1() {
@@ -35,9 +35,9 @@ void Fase_1::Cria_Plataforma() {
 
 }
 
-void Fase_1::Criar_Inimigos() {
+void Fase_1::Cria_Inimigos() {
 }
 
-void Fase_1::Criar_Obstaculos() {
+void Fase_1::Cria_Obstaculos() {
 
-}
+}	

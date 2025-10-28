@@ -15,11 +15,11 @@ namespace Fases {
 			void cria_Obstaculos_Dificeis();
 			void cria_Inimigos_Medios();
 			
-			virtual void Executar();
-			virtual void Cria_Piso();
-			virtual void Cria_Plataforma();
-			virtual void Criar_Inimigos();
-			virtual void Criar_Obstaculos();
+			void Executar();
+			void Cria_Piso();
+			void Cria_Plataforma();
+			void Cria_Inimigos();
+			void Cria_Obstaculos();
 	};
 
 }

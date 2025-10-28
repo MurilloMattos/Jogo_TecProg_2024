@@ -5,7 +5,13 @@ using namespace Entidades;
 using namespace Personagens;
 using namespace Fases;
 
-Jogo::Jogo()
+Jogo::Jogo() :
+Ger_Graf(),
+jogador_1(),
+jogador_2(),
+fase1(),
+menu(new Menu(this)),
+estado(Estado::MENU)
 {
 
     jogador_2.setar_Dois_Jogadores(false);
@@ -13,15 +19,25 @@ Jogo::Jogo()
 
     Ger_Graf = Gerenciador_Grafico::getInstance();
 
-	//mudar para a fase que for ser utilizada, a principio o menu é para alternar essas boleanas e chamar a função setar_Fase();
+	//mudar para a fase que for ser utilizada, a principio o menu ï¿½ para alternar essas boleanas e chamar a funï¿½ï¿½o setar_Fase();
     fase_1_ativa = false;
     fase_2_ativa = true;
 
     setar_Fase();
+
 }
 
 Jogo::~Jogo()
 {
+    delete menu;
+}
+
+void Jogo::setEstado(Estado novoEstado) {
+    estado = novoEstado;
+}
+
+Estado Jogo::getEstado() const {
+    return estado;
 }
 
 void Jogo::Executar()
@@ -32,7 +48,6 @@ void Jogo::Executar()
     while (Ger_Graf->getJanela()->isOpen())
     {
         
-
         sf::Event evento;
 
         Ger_Graf->getJanela()->setFramerateLimit(60);
@@ -57,37 +72,42 @@ void Jogo::Executar()
         Atualiza();
 
         Ger_Graf->getJanela()->display();
+
+        if (fase1.get_Ganhou()) {
+            Ger_Graf->getJanela()->close();
+        }
+
     }
 }
 
 void Jogo::Atualiza() {
 
-    //fase1.Executar();
+    if(estado == Estado::MENU) {
 
-    if (!acabou) {
-        if (fase_1_ativa) {
-            //fase_1.executar();
-        }
-        else if (fase_2_ativa) {
-            fase2.Executar();
+        menu->Executar();
+        if (menu->getFase_1()) {
+            estado = Estado::FASE_1;
         }
 
+    }
 
+    if(estado == Estado::FASE_1) {
+
+        fase1.Executar();
+        atualiza_Camera();
         jogador_1.Executar();
-
         if (jogador_2.get_Dois_Jogadores()) {
             jogador_2.Executar();
         }
 
         verifica_Fim_De_Jogo();
 
-        atualiza_Camera();
     }
+    
     else {
 		system("pause");
         //salvar o jogo ou mostrar a tela de fim de jogo
 	}
-
 }
 
 void Jogo::verifica_Fim_De_Jogo()
