@@ -523,30 +523,6 @@ ContinuousSubmit/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ContinuousSubmit.dir/build.make CMakeFiles/ContinuousSubmit.dir/build
 .PHONY : ContinuousSubmit/fast
 
-Jogo_TecProg_2024/Botao.o: Jogo_TecProg_2024/Botao.cpp.o
-.PHONY : Jogo_TecProg_2024/Botao.o
-
-# target to build an object file
-Jogo_TecProg_2024/Botao.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/JOGO_TECPROG_2024.dir/build.make CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.o
-.PHONY : Jogo_TecProg_2024/Botao.cpp.o
-
-Jogo_TecProg_2024/Botao.i: Jogo_TecProg_2024/Botao.cpp.i
-.PHONY : Jogo_TecProg_2024/Botao.i
-
-# target to preprocess a source file
-Jogo_TecProg_2024/Botao.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/JOGO_TECPROG_2024.dir/build.make CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.i
-.PHONY : Jogo_TecProg_2024/Botao.cpp.i
-
-Jogo_TecProg_2024/Botao.s: Jogo_TecProg_2024/Botao.cpp.s
-.PHONY : Jogo_TecProg_2024/Botao.s
-
-# target to generate assembly for a file
-Jogo_TecProg_2024/Botao.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/JOGO_TECPROG_2024.dir/build.make CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.s
-.PHONY : Jogo_TecProg_2024/Botao.cpp.s
-
 Jogo_TecProg_2024/Capitao.o: Jogo_TecProg_2024/Capitao.cpp.o
 .PHONY : Jogo_TecProg_2024/Capitao.o
 
@@ -1139,9 +1115,6 @@ help:
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
 	@echo "... JOGO_TECPROG_2024"
-	@echo "... Jogo_TecProg_2024/Botao.o"
-	@echo "... Jogo_TecProg_2024/Botao.i"
-	@echo "... Jogo_TecProg_2024/Botao.s"
 	@echo "... Jogo_TecProg_2024/Capitao.o"
 	@echo "... Jogo_TecProg_2024/Capitao.i"
 	@echo "... Jogo_TecProg_2024/Capitao.s"

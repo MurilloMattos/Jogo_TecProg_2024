@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Botao.cpp" "CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.o" "gcc" "CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.o.d"
   "/home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Capitao.cpp" "CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.o" "gcc" "CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.o.d"
   "/home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Ente.cpp" "CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Ente.cpp.o" "gcc" "CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Ente.cpp.o.d"
   "/home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Entidade.cpp" "CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Entidade.cpp.o" "gcc" "CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Entidade.cpp.o.d"

@@ -6,7 +6,8 @@ class Jogo;
 class Menu : public Ente {
 	private:
 		Jogo *pJogo;
-		sf::RenderWindow *menu;
+		Menu *menu;
+
 		sf::RectangleShape *exitMenu;
 		sf::Font *fonte;
 		//sf::Text *texto;

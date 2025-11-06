@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.o"
-  "CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.o.d"
   "CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.o"
   "CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.o.d"
   "CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Ente.cpp.o"

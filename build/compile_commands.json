@@ -1,11 +1,6 @@
 [
 {
   "directory": "/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build",
-  "command": "/usr/bin/c++  -I/home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024 -I/home/aluno/Desktop/kaue/Jogo_TecProg_2024/SFML-2.5.1/include -g -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Botao.cpp",
-  "file": "/home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Botao.cpp"
-},
-{
-  "directory": "/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build",
   "command": "/usr/bin/c++  -I/home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024 -I/home/aluno/Desktop/kaue/Jogo_TecProg_2024/SFML-2.5.1/include -g -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Capitao.cpp",
   "file": "/home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Capitao.cpp"
 },

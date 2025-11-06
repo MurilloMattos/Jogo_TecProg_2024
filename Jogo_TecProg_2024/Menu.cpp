@@ -1,5 +1,6 @@
 #include "Jogo.h"
 #include "Menu.h"
+
 Menu::Menu(Jogo *pJogo):Ente(), posicaoMenu(0) {
 	pJogo = NULL;
 	//menu = pGG->criaJanela("Menu", 500, 500);
@@ -50,7 +51,7 @@ void Menu::atribuir() {
 	pFigura->setPosition(290.0f,140.0f);
 	
 	opcoes = {"Menu","Continuar","Fases","Salvar jogada","Rank","Salvar pontuacao"};
-	coords = {{600,150},{520, 240},{520, 318},{520, 396},{520, 474},{520,552} };
+	coords = {{200,100},{200, 200},{200, 250},{200, 300},{200, 350},{200,400} };
 	tam = {44, 20,20,20,20,20};
 	textos.resize(6);
         for(size_t i = 0; i < textos.size(); i++) {

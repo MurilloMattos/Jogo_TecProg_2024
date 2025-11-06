@@ -69,24 +69,10 @@ include CMakeFiles/JOGO_TECPROG_2024.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 
-CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
-CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.o: ../Jogo_TecProg_2024/Botao.cpp
-CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Botao.cpp
-
-CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Botao.cpp > CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.i
-
-CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Botao.cpp -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.s
-
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.o: ../Jogo_TecProg_2024/Capitao.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Capitao.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.i: cmake_force
@@ -100,7 +86,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.s: cmake_force
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Ente.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Ente.cpp.o: ../Jogo_TecProg_2024/Ente.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Ente.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Ente.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Ente.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Ente.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Ente.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Ente.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Ente.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Ente.cpp.i: cmake_force
@@ -114,7 +100,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Ente.cpp.s: cmake_force
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Entidade.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Entidade.cpp.o: ../Jogo_TecProg_2024/Entidade.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Entidade.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Entidade.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Entidade.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Entidade.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Entidade.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Entidade.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Entidade.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Entidade.cpp.i: cmake_force
@@ -128,7 +114,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Entidade.cpp.s: cmake_force
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase.cpp.o: ../Jogo_TecProg_2024/Fase.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Fase.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase.cpp.i: cmake_force
@@ -142,7 +128,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase.cpp.s: cmake_force
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_1.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_1.cpp.o: ../Jogo_TecProg_2024/Fase_1.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_1.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_1.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_1.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_1.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_1.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_1.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Fase_1.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_1.cpp.i: cmake_force
@@ -156,7 +142,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_1.cpp.s: cmake_force
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_2.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_2.cpp.o: ../Jogo_TecProg_2024/Fase_2.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_2.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_2.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_2.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_2.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_2.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_2.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Fase_2.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_2.cpp.i: cmake_force
@@ -170,7 +156,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Fase_2.cpp.s: cmake_force
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Colisoes.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Colisoes.cpp.o: ../Jogo_TecProg_2024/Gerenciador_Colisoes.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Colisoes.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Colisoes.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Colisoes.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Colisoes.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Colisoes.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Colisoes.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Gerenciador_Colisoes.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Colisoes.cpp.i: cmake_force
@@ -184,7 +170,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Colisoes.cpp.s: c
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Grafico.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Grafico.cpp.o: ../Jogo_TecProg_2024/Gerenciador_Grafico.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Grafico.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Grafico.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Grafico.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Grafico.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Grafico.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Grafico.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Gerenciador_Grafico.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Grafico.cpp.i: cmake_force
@@ -198,7 +184,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Gerenciador_Grafico.cpp.s: cm
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo.cpp.o: ../Jogo_TecProg_2024/Inimigo.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo.cpp.i: cmake_force
@@ -212,7 +198,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo.cpp.s: cmake_force
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Facil.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Facil.cpp.o: ../Jogo_TecProg_2024/Inimigo_Facil.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Facil.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Facil.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Facil.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Facil.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Facil.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Facil.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Facil.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Facil.cpp.i: cmake_force
@@ -226,7 +212,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Facil.cpp.s: cmake_fo
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o: ../Jogo_TecProg_2024/Inimigo_Medio.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Medio.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.i: cmake_force
@@ -240,7 +226,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.s: cmake_fo
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogador.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogador.cpp.o: ../Jogo_TecProg_2024/Jogador.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogador.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogador.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogador.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogador.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogador.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogador.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Jogador.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogador.cpp.i: cmake_force
@@ -254,7 +240,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogador.cpp.s: cmake_force
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo.cpp.o: ../Jogo_TecProg_2024/Jogo.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Jogo.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo.cpp.i: cmake_force
@@ -268,7 +254,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo.cpp.s: cmake_force
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo_TecProg_2024.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo_TecProg_2024.cpp.o: ../Jogo_TecProg_2024/Jogo_TecProg_2024.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo_TecProg_2024.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo_TecProg_2024.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo_TecProg_2024.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo_TecProg_2024.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo_TecProg_2024.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo_TecProg_2024.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Jogo_TecProg_2024.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo_TecProg_2024.cpp.i: cmake_force
@@ -282,7 +268,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Jogo_TecProg_2024.cpp.s: cmak
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Lista_Entidades.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Lista_Entidades.cpp.o: ../Jogo_TecProg_2024/Lista_Entidades.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Lista_Entidades.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Lista_Entidades.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Lista_Entidades.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Lista_Entidades.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Lista_Entidades.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Lista_Entidades.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Lista_Entidades.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Lista_Entidades.cpp.i: cmake_force
@@ -296,7 +282,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Lista_Entidades.cpp.s: cmake_
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Menu.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Menu.cpp.o: ../Jogo_TecProg_2024/Menu.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Menu.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Menu.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Menu.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Menu.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Menu.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Menu.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Menu.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Menu.cpp.i: cmake_force
@@ -310,7 +296,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Menu.cpp.s: cmake_force
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo.cpp.o: ../Jogo_TecProg_2024/Obstaculo.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo.cpp.i: cmake_force
@@ -324,7 +310,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo.cpp.s: cmake_force
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Dificil.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Dificil.cpp.o: ../Jogo_TecProg_2024/Obstaculo_Dificil.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Dificil.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Dificil.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Dificil.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Dificil.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Dificil.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Dificil.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo_Dificil.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Dificil.cpp.i: cmake_force
@@ -338,7 +324,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Dificil.cpp.s: cmak
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.o: ../Jogo_TecProg_2024/Obstaculo_Facil.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo_Facil.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.i: cmake_force
@@ -352,7 +338,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.s: cmake_
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o: ../Jogo_TecProg_2024/Obstaculo_Medio.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo_Medio.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.i: cmake_force
@@ -366,7 +352,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.s: cmake_
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Personagem.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Personagem.cpp.o: ../Jogo_TecProg_2024/Personagem.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Personagem.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Personagem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Personagem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Personagem.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Personagem.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Personagem.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Personagem.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Personagem.cpp.i: cmake_force
@@ -380,7 +366,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Personagem.cpp.s: cmake_force
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Piso.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Piso.cpp.o: ../Jogo_TecProg_2024/Piso.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Piso.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Piso.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Piso.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Piso.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Piso.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Piso.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Piso.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Piso.cpp.i: cmake_force
@@ -394,7 +380,7 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Piso.cpp.s: cmake_force
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Projetil.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/flags.make
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Projetil.cpp.o: ../Jogo_TecProg_2024/Projetil.cpp
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Projetil.cpp.o: CMakeFiles/JOGO_TECPROG_2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Projetil.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Projetil.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Projetil.cpp.o -MF CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Projetil.cpp.o.d -o CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Projetil.cpp.o -c /home/aluno/Desktop/kaue/Jogo_TecProg_2024/Jogo_TecProg_2024/Projetil.cpp
 
 CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Projetil.cpp.i: cmake_force
@@ -407,7 +393,6 @@ CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Projetil.cpp.s: cmake_force
 
 # Object files for target JOGO_TECPROG_2024
 JOGO_TECPROG_2024_OBJECTS = \
-"CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.o" \
 "CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.o" \
 "CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Ente.cpp.o" \
 "CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Entidade.cpp.o" \
@@ -435,7 +420,6 @@ JOGO_TECPROG_2024_OBJECTS = \
 # External object files for target JOGO_TECPROG_2024
 JOGO_TECPROG_2024_EXTERNAL_OBJECTS =
 
-JOGO_TECPROG_2024: CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Botao.cpp.o
 JOGO_TECPROG_2024: CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Capitao.cpp.o
 JOGO_TECPROG_2024: CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Ente.cpp.o
 JOGO_TECPROG_2024: CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Entidade.cpp.o
@@ -461,7 +445,7 @@ JOGO_TECPROG_2024: CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Piso.cpp.o
 JOGO_TECPROG_2024: CMakeFiles/JOGO_TECPROG_2024.dir/Jogo_TecProg_2024/Projetil.cpp.o
 JOGO_TECPROG_2024: CMakeFiles/JOGO_TECPROG_2024.dir/build.make
 JOGO_TECPROG_2024: CMakeFiles/JOGO_TECPROG_2024.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable JOGO_TECPROG_2024"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aluno/Desktop/kaue/Jogo_TecProg_2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable JOGO_TECPROG_2024"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/JOGO_TECPROG_2024.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

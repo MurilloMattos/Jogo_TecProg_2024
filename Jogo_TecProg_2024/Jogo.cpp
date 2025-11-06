@@ -6,13 +6,14 @@ using namespace Personagens;
 using namespace Fases;
 
 Jogo::Jogo() : GG(Gerenciador_Grafico::getInstance()),
-menu(this),//menu com ponteiro para Jogo
+menu(),//menu com ponteiro para Jogo
 fase1(),
 pJog1(),
 pJog2()
 {
+    
     //Ger_Graf->getJanela()->setView(Ger_Graf->getCamera());
-    estado_atual = EstadoJogo::MENU_PRINCIPAL;
+    estado_atual = EstadoJogo::FASE_1;
 }
 
 Jogo::~Jogo()
