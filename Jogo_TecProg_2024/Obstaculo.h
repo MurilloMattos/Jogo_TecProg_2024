@@ -19,7 +19,7 @@ namespace Entidades {
 				virtual void executar_Gravidade();
 				virtual void Salvar() = 0;
 				virtual void Executar() = 0;
-				virtual void danificar(Entidades::Personagens::Jogador* p) = 0;
+				virtual void obstacular(Entidades::Personagens::Jogador* p) = 0;
 		};
 	}
 }

@@ -16,6 +16,6 @@ void Obstaculo_Facil::executar()
 {
 }
 
-void Obstaculo_Facil::danificar(Jogador* p)
+void Obstaculo_Facil::obstacular(Jogador* p)
 {
 }

@@ -20,6 +20,6 @@ void Obstaculo_Medio::Executar()
 {
 }
 
-void Obstaculo_Medio::danificar(Jogador* p)
+void Obstaculo_Medio::obstacular(Jogador* p)
 {
 }

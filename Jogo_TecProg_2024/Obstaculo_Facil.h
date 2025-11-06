@@ -7,14 +7,14 @@ namespace Entidades {
 		class Obstaculo_Facil :public Obstaculo
 		{
 			private:
-				//definir oq vai fazer esse obstáculo;
+				//definir oq vai fazer esse obstï¿½culo;
 
 			public:
 				Obstaculo_Facil();
 				~Obstaculo_Facil();
 
 				void executar();
-				void danificar(Entidades::Personagens::Jogador* p);
+				void obstacular(Entidades::Personagens::Jogador* p);
 		};
 	}
 }
