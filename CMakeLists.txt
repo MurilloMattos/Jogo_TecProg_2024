@@ -1,37 +1,48 @@
-cmake_minimum_required(VERSION 3.10.0)
-project(JOGO_TECPROG_2024 VERSION 0.1.0 LANGUAGES C CXX)
+# Versão mínima do CMake
+cmake_minimum_required(VERSION 3.10)
 
-file(GLOB_RECURSE SOURCES "Jogo_TecProg_2024/*.cpp")
-file(GLOB_RECURSE HEADER_FILES "Jogo_TecProg_2024/*.h" "Jogo_TecProg_2024/*.hpp")
+# Nome do projeto
+project(JogoTecProg LANGUAGES CXX)
 
-set(INCLUDE_DIRECTORIES "")
+# Define o padrão C++
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-foreach(HEADER_FILE ${HEADER_FILES})
-    get_filename_component(DIR ${HEADER_FILE} DIRECTORY)
-    list(APPEND INCLUDE_DIRECTORIES ${DIR})
-endforeach()
+# --- Encontrar Arquivos do Jogo ---
 
-list(REMOVE_DUPLICATES INCLUDE_DIRECTORIES)
+include_directories(Jogo_TecProg_2024)
+file(GLOB SOURCES "Jogo_TecProg_2024/*.cpp")
+file(GLOB HEADERS "Jogo_TecProg_2024/*.h")
 
-add_executable(JOGO_TECPROG_2024 ${SOURCES})
+# --- Configuração do SFML (Pasta Única) ---
 
-target_include_directories(JOGO_TECPROG_2024 PUBLIC ${INCLUDE_DIRECTORIES})
-target_include_directories(JOGO_TECPROG_2024 PUBLIC "SFML-2.5.1/include")
+# Define o caminho para a pasta local do SFML (com o nome padrão do download)
+# ATENÇÃO: O CONTEÚDO desta pasta deve ser trocado ao mudar de OS.
+set(SFML_DIR ${CMAKE_CURRENT_SOURCE_DIR}/SFML-2.5.1)
 
-target_link_directories(JOGO_TECPROG_2024 PUBLIC "libs/SFML/lib")
+# Diz ao CMake para procurar pacotes (como o SFML) nesta pasta primeiro
+set(CMAKE_PREFIX_PATH ${SFML_DIR})
 
-target_link_directories(JOGO_TECPROG_2024 PUBLIC "SFML-2.5.1/lib")
-target_link_libraries(JOGO_TECPROG_2024
-    sfml-graphics
-    sfml-window
-    sfml-system
-    sfml-audio
-    sfml-network
-)
+# Procura pelo SFML.
+# A versão 2.5 aqui deve corresponder ao nome da pasta/versão baixada
+find_package(SFML 2.5 REQUIRED COMPONENTS system window graphics audio network)
 
-include(CTest)
-enable_testing()
+# --- Criar o Executável ---
 
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
+add_executable(JogoTecProg ${SOURCES} ${HEADERS})
+
+target_link_libraries(JogoTecProg PRIVATE sfml-graphics sfml-window sfml-system sfml-audio sfml-network)
+
+# --- Específico para Windows: Copiar DLLs ---
+
+# Esta é a "condição do windows" que mantivemos.
+# Ela só roda no Windows e copia as .dll necessárias para junto do .exe
+if(WIN32)
+    file(GLOB SFML_DLLS "${SFML_DIR}/bin/*.dll")
+    
+    add_custom_command(TARGET JogoTecProg POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${SFML_DLLS}
+        $<TARGET_FILE_DIR:JogoTecProg>
+    )
+endif()

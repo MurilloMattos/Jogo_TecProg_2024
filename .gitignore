@@ -361,3 +361,12 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Ignore Jogo_TecProg_2024 build files
+Jogo_TecProg_2024/build/
+
+# Ignorar pastas do SFML
+/SFML-2.5.1/
+
+# Ignorar pastas de build do CMake
+/build/

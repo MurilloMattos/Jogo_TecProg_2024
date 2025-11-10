@@ -5,15 +5,16 @@ using namespace Entidades;
 using namespace Personagens;
 using namespace Fases;
 
-Jogo::Jogo() : GG(Gerenciador_Grafico::getInstance()),
-menu(),//menu com ponteiro para Jogo
-fase1(),
-pJog1(),
-pJog2()
+Jogo::Jogo(Menu m): menu(m)
 {
-    
-    //Ger_Graf->getJanela()->setView(Ger_Graf->getCamera());
-    estado_atual = EstadoJogo::FASE_1;
+    pJog2.setar_Dois_Jogadores(true);
+
+    GG = Gerenciador_Grafico::getInstance();
+    //fase1.Setar_Jogadores_Colisoes(&pJog1, nullptr);
+
+
+    //GG->getJanela()->setView(GG->getCamera());
+    fase1.Setar_Jogadores_Colisoes(&pJog1, &pJog2);
 }
 
 Jogo::~Jogo()
@@ -55,28 +56,7 @@ void Jogo::Executar()
         //std::cout << tempo_principal.getElapsedTime().asSeconds(); //<< std::endl;
         //tempo.restart();
         
-        switch (estado_atual) {
-            case EstadoJogo::MENU_PRINCIPAL:{
-                menu.Executar();
-                break;
-            }
-            case EstadoJogo::FASE_1:{
-                fase1.Executar();
-                break;
-            }
-            case EstadoJogo::FASE_2:{
-                //fazer depois
-                break;
-            }
-            case EstadoJogo::PAUSADO:{
-                //fazer depois
-                break;
-            }
-            case EstadoJogo::FIM_DE_JOGO:{
-                //fazer depois
-                break;
-            }
-        }
+        Atualiza();
 
         GG->getJanela()->display();
 
@@ -112,8 +92,4 @@ void Jogo::atualiza_Camera() {
     GG->getJanela()->setView(*GG->getCamera());
     GG->getCamera()->setCenter(pJog1.get_Centro());
 
-}
-
-void Jogo::set_Estado_Atual(EstadoJogo estado) {
-    estado_atual = estado;
 }
