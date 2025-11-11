@@ -64,8 +64,8 @@ namespace Listas
 		void incluiInfoNaLista(TL* info);
 		void deletaLista();
 
-		//percorrer a lista, deverá ser implementada por outra classe, no caso, já possuí dentor do UML básico do jogo o listaEntidades
-		//poís é necessário saber oque deve ser buscado.
+		//percorrer a lista, deverï¿½ ser implementada por outra classe, no caso, jï¿½ possuï¿½ dentor do UML bï¿½sico do jogo o listaEntidades
+		//poï¿½s ï¿½ necessï¿½rio saber oque deve ser buscado.
 	};
 
 	template<class TL>
@@ -148,7 +148,7 @@ namespace Listas
 		}
 		else {
 
-			std::cout << "Erro, elemento nullo, não adicionado na lista!";
+			std::cout << "Erro, elemento nullo, nï¿½o adicionado na lista!" << std::endl;
 		}
 
 	}

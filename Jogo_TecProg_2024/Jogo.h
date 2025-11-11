@@ -13,10 +13,13 @@ class Jogo
 		Entidades::Personagens::Jogador pJog2;
 		Fases::Fase_1 fase1;
 		//sf::Clock tempo_principal;
-		Menu menu;
+		Menu *menu;
+       // estado do jogo: inicia no menu e pode mudar para JOGANDO
+       enum class Estado { MENU, FASE_1 };
+       Estado estado;
 
 	public:
-		Jogo(Menu m);
+		Jogo();
 		~Jogo();
 		void Executar();
 		void atualiza_Camera();

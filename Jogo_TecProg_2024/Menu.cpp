@@ -1,22 +1,21 @@
 #include "Jogo.h"
 #include "Menu.h"
 
-Menu::Menu(Jogo *pJogo):Ente(), posicaoMenu(0) {
-	pJogo = NULL;
-	//menu = pGG->criaJanela("Menu", 500, 500);
+Menu::Menu(Jogo *pJogo):Ente(){
+	posOpcao = -1;
+	//menu = pGG->getJanela("Menu", 500, 500);
 	exitMenu = new sf::RectangleShape();
  	fonte = new sf::Font();
-	//pFigura bg = new sf::Sprite();
-	figura = new sf::Texture();
+	bg = new sf::Sprite();
+	imagem = new sf::Texture();
 	atribuir();	
 }
 Menu::~Menu() {
 	pJogo = NULL;
-	//delete menu;
 	delete exitMenu;
 	delete fonte;
 	//delete pFigura;
-	//delete figura;
+	delete imagem;
 }
 void Menu::atribuir() {	
 	
@@ -26,58 +25,64 @@ void Menu::atribuir() {
 
 	pressionado = selecionado = false;
 
-	std::cout << "--- Iniciando o carregamento de assets do Menu ---" << std::endl;
-
 	if (fonte->loadFromFile("./assets/Jersey25-Regular.ttf")) {
 		std::cout << "[SUCESSO] Fonte 'Jersey25-Regular.ttf' carregada." << std::endl;
-	} else {
-		std::cout << "[ERRO FATAL] Nao foi possivel encontrar ou carregar a fonte './assets/Jersey25-Regular.ttf'" << std::endl;
-	}
-
-	if (figura->loadFromFile("./assets/menu.jpg")) { 
-		std::cout << "[SUCESSO] Imagem 'menu.jpg' carregada." << std::endl;
-		pFigura->setTexture(figura);
+	}	
+	else {
+		std::cout << "[ERRO FATAL] Nao foi possivel encontrar ou carregar a fonte 'assets/Jersey25-Regular.ttf'" << std::endl;
+	}	
+	
+	if (imagem->loadFromFile("./assets/menuPrincipal.png")) { 
+		std::cout << "[SUCESSO] Imagem 'menuPrincipal.png' carregada." << std::endl;
+		bg->setTexture(*imagem);
 	}
 	else {
-		std::cout << "[ERRO FATAL] Nao foi possivel encontrar ou carregar a imagem './assets/menu.jpg'" << std::endl;
-		
-    pFigura->setFillColor(sf::Color::Magenta); // Magenta é uma cor feia que chama a atenção
-    pFigura->setSize(sf::Vector2f(800.0f, 600.0f));
+		std::cout << "[ERRO FATAL] Nao foi possivel encontrar ou carregar a imagem 'assets/menuPrincipal.png'" << std::endl;
+		// sf::Sprite não possui setFillColor/setSize — use setColor e setScale como fallback.
+		bg->setColor(sf::Color::Magenta); // Magenta é uma cor feia que chama a atenção
+		// Sem textura, setScale não define um tamanho absoluto; manter escala padrão como fallback.
+		bg->setScale(1.0f, 1.0f);
 	}
+		
 
-	std::cout << "--- Fim do carregamento de assets ---" << std::endl;
-
-	pFigura->setScale(0.7680f, 0.500f);
-	pFigura->setPosition(290.0f,140.0f);
+	pFigura->setScale(500.0f, 500.0f);//tamanho do menu na janela
+	pFigura->setPosition(290.0f,140.0f);//posicao do menu na janela
 	
-	opcoes = {"Menu","Continuar","Fases","Salvar jogada","Rank","Salvar pontuacao"};
-	coords = {{200,100},{200, 200},{200, 250},{200, 300},{200, 350},{200,400} };
-	tam = {44, 20,20,20,20,20};
-	textos.resize(6);
-        for(size_t i = 0; i < textos.size(); i++) {
+	opcoes = {"Joguinho", "Jogar", "Configurações", "Sair"};
+	coords = {{200,100},{200, 250},{200, 300},{200, 350}};
+	tam = {44, 20,20,20};
+	textos.resize(4);
+    for(std::size_t i{}; i < textos.size(); i++) {
 		textos[i].setFont(*fonte);
 		textos[i].setString(opcoes[i]);
-		textos[i].setCharacterSize(static_cast<unsigned int>(tam[i]));
-		//textos[i].setOutlineColor(sf::Color::Red);
-	
+		textos[i].setCharacterSize((tam[i]));
+		textos[i].setOutlineColor(sf::Color::Red);
 		textos[i].setPosition(coords[i]);
-	}
-}
+	}	
+}	
 void Menu::Executar() {
+	Atualizar();
+	desenhar();
+}	
+void Menu::Atualizar() {
 	sf::Event evento;
 	while(pGG->getJanela()->pollEvent(evento)){ //enquanto houver eventos
 		if(evento.type == sf::Event::Closed){//se o evento for fechar a janela
 			pGG->getJanela()->close();
-		}
+		}	
 
 		if(evento.type == sf::Event::MouseMoved){//se o evento for mover o mouse
-			//ver depois
-		}
+			posicaoMouse = sf::Mouse::getPosition(*pGG->getJanela());//pega a posicao do mouse na janela
+			coordMouse = pGG->getJanela()->mapPixelToCoords(posicaoMouse);//converte a posicao do mouse para coordenadas do mundo
+		}	
 
 		if(evento.type == sf::Event::MouseButtonPressed){//se o evento for pressionar o botão do mouse
-			//ver depois
-		}
-	}
+			if(evento.mouseButton.button == sf::Mouse::Left){//se o botão pressionado for o esquerdo
+				pressionado = true;
+			}	
+
+		}	
+	}	
 
 	sf::Vector2f mouse_pos = pGG->getJanela()->mapPixelToCoords(sf::Mouse::getPosition(*pGG->getJanela()));//pega a posição do mouse na janela
 
@@ -89,26 +94,22 @@ void Menu::Executar() {
 			selecionado = true;
 			if(sf::Mouse::isButtonPressed(sf::Mouse::Left)) {//se o botão esquerdo do mouse estiver pressionado
 				pressionado = true;
-			}
-		}
+			}	
+		}	
 		else{
 			textos[i].setFillColor(sf::Color::White);//muda a cor do texto para branco
 			if(!sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 				pressionado = false;
 				selecionado = false;	
-			}			
-		}
-	}
-	desenhar();
-}
+			}				
+		}	
+	}	
+}	
 void Menu::desenhar() {//desenha o menu
 	pGG->getJanela()->draw(*pFigura);//desenha o fundo do menu
 	for (size_t i = 0; i < textos.size(); i++) {//desenha cada texto do menu
         pGG->getJanela()->draw(textos[i]);
     }
-}
-sf::RenderWindow * Menu::getJanelaMenu() {
-	return menu;
 }
 bool Menu::getPressionado() {
 	return pressionado;
@@ -143,6 +144,18 @@ int Menu::getPosicaoMenu() {
 }
 std::vector<sf::Text>* Menu::getTextos() {
 	return &textos;
+}
+bool Menu::setFase_1(bool valor) {
+	// Define se o menu deve iniciar a Fase 1
+	// Implementação simples para exemplo
+	if(valor) {
+		std::cout << "Iniciando Fase 1..." << std::endl;
+	}
+}
+bool Menu::getFase_1() {
+	// Retorna se a Fase 1 deve ser iniciada
+	// Implementação simples para exemplo
+	return (posicaoMenu == 1 && pressionado);
 }
 Jogo* Menu::get_pJog() {
 return pJogo;

@@ -34,6 +34,7 @@ JOGO_TECPROG_2024/
     ├── include/
     ├── lib/
     └── SFMLConfig.cmake
+    
 Se você quiser trocar de sistema (do Windows para o Linux), você deverá apagar o conteúdo desta pasta e extrair os binários corretos para o novo sistema.
 
 🖥️ Compilando (Windows ou Linux)

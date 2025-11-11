@@ -5,13 +5,22 @@ using namespace Entidades;
 using namespace Personagens;
 using namespace Fases;
 
-Jogo::Jogo(Menu m): menu(m)
+Jogo::Jogo():
+GG(nullptr),
+pJog1(),
+pJog2(),
+fase1(),
+menu(nullptr)
 {
-    pJog2.setar_Dois_Jogadores(true);
+    //inicializa o estado do jogo como MENU
+    estado = Estado::MENU;
+
+    pJog2.setar_Dois_Jogadores(false);
 
     GG = Gerenciador_Grafico::getInstance();
     //fase1.Setar_Jogadores_Colisoes(&pJog1, nullptr);
 
+    menu = new Menu(this);
 
     //GG->getJanela()->setView(GG->getCamera());
     fase1.Setar_Jogadores_Colisoes(&pJog1, &pJog2);
@@ -19,7 +28,8 @@ Jogo::Jogo(Menu m): menu(m)
 
 Jogo::~Jogo()
 {
-    menu = NULL;
+    delete menu;
+    menu = nullptr;
 }
 
 void Jogo::Executar()
@@ -36,6 +46,7 @@ void Jogo::Executar()
 
         //tempo.restart();
 
+        
         while (GG->getJanela()->pollEvent(evento))//trata eventos
         {
                 if (evento.type == sf::Event::Closed) {//se o evento for fechar a janela
@@ -68,7 +79,15 @@ void Jogo::Executar()
 
 void Jogo::Atualiza() {
 
-    fase1.Executar();
+    if(estado == Estado::MENU) {
+        menu->Executar();
+        if (menu->getFase_1()) {
+            estado = Estado::FASE_1;
+        }
+    }
+    if(estado == Estado::FASE_1) {
+        fase1.Executar();
+    }
     
     pJog1.Executar();
 

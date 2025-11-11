@@ -27,7 +27,7 @@ namespace Gerenciadores
 				return GenGraf;
 			}
 
-			sf::RenderWindow* getJanela();
+			sf::RenderWindow* getJanela();//
 			sf::Event* getEvent() const;
 			sf::View* getCamera() const;
 

@@ -362,11 +362,9 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-# Ignore Jogo_TecProg_2024 build files
-Jogo_TecProg_2024/build/
+# Ignore VS Code workspace settings
+.vscode/
 
-# Ignorar pastas do SFML
-/SFML-2.5.1/
-
-# Ignorar pastas de build do CMake
-/build/
+# Ignore SFML and build folders (ajuste se as pastas estiverem em subpastas)
+SFML-2.5.1/
+build/

@@ -1,17 +1,20 @@
 #pragma once
 #include "Ente.h"
+#include "Jogo.h"
 #include "SFML/Graphics.hpp"
 
 class Jogo;
 class Menu : public Ente {
 	private:
-		Jogo *pJogo;
-		Menu *menu;
+		int posOpcao;
 
+		Jogo *pJogo;
+		
 		sf::RectangleShape *exitMenu;
 		sf::Font *fonte;
 		//sf::Text *texto;
-		sf::Texture *figura;
+		sf::Texture *imagem;
+		sf::Sprite *bg;
 		sf::Vector2i posicaoMouse;
 		sf::Vector2f coordMouse;
 		int posicaoMenu;
@@ -30,6 +33,7 @@ class Menu : public Ente {
 		~Menu();
 		void atribuir();
 		void Executar();
+		void Atualizar();
 		void desenhar();
 		sf::RenderWindow * getJanelaMenu();
 		bool getPressionado();
@@ -43,5 +47,7 @@ class Menu : public Ente {
 		void setPosicaoMenu(int pos);
 		int getPosicaoMenu();
 		std::vector<sf::Text>* getTextos();
+		bool setFase_1(bool valor);
+		bool getFase_1();
 		Jogo* get_pJog(); 
 };
