@@ -25,31 +25,31 @@ void Menu::atribuir() {
 
 	pressionado = selecionado = false;
 
-	if (fonte->loadFromFile("./assets/Jersey25-Regular.ttf")) {
+	if (fonte->loadFromFile("../assets/menu_principal/Jersey25-Regular.ttf")) {
 		std::cout << "[SUCESSO] Fonte 'Jersey25-Regular.ttf' carregada." << std::endl;
 	}	
 	else {
-		std::cout << "[ERRO FATAL] Nao foi possivel encontrar ou carregar a fonte 'assets/Jersey25-Regular.ttf'" << std::endl;
+		std::cout << "[ERRO FATAL] Nao foi possivel encontrar ou carregar a fonte 'Jogo_TecProg_2024/assets/menu_principal/Jersey25-Regular.ttf'" << std::endl;
 	}	
 	
-	if (imagem->loadFromFile("./assets/menuPrincipal.png")) { 
+	if (imagem->loadFromFile("../assets/menu_principal/menuPrincipal.png")) { 
 		std::cout << "[SUCESSO] Imagem 'menuPrincipal.png' carregada." << std::endl;
-		bg->setTexture(*imagem);
+		pFigura->setTexture(imagem);
 	}
 	else {
-		std::cout << "[ERRO FATAL] Nao foi possivel encontrar ou carregar a imagem 'assets/menuPrincipal.png'" << std::endl;
+		std::cout << "[ERRO FATAL] Nao foi possivel encontrar ou carregar a imagem 'Jogo_TecProg_2024/assets/menu_principal/menuPrincipal.png'" << std::endl;
 		// sf::Sprite não possui setFillColor/setSize — use setColor e setScale como fallback.
 		bg->setColor(sf::Color::Magenta); // Magenta é uma cor feia que chama a atenção
 		// Sem textura, setScale não define um tamanho absoluto; manter escala padrão como fallback.
 		bg->setScale(1.0f, 1.0f);
 	}
-		
+
 
 	pFigura->setScale(500.0f, 500.0f);//tamanho do menu na janela
 	pFigura->setPosition(290.0f,140.0f);//posicao do menu na janela
 	
 	opcoes = {"Joguinho", "Jogar", "Configurações", "Sair"};
-	coords = {{200,100},{200, 250},{200, 300},{200, 350}};
+	coords = {{0,250},{200, 250},{200, 300},{200, 350}};
 	tam = {44, 20,20,20};
 	textos.resize(4);
     for(std::size_t i{}; i < textos.size(); i++) {
@@ -106,10 +106,12 @@ void Menu::Atualizar() {
 	}	
 }	
 void Menu::desenhar() {//desenha o menu
+	pGG->getJanela()->clear();
 	pGG->getJanela()->draw(*pFigura);//desenha o fundo do menu
 	for (size_t i = 0; i < textos.size(); i++) {//desenha cada texto do menu
         pGG->getJanela()->draw(textos[i]);
     }
+	pGG->getJanela()->display();
 }
 bool Menu::getPressionado() {
 	return pressionado;
@@ -151,6 +153,7 @@ bool Menu::setFase_1(bool valor) {
 	if(valor) {
 		std::cout << "Iniciando Fase 1..." << std::endl;
 	}
+	return valor;
 }
 bool Menu::getFase_1() {
 	// Retorna se a Fase 1 deve ser iniciada
