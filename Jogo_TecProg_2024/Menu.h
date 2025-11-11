@@ -13,7 +13,7 @@ class Menu : public Ente {
 		sf::RectangleShape *exitMenu;
 		sf::Font *fonte;
 		//sf::Text *texto;
-		sf::Texture *imagem;
+		sf::Texture imagem;
 		sf::Sprite *bg;
 		sf::Vector2i posicaoMouse;
 		sf::Vector2f coordMouse;

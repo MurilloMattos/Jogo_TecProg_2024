@@ -32,7 +32,7 @@ void Menu::atribuir() {
 		std::cout << "[ERRO FATAL] Nao foi possivel encontrar ou carregar a fonte 'Jogo_TecProg_2024/assets/menu_principal/Jersey25-Regular.ttf'" << std::endl;
 	}	
 	
-	if (imagem->loadFromFile("../assets/menu_principal/menuPrincipal.png")) { 
+	if (imagem.loadFromFile("../assets/menu_principal/menuPrincipal.png")) { 
 		std::cout << "[SUCESSO] Imagem 'menuPrincipal.png' carregada." << std::endl;
 		pFigura->setTexture(imagem);
 	}
