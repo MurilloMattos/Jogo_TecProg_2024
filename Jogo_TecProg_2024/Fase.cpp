@@ -149,5 +149,3 @@ void Fases::Fase::Executar() {
 	gerenciador_colisoes.Executar();
 	lista_Entidades.Percorrer();
 }
-
-

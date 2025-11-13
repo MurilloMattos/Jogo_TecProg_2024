@@ -5,6 +5,8 @@
 #include "Fase_1.h"
 #include "Menu.h"
 
+enum class Estado { MENU, FASE_1 };
+
 class Jogo
 {
 	private:
@@ -15,12 +17,14 @@ class Jogo
 		//sf::Clock tempo_principal;
 		Menu *menu;
        // estado do jogo: inicia no menu e pode mudar para JOGANDO
-       enum class Estado { MENU, FASE_1 };
-       Estado estado;
+       	Estado estado;
 
 	public:
 		Jogo();
 		~Jogo();
+		void setEstado(Estado novoEstado);
+		Estado getEstado() const;
+		void set_pJog2_Dois_Jogadores(bool valor);
 		void Executar();
 		void atualiza_Camera();
 		void Atualiza();

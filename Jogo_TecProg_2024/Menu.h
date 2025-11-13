@@ -6,22 +6,21 @@
 class Jogo;
 class Menu : public Ente {
 	private:
-		int posOpcao;
+		int posicaoMenu;
+		bool pressionado, selecionado;
 
 		Jogo *pJogo;
 		
 		sf::RectangleShape *exitMenu;
 		sf::Font *fonte;
 		//sf::Text *texto;
-		sf::Texture imagem;
+		sf::Texture *imagem;
 		sf::Sprite *bg;
 		sf::Vector2i posicaoMouse;
 		sf::Vector2f coordMouse;
-		int posicaoMenu;
-		bool pressionado, selecionado;
 
 		std::vector<const char*> opcoes;
-		std::vector<sf::Vector2f> coords;
+		std::vector<sf::Vector2f> coordsOpcoes;
 		std::vector<sf::Text> textos;
 		std::vector<std::size_t> tam;	
 

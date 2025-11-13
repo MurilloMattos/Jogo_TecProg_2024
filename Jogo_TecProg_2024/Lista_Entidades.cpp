@@ -10,7 +10,7 @@ Lista_Entidades::Lista_Entidades() {
 
 Lista_Entidades::~Lista_Entidades() {
 
-	//A lista já é deletada pelo template
+	//A lista jÃ¡ Ã© deletada pelo template
 }
 
 void Lista_Entidades::Remover(Entidade* pE) {
@@ -26,7 +26,7 @@ void Lista_Entidades::Remover(Entidade* pE) {
 
 	if (aux_anterior != nullptr && pE != nullptr) {
 
-		//para evitar que no primeiro loop ele acesse memoria já alocada.
+		//para evitar que no primeiro loop ele acesse memoria jï¿½ alocada.
 		if (aux_atual != nullptr) {
 			while (aux_atual->getInfo()->getId() != pE->getId() || aux_atual != nullptr )
 			{

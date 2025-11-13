@@ -6,21 +6,19 @@ using namespace Personagens;
 using namespace Fases;
 
 Jogo::Jogo():
-GG(nullptr),
+GG(),
 pJog1(),
 pJog2(),
 fase1(),
-menu(nullptr)
+menu(new Menu(this))
 {
     //inicializa o estado do jogo como MENU
     estado = Estado::MENU;
-
+    //inicializa jogador 2 como falso
     pJog2.setar_Dois_Jogadores(false);
 
     GG = Gerenciador_Grafico::getInstance();
     //fase1.Setar_Jogadores_Colisoes(&pJog1, nullptr);
-
-    menu = new Menu(this);
 
     //GG->getJanela()->setView(GG->getCamera());
     fase1.Setar_Jogadores_Colisoes(&pJog1, &pJog2);
@@ -29,7 +27,18 @@ menu(nullptr)
 Jogo::~Jogo()
 {
     delete menu;
-    menu = nullptr;
+}
+
+void Jogo::setEstado(Estado novoEstado) {
+    estado = novoEstado;
+}
+
+Estado Jogo::getEstado() const {
+    return estado;
+}
+
+void Jogo::set_pJog2_Dois_Jogadores(bool valor) {
+    pJog2.setar_Dois_Jogadores(valor);
 }
 
 void Jogo::Executar()
@@ -69,7 +78,7 @@ void Jogo::Executar()
         
         Atualiza();
 
-        GG->getJanela()->display();
+    GG->getJanela()->display();
 
         if (fase1.get_Ganhou()) {
             GG->getJanela()->close();
@@ -87,15 +96,15 @@ void Jogo::Atualiza() {
     }
     if(estado == Estado::FASE_1) {
         fase1.Executar();
+        atualiza_Camera();
+        pJog1.Executar();
+        if (pJog2.get_Dois_Jogadores()) {
+            pJog2.Executar();
+        }
     }
     
-    pJog1.Executar();
 
-    if (pJog2.get_Dois_Jogadores()) {
-        pJog2.Executar();
-    }
     
-    atualiza_Camera();
 
     //descomentar essa execu��o caso n�o achar interessante a movimenta��o da camera ao colidir.
     //fase1.Executar();

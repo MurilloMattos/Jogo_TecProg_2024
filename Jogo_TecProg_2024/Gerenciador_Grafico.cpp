@@ -6,7 +6,7 @@ Gerenciador_Grafico* Gerenciador_Grafico::GenGraf = NULL;
 
 Gerenciador_Grafico::Gerenciador_Grafico(){
 
-	janela = new sf::RenderWindow(sf::VideoMode(1024,1024),"Jogo");
+	janela = new sf::RenderWindow(sf::VideoMode(500,500),"Jogo");
 	evento = new sf::Event();
 	camera = new sf::View();
 

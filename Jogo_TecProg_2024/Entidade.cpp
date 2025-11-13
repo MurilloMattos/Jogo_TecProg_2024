@@ -35,7 +35,7 @@ void Entidades::Entidade::setar_Gravidade(float grav){
 	gravidade = grav;
 }
 
-//irá funcionar?
+//irï¿½ funcionar?
 void Entidades::Entidade::executar_Gravidade(){
 	y += gravidade;
 
@@ -59,7 +59,7 @@ float Entidades::Entidade::get_Altura(){
 }
 
 
-//esta é a posição relativa ao canto superior esquerdo da figura em relação a janela (o pixel (0,0))
+//esta Ã© a posiÃ§Ã£o relativa ao canto superior esquerdo da figura em relaÃ§Ã£o a janela (o pixel (0,0))
 float Entidades::Entidade::get_X() const{
 	return x;
 }
@@ -70,7 +70,6 @@ float Entidades::Entidade::get_Y() const{
 
 //retorna Y + A
 float Entidades::Entidade::get_Comprimento_A() {
-
 	return get_Y() + get_Altura();
 }
 
