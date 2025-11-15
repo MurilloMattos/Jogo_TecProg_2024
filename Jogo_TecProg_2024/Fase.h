@@ -17,21 +17,6 @@ namespace Fases {
 			Listas::Lista_Entidades lista_Entidades;
 			Gerenciadores::Gerenciador_colisoes gerenciador_colisoes;
 
-			Entidades::Obstaculos::Piso* piso;
-			Entidades::Obstaculos::Piso* plataforma;
-			
-
-
-			sf::Vector2f tam_Piso_Fase;
-			sf::Vector2f pos_Piso;
-
-			int num_plataformas;
-
-			sf::Vector2f tam_plataforma;
-
-			sf::Vector2f pos_original;
-
-
 		public:
 			Fase();
 			~Fase();
@@ -42,26 +27,19 @@ namespace Fases {
 			Listas::Lista_Entidades* get_Lista_Entidades();
 			*/
 
-
 			void Setar_Jogadores_Colisoes(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
-			virtual void Executar();
-
-			//piso � inerente as fases e a plataforma � obst�culo nas 2 fases.
-			void Cria_Piso();
-			void Cria_Plataforma();
-
-			//inimigos f�ceis
-			void Cria_Inimigos_Piratas();
-			//void Cria_Inimigos_Capitao();
-
+			
 			bool get_Ganhou();
-
-			virtual void Cria_Inimigos() = 0;
+			
+			//virtual void criar_cenario() = 0;
+			virtual void Cria_Piso() = 0;
 			virtual void Cria_Obstaculos() = 0;
-			void criar_cenario();
+			virtual void Cria_Plataforma() = 0;
+			virtual void Cria_Inimigos() = 0;
 			void verifica_Inimigos_Neutralizados();
-
+			
+			virtual void Executar() = 0;
 			//void executa_Colisoes();
 
 	};
-}
+};
