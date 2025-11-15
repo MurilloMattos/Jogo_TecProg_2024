@@ -18,6 +18,7 @@ void Entidades::Obstaculos::Obstaculo_Dificil::Salvar()
 
 void Obstaculo_Dificil::Executar() {
 
+
 }
 
 void Obstaculo_Dificil::obstacular(Jogador* p) {

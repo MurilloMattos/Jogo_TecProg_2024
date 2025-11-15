@@ -3,7 +3,7 @@
 
 namespace Entidades {
 	namespace Obstaculos {
-		class Piso : public Obstaculo
+		class Plataforma : public Obstaculo
 		{
 		private:
 			//int boo;
@@ -15,10 +15,10 @@ namespace Entidades {
 		public:
 			float boo;
 
-			Piso();
-			~Piso();
+			Plataforma();
+			~Plataforma();
 
-			void seta_Piso(float alt, float larg, float origem_x, float origem_y);
+			void seta_Plataforma(float alt, float larg, float origem_x, float origem_y);
 			void Executar();
 			void obstacular(Entidades::Personagens::Jogador* p);
 			void Salvar();

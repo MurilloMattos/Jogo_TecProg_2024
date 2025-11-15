@@ -24,9 +24,6 @@ Jogo::~Jogo()
 
 void Jogo::Executar()
 {
-    //int i = 0;
-    //tempo_principal.restart();
-    //tempo.getElapsedTime().asSeconds();
 
     while (Ger_Graf->getJanela()->isOpen())
     {
@@ -36,7 +33,6 @@ void Jogo::Executar()
 
         Ger_Graf->getJanela()->setFramerateLimit(60);
 
-        //tempo.restart();
 
         while (Ger_Graf->getJanela()->pollEvent(evento))
         {
@@ -53,10 +49,6 @@ void Jogo::Executar()
 
         Ger_Graf->getJanela()->clear();
 
-        //std::cout << i << std::endl;
-        //i++;
-        //std::cout << tempo_principal.getElapsedTime().asSeconds(); //<< std::endl;
-        //tempo.restart();
 
         Atualiza();
 

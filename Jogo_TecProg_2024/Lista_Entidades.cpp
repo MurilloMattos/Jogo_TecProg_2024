@@ -72,12 +72,14 @@ void Lista_Entidades::Percorrer() {
 
 		while (aux1 != nullptr)
 		{
+			aux->getInfo()->executar_Gravidade();
 			aux->getInfo()->Executar();
 
 			aux = aux1;
 			aux1 = aux->getProx();
 		}
 
+		aux->getInfo()->executar_Gravidade();
 		aux->getInfo()->Executar();
 	}
 	else {
@@ -115,11 +117,6 @@ void Listas::Lista_Entidades::imprimir_Ids()
 
 bool Listas::Lista_Entidades::verifica_Lista_Vazia(){
 
-	//Lista<Entidade>::Elemento<Entidade>* aux, * aux1;
-
-	//aux = nullptr;
-	//aux1 = nullptr;
-
 	if (lista_Ent.getPrimeiro() == nullptr) {
 		return true;
 	}
@@ -132,5 +129,34 @@ bool Listas::Lista_Entidades::verifica_Lista_Vazia(){
 Lista_Entidades* Lista_Entidades::get_Lista_Entidades() {
 
 	return this;
+}
+
+Entidade* Lista_Entidades::get_Entidade_Por_Id(int id_busca) {
+
+	Lista<Entidade>::Elemento<Entidade>* aux, * aux1;
+	aux = nullptr;
+	aux1 = nullptr;
+	aux = lista_Ent.getPrimeiro();
+	aux1 = aux->getProx();
+
+	if (aux != nullptr) {
+		while (aux1 != nullptr)
+		{
+			if (aux->getInfo()->getId() == id_busca) {
+				return aux->getInfo();
+			}
+			aux = aux1;
+			aux1 = aux->getProx();
+		}
+		if (aux->getInfo()->getId() == id_busca) {
+			return aux->getInfo();
+		}
+	}
+
+	else {
+		std::cout << " Lista vazia, nao percorrida. ";
+	}
+
+	return nullptr;
 }
 

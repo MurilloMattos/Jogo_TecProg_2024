@@ -1,10 +1,10 @@
-#include "Piso.h"
+#include "Plataforma.h"
 
 using namespace Entidades;
 using namespace Obstaculos;
 using namespace Personagens;
 
-Piso::Piso()
+Plataforma::Plataforma()
 {
 	boo = 0;
 
@@ -12,11 +12,11 @@ Piso::Piso()
 	tamanho.y = 0;
 }
 
-Piso::~Piso(){
+Plataforma::~Plataforma(){
 
 }
 
-void Piso::seta_Piso(float alt, float larg, float origem_x, float origem_y)
+void Plataforma::seta_Plataforma(float alt, float larg, float origem_x, float origem_y)
 {
 
 	tamanho.x = larg;
@@ -27,16 +27,17 @@ void Piso::seta_Piso(float alt, float larg, float origem_x, float origem_y)
 	this->setar_Pos(origem_x, origem_y);
 }
 
-void Piso::Salvar(){
+void Plataforma::Salvar(){
 
 }
 
 
 
-void Piso::Executar() {
+void Plataforma::Executar() {
+
 	Desenhar();
 }
 
-void Piso::obstacular(Jogador* p) {
+void Plataforma::obstacular(Jogador* p) {
 
 }

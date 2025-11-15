@@ -18,6 +18,7 @@ void Entidades::Obstaculos::Obstaculo_Medio::Salvar()
 
 void Obstaculo_Medio::Executar()
 {
+
 }
 
 void Obstaculo_Medio::danificar(Jogador* p)

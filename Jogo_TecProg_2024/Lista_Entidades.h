@@ -15,10 +15,14 @@ namespace Listas {
 
 			Lista_Entidades* get_Lista_Entidades();
 
+			Entidades::Entidade* get_Entidade_Por_Id(int id_busca);
+
 			void Remover(Entidades::Entidade* pE);
 			void Incluir(Entidades::Entidade* pE);
 			void Percorrer();
+
 			void imprimir_Ids();
+
 			bool verifica_Lista_Vazia();
 	};
 

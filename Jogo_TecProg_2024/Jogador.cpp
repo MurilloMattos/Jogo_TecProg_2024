@@ -42,6 +42,9 @@ Jogador::~Jogador() {
 }
 
 void Jogador::Executar() {
+
+	executar_Gravidade();
+
 	Desenhar();
 	setar_Pos(x, y);
 
