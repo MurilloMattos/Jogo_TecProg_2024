@@ -300,29 +300,68 @@ void Gerenciador_colisoes::tratar_Colisoes_Esmagador() {
 	for (i = 0; i < lista_Inimigos.size(); i++) {
 
 		Inimigo_Esmagador* pEsmagador = dynamic_cast<Inimigo_Esmagador*>(lista_Inimigos[i]);
-		float distancia_jogador1;
-		if(pJogador2->get_Dois_Jogadores()){
-			float distancia_jogador2;
-		}
+		sf::Vector2f tamanhoDeteccao(300.f, 100.f);//raio determinado de detecção
 
 		if (pEsmagador) {
 
-			if(pEsmagador->get_Estado() == EstadoEsmagador::PREPARANDO) {
-				
-				distancia_jogador1 = pJogador1->get_Centro().x - pEsmagador->get_Centro().x; 
+			if(pEsmagador->get_Estado() == EstadoEsmagador::PATRULHANDO) {
 
-				if (distancia_jogador1 <= pEsmagador->get_RaioDeteccao()) {
-					pEsmagador->Atacar();
+				float distancia_jogador1 = pJogador1->get_Centro().x - pEsmagador->get_Centro().x; 
+
+				sf::FloatRect areaDeteccao(
+					pEsmagador->get_Centro().x - tamanhoDeteccao.x / 2,//left - 
+					pEsmagador->get_Centro().y - tamanhoDeteccao.y / 2,//top
+					tamanhoDeteccao.x,//width - tamanho horizontal da área de detecção
+					tamanhoDeteccao.y//height - tamanho vertical da área de detecção
+				);//definindo a area de detecção de cada esmagador
+
+				if(pJogador2->get_Dois_Jogadores()) {
+					float distancia_jogador2 = pJogador2->get_Centro().x - pEsmagador->get_Centro().x;
+					if(std::abs(distancia_jogador1) <= std::abs(distancia_jogador2)) {
+						pEsmagador->andar_ate(pJogador1->get_Centro().x, pJogador1->get_Centro().y);
+					}
+					else {
+						pEsmagador->andar_ate(pJogador2->get_Centro().x, pJogador2->get_Centro().y);
+					}
+
+					if (std::abs(distancia_jogador1) <= areaDeteccao.width || std::abs(distancia_jogador2) <= areaDeteccao.width) {
+						pEsmagador->set_Estado(EstadoEsmagador::PREPARANDO);
+					}
 				}
 				else {
-					float distancia_jogador2 = std::sqrt(std::pow(pEsmagador->get_Centro().x - pJogador2->get_Centro().x, 2) +
-						std::pow(pEsmagador->get_Centro().y - pJogador2->get_Centro().y, 2));
 
-					if (distancia_jogador2 <= pEsmagador->get_RaioAtaque()) {
-						pEsmagador->Atacar();
+					if (std::abs(distancia_jogador1) <= areaDeteccao.width) {
+						pEsmagador->set_Estado(EstadoEsmagador::PREPARANDO);
 					}
 				}
 			}
+
+			if(pEsmagador->get_Estado() == EstadoEsmagador::PREPARANDO) {
+				
+				if(pEsmagador->get_RelogioPreparacao().getElapsedTime().asSeconds() >= pEsmagador->get_TempoPreparacaoSeg()) {
+					pEsmagador->set_Estado(EstadoEsmagador::ATACANDO);
+				}
+			}
+
+			if(pEsmagador->get_Estado() == EstadoEsmagador::ATACANDO) {
+
+				//logica de ataque
+				sf::FloatRect areaAtaque(
+					pEsmagador->get_Centro().x - tamanhoDeteccao.x / 2.0,//left - 
+					pEsmagador->get_Centro().y - tamanhoDeteccao.y / 2.0,//top
+					tamanhoDeteccao.x,//width - tamanho horizontal da área de detecção
+					tamanhoDeteccao.y//height - tamanho vertical da área de detecção
+				);//definindo a area de ataque de cada esmagador
+
+				if (pJogador2->get_Dois_Jogadores()) {
+					tratar_Colisoes_Jogador_Inimigos(pJogador1, pEsmagador);
+					tratar_Colisoes_Jogador_Inimigos(pJogador2, pEsmagador);
+				}
+				else {
+					tratar_Colisoes_Jogador_Inimigos(pJogador1, pEsmagador);
+				}
+			}
+			
 		}
 	}
 

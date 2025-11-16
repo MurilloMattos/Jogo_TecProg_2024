@@ -56,6 +56,7 @@ void Fases::Fase_1::Cria_Piso() {
 void Fases::Fase_1::Cria_Inimigos(){
 
 	Cria_Inimigos_Piratas();
+	Cria_Inimigos_Esmagador();
 	Cria_Inimigos_Capitao();
 
 }
@@ -72,6 +73,21 @@ void Fases::Fase_1::Cria_Inimigos_Piratas(){
 
 		gerenciador_colisoes.Incluir_Inimigo(pirata);
 		lista_Entidades.Incluir(static_cast<Entidade*>(pirata));
+	}
+}
+
+void Fases::Fase_1::Cria_Inimigos_Esmagador(){
+
+	int random = rand() % 2 + 1;// número aleatório de esmagadores entre 1 e 2
+	float espacamento = 100.f;
+
+	for (int i = 0; i < random; i++) {
+
+		Inimigo_Esmagador* esmagador = new Inimigo_Esmagador;
+		esmagador->setar_Pos(500.f + i * espacamento, 100.f);
+
+		gerenciador_colisoes.Incluir_Inimigo(esmagador);
+		lista_Entidades.Incluir(static_cast<Entidade*>(esmagador));
 	}
 }
 

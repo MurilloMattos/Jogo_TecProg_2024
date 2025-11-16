@@ -16,10 +16,11 @@ namespace Entidades {
         private:
             EstadoEsmagador estado_atual;
             sf::Clock relogio_preparacao; // Para contar o segundo de espera
-            
+            sf::Vector2f tamanhoDeteccao;
+
             const float tempo_preparacao_seg;
-            float raio_deteccao;
-            float raio_ataque;
+            //float raio_deteccao;
+            //float raio_ataque;
 
             // Variáveis de patrulha (como no Inimigo_Medio)
             sf::Vector2f pos_inicial;
@@ -40,9 +41,11 @@ namespace Entidades {
             EstadoEsmagador get_Estado();
             float get_RaioDeteccao();
             float get_RaioAtaque();
+            sf::Clock get_RelogioPreparacao();
+            float get_TempoPreparacaoSeg();
 
-            void IniciarPreparacao(); // Muda o estado e reinicia o relógio
-            void Atacar(); // Muda o estado para ATACANDO
+            //void IniciarPreparacao(); // Muda o estado e reinicia o relógio
+            //void Atacar(); // Muda o estado para ATACANDO
         };
     }
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include "Fase.h"
 #include "Capitao.h"
+#include "Inimigo_Esmagador.h"
 #include "Piratas.h"
 #include "Piso.h"
 #include "Obstaculo.h"
@@ -38,6 +39,7 @@ namespace Fases{
 		//inimigos fáceis		
 		void Cria_Inimigos();
 		void Cria_Inimigos_Piratas();
+		void Cria_Inimigos_Esmagador();
 		void Cria_Inimigos_Capitao();
 		void Executar();
 	};

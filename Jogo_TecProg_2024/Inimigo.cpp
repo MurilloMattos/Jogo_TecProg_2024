@@ -8,7 +8,6 @@ Inimigo::Inimigo() :semente_id_entidade(100){
 	
 	setId(semente_id_entidade);
 
-	nivel_raiva = -1;
 	dano = -1;
 
 	pos_inicial.x = 0;
