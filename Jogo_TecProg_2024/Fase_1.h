@@ -1,6 +1,7 @@
 #pragma once
 #include "Fase.h"
 #include "Capitao.h"
+#include "Piratas.h"
 #include "Piso.h"
 #include "Obstaculo.h"
 
@@ -11,6 +12,10 @@ namespace Fases{
 
 	Entidades::Obstaculos::Piso* piso;
 	Entidades::Obstaculos::Piso* plataforma;
+	Entidades::Personagens::Piratas* pirata;
+	Entidades::Personagens::Capitao* capitao;
+
+
 
 	sf::Vector2f tam_Piso_Fase;
 	sf::Vector2f pos_Piso;

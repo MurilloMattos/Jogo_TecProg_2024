@@ -61,19 +61,24 @@ void Fases::Fase_1::Cria_Inimigos(){
 }
 
 void Fases::Fase_1::Cria_Inimigos_Piratas(){
-	Inimigo_Medio* pirata;
 
-	pirata = new Inimigo_Medio;
-	pirata->setar_Pos(290.f, 100.f);
+	int random = rand() % 3 + 3;// número aleatório de piratas entre 3 e 5
+	float espacamento = 100.f;
+	
+	for(int i = 0; i < random; i++) {
 
-	gerenciador_colisoes.Incluir_Inimigo(pirata);
-	lista_Entidades.Incluir(static_cast<Entidade*>(pirata));
+		pirata = new Piratas;
+		pirata->setar_Pos(290.f + i * espacamento, 100.f);
+
+		gerenciador_colisoes.Incluir_Inimigo(pirata);
+		lista_Entidades.Incluir(static_cast<Entidade*>(pirata));
+	}
 }
+
 
 
 void Fases::Fase_1::Cria_Inimigos_Capitao(){
 
-	Capitao* capitao;
 	capitao = new Capitao;
 
 	capitao->setar_Pos(600.f, 159.f);
