@@ -2,7 +2,7 @@
 #include "Ente.h"
 #include "Lista_Entidades.h"
 #include "Piso.h"
-#include "Inimigo_Medio.h"
+#include "Inimigo_Esmagador.h"
 #include "Jogador.h"
 #include "Gerenciador_Colisoes.h"
 

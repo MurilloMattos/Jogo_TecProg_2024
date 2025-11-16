@@ -92,4 +92,3 @@ void Fases::Fase_1::Cria_Inimigos_Capitao(){
 		gerenciador_colisoes.Executar();
 		lista_Entidades.Percorrer();
 	}
-	

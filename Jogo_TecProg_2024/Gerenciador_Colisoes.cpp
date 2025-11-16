@@ -60,7 +60,7 @@ Entidades::Entidade* Gerenciadores::Gerenciador_colisoes::projetil_Destruido()
 }
 */
 
-// Definitivamente uma melhor solução seria colocar essa fução na classe fase
+// Definitivamente uma melhor soluï¿½ï¿½o seria colocar essa fuï¿½ï¿½o na classe fase
 Entidade* Gerenciador_colisoes::Inimigo_neutralizado()
 {
 	int i;
@@ -73,16 +73,19 @@ Entidade* Gerenciador_colisoes::Inimigo_neutralizado()
 
  			aux = lista_Inimigos[i];
 			lista_Inimigos.erase(lista_Inimigos.begin() + i);
+			std::cout << "Inimigo neutralizado, id: " << aux->getId() << std::endl;
 			
 			return aux;
 		}
 	}
 	return nullptr;
+
 }
 
 bool Gerenciador_colisoes::verifica_Lista_Inimigos_Vazia()
 {
 	if (lista_Inimigos.size() == 0) {
+		std::cerr << "Lista de inimigos vazia." << std::endl;
 		return true;
 	}
 	else {
@@ -96,8 +99,10 @@ void Gerenciador_colisoes::tratar_Fisica_Inimigos(){
 	int i;
 
 	for (i = 0; i < lista_Inimigos.size(); i++) {
+		std::cout << "Executando gravidade para inimigo, id: " << lista_Inimigos[i]->getId() << std::endl;
 		lista_Inimigos[i]->executar_Gravidade();
 	}
+
 }
 
 void Gerenciador_colisoes::tratar_Fisica_Projeteis(){
@@ -107,9 +112,9 @@ void Gerenciador_colisoes::tratar_Fisica_Projeteis(){
 
 	for (itr = lista_Projeteis.begin(); itr != lista_Projeteis.end(); itr++) {
 
+		std::cout << "Executando gravidade para projetil, id: " << (*itr)->getId() << std::endl;
 		(*itr)->executar_Gravidade();
 
-		itr++;
 	}
 }
 
@@ -129,6 +134,7 @@ void Gerenciador_colisoes::tratar_Fisica_Obstaculos(){
 
 	while (itr != lista_Obstaculos.end()) {
 
+		std::cout << "Executando gravidade para obstaculo, id: " << (*itr)->getId() << std::endl;
 		(*itr)->executar_Gravidade();
 
 		itr++;
@@ -142,14 +148,14 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(Jogador* p_Jogador)
 	itr = lista_Obstaculos.begin();
 
 
-	//verifica o tipo de colisão especificamente com objetos.
+	//verifica o tipo de colisï¿½o especificamente com objetos.
 	while (itr != lista_Obstaculos.end()) {
 
 		int lado = verifica_Tipo_De_Colisao(static_cast<Entidade*>(p_Jogador), static_cast<Entidade*>(*itr));
 
 		//direita
 		if (lado == 1) {
-
+			
 			p_Jogador->setar_Pos(((*itr)->get_X() - p_Jogador->get_Largura()), p_Jogador->get_Y());
 		}
 		//cima
@@ -200,7 +206,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Obstaculo(Entidade* pEntidadeRef) {
 	itr = lista_Obstaculos.begin();
 
 
-	//verifica o tipo de colisão especificamente com objetos.
+	//verifica o tipo de colisï¿½o especificamente com objetos.
 	while (itr != lista_Obstaculos.end()) {
 
 		int lado = verifica_Tipo_De_Colisao(static_cast<Entidade*>(pEntidadeRef), static_cast<Entidade*>(*itr));
@@ -287,6 +293,41 @@ void Gerenciador_colisoes::tratar_Colisoes_Inimigos(){
 
 }
 
+void Gerenciador_colisoes::tratar_Colisoes_Esmagador() {
+
+	int i;
+
+	for (i = 0; i < lista_Inimigos.size(); i++) {
+
+		Inimigo_Esmagador* pEsmagador = dynamic_cast<Inimigo_Esmagador*>(lista_Inimigos[i]);
+		float distancia_jogador1;
+		if(pJogador2->get_Dois_Jogadores()){
+			float distancia_jogador2;
+		}
+
+		if (pEsmagador) {
+
+			if(pEsmagador->get_Estado() == EstadoEsmagador::PREPARANDO) {
+				
+				distancia_jogador1 = pJogador1->get_Centro().x - pEsmagador->get_Centro().x; 
+
+				if (distancia_jogador1 <= pEsmagador->get_RaioDeteccao()) {
+					pEsmagador->Atacar();
+				}
+				else {
+					float distancia_jogador2 = std::sqrt(std::pow(pEsmagador->get_Centro().x - pJogador2->get_Centro().x, 2) +
+						std::pow(pEsmagador->get_Centro().y - pJogador2->get_Centro().y, 2));
+
+					if (distancia_jogador2 <= pEsmagador->get_RaioAtaque()) {
+						pEsmagador->Atacar();
+					}
+				}
+			}
+		}
+	}
+
+}
+
 // 
 void Gerenciador_colisoes::tratar_Colisoes_Jogador_Inimigos(Jogador* pJogador, Inimigo* pInimigo) {
 
@@ -297,18 +338,21 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Inimigos(Jogador* pJogador, I
 
 		pJogador->setar_Pos((pInimigo->get_X() - pJogador->get_Largura() - empurrao), pJogador->get_Y());
 		pJogador->diminuir_Vitalidade(pInimigo->danificar());
+		std::cout << "Jogador danificado! Vitalidade atual: " << pJogador->get_Vitalidade() << std::endl;
 	}
 	//cima
 	else if (lado == 2) {
 
 		pJogador->setar_Pos(pJogador->get_X(), pInimigo->get_Comprimento_A() + empurrao);
 		pJogador->diminuir_Vitalidade(pInimigo->danificar());
+		std::cout << "Jogador danificado! Vitalidade atual: " << pJogador->get_Vitalidade() << std::endl;
 	}
 	//esquerda
 	else if (lado == 3) {
 
 		pJogador->setar_Pos(pInimigo->get_Comprimento_L() + empurrao, pJogador->get_Y());
 		pJogador->diminuir_Vitalidade(pInimigo->danificar());
+		std::cout << "Jogador danificado! Vitalidade atual: " << pJogador->get_Vitalidade() << std::endl;
 	}
 	//baixo
 	else if (lado == 4) {
@@ -317,12 +361,13 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Inimigos(Jogador* pJogador, I
 		pJogador->setar_Estado(false);
 		pJogador->executando_Pulo();
 		pInimigo->diminuir_Vitalidade(pJogador->danificar());
+		std::cout << "Inimigo danificado! Vitalidade atual: " << pInimigo->get_Vitalidade() << std::endl;
 	}
 
 }
 
-//Essa classe tem como objetivo Garantir corretamente o lado colidido da entidade referência.
-//Primeiro ela verifica as coordenadas principais, depois confirma com as secundárias, referente a colisão respectivamente.
+//Essa classe tem como objetivo Garantir corretamente o lado colidido da entidade referï¿½ncia.
+//Primeiro ela verifica as coordenadas principais, depois confirma com as secundï¿½rias, referente a colisï¿½o respectivamente.
 const int Gerenciador_colisoes::verifica_Tipo_De_Colisao(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
 	
 	float maior = 0;
@@ -415,7 +460,7 @@ const int Gerenciador_colisoes::verifica_Tipo_De_Colisao(Entidade* pEntidade_Ref
 		}
 	}
 	
-	// verifica o maior lado em contato da entidade Referência com a colidida e retorna o lado colidido.
+	// verifica o maior lado em contato da entidade Referï¿½ncia com a colidida e retorna o lado colidido.
 	if (colisao) {
 		if (maior < comprimento_baixo) {
 
@@ -443,7 +488,7 @@ const int Gerenciador_colisoes::verifica_Tipo_De_Colisao(Entidade* pEntidade_Ref
 	return lado;
 }
 
-//verifica se o objeto esta com possibilidade de colisão.
+//verifica se o objeto esta com possibilidade de colisï¿½o.
 const bool Gerenciador_colisoes::verifica_Mesma_Pos(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
 
 	bool pos = true;

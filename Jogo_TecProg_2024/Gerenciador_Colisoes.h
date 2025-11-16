@@ -1,13 +1,15 @@
 #pragma once
 
 #include "Jogador.h"
-#include "Inimigo.h"
+#include "Piratas.h"
+#include "Inimigo_Esmagador.h"
 #include "Obstaculo.h"
 #include "Projetil.h"
 #include <iostream>
 #include <vector>
 #include <list>
 #include <set>
+#include <cmath>
 
 
 namespace Gerenciadores {
@@ -15,6 +17,7 @@ namespace Gerenciadores {
 	{
 	private:
 		std::vector<Entidades::Personagens::Inimigo*> lista_Inimigos;
+		std::vector<Entidades::Personagens::Inimigo_Esmagador*> lista_Esmagadores;
 		std::list<Entidades::Obstaculos::Obstaculo*> lista_Obstaculos;
 		std::set<Entidades::Projetil*> lista_Projeteis;
 		Entidades::Personagens::Jogador* pJogador1;
@@ -45,6 +48,7 @@ namespace Gerenciadores {
 		void tratar_Fisica_Projeteis();
 
 		void tratar_Colisoes_Inimigos();
+		void tratar_Colisoes_Esmagador();
 		void tratar_Colisoes_Obstaculo(Entidades::Entidade* pEntidadeRef);
 		void tratar_Colisoes_Projeteis();
 		void tratar_Colisoes_Jogador_Inimigos(Entidades::Personagens::Jogador* p_Jogador, Entidades::Personagens::Inimigo* pInimigo);

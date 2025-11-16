@@ -41,14 +41,6 @@ void Piratas::Executar() {
 		else if (pos_final.x < x) {
 			x -= velocidade.x;
 		}
-		/*
-		if (pos_final.y > y) {
-			y += velocidade;
-		}
-		else if (pos_final.y < y) {
-			y -= velocidade;
-		}
-		*/
 	}
 }
 

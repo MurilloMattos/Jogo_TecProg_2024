@@ -4,18 +4,17 @@ using namespace Entidades;
 using namespace Personagens;
 using namespace Obstaculos;
 
-Obstaculo_Facil::Obstaculo_Facil() {
+Plataforma::Plataforma() {
 
 }
 
-Obstaculo_Facil::~Obstaculo_Facil() {
-
+Plataforma::~Plataforma() {
 }
 
-void Obstaculo_Facil::executar()
+void Plataforma::executar()
 {
 }
 
-void Obstaculo_Facil::obstacular(Jogador* p)
+void Plataforma::obstacular(Jogador* p)
 {
 }
