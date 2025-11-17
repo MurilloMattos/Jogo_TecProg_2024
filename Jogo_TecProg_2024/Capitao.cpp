@@ -11,6 +11,7 @@ Capitao::Capitao(): recarga(0){
 	dano_do_balote = 15;
 
 	disparou = false;
+	pode_disparar = true;
 
 	tamanho.x = 35.0;
 	tamanho.y = 65.0;
@@ -30,7 +31,8 @@ Capitao::Capitao(): recarga(0){
 
 Capitao::~Capitao(){
 
-	//disparos.clear();
+	disparos.clear();
+	pode_disparar = false;
 	disparou = false;
 }
 
@@ -45,6 +47,7 @@ void Entidades::Personagens::Capitao::incluir_Projetil(Projetil* projet) {
 	projet->setar_Ativo(true);
 	projet->setar_Direcao(direcao);
 	projet->setar_Dano(dano_do_balote);
+	projet->setar_Capitao(this);
 
 
 	if (direcao == esquerda) {
@@ -55,7 +58,10 @@ void Entidades::Personagens::Capitao::incluir_Projetil(Projetil* projet) {
 		projet->setar_Pos((x + this->get_Largura()), (this->get_Centro().y - projet->get_Centro().y));
 	}
 
+	std::cout << "Incluiu projetil ID " << projet->getId() << " na pos (" << projet->get_X() << "," << projet->get_Y() << ")" << std::endl;
+
 	disparos.push_back(projet);
+	imprime_Projeteis_Ids_Ativos_e_Pos();
 }
 
 void Capitao::remover_Projetil(Projetil* projet) {
@@ -64,6 +70,8 @@ void Capitao::remover_Projetil(Projetil* projet) {
 	itr = disparos.begin();
 
 	while (itr != disparos.end()) {
+
+		
 		if ((*itr)->getId() == projet->getId()) {
 			disparos.erase(itr);
 			break;
@@ -72,25 +80,44 @@ void Capitao::remover_Projetil(Projetil* projet) {
 	}
 }
 
+std::vector<Projetil*>& Capitao::get_Vetor_De_Projetis()
+{
+	return disparos;
+}
+
 void Capitao::Executar() {
 
 	disparou = false;
 
-	if (recarga < 180) {
-		recarga++;
+	if (pode_disparar) {
+
+		if (recarga < 180) {
+			recarga++;
+		}
+		else {
+
+			disparou = true;
+			std::cout << "Disparou, pos (" << x << "," << y << ") direcao " << direcao << std::endl;
+
+			recarga = 0;
+		}
 	}
-	else {
-
-		disparou = true;
-		std::cout << "Disparou, pos (" << x << "," << y << ") direcao " << direcao <<std::endl;
-
-		recarga = 0;
-	}
-
 
 	Desenhar();
 }
 
+void Capitao::imprime_Projeteis_Ids_Ativos_e_Pos() {
+
+	//std::cout << "Projetis Ativos do Capitao ID " << id << " :" << std::endl;
+	//std::cout << "projetis totais: " << disparos.size() << std::endl;
+	//std::cout << "Projetis do Capitao ID " << id << " :" << std::endl;
+
+	for (int i = 0; i < disparos.size(); i++) {
+		if (disparos[i]->get_Ativo()) {
+			std::cout << "  Projetil ID: " << disparos[i]->getId() << " Pos (" << disparos[i]->get_X() << "," << disparos[i]->get_Y() << ")" << std::endl;
+		}
+	}
+}
 
 
 void Capitao::Salvar() {

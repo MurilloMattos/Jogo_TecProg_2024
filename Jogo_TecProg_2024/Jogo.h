@@ -9,7 +9,7 @@ class Jogo
 	private:
 		Gerenciadores::Gerenciador_Grafico* Ger_Graf;
 		Entidades::Personagens::Jogador jogador_1;
-		//Entidades::Personagens::Jogador jogador_2;
+		Entidades::Personagens::Jogador jogador_2;
 
 		Fases::Fase_1 fase1;
 

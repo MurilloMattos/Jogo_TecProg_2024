@@ -14,6 +14,8 @@ namespace Entidades {
 		bool ativo;
 		int lado;
 		int dano;
+		int tempo_de_vida;
+		int tempo_ativo;
 
 		
 		Entidades::Personagens::Capitao* cap;

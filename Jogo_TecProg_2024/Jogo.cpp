@@ -8,14 +8,11 @@ using namespace Fases;
 Jogo::Jogo()
 {
 
-    //jogador_2.setar_Dois_Jogadores(true);
+    jogador_2.setar_Dois_Jogadores(false);
 
     Ger_Graf = Gerenciador_Grafico::getInstance();
-    fase1.Setar_Jogadores_Colisoes(&jogador_1, nullptr);
+    fase1.Setar_Jogadores_Colisoes(&jogador_1, &jogador_2);
 
-
-    //Ger_Graf->getJanela()->setView(Ger_Graf->getCamera());
-    //fase1.Setar_Jogadores_Colisoes(&jogador_1, &jogador_2);
 }
 
 Jogo::~Jogo()
@@ -62,19 +59,14 @@ void Jogo::Executar()
 
 void Jogo::Atualiza() {
 
-    
-
     fase1.Executar();
     jogador_1.Executar();
+
+    if (jogador_2.get_Dois_Jogadores()) {
+        jogador_2.Executar();
+    }
+
     atualiza_Camera();
-
-    //descomentar essa execução caso não achar interessante a movimentação da camera ao colidir.
-    //fase1.Executar();
-    
-    //Ger_Graf->getCamera()->setCenter(jogador_1.get_Centro());
-    //Ger_Graf->getCamera()->move(jogador_1.get_Centro());
-
-    //jogador_2.Executar();
 
 }
 

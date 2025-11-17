@@ -34,7 +34,7 @@ namespace Gerenciadores {
 		void tratar_Colisoes_Projeteis();
 		void tratar_Colisoes_Jogador_Inimigos(Entidades::Personagens::Jogador* p_Jogador, Entidades::Personagens::Inimigo* pInimigo);
 		void tratar_Colisoes_Jogador_Obstaculo(Entidades::Personagens::Jogador* p_Jogador);
-		bool tratar_Colisoes_Jogador_Projeteis(Entidades::Personagens::Jogador* p_Jogador);
+		void tratar_Colisoes_Jogador_Projeteis(Entidades::Personagens::Jogador* p_Jogador);
 
 		const int verifica_Tipo_De_Colisao(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
 		const bool verifica_Mesma_Pos(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
@@ -53,7 +53,7 @@ namespace Gerenciadores {
 		void Incluir_Projetil(Entidades::Projetil* p_Projetil);
 		void Setar_Jogador(Entidades::Personagens::Jogador* p_Jogador1, Entidades::Personagens::Jogador* p_Jogador2);
 
-		Entidades::Projetil* projetil_Destruido();
+		void projetil_Destruido(Entidades::Projetil* pProj);
 		Entidades::Entidade* Inimigo_neutralizado();
 		bool verifica_Lista_Inimigos_Vazia();
 

@@ -28,12 +28,13 @@ namespace Entidades{
 				~Jogador();
 
 				void setar_Dois_Jogadores(bool jogador_dois);
+				bool get_Dois_Jogadores();
 				void executando_Pulo();
 				void executar_Gravidade();
 				void setar_Estado(bool estado);
 
-				//int danificar();
-				//void receber_dano(int dan);
+				int danificar();
+				void receber_dano(int dan);
 
 				void Executar();
 				void Salvar();

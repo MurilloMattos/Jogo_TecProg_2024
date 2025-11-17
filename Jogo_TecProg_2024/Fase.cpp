@@ -115,11 +115,11 @@ void Fases::Fase::Cria_Plataforma() {
 	
 }
 
-void Fases::Fase::Cria_Inimigos_Piratas(){
+void Fases::Fase::Cria_Inimigos_Piratas(float x, float y){
 	Inimigo_Medio* pirata;
 
 	pirata = new Inimigo_Medio;
-	pirata->setar_Pos(290.f, 100.f);
+	pirata->setar_Pos(x, y);
 
 	lista_id_inimigos.push_front(pirata->getId());
 	gerenciador_colisoes.Incluir_Inimigo(pirata);
@@ -131,9 +131,11 @@ bool Fases::Fase::get_Ganhou()
 	return ganhou;
 }
 
-void Fase::Cria_Inimigos() {
 
-	Cria_Inimigos_Piratas();
+void Fases::Fase::criar_cenario()
+{
+
+
 }
 
 void Fases::Fase::verifica_Inimigos_Neutralizados(){
@@ -167,9 +169,12 @@ void Fases::Fase::verifica_Inimigos_Neutralizados(){
 void Fases::Fase::Executar() {
 
 
+	
+
 	verifica_Inimigos_Neutralizados();
 	gerenciador_colisoes.Executar();
 	lista_Entidades.Percorrer();
 }
+
 
 
