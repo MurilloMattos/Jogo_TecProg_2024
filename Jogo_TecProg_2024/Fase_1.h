@@ -5,6 +5,7 @@
 #include "Piratas.h"
 #include "Piso.h"
 #include "Obstaculo.h"
+#include "Obstaculo_Esteira.h"
 
 namespace Fases{
 	class Fase_1 : public Fase
@@ -13,10 +14,10 @@ namespace Fases{
 
 	Entidades::Obstaculos::Piso* piso;
 	Entidades::Obstaculos::Piso* plataforma;
+	Entidades::Obstaculos::Obstaculo_Esteira* esteira;
 	Entidades::Personagens::Piratas* pirata;
 	Entidades::Personagens::Capitao* capitao;
-
-
+	Entidades::Personagens::Inimigo_Esmagador* esmagador;
 
 	sf::Vector2f tam_Piso_Fase;
 	sf::Vector2f pos_Piso;

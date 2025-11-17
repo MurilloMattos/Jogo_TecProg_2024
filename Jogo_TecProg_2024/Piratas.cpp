@@ -5,6 +5,8 @@ using namespace Personagens;
 
 Piratas::Piratas() {
 
+	
+
 	num_vitalidade = 100;
 	dano = 20;
 

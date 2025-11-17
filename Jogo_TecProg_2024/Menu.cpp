@@ -69,11 +69,11 @@ void Menu::atribuir() {
 	// Posiciona o fundo no canto superior esquerdo para ocupar a janela
 	pFigura->setPosition(0.0f, 0.0f);//posicao do menu na janela
 	
-	opcoes = {"1 Jogador","2 Jogadores", "Configuracoes", "Sair"};
-	coordsOpcoes = {{200, 250},{200, 300},{200, 350},{200, 400}};
+	opcoes = {"1 Jogador","2 Jogadores", "Sair"};
+	coordsOpcoes = {{200, 250},{200, 300},{200, 350}};
 	// Aumenta os tamanhos das opções principais para melhor legibilidade
-	tam = {36, 36, 36, 36};
-	textos.resize(4);
+	tam = {36, 36, 36};
+	textos.resize(3);
     for(std::size_t i{}; i < textos.size(); i++) {
 		textos[i].setFont(*fonte);
 		textos[i].setString(opcoes[i]);

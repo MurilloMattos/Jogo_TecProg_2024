@@ -17,33 +17,41 @@ Inimigo_Esmagador::Inimigo_Esmagador() :
     tamanho.x = 30.0f;
     tamanho.y = 30.0f;
 
-    pos_inicial.x = 600.f;
+    pos_inicial.x = 700.f;
     pos_inicial.y = 159.f;
 
     pos_final = pos_inicial;
 
     velocidade.x = 0.5f; // Anda devagar
 
-    pFigura->setFillColor(sf::Color::Blue);
-    pFigura->setSize(tamanho);
-    pFigura->setPosition(pos_inicial);
+    if (pFigura != nullptr) {
+        // IMPORTANTE: Remove qualquer textura herdada para que a cor funcione
+        pFigura->setTexture(nullptr); 
+        
+        pFigura->setFillColor(sf::Color::Blue);
+        pFigura->setSize(tamanho);
+        // A posição será atualizada pelo setar_Pos, mas é bom garantir aqui também
+        pFigura->setPosition(pos_inicial); 
+        
+        // Garante que a origem esteja no canto superior esquerdo (padrão)
+        // ou ajuste se sua colisão usar centro (ex: tamanho.x/2, tamanho.y/2)
+        pFigura->setOrigin(0.f, 0.f); 
+    }
 }
 
 Inimigo_Esmagador::~Inimigo_Esmagador() {
-    // ... limpeza se necessário ...
+    
 }
 
 // Executar apenas gerencia o estado ATUAL
 void Inimigo_Esmagador::Executar() {
-
-    // O Gerenciador de Colisões vai mudar o estado
-    // de PATRULHANDO para PREPARANDO.
 
     switch (estado_atual) {
     
         case EstadoEsmagador::PATRULHANDO:
             
             if (pFigura) pFigura->setFillColor(sf::Color::Blue); // Cor de patrulha
+            Mover();
             break;
 
         case EstadoEsmagador::PREPARANDO:
@@ -53,18 +61,19 @@ void Inimigo_Esmagador::Executar() {
             // Verifica se o tempo de espera passou
             /*if (relogio_preparacao.getElapsedTime().asSeconds() > tempo_preparacao_seg) {
                 Atacar(); // Manda executar o ataque
-            }
-            break;*/
+            }*/
+            break;
 
         case EstadoEsmagador::ATACANDO:
             // Este estado é "instantâneo". O Gerenciador de Colisões
             // vai detectar este estado e aplicar o dano no mesmo frame.
             if (pFigura) pFigura->setFillColor(sf::Color::Magenta); // Cor de ataque
+            break;
 
+        }   
         Desenhar();
         setar_Pos(x, y);
-    }   
-}
+    }
 
 /*void Inimigo_Esmagador::IniciarPreparacao() {
     if (estado_atual == EstadoEsmagador::PATRULHANDO) {
@@ -75,11 +84,22 @@ void Inimigo_Esmagador::Executar() {
 
 void Inimigo_Esmagador::Atacar() {
     estado_atual = EstadoEsmagador::ATACANDO;
-}
+}*/
 
 void Inimigo_Esmagador::Mover() {
     x += 0.5f;
-}*/
+
+    if ((pos_final.x != x) && (pos_final.y != y)) {
+
+	if (pos_final.x > x) {
+		x += velocidade.x;
+	}
+	else if (pos_final.x < x) {
+		x -= velocidade.x;
+	}
+    }
+
+}
 
 void Inimigo_Esmagador::Danificar() {
     // Implementação mínima: pode ser estendida para aplicar dano ao jogador

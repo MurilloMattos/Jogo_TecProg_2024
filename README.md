@@ -18,11 +18,11 @@ Crie uma pasta chamada SFML-2.5.1/ na raiz do projeto.
 
 Baixe UMA das versões do SFML, dependendo do sistema que você quer usar:
 
-Para Windows (Visual Studio): SFML-2.x.x-windows-visual-studio-17-64-bit.zip
+Para Windows (Visual Studio): SFML-2.5.1-windows-visual-studio-17-64-bit.zip
 
-Para Windows (MinGW): SFML-2.x.x-windows-gcc-xx-mingw-64-bit.zip
+Para Windows (MinGW): SFML-2.5.1-windows-gcc-xx-mingw-64-bit.zip
 
-Para Linux (GCC): SFML-2.x.x-linux-gcc-64-bit.tar.gz
+Para Linux (GCC): SFML-2.5.1-linux-gcc-64-bit.tar.gz
 
 Extraia o conteúdo do arquivo baixado (pastas como bin, lib, include, SFMLConfig.cmake) para dentro da pasta SFML-2.5.1/ que você criou.
 
