@@ -33,7 +33,6 @@ namespace Fases {
 			
 			//virtual void criar_cenario() = 0;
 			virtual void Cria_Piso() = 0;
-			virtual void Cria_Obstaculos() = 0;
 			virtual void Cria_Plataforma() = 0;
 			virtual void Cria_Inimigos() = 0;
 			void verifica_Inimigos_Neutralizados();

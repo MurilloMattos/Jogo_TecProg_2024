@@ -1,3 +1,5 @@
+//Obstacullo Médio: Esteira que empurra o jogador
+
 #pragma once
 #include "Obstaculo.h"
 

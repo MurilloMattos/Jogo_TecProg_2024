@@ -3,14 +3,15 @@
 // Implementações usando qualificação completa de namespace
 Entidades::Obstaculos::Obstaculo_Esteira::Obstaculo_Esteira(float vel, sf::Vector2f dir)
     : Obstaculo(), velocidadeTransporte(vel), direcao(dir) {
-    agressivo = false; // Esteira não é agressiva
-    vel = -1.0f;
+    agressivo = false;
     tamanhoEsteira = sf::Vector2f(50.0f, 10.0f); // Exemplo de tamanho
 }
 Entidades::Obstaculos::Obstaculo_Esteira::~Obstaculo_Esteira() {}
 
 void Entidades::Obstaculos::Obstaculo_Esteira::Executar() {
-    // Lógica de animação da esteira rodando (mudança de rect da textura)
+    pFigura->setFillColor(sf::Color::Cyan); // Cor indicativa da esteira
+    pFigura->setSize(tamanhoEsteira);
+    pFigura->setPosition(x, y);
 }
 
 void Entidades::Obstaculos::Obstaculo_Esteira::Salvar() {

@@ -35,7 +35,7 @@ namespace Fases{
 		//piso é inerente as fases e a plataforma  obstáculo nas 2 fases.
 		void Cria_Piso();
 		void Cria_Plataforma();
-		void Cria_Obstaculos();
+		void Cria_Esteiras();
 		
 		//inimigos fáceis		
 		void Cria_Inimigos();

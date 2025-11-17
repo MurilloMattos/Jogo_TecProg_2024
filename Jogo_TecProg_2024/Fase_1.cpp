@@ -19,21 +19,15 @@ Fases::Fase_1::Fase_1() {
 
 	pos_original.x = 10;
 	pos_original.y = 80;
-
-	Cria_Obstaculos();
+	
 	Cria_Piso();
 	Cria_Plataforma();
+	Cria_Esteiras();
 	Cria_Inimigos();
 
 }
 
 Fases::Fase_1::~Fase_1(){
-
-}
-
-
-void Fases::Fase_1::Cria_Obstaculos()
-{
 
 }
 
@@ -44,6 +38,7 @@ void Fases::Fase_1::Cria_Plataforma(){
 	gerenciador_colisoes.Incluir_Obstaculo(static_cast<Entidades::Obstaculos::Obstaculo*>(plataforma));
 	lista_Entidades.Incluir(static_cast<Entidade*>(plataforma));
 }
+
 void Fases::Fase_1::Cria_Piso() {
 
 	piso = new Obstaculos::Piso;
@@ -53,6 +48,16 @@ void Fases::Fase_1::Cria_Piso() {
 	lista_Entidades.Incluir(static_cast<Entidade*>(piso));
 	
 }
+
+void Fases::Fase_1::Cria_Esteiras() {
+
+	/*esteira = new Obstaculos::Obstaculo_Esteira(100.f, sf::Vector2f(1.f, 0.f));
+	esteira->setar_Pos(200.f, 100.f);
+
+	gerenciador_colisoes.Incluir_Obstaculo(static_cast<Entidades::Obstaculos::Obstaculo*>(esteira));
+	lista_Entidades.Incluir(static_cast<Entidade*>(esteira));*/
+}
+
 void Fases::Fase_1::Cria_Inimigos(){
 
 	Cria_Inimigos_Piratas();
