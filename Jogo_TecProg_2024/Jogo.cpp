@@ -25,6 +25,7 @@ estado(Estado::MENU)
 
     setar_Fase();
 
+    setar_Fase();
 }
 
 Jogo::~Jogo()
