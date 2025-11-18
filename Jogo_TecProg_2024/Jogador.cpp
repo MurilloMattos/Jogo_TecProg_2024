@@ -3,13 +3,15 @@
 using namespace Entidades;
 using namespace Personagens;
 
-Jogador::Jogador() : semente_id_entidade(10) {
+Jogador::Jogador() : semente_id_entidade(10) , eliminado(false) {
 
 	//arrumar isso posteriormente
 	setId(semente_id_entidade);
 
 	segundo_jogador = false;
 	estado_pulando = false;
+	estado_caindo = true;
+
 	num_vitalidade = 100;
 
 	dano = 100;
@@ -28,6 +30,7 @@ Jogador::Jogador() : semente_id_entidade(10) {
 
 	forca_de_impulso = -7.0;
 	acelerando = false;
+	
 	//altura_de_pulo = 50.0;
 	
 	velocidade.y = -5.0;
@@ -43,39 +46,43 @@ Jogador::~Jogador() {
 
 void Jogador::Executar() {
 
-	executar_Gravidade();
 
-	Desenhar();
-	setar_Pos(x, y);
+	if (!eliminado) {
 
-	if (!segundo_jogador) {
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-		{
-			x += velocidade.x;
-		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-			x -= velocidade.x;
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+		executar_Gravidade();
 
-			executando_Pulo();
+		Desenhar();
+		setar_Pos(x, y);
+
+		if (!segundo_jogador) {
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+			{
+				x += velocidade.x;
+			}
+			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+				x -= velocidade.x;
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+
+				executando_Pulo();
+			}
+
+			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+				y += 5.0f;
+			}
+
 		}
-		
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-			y += 5.0f;
-		}
-		
-	}
-	else {
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-		{
-			x += velocidade.x;
-		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-			x -= velocidade.x;
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-			executando_Pulo();
+		else {
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+			{
+				x += velocidade.x;
+			}
+			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+				x -= velocidade.x;
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+				executando_Pulo();
+			}
 		}
 	}
 	
@@ -83,6 +90,11 @@ void Jogador::Executar() {
 
 void Jogador::setar_Estado(bool estado){
 	estado_pulando = estado;
+}
+
+bool Jogador::get_Eliminado() const
+{
+	return eliminado;
 }
 
 void Entidades::Personagens::Jogador::executar_Gravidade() {
@@ -115,9 +127,22 @@ void Entidades::Personagens::Jogador::executar_Gravidade() {
 
 
 void Jogador::setar_Dois_Jogadores(bool jogador_dois) {
-	segundo_jogador = jogador_dois;
-	pFigura->setFillColor(sf::Color::Cyan);
-	setar_Pos(x + 25,y);
+
+	if (jogador_dois) {
+		segundo_jogador = jogador_dois;
+		pFigura->setFillColor(sf::Color::Cyan);
+		setar_Pos(x + 25, y);
+		eliminado = false;
+	}
+	else {
+		eliminado = true;
+	}
+}
+
+bool Jogador::get_Dois_Jogadores() {
+
+
+	return segundo_jogador;
 }
 
 void Entidades::Personagens::Jogador::executando_Pulo()
@@ -132,6 +157,24 @@ void Entidades::Personagens::Jogador::executando_Pulo()
 
 void Jogador::Salvar(){
 
+}
+
+int Jogador::danificar() {
+	return dano;
+}
+
+void Jogador::diminuir_Vitalidade(int dano) {
+
+	num_vitalidade -= dano;
+	if (num_vitalidade <= 0) {
+		num_vitalidade = 0;
+		eliminado = true;
+	}
+	std::cout << "Jogador " << getId() << " tomou " << dano << " de dano. Vitalidade atual: " << num_vitalidade << std::endl;
+
+	if (eliminado) {
+		std::cout << "Jogador " << getId() << " foi eliminado!" << std::endl;
+	}
 }
 
 // adicionar em classes primordiais? tais como Ente ou Entidades?

@@ -34,14 +34,14 @@ namespace Gerenciadores {
 		void tratar_Colisoes_Projeteis();
 		void tratar_Colisoes_Jogador_Inimigos(Entidades::Personagens::Jogador* p_Jogador, Entidades::Personagens::Inimigo* pInimigo);
 		void tratar_Colisoes_Jogador_Obstaculo(Entidades::Personagens::Jogador* p_Jogador);
-		bool tratar_Colisoes_Jogador_Projeteis(Entidades::Personagens::Jogador* p_Jogador);
+		void tratar_Colisoes_Jogador_Projeteis(Entidades::Personagens::Jogador* p_Jogador);
 
 		const int verifica_Tipo_De_Colisao(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
 		const bool verifica_Mesma_Pos(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
-		const bool verifica_Colisao_Cima(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
-		const bool verifica_Colisao_Esquerda(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
-		const bool verifica_Colisao_Baixo(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
-		const bool verifica_Colisao_Direita(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
+		const bool verifica_Colisao_Cima (Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
+		const bool verifica_Colisao_Esquerda (Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
+		const bool verifica_Colisao_Baixo (Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
+		const bool verifica_Colisao_Direita (Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
 
 	public:
 
@@ -53,8 +53,8 @@ namespace Gerenciadores {
 		void Incluir_Projetil(Entidades::Projetil* p_Projetil);
 		void Setar_Jogador(Entidades::Personagens::Jogador* p_Jogador1, Entidades::Personagens::Jogador* p_Jogador2);
 
-		Entidades::Projetil* projetil_Destruido();
-		Entidades::Entidade* Inimigo_neutralizado();
+		void projetil_Destruido(Entidades::Projetil* pProj);
+		Entidades::Entidade* Inimigo_neutralizado(Entidades::Personagens::Inimigo* inimigo_eliminado);
 		bool verifica_Lista_Inimigos_Vazia();
 
 		void Executar();

@@ -23,6 +23,8 @@ Gerenciador_colisoes::Gerenciador_colisoes() : direita(1),cima(2),esquerda(3),ba
 
 Gerenciador_colisoes::~Gerenciador_colisoes(){
 
+
+
 	lista_Inimigos.clear();
 	lista_Obstaculos.clear();
 	lista_Projeteis.clear();
@@ -54,43 +56,34 @@ void Gerenciador_colisoes::Setar_Jogador(Jogador* p_Jogador1, Jogador* p_Jogador
 }
 
 
-Entidades::Projetil* Gerenciadores::Gerenciador_colisoes::projetil_Destruido()
+void Gerenciadores::Gerenciador_colisoes::projetil_Destruido(Projetil* pProj)
 {
-	set<Projetil*>::iterator itr;
 
-	for (itr = lista_Projeteis.begin(); itr != lista_Projeteis.end(); itr++) {
-		if (!(*itr)->get_Ativo()) {
-			Projetil* aux = *itr;
-			lista_Projeteis.erase(itr);
-			return aux;
-		}
+	if (pProj != nullptr) {
+
+		//remove diretamente
+		lista_Projeteis.erase(pProj);
 	}
-
-	return nullptr;
 }
 
 
-// Definitivamente uma melhor solução seria colocar essa fução na classe fase
-Entidade* Gerenciador_colisoes::Inimigo_neutralizado()
+
+Entidade* Gerenciador_colisoes::Inimigo_neutralizado(Inimigo* inimigo_eliminado)
 {
 	int i;
-
 	Entidade* aux;
 
 	for (i = 0; i < lista_Inimigos.size(); i++) {
-
-		if (lista_Inimigos[i]->get_Vitalidade() <= 0) {
-
-
- 			aux = lista_Inimigos[i];
+		if (lista_Inimigos[i] == inimigo_eliminado) {
+			aux = static_cast<Entidade*>(lista_Inimigos[i]);
 			lista_Inimigos.erase(lista_Inimigos.begin() + i);
-			
 			return aux;
 		}
 	}
 	return nullptr;
 }
 
+//Verifica se a lista de inimigos do gerenciador está vazia
 bool Gerenciador_colisoes::verifica_Lista_Inimigos_Vazia()
 {
 	if (lista_Inimigos.size() == 0) {
@@ -101,6 +94,7 @@ bool Gerenciador_colisoes::verifica_Lista_Inimigos_Vazia()
 	}
 }
 
+//colisão do jogador com os obstáculos
 void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(Jogador* p_Jogador) {
 
 	list<Obstaculo*>::iterator itr;
@@ -122,6 +116,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(Jogador* p_Jogador)
 		else if (lado == 2) {
 
 			p_Jogador->setar_Pos(p_Jogador->get_X(), (*itr)->get_Comprimento_A());
+			p_Jogador->setar_Estado(false);
 		}
 		//esquerda
 		else if (lado == 3) {
@@ -139,26 +134,38 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(Jogador* p_Jogador)
 	}
 }
 
-bool Gerenciador_colisoes::tratar_Colisoes_Jogador_Projeteis(Jogador* p_Jogador){
+//colisão de projeteis com o jogador
+void Gerenciador_colisoes::tratar_Colisoes_Jogador_Projeteis(Jogador* p_Jogador){
 
 	set<Projetil*>::iterator itr;
 
 	itr = lista_Projeteis.begin();
 
-	while (itr != lista_Projeteis.end()) {
+	if (p_Jogador != nullptr) {
 
-		int lado = verifica_Tipo_De_Colisao(static_cast<Entidade*>(p_Jogador), static_cast<Entidade*>(*itr));
+		while (itr != lista_Projeteis.end()) {
 
-		if (lado != 0) {
-			return true;
+
+			if ((*itr)->get_Ativo()) {
+
+				int lado = verifica_Tipo_De_Colisao(static_cast<Entidade*>(p_Jogador), static_cast<Entidade*>(*itr));
+
+				if (lado != 0) {
+
+					p_Jogador->diminuir_Vitalidade((*itr)->get_Dano());
+					(*itr)->setar_Ativo(false);
+					projetil_Destruido(*itr);
+					break;
+				}
+			}
+			itr++;
+
 		}
-
-		itr++;
 	}
 
-	return false;
 }
 
+//colisão de qualquer coisa com os obstáculos
 void Gerenciador_colisoes::tratar_Colisoes_Obstaculo(Entidade* pEntidadeRef) {
 
 	list<Obstaculo*>::iterator itr;
@@ -196,6 +203,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Obstaculo(Entidade* pEntidadeRef) {
 	}
 }
 
+//colisão de projeteis com os obstáculos
 void Gerenciador_colisoes::tratar_Colisoes_Projeteis(){
 
 	set<Projetil*>::iterator itr_proj;
@@ -212,7 +220,9 @@ void Gerenciador_colisoes::tratar_Colisoes_Projeteis(){
 			int lado = verifica_Tipo_De_Colisao(static_cast<Entidade*>(*itr_proj), static_cast<Entidade*>(*itr_obst));
 
 			if (lado != 0) {
+
 				(*itr_proj)->setar_Ativo(false);
+				projetil_Destruido(*itr_proj);
 			}
 
 			itr_obst++;
@@ -222,18 +232,23 @@ void Gerenciador_colisoes::tratar_Colisoes_Projeteis(){
 	}
 }
 
+//trata as colisões entre os inimigos e os outros objetos não em inimigos (ainda)
 void Gerenciador_colisoes::tratar_Colisoes_Inimigos(){
 
 	int i;
 
 	for (i = 0; i < lista_Inimigos.size(); i++) {
 
-		if (lista_Inimigos[i]->get_Vitalidade() < 0) {
+		if(lista_Inimigos[i] == nullptr){
+			continue;
+		}
+
+		if (lista_Inimigos[i]->get_Vitalidade() <= 0) {
 			std::cout << "entidade " << i << " foi neutralizada" << std::endl;
 		}
 
 
-		if (pJogador2 != nullptr) {
+		if (pJogador2->get_Dois_Jogadores()) {
 			tratar_Colisoes_Obstaculo(static_cast<Entidade*>(lista_Inimigos[i]));
 			tratar_Colisoes_Jogador_Inimigos(pJogador1, lista_Inimigos[i]);
 			tratar_Colisoes_Jogador_Inimigos(pJogador2, lista_Inimigos[i]);
@@ -253,7 +268,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Inimigos(){
 
 }
 
-// 
+//trata as colisões entre o jogador e os inimigos
 void Gerenciador_colisoes::tratar_Colisoes_Jogador_Inimigos(Jogador* pJogador, Inimigo* pInimigo) {
 
 	int lado = verifica_Tipo_De_Colisao(pJogador, pInimigo);
@@ -269,6 +284,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Inimigos(Jogador* pJogador, I
 
 		pJogador->setar_Pos(pJogador->get_X(), pInimigo->get_Comprimento_A() + empurrao);
 		pJogador->diminuir_Vitalidade(pInimigo->danificar());
+		pJogador->setar_Estado(false);
 	}
 	//esquerda
 	else if (lado == 3) {
@@ -429,7 +445,7 @@ const bool Gerenciador_colisoes::verifica_Mesma_Pos(Entidade* pEntidade_Ref, Ent
 }
 
 //Auto explicativo
-const bool Gerenciador_colisoes::verifica_Colisao_Cima(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
+const bool Gerenciador_colisoes::verifica_Colisao_Cima (Entidade* pEntidade_Ref, Entidade* pEntidade2) {
 
 	if (!verifica_Mesma_Pos(pEntidade_Ref, pEntidade2)) {
 		return false;
@@ -509,8 +525,10 @@ const bool Gerenciador_colisoes::verifica_Colisao_Direita(Entidade* pEntidade_Re
 
 void Gerenciador_colisoes::Executar(){
 
-	tratar_Colisoes_Jogador_Obstaculo(pJogador1);
-	tratar_Colisoes_Jogador_Projeteis(pJogador1);
+	if (pJogador1) {
+		tratar_Colisoes_Jogador_Obstaculo(pJogador1);
+		tratar_Colisoes_Jogador_Projeteis(pJogador1);
+	}
 	if (pJogador2->get_Dois_Jogadores()) {
 		tratar_Colisoes_Jogador_Obstaculo(pJogador2);
 		tratar_Colisoes_Jogador_Projeteis(pJogador2);
@@ -518,5 +536,4 @@ void Gerenciador_colisoes::Executar(){
 
 	tratar_Colisoes_Inimigos();
 	tratar_Colisoes_Projeteis();
-
 }

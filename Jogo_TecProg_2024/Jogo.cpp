@@ -8,14 +8,16 @@ using namespace Fases;
 Jogo::Jogo()
 {
 
-    jogador_2.setar_Dois_Jogadores(true);
+    jogador_2.setar_Dois_Jogadores(false);
+
 
     Ger_Graf = Gerenciador_Grafico::getInstance();
-    //fase1.Setar_Jogadores_Colisoes(&jogador_1, nullptr);
 
+	//mudar para a fase que for ser utilizada, a principio o menu é para alternar essas boleanas e chamar a função setar_Fase();
+    fase_1_ativa = false;
+    fase_2_ativa = true;
 
-    //Ger_Graf->getJanela()->setView(Ger_Graf->getCamera());
-    fase1.Setar_Jogadores_Colisoes(&jogador_1, &jogador_2);
+    setar_Fase();
 }
 
 Jogo::~Jogo()
@@ -24,9 +26,8 @@ Jogo::~Jogo()
 
 void Jogo::Executar()
 {
-    //int i = 0;
-    //tempo_principal.restart();
-    //tempo.getElapsedTime().asSeconds();
+
+    setar_Fase();
 
     while (Ger_Graf->getJanela()->isOpen())
     {
@@ -36,7 +37,6 @@ void Jogo::Executar()
 
         Ger_Graf->getJanela()->setFramerateLimit(60);
 
-        //tempo.restart();
 
         while (Ger_Graf->getJanela()->pollEvent(evento))
         {
@@ -53,44 +53,71 @@ void Jogo::Executar()
 
         Ger_Graf->getJanela()->clear();
 
-        //std::cout << i << std::endl;
-        //i++;
-        //std::cout << tempo_principal.getElapsedTime().asSeconds(); //<< std::endl;
-        //tempo.restart();
 
         Atualiza();
 
         Ger_Graf->getJanela()->display();
-
-        if (fase1.get_Ganhou()) {
-            Ger_Graf->getJanela()->close();
-        }
     }
 }
 
 void Jogo::Atualiza() {
 
-
-
-
-    fase1.Executar();
-    jogador_1.Executar();
-
-    if (jogador_2.get_Dois_Jogadores()) {
-        
-        jogador_2.Executar();
-    }
-    
-    atualiza_Camera();
-
-    //descomentar essa execução caso não achar interessante a movimentação da camera ao colidir.
     //fase1.Executar();
-    
-    //Ger_Graf->getCamera()->setCenter(jogador_1.get_Centro());
-    //Ger_Graf->getCamera()->move(jogador_1.get_Centro());
 
-    
+    if (!acabou) {
+        if (fase_1_ativa) {
+            //fase_1.executar();
+        }
+        else if (fase_2_ativa) {
+            fase2.Executar();
+        }
 
+
+        jogador_1.Executar();
+
+        if (jogador_2.get_Dois_Jogadores()) {
+            jogador_2.Executar();
+        }
+
+        verifica_Fim_De_Jogo();
+
+        atualiza_Camera();
+    }
+    else {
+		system("pause");
+        //salvar o jogo ou mostrar a tela de fim de jogo
+	}
+
+}
+
+void Jogo::verifica_Fim_De_Jogo()
+{
+    if(fase_1_ativa){
+        //if (fase1.get_Ganhou() || (jogador_1.get_Eliminado() && jogador_2.get_Eliminado()))
+        //{
+        //    Ger_Graf->getJanela()->close();
+        //    acabou = true;
+        //}
+    }
+    else  if(fase_2_ativa){
+        if (fase2.get_Ganhou() || (jogador_1.get_Eliminado() && jogador_2.get_Eliminado()))
+        {
+            Ger_Graf->getJanela()->close();
+			acabou = true;
+        }
+	}
+}
+
+void Jogo::setar_Fase()
+{
+
+	//com a fase_1 implementada, pode descomentar esse bloco;
+    if (fase_1_ativa) {
+        //fase1.Setar_Jogadores(&jogador_1, &jogador_2);
+	}
+    else if (fase_2_ativa) {
+        fase2.Setar_Jogadores(&jogador_1, &jogador_2);
+	}
 }
 
 void Jogo::atualiza_Camera() {

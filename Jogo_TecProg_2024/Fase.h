@@ -1,10 +1,12 @@
 #pragma once
+
 #include "Ente.h"
 #include "Lista_Entidades.h"
-#include "Piso.h"
+#include "Plataforma.h"
 #include "Inimigo_Medio.h"
 #include "Jogador.h"
 #include "Gerenciador_Colisoes.h"
+#include <list>
 
 namespace Fases {
 	class Fase : public Ente
@@ -15,12 +17,11 @@ namespace Fases {
 			bool ganhou;
 			bool perdeu;
 			Listas::Lista_Entidades lista_Entidades;
+			Entidades::Obstaculos::Plataforma* piso;
+			Entidades::Obstaculos::Plataforma* plataforma;
 			Gerenciadores::Gerenciador_colisoes gerenciador_colisoes;
-
-			Entidades::Obstaculos::Piso* piso;
-			Entidades::Obstaculos::Piso* plataforma;
+			std::list<int> lista_id_inimigos;
 			
-
 
 			sf::Vector2f tam_Piso_Fase;
 			sf::Vector2f pos_Piso;
@@ -36,32 +37,22 @@ namespace Fases {
 			Fase();
 			virtual ~Fase();
 
-			/*
-			//int get_Num_Plataformas();
-			Gerenciadores::Gerenciador_colisoes* get_Gerenciador_Colisoes();
-			Listas::Lista_Entidades* get_Lista_Entidades();
-			*/
-
-
+			void Setar_Jogadores(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
 			void Setar_Jogadores_Colisoes(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
-			virtual void Executar();
+			void Setar_Jogadores_Inimigos(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
 
-			//piso é inerente as fases e a plataforma é obstáculo nas 2 fases.
-			void Cria_Piso();
-			void Cria_Plataforma();
-
-			//inimigos fáceis
-			void Cria_Inimigos_Piratas(float x, float y);
-			//void Cria_Inimigos_Capitao();
+			void Cria_Inimigo_Pirata(float x, float y);
 
 			bool get_Ganhou();
 
-			virtual void Cria_Inimigos() = 0;
+			virtual void Executar();
+			virtual void Cria_Piso();
+			virtual void Cria_Plataforma();
+			virtual void Cria_Inimigos() = 0;	
 			virtual void Cria_Obstaculos() = 0;
+
 			void criar_cenario();
 			void verifica_Inimigos_Neutralizados();
-
-			//void executa_Colisões();
 
 	};
 }

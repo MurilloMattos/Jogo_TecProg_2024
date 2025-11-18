@@ -11,6 +11,8 @@ namespace Entidades {
 			bool disparou;
 			int recarga;
 
+			sf::Vector2f velocidade_proj;
+
 
 			std::vector<Entidades::Projetil*> disparos;
 

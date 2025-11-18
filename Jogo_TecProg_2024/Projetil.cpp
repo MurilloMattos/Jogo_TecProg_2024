@@ -15,12 +15,15 @@ Projetil::Projetil(): direita(1),cima(2),esquerda(3),baixo(4), semente_id_entida
 	tamanho.y = 15.f;
 
 
+	tempo_ativo = 0;
+	tempo_de_vida = 180;
+
 	x = 0;
 	y = 0;
 
 	ativo = false;
 	lado = 0;
-	velocidade.x = 5.f;
+	velocidade.x = 0.5f;
 	velocidade.y = 0.f;
 	
 
@@ -41,6 +44,11 @@ Projetil::Projetil(float saida_x, float saida_y, int direcao) : direita(1),cima(
 	tamanho.x = 5.f;
 	tamanho.y = 10.f;
 
+	tempo_ativo = 0;
+	tempo_de_vida = 180;
+
+	velocidade.x = 0.f;
+	velocidade.y = 0.f;
 
 	x = saida_x;
 	y = saida_y;
@@ -96,6 +104,8 @@ void Projetil::Executar() {
 
 	if (ativo) {
 
+		//tempo_ativo++;
+
 		if (lado == direita) {
 			x += velocidade.x;
 		}
@@ -111,6 +121,17 @@ void Projetil::Executar() {
 
 		Desenhar();
 	}
+	else {
+
+		std::cout << "Projetil ID " << getId() << " inativo na pos (" << x << "," << y << ")" << std::endl;
+	}
+
+	/*
+	if(tempo_ativo >= tempo_de_vida){
+		ativo = false;
+		tempo_ativo = 0;
+	}
+	*/
 }
 
 void Projetil::Salvar() {
