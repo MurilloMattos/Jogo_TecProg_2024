@@ -1,9 +1,12 @@
 #pragma once
 #include "Ente.h"
 #include "SFML/Graphics.hpp"
+#include "Jogo.h"
 class Jogo;
 class Menu : public Ente {
+
 	private:
+
 		Jogo *pJog;
 		sf::RenderWindow *menu;
 		sf::RectangleShape *exitMenu;
@@ -18,11 +21,11 @@ class Menu : public Ente {
 		std::vector<sf::Vector2f> coords;
 		std::vector<sf::Text> textos;
 		std::vector<std::size_t> tam;	
+		sf::Texture* menuTexture;
+		sf::Sprite* menuSprite;
 
-
-		
-				
 	public:
+
 		Menu();
 		~Menu();
 		void atribuir();
@@ -44,4 +47,5 @@ class Menu : public Ente {
 		std::vector<sf::Text>* getTextos();
 		void set_pJog(Jogo *pJ);
 		Jogo* get_pJog(); 
+
 };

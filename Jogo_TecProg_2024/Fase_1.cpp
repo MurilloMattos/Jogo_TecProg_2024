@@ -93,7 +93,7 @@ void Fases::Fase_1::verifica_Projeteis_Destroidos()
 
 				
 				if (projetil_deletado) {
-					//remove da lista de colisões
+					//remove da lista de colisï¿½es
 					gerenciador_colisoes.projetil_Destruido(projetil_deletado);
 
 				}
@@ -102,7 +102,7 @@ void Fases::Fase_1::verifica_Projeteis_Destroidos()
 				}
 
 				if (projetil_deletado) {
-					//remove do capitão
+					//remove do capitï¿½o
 					lista_cap[i]->remover_Projetil(projetil_deletado);
 				}
 				else {

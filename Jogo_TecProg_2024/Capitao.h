@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include "Inimigo.h"
 #include "Projetil.h"
 
@@ -26,7 +27,7 @@ namespace Entidades {
 				void incluir_Projetil(Projetil* projet);
 				void remover_Projetil(Projetil* projet);
 
-				std::vector<Entidades::Projetil*>* get_Vetor_De_Projetis();
+				std::vector<Entidades::Projetil*>& get_Vetor_De_Projetis();
 				void imprime_Projeteis_Ids_Ativos_e_Pos();
 
 				void Executar();

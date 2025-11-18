@@ -5,14 +5,14 @@
 #include "Inimigo_Medio.h"
 #include "Jogador.h"
 #include "Gerenciador_Colisoes.h"
-#include <List>
+#include <list>
 
 namespace Fases {
 	class Fase : public Ente
 	{
 		protected:
 
-			//tem como a lista_Entidades passar parametros a classe que não necessáriamente entidades?
+			//tem como a lista_Entidades passar parametros a classe que nï¿½o necessï¿½riamente entidades?
 			bool ganhou;
 			bool perdeu;
 			Listas::Lista_Entidades lista_Entidades;

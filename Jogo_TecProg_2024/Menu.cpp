@@ -1,63 +1,79 @@
+// ...existing code...
 #include "Jogo.h"
 #include "Menu.h"
+
+// adiciona texturas/sprite estáticos para o menu (vivem pelo tempo do programa)
+
 Menu::Menu():Ente(), posicaoMenu(0) {
-	pJog = NULL;
-	//menu = pGG->criaJanela("Menu", 500, 500);
-	exitMenu = new sf::RectangleShape();
- 	fonte = new sf::Font();
-	//pFigura bg = new sf::Sprite();
-	//figura = new sf::Texture();
-	atribuir();	
+    pJog = NULL;
+    //menu = pGG->criaJanela("Menu", 500, 500);
+    exitMenu = new sf::RectangleShape();
+     fonte = new sf::Font();
+	menuTexture = nullptr;
+	menuSprite = nullptr;
+    atribuir();	
 }
 Menu::~Menu() {
-	pJog = NULL;
-	//delete menu;
-	delete exitMenu;
-	delete fonte;
-	//delete pFigura;
-	//delete figura;
+    pJog = NULL;
+    //delete menu;
+    delete exitMenu;
+    delete fonte;
+    // não delete menuTexture/menuSprite aqui (são estáticos e podem ser reutilizados)
 }
 void Menu::atribuir() {	
-	
-	posicaoMouse = {0,0};
-	coordMouse = {0.0, 0.0};	
-	posicaoMenu = 0;
+    
+    posicaoMouse = {0,0};
+    coordMouse = {0.0, 0.0};	
+    posicaoMenu = 0;
 
-	pressionado = selecionado = false;
-	fonte->loadFromFile("./assets/tropifonte.ttf");
-	figura->loadFromFile("./assets/menu.png");
-	pFigura->setScale(0.7680, 0.500);
-	pFigura->setTexture(*figura);
-	pFigura->setPosition(290,140);
-	
-	opcoes = {"Menu","Continuar","Fases","Salvar jogada","Rank","Salvar pontuacao"};
-	coords = {{600,150},{520, 240},{520, 318},{520, 396},{520, 474},{520,552} };
-	tam = {44, 20,20,20,20,20};
-	textos.resize(6);
-        for(size_t i = 0; i < textos.size(); i++) {
-		textos[i].setFont(*fonte);
-		textos[i].setString(opcoes[i]);
-		textos[i].setCharacterSize(tam[i]);
-		//textos[i].setOutlineColor(sf::Color::Red);
-	
-		textos[i].setPosition(coords[i]);
-	}
+    pressionado = selecionado = false;
+    fonte->loadFromFile("./assets/tropifonte.ttf");
+
+    // inicializa textura/sprite do menu apenas uma vez
+    if (!menuTexture) {
+        menuTexture = new sf::Texture();
+        if (!menuTexture->loadFromFile("./assets/menu.png")) {
+            std::cerr << "Erro ao carregar ./assets/menu.png\n";
+        }
+        menuSprite = new sf::Sprite();
+        menuSprite->setTexture(*menuTexture);
+        menuSprite->setScale(0.7680f, 0.500f);
+        menuSprite->setPosition(290.f,140.f);
+    }
+
+    opcoes = {"Menu","Continuar","Fases","Salvar jogada","Rank","Salvar pontuacao"};
+    coords = {{600,150},{520, 240},{520, 318},{520, 396},{520, 474},{520,552} };
+    tam = {44, 20,20,20,20,20};
+    textos.resize(6);
+    for(size_t i = 0; i < textos.size(); i++) {
+        textos[i].setFont(*fonte);
+        textos[i].setString(opcoes[i]);
+        textos[i].setCharacterSize(tam[i]);
+        textos[i].setPosition(coords[i]);
+    }
 }
 void Menu::Executar() {
-	executar();
+    executar();
 }
 void Menu::executar() {
-//entra, atualiza, renderiza;
-pGG->executar(this);
-	//pJog->Executar();		
+    // atualiza estado e prepara desenho do menu
+    atualizar();
 }
 void Menu::atualizar() {
-	//pJog->Executar();
-	pJog->Atualiza();
-	for(int i = 0; i < textos.size(); i++) {
-		pJog->getJanela()->draw(textos[i]);
-	}	
+    // atualiza lógica do jogo via ponteiro (se existir)
+    if (pJog) pJog->Atualiza();
+
+    // desenha fundo do menu usando o gerenciador gráfico (pGG fornecido por Ente)
+    if (menuSprite && pGG && pGG->getJanela()) {
+        pGG->getJanela()->draw(*menuSprite);
+    }
+
+    // desenha textos do menu na janela do gerenciador gráfico
+    for (size_t i = 0; i < textos.size(); ++i) {
+        if (pGG && pGG->getJanela()) pGG->getJanela()->draw(textos[i]);
+    }
 }
+// ...existing code continues...
 sf::RenderWindow * Menu::getJanelaMenu() {
 	return menu;
 }

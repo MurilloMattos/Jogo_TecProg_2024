@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include "Fase.h"
 #include "Capitao.h"
 #include "Projetil.h"
