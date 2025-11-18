@@ -14,7 +14,7 @@ namespace Entidades {
                 Pirata();
                 //Inimigo_Medio(float pos_x, float pos_y);
                 ~Pirata();
-
+            
                 void andar_ate(float em_x, float em_y);
                 void Salvar();
                 void Executar();

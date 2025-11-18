@@ -108,8 +108,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(Jogador* p_Jogador)
 
 			(*itr)->obstacular(p_Jogador);
 			itr++;
-			continue;
-			
+						
 		}
 
 		//direita
