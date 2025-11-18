@@ -25,6 +25,8 @@ Gerenciador_colisoes::~Gerenciador_colisoes(){
 
 
 
+
+
 	lista_Inimigos.clear();
 	lista_Obstaculos.clear();
 	lista_Projeteis.clear();
@@ -63,17 +65,22 @@ void Gerenciadores::Gerenciador_colisoes::projetil_Destruido(Projetil* pProj)
 
 		//remove diretamente
 		lista_Projeteis.erase(pProj);
+
+		//remove diretamente
+		lista_Projeteis.erase(pProj);
 	}
 }
 
 
-
+// Definitivamente uma melhor soluï¿½ï¿½o seria colocar essa fuï¿½ï¿½o na classe fase
 Entidade* Gerenciador_colisoes::Inimigo_neutralizado(Inimigo* inimigo_eliminado)
 {
 	int i;
 	Entidade* aux;
 
 	for (i = 0; i < lista_Inimigos.size(); i++) {
+		if (lista_Inimigos[i] == inimigo_eliminado) {
+			aux = static_cast<Entidade*>(lista_Inimigos[i]);
 		if (lista_Inimigos[i] == inimigo_eliminado) {
 			aux = static_cast<Entidade*>(lista_Inimigos[i]);
 			lista_Inimigos.erase(lista_Inimigos.begin() + i);
@@ -83,7 +90,8 @@ Entidade* Gerenciador_colisoes::Inimigo_neutralizado(Inimigo* inimigo_eliminado)
 	return nullptr;
 }
 
-//Verifica se a lista de inimigos do gerenciador está vazia
+//Verifica se a lista de inimigos do gerenciador estï¿½ vazia
+//Verifica se a lista de inimigos do gerenciador estï¿½ vazia
 bool Gerenciador_colisoes::verifica_Lista_Inimigos_Vazia()
 {
 	if (lista_Inimigos.size() == 0) {
@@ -94,7 +102,8 @@ bool Gerenciador_colisoes::verifica_Lista_Inimigos_Vazia()
 	}
 }
 
-//colisão do jogador com os obstáculos
+//colisï¿½o do jogador com os obstï¿½culos
+//colisï¿½o do jogador com os obstï¿½culos
 void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(Jogador* p_Jogador) {
 
 	list<Obstaculo*>::iterator itr;
@@ -102,7 +111,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(Jogador* p_Jogador)
 	itr = lista_Obstaculos.begin();
 
 
-	//verifica o tipo de colisão especificamente com objetos.
+	//verifica o tipo de colisï¿½o especificamente com objetos.
 	while (itr != lista_Obstaculos.end()) {
 
 		int lado = verifica_Tipo_De_Colisao(static_cast<Entidade*>(p_Jogador), static_cast<Entidade*>(*itr));
@@ -116,6 +125,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(Jogador* p_Jogador)
 		else if (lado == 2) {
 
 			p_Jogador->setar_Pos(p_Jogador->get_X(), (*itr)->get_Comprimento_A());
+			p_Jogador->setar_Estado(false);
 			p_Jogador->setar_Estado(false);
 		}
 		//esquerda
@@ -134,7 +144,8 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(Jogador* p_Jogador)
 	}
 }
 
-//colisão de projeteis com o jogador
+//colisï¿½o de projeteis com o jogador
+//colisï¿½o de projeteis com o jogador
 void Gerenciador_colisoes::tratar_Colisoes_Jogador_Projeteis(Jogador* p_Jogador){
 
 	set<Projetil*>::iterator itr;
@@ -165,7 +176,8 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Projeteis(Jogador* p_Jogador)
 
 }
 
-//colisão de qualquer coisa com os obstáculos
+//colisï¿½o de qualquer coisa com os obstï¿½culos
+//colisï¿½o de qualquer coisa com os obstï¿½culos
 void Gerenciador_colisoes::tratar_Colisoes_Obstaculo(Entidade* pEntidadeRef) {
 
 	list<Obstaculo*>::iterator itr;
@@ -173,7 +185,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Obstaculo(Entidade* pEntidadeRef) {
 	itr = lista_Obstaculos.begin();
 
 
-	//verifica o tipo de colisão especificamente com objetos.
+	//verifica o tipo de colisï¿½o especificamente com objetos.
 	while (itr != lista_Obstaculos.end()) {
 
 		int lado = verifica_Tipo_De_Colisao(static_cast<Entidade*>(pEntidadeRef), static_cast<Entidade*>(*itr));
@@ -203,7 +215,8 @@ void Gerenciador_colisoes::tratar_Colisoes_Obstaculo(Entidade* pEntidadeRef) {
 	}
 }
 
-//colisão de projeteis com os obstáculos
+//colisï¿½o de projeteis com os obstï¿½culos
+//colisï¿½o de projeteis com os obstï¿½culos
 void Gerenciador_colisoes::tratar_Colisoes_Projeteis(){
 
 	set<Projetil*>::iterator itr_proj;
@@ -232,12 +245,17 @@ void Gerenciador_colisoes::tratar_Colisoes_Projeteis(){
 	}
 }
 
-//trata as colisões entre os inimigos e os outros objetos não em inimigos (ainda)
+//trata as colisï¿½es entre os inimigos e os outros objetos nï¿½o em inimigos (ainda)
+//trata as colisï¿½es entre os inimigos e os outros objetos nï¿½o em inimigos (ainda)
 void Gerenciador_colisoes::tratar_Colisoes_Inimigos(){
 
 	int i;
 
 	for (i = 0; i < lista_Inimigos.size(); i++) {
+
+		if(lista_Inimigos[i] == nullptr){
+			continue;
+		}
 
 		if(lista_Inimigos[i] == nullptr){
 			continue;
@@ -268,7 +286,8 @@ void Gerenciador_colisoes::tratar_Colisoes_Inimigos(){
 
 }
 
-//trata as colisões entre o jogador e os inimigos
+//trata as colisï¿½es entre o jogador e os inimigos
+//trata as colisï¿½es entre o jogador e os inimigos
 void Gerenciador_colisoes::tratar_Colisoes_Jogador_Inimigos(Jogador* pJogador, Inimigo* pInimigo) {
 
 	int lado = verifica_Tipo_De_Colisao(pJogador, pInimigo);
@@ -284,6 +303,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Inimigos(Jogador* pJogador, I
 
 		pJogador->setar_Pos(pJogador->get_X(), pInimigo->get_Comprimento_A() + empurrao);
 		pJogador->diminuir_Vitalidade(pInimigo->danificar());
+		pJogador->setar_Estado(false);
 		pJogador->setar_Estado(false);
 	}
 	//esquerda
@@ -303,8 +323,8 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Inimigos(Jogador* pJogador, I
 
 }
 
-//Essa classe tem como objetivo Garantir corretamente o lado colidido da entidade referência.
-//Primeiro ela verifica as coordenadas principais, depois confirma com as secundárias, referente a colisão respectivamente.
+//Essa classe tem como objetivo Garantir corretamente o lado colidido da entidade referï¿½ncia.
+//Primeiro ela verifica as coordenadas principais, depois confirma com as secundï¿½rias, referente a colisï¿½o respectivamente.
 const int Gerenciador_colisoes::verifica_Tipo_De_Colisao(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
 	
 	float maior = 0;
@@ -397,7 +417,7 @@ const int Gerenciador_colisoes::verifica_Tipo_De_Colisao(Entidade* pEntidade_Ref
 		}
 	}
 	
-	// verifica o maior lado em contato da entidade Referência com a colidida e retorna o lado colidido.
+	// verifica o maior lado em contato da entidade Referï¿½ncia com a colidida e retorna o lado colidido.
 	if (colisao) {
 		if (maior < comprimento_baixo) {
 
@@ -425,7 +445,7 @@ const int Gerenciador_colisoes::verifica_Tipo_De_Colisao(Entidade* pEntidade_Ref
 	return lado;
 }
 
-//verifica se o objeto esta com possibilidade de colisão.
+//verifica se o objeto esta com possibilidade de colisï¿½o.
 const bool Gerenciador_colisoes::verifica_Mesma_Pos(Entidade* pEntidade_Ref, Entidade* pEntidade2) {
 
 	bool pos = true;
@@ -445,6 +465,7 @@ const bool Gerenciador_colisoes::verifica_Mesma_Pos(Entidade* pEntidade_Ref, Ent
 }
 
 //Auto explicativo
+const bool Gerenciador_colisoes::verifica_Colisao_Cima (Entidade* pEntidade_Ref, Entidade* pEntidade2) {
 const bool Gerenciador_colisoes::verifica_Colisao_Cima (Entidade* pEntidade_Ref, Entidade* pEntidade2) {
 
 	if (!verifica_Mesma_Pos(pEntidade_Ref, pEntidade2)) {
@@ -525,6 +546,10 @@ const bool Gerenciador_colisoes::verifica_Colisao_Direita(Entidade* pEntidade_Re
 
 void Gerenciador_colisoes::Executar(){
 
+	if (pJogador1) {
+		tratar_Colisoes_Jogador_Obstaculo(pJogador1);
+		tratar_Colisoes_Jogador_Projeteis(pJogador1);
+	}
 	if (pJogador1) {
 		tratar_Colisoes_Jogador_Obstaculo(pJogador1);
 		tratar_Colisoes_Jogador_Projeteis(pJogador1);
