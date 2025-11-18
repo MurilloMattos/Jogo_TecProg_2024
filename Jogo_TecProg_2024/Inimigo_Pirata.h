@@ -4,16 +4,16 @@
 namespace Entidades {
     namespace Personagens {
 
-        class Inimigo_Medio : public Inimigo
+        class Pirata : public Inimigo
         {
             private:
-                //definir varíaveis distintas dos outros inimigos
+                //definir varï¿½aveis distintas dos outros inimigos
                 //int boo;
 
             public:
-                Inimigo_Medio();
+                Pirata();
                 //Inimigo_Medio(float pos_x, float pos_y);
-                ~Inimigo_Medio();
+                ~Pirata();
 
                 void andar_ate(float em_x, float em_y);
                 void Salvar();

@@ -1,27 +1,29 @@
 #include "Obstaculo_Esteira.h"
 
 // Implementações usando qualificação completa de namespace
-Entidades::Obstaculos::Obstaculo_Esteira::Obstaculo_Esteira(float vel, sf::Vector2f dir)
+Entidades::Obstaculos::Esteira::Esteira(float vel, sf::Vector2f dir)
     : Obstaculo(), velocidadeTransporte(vel), direcao(dir) {
     agressivo = false;
     tamanhoEsteira = sf::Vector2f(100.0f, 10.0f); // Exemplo de tamanho
 }
-Entidades::Obstaculos::Obstaculo_Esteira::~Obstaculo_Esteira() {
+Entidades::Obstaculos::Esteira::~Esteira() {
 
 }
 
-void Entidades::Obstaculos::Obstaculo_Esteira::Executar() {
+void Entidades::Obstaculos::Esteira::Executar() {
+
     pFigura->setFillColor(sf::Color::Cyan); // Cor indicativa da esteira
     pFigura->setSize(tamanhoEsteira);
     pFigura->setPosition(x, y);
     this->Desenhar();
+    
 }
 
-void Entidades::Obstaculos::Obstaculo_Esteira::Salvar() {
+void Entidades::Obstaculos::Esteira::Salvar() {
     // Implementar salvamento
 }
 
-void Entidades::Obstaculos::Obstaculo_Esteira::obstacular(Entidades::Personagens::Jogador* p) {
+void Entidades::Obstaculos::Esteira::obstacular(Entidades::Personagens::Jogador* p) {
     // A esteira só deve mover o jogador se ele estiver EM CIMA dela.
     // Verificação simples de colisão superior:
     // Se o pé do jogador está próximo ao topo da esteira
@@ -50,6 +52,6 @@ void Entidades::Obstaculos::Obstaculo_Esteira::obstacular(Entidades::Personagens
     }
 }
 
-sf::Vector2f Entidades::Obstaculos::Obstaculo_Esteira::get_Tamanho_Esteira() {
+sf::Vector2f Entidades::Obstaculos::Esteira::get_Tamanho_Esteira() {
     return tamanhoEsteira;
 }

@@ -67,9 +67,9 @@
 },
 {
   "directory": "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build",
-  "command": "/usr/bin/c++  -I\"/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024\" -isystem \"/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/SFML-2.5.1/include\" -g -std=gnu++17 -o CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o -c \"/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Medio.cpp\"",
-  "file": "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Medio.cpp",
-  "output": "CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o"
+  "command": "/usr/bin/c++  -I\"/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024\" -isystem \"/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/SFML-2.5.1/include\" -g -std=gnu++17 -o CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.o -c \"/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Pirata.cpp\"",
+  "file": "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Pirata.cpp",
+  "output": "CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.o"
 },
 {
   "directory": "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build",
@@ -124,12 +124,6 @@
   "command": "/usr/bin/c++  -I\"/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024\" -isystem \"/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/SFML-2.5.1/include\" -g -std=gnu++17 -o CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.o -c \"/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo_Facil.cpp\"",
   "file": "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo_Facil.cpp",
   "output": "CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.o"
-},
-{
-  "directory": "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build",
-  "command": "/usr/bin/c++  -I\"/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024\" -isystem \"/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/SFML-2.5.1/include\" -g -std=gnu++17 -o CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o -c \"/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo_Medio.cpp\"",
-  "file": "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo_Medio.cpp",
-  "output": "CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o"
 },
 {
   "directory": "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build",

@@ -6,7 +6,7 @@
 namespace Entidades {
     namespace Obstaculos {
 
-        class Obstaculo_Esteira : public Obstaculo {
+        class Esteira : public Obstaculo {
         private:
 
             float velocidadeTransporte; // Velocidade que a esteira joga o player
@@ -16,8 +16,8 @@ namespace Entidades {
             
         public:
 
-            Obstaculo_Esteira(float vel, sf::Vector2f dir);
-            ~Obstaculo_Esteira();
+            Esteira(float vel, sf::Vector2f dir);
+            ~Esteira();
 
             void Executar(); // Pode animar a textura aqui
             void Salvar();

@@ -255,11 +255,11 @@ CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Fase_2.cpp.o: \
  /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Lista_Entidades.h \
  /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Entidade.h \
  /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Lista.h \
- /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Plataforma.h \
  /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo.h \
  /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Jogador.h \
  /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Personagem.h \
- /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Medio.h \
+ /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Plataforma.h \
+ /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Pirata.h \
  /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo.h \
  /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Gerenciador_Colisoes.h \
  /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Projetil.h \
@@ -268,4 +268,5 @@ CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Fase_2.cpp.o: \
  /usr/include/c++/13/bits/list.tcc /usr/include/c++/13/set \
  /usr/include/c++/13/bits/stl_set.h \
  /usr/include/c++/13/bits/stl_multiset.h \
+ /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo_Esteira.h \
  /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Capitao.h

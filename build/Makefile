@@ -406,29 +406,29 @@ Jogo_TecProg_2024/Inimigo_Facil.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/JogoTecProg.dir/build.make CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Facil.cpp.s
 .PHONY : Jogo_TecProg_2024/Inimigo_Facil.cpp.s
 
-Jogo_TecProg_2024/Inimigo_Medio.o: Jogo_TecProg_2024/Inimigo_Medio.cpp.o
-.PHONY : Jogo_TecProg_2024/Inimigo_Medio.o
+Jogo_TecProg_2024/Inimigo_Pirata.o: Jogo_TecProg_2024/Inimigo_Pirata.cpp.o
+.PHONY : Jogo_TecProg_2024/Inimigo_Pirata.o
 
 # target to build an object file
-Jogo_TecProg_2024/Inimigo_Medio.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/JogoTecProg.dir/build.make CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o
-.PHONY : Jogo_TecProg_2024/Inimigo_Medio.cpp.o
+Jogo_TecProg_2024/Inimigo_Pirata.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/JogoTecProg.dir/build.make CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.o
+.PHONY : Jogo_TecProg_2024/Inimigo_Pirata.cpp.o
 
-Jogo_TecProg_2024/Inimigo_Medio.i: Jogo_TecProg_2024/Inimigo_Medio.cpp.i
-.PHONY : Jogo_TecProg_2024/Inimigo_Medio.i
+Jogo_TecProg_2024/Inimigo_Pirata.i: Jogo_TecProg_2024/Inimigo_Pirata.cpp.i
+.PHONY : Jogo_TecProg_2024/Inimigo_Pirata.i
 
 # target to preprocess a source file
-Jogo_TecProg_2024/Inimigo_Medio.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/JogoTecProg.dir/build.make CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.i
-.PHONY : Jogo_TecProg_2024/Inimigo_Medio.cpp.i
+Jogo_TecProg_2024/Inimigo_Pirata.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/JogoTecProg.dir/build.make CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.i
+.PHONY : Jogo_TecProg_2024/Inimigo_Pirata.cpp.i
 
-Jogo_TecProg_2024/Inimigo_Medio.s: Jogo_TecProg_2024/Inimigo_Medio.cpp.s
-.PHONY : Jogo_TecProg_2024/Inimigo_Medio.s
+Jogo_TecProg_2024/Inimigo_Pirata.s: Jogo_TecProg_2024/Inimigo_Pirata.cpp.s
+.PHONY : Jogo_TecProg_2024/Inimigo_Pirata.s
 
 # target to generate assembly for a file
-Jogo_TecProg_2024/Inimigo_Medio.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/JogoTecProg.dir/build.make CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.s
-.PHONY : Jogo_TecProg_2024/Inimigo_Medio.cpp.s
+Jogo_TecProg_2024/Inimigo_Pirata.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/JogoTecProg.dir/build.make CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.s
+.PHONY : Jogo_TecProg_2024/Inimigo_Pirata.cpp.s
 
 Jogo_TecProg_2024/Jogador.o: Jogo_TecProg_2024/Jogador.cpp.o
 .PHONY : Jogo_TecProg_2024/Jogador.o
@@ -646,30 +646,6 @@ Jogo_TecProg_2024/Obstaculo_Facil.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/JogoTecProg.dir/build.make CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.s
 .PHONY : Jogo_TecProg_2024/Obstaculo_Facil.cpp.s
 
-Jogo_TecProg_2024/Obstaculo_Medio.o: Jogo_TecProg_2024/Obstaculo_Medio.cpp.o
-.PHONY : Jogo_TecProg_2024/Obstaculo_Medio.o
-
-# target to build an object file
-Jogo_TecProg_2024/Obstaculo_Medio.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/JogoTecProg.dir/build.make CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o
-.PHONY : Jogo_TecProg_2024/Obstaculo_Medio.cpp.o
-
-Jogo_TecProg_2024/Obstaculo_Medio.i: Jogo_TecProg_2024/Obstaculo_Medio.cpp.i
-.PHONY : Jogo_TecProg_2024/Obstaculo_Medio.i
-
-# target to preprocess a source file
-Jogo_TecProg_2024/Obstaculo_Medio.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/JogoTecProg.dir/build.make CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.i
-.PHONY : Jogo_TecProg_2024/Obstaculo_Medio.cpp.i
-
-Jogo_TecProg_2024/Obstaculo_Medio.s: Jogo_TecProg_2024/Obstaculo_Medio.cpp.s
-.PHONY : Jogo_TecProg_2024/Obstaculo_Medio.s
-
-# target to generate assembly for a file
-Jogo_TecProg_2024/Obstaculo_Medio.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/JogoTecProg.dir/build.make CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.s
-.PHONY : Jogo_TecProg_2024/Obstaculo_Medio.cpp.s
-
 Jogo_TecProg_2024/Personagem.o: Jogo_TecProg_2024/Personagem.cpp.o
 .PHONY : Jogo_TecProg_2024/Personagem.o
 
@@ -785,9 +761,9 @@ help:
 	@echo "... Jogo_TecProg_2024/Inimigo_Facil.o"
 	@echo "... Jogo_TecProg_2024/Inimigo_Facil.i"
 	@echo "... Jogo_TecProg_2024/Inimigo_Facil.s"
-	@echo "... Jogo_TecProg_2024/Inimigo_Medio.o"
-	@echo "... Jogo_TecProg_2024/Inimigo_Medio.i"
-	@echo "... Jogo_TecProg_2024/Inimigo_Medio.s"
+	@echo "... Jogo_TecProg_2024/Inimigo_Pirata.o"
+	@echo "... Jogo_TecProg_2024/Inimigo_Pirata.i"
+	@echo "... Jogo_TecProg_2024/Inimigo_Pirata.s"
 	@echo "... Jogo_TecProg_2024/Jogador.o"
 	@echo "... Jogo_TecProg_2024/Jogador.i"
 	@echo "... Jogo_TecProg_2024/Jogador.s"
@@ -815,9 +791,6 @@ help:
 	@echo "... Jogo_TecProg_2024/Obstaculo_Facil.o"
 	@echo "... Jogo_TecProg_2024/Obstaculo_Facil.i"
 	@echo "... Jogo_TecProg_2024/Obstaculo_Facil.s"
-	@echo "... Jogo_TecProg_2024/Obstaculo_Medio.o"
-	@echo "... Jogo_TecProg_2024/Obstaculo_Medio.i"
-	@echo "... Jogo_TecProg_2024/Obstaculo_Medio.s"
 	@echo "... Jogo_TecProg_2024/Personagem.o"
 	@echo "... Jogo_TecProg_2024/Personagem.i"
 	@echo "... Jogo_TecProg_2024/Personagem.s"

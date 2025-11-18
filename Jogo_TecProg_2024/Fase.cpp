@@ -114,9 +114,9 @@ void Fases::Fase::Cria_Plataforma() {
 }
 
 void Fases::Fase::Cria_Inimigo_Pirata(float x, float y){
-	Inimigo_Medio* pirata;
+	Pirata* pirata;
 
-	pirata = new Inimigo_Medio;
+	pirata = new Pirata;
 	pirata->setar_Pos(x, y);
 
 	lista_id_inimigos.push_front(pirata->getId());
@@ -146,13 +146,13 @@ void Fases::Fase::verifica_Inimigos_Neutralizados() {
         int id = *itr;
         Entidade* ent = lista_Entidades.get_Entidade_Por_Id(id);
 
-        // id inválido -> remover da lista de ids
+        // id invï¿½lido -> remover da lista de ids
         if (ent == nullptr) {
             itr = lista_id_inimigos.erase(itr);
             continue;
         }
 
-        // garantir que é um inimigo (mais seguro que static_cast)
+        // garantir que ï¿½ um inimigo (mais seguro que static_cast)
         Inimigo* inim = dynamic_cast<Inimigo*>(ent);
         if (inim == nullptr) {
             ++itr;
@@ -164,7 +164,7 @@ void Fases::Fase::verifica_Inimigos_Neutralizados() {
             lista_Entidades.Remover(ent);
 			gerenciador_colisoes.Inimigo_neutralizado(inim);
 
-            // também remover o id da lista de inimigos para não iterar sobre ele novamente
+            // tambï¿½m remover o id da lista de inimigos para nï¿½o iterar sobre ele novamente
             itr = lista_id_inimigos.erase(itr);
         } else {
             ++itr;

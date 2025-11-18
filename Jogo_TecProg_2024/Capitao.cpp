@@ -3,7 +3,7 @@
 using namespace Entidades;
 using namespace Personagens;
 
-Capitao::Capitao(): recarga(0){
+Inimigo_Capitao::Inimigo_Capitao(): recarga(0){
 
 	num_vitalidade = 200;
 	
@@ -32,20 +32,20 @@ Capitao::Capitao(): recarga(0){
 	pFigura->setPosition(pos_inicial);
 }
 
-Capitao::~Capitao(){
+Inimigo_Capitao::~Inimigo_Capitao(){
 
 	disparos.clear();
 	pode_disparar = false;
 	disparou = false;
 }
 
-const bool Capitao::get_Disparou()
+const bool Inimigo_Capitao::get_Disparou()
 {
 	return disparou;
 }
 
 
-void Entidades::Personagens::Capitao::incluir_Projetil(Projetil* projet) {
+void Entidades::Personagens::Inimigo_Capitao::incluir_Projetil(Projetil* projet) {
 
 	projet->setar_Ativo(true);
 	projet->setar_Direcao(direcao);
@@ -68,7 +68,7 @@ void Entidades::Personagens::Capitao::incluir_Projetil(Projetil* projet) {
 	imprime_Projeteis_Ids_Ativos_e_Pos();
 }
 
-void Capitao::remover_Projetil(Projetil* projet) {
+void Inimigo_Capitao::remover_Projetil(Projetil* projet) {
 
 	std::vector<Entidades::Projetil*>::iterator itr;
 	itr = disparos.begin();
@@ -84,12 +84,12 @@ void Capitao::remover_Projetil(Projetil* projet) {
 	}
 }
 
-std::vector<Projetil*>* Capitao::get_Vetor_De_Projetis(){
+std::vector<Projetil*>* Inimigo_Capitao::get_Vetor_De_Projetis(){
 
 	return &disparos;
 }
 
-void Capitao::Executar() {
+void Inimigo_Capitao::Executar() {
 
 	disparou = false;
 
@@ -110,7 +110,7 @@ void Capitao::Executar() {
 	Desenhar();
 }
 
-void Capitao::imprime_Projeteis_Ids_Ativos_e_Pos() {
+void Inimigo_Capitao::imprime_Projeteis_Ids_Ativos_e_Pos() {
 
 	//std::cout << "Projetis Ativos do Capitao ID " << id << " :" << std::endl;
 	//std::cout << "projetis totais: " << disparos.size() << std::endl;
@@ -124,6 +124,6 @@ void Capitao::imprime_Projeteis_Ids_Ativos_e_Pos() {
 }
 
 
-void Capitao::Salvar() {
+void Inimigo_Capitao::Salvar() {
 
 }

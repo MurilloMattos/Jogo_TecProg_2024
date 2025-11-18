@@ -1,9 +1,9 @@
-#include "Inimigo_Medio.h"
+#include "Inimigo_Pirata.h"
 
 using namespace Entidades;
 using namespace Personagens;
 
-Inimigo_Medio::Inimigo_Medio() {
+Pirata::Pirata() {
 
 	num_vitalidade = 100;
 	dano = 20;
@@ -25,11 +25,11 @@ Inimigo_Medio::Inimigo_Medio() {
 
 }
 
-Inimigo_Medio::~Inimigo_Medio() {
+Pirata::~Pirata() {
 
 }
 
-void Inimigo_Medio::Executar() {
+void Pirata::Executar() {
 
 	Desenhar();
 	setar_Pos(x, y);
@@ -47,16 +47,16 @@ void Inimigo_Medio::Executar() {
 }
 
 
-void Inimigo_Medio::Danificar(){
+void Pirata::Danificar(){
 
 }
 
-void Inimigo_Medio::andar_ate(float em_x, float em_y){
+void Pirata::andar_ate(float em_x, float em_y){
 
 	pos_final.x = em_x;
 	pos_final.y = em_y;
 }
 
-void Inimigo_Medio::Salvar() {
+void Pirata::Salvar() {
 
 }

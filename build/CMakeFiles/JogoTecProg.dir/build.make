@@ -223,19 +223,19 @@ CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Facil.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Facil.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Facil.cpp" -o CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Facil.cpp.s
 
-CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o: CMakeFiles/JogoTecProg.dir/flags.make
-CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o: /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Medio.cpp
-CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o: CMakeFiles/JogoTecProg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o -MF CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o.d -o CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o -c "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Medio.cpp"
+CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.o: CMakeFiles/JogoTecProg.dir/flags.make
+CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.o: /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Pirata.cpp
+CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.o: CMakeFiles/JogoTecProg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.o -MF CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.o.d -o CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.o -c "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Pirata.cpp"
 
-CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Medio.cpp" > CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.i
+CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Pirata.cpp" > CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.i
 
-CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Medio.cpp" -o CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.s
+CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Pirata.cpp" -o CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.s
 
 CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Jogador.cpp.o: CMakeFiles/JogoTecProg.dir/flags.make
 CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Jogador.cpp.o: /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Jogador.cpp
@@ -363,24 +363,10 @@ CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo_Facil.cpp" -o CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.s
 
-CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o: CMakeFiles/JogoTecProg.dir/flags.make
-CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o: /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo_Medio.cpp
-CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o: CMakeFiles/JogoTecProg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o -MF CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o.d -o CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o -c "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo_Medio.cpp"
-
-CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo_Medio.cpp" > CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.i
-
-CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo_Medio.cpp" -o CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.s
-
 CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Personagem.cpp.o: CMakeFiles/JogoTecProg.dir/flags.make
 CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Personagem.cpp.o: /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Personagem.cpp
 CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Personagem.cpp.o: CMakeFiles/JogoTecProg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Personagem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Personagem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Personagem.cpp.o -MF CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Personagem.cpp.o.d -o CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Personagem.cpp.o -c "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Personagem.cpp"
 
 CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Personagem.cpp.i: cmake_force
@@ -394,7 +380,7 @@ CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Personagem.cpp.s: cmake_force
 CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Plataforma.cpp.o: CMakeFiles/JogoTecProg.dir/flags.make
 CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Plataforma.cpp.o: /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Plataforma.cpp
 CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Plataforma.cpp.o: CMakeFiles/JogoTecProg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Plataforma.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Plataforma.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Plataforma.cpp.o -MF CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Plataforma.cpp.o.d -o CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Plataforma.cpp.o -c "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Plataforma.cpp"
 
 CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Plataforma.cpp.i: cmake_force
@@ -408,7 +394,7 @@ CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Plataforma.cpp.s: cmake_force
 CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Projetil.cpp.o: CMakeFiles/JogoTecProg.dir/flags.make
 CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Projetil.cpp.o: /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Projetil.cpp
 CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Projetil.cpp.o: CMakeFiles/JogoTecProg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Projetil.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Projetil.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Projetil.cpp.o -MF CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Projetil.cpp.o.d -o CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Projetil.cpp.o -c "/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Projetil.cpp"
 
 CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Projetil.cpp.i: cmake_force
@@ -432,7 +418,7 @@ JogoTecProg_OBJECTS = \
 "CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo.cpp.o" \
 "CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Esmagador.cpp.o" \
 "CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Facil.cpp.o" \
-"CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o" \
+"CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.o" \
 "CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Jogador.cpp.o" \
 "CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Jogo.cpp.o" \
 "CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Jogo_TecProg_2024.cpp.o" \
@@ -442,7 +428,6 @@ JogoTecProg_OBJECTS = \
 "CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Dificil.cpp.o" \
 "CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Esteira.cpp.o" \
 "CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.o" \
-"CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o" \
 "CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Personagem.cpp.o" \
 "CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Plataforma.cpp.o" \
 "CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Projetil.cpp.o"
@@ -461,7 +446,7 @@ JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Gerenciador_Grafico.cp
 JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo.cpp.o
 JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Esmagador.cpp.o
 JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Facil.cpp.o
-JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Medio.cpp.o
+JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.o
 JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Jogador.cpp.o
 JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Jogo.cpp.o
 JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Jogo_TecProg_2024.cpp.o
@@ -471,7 +456,6 @@ JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo.cpp.o
 JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Dificil.cpp.o
 JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Esteira.cpp.o
 JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Facil.cpp.o
-JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o
 JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Personagem.cpp.o
 JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Plataforma.cpp.o
 JogoTecProg: CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Projetil.cpp.o
@@ -482,7 +466,7 @@ JogoTecProg: /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/
 JogoTecProg: /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/SFML-2.5.1/lib/libsfml-network.so.2.5.1
 JogoTecProg: /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/SFML-2.5.1/lib/libsfml-system.so.2.5.1
 JogoTecProg: CMakeFiles/JogoTecProg.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable JogoTecProg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable JogoTecProg"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/JogoTecProg.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

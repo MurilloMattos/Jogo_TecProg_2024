@@ -1,8 +1,9 @@
-CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o: \
- /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo_Medio.cpp \
+CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Inimigo_Pirata.cpp.o: \
+ /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Pirata.cpp \
  /usr/include/stdc-predef.h \
- /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo_Medio.h \
- /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Obstaculo.h \
+ /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Pirata.h \
+ /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo.h \
+ /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Personagem.h \
  /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Entidade.h \
  /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Ente.h \
  /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Gerenciador_Grafico.h \
@@ -253,5 +254,4 @@ CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Obstaculo_Medio.cpp.o: \
  /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
  /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
  /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
- /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Jogador.h \
- /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Personagem.h
+ /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Jogador.h
