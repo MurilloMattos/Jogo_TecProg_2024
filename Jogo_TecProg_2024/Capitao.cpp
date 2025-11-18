@@ -95,7 +95,7 @@ void Capitao::Executar() {
 
 	if (pode_disparar) {
 
-		if (recarga < 180) {
+		if (recarga < 240) {
 			recarga++;
 		}
 		else {
