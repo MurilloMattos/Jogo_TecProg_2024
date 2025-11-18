@@ -4,14 +4,17 @@
 Entidades::Obstaculos::Obstaculo_Esteira::Obstaculo_Esteira(float vel, sf::Vector2f dir)
     : Obstaculo(), velocidadeTransporte(vel), direcao(dir) {
     agressivo = false;
-    tamanhoEsteira = sf::Vector2f(50.0f, 10.0f); // Exemplo de tamanho
+    tamanhoEsteira = sf::Vector2f(100.0f, 10.0f); // Exemplo de tamanho
 }
-Entidades::Obstaculos::Obstaculo_Esteira::~Obstaculo_Esteira() {}
+Entidades::Obstaculos::Obstaculo_Esteira::~Obstaculo_Esteira() {
+
+}
 
 void Entidades::Obstaculos::Obstaculo_Esteira::Executar() {
     pFigura->setFillColor(sf::Color::Cyan); // Cor indicativa da esteira
     pFigura->setSize(tamanhoEsteira);
     pFigura->setPosition(x, y);
+    this->Desenhar();
 }
 
 void Entidades::Obstaculos::Obstaculo_Esteira::Salvar() {

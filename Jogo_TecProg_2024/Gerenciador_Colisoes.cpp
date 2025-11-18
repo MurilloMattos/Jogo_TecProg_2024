@@ -85,8 +85,10 @@ Entidade* Gerenciador_colisoes::Inimigo_neutralizado()
 bool Gerenciador_colisoes::verifica_Lista_Inimigos_Vazia()
 {
 	if (lista_Inimigos.size() == 0) {
+
 		std::cerr << "Lista de inimigos vazia." << std::endl;
 		return true;
+		
 	}
 	else {
 		return false;
