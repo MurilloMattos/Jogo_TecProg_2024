@@ -11,10 +11,13 @@ namespace Entidades{
 				int pontos;
 				const int semente_id_entidade;
 
+				bool eliminado;
+
 				bool segundo_jogador;
 				void setar_Figura();
 
 				bool estado_pulando;
+				bool estado_caindo;
 				bool acelerando;
 				
 				float forca_de_impulso;
@@ -33,8 +36,10 @@ namespace Entidades{
 				void executar_Gravidade();
 				void setar_Estado(bool estado);
 
+				bool get_Eliminado() const;
+
+				void diminuir_Vitalidade(int dano);
 				int danificar();
-				void receber_dano(int dan);
 
 				void Executar();
 				void Salvar();

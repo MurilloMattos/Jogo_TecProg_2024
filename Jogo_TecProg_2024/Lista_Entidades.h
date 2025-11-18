@@ -24,6 +24,8 @@ namespace Listas {
 			void imprimir_Ids();
 
 			bool verifica_Lista_Vazia();
+
+			const int get_Tamanho_Da_Lista() const;
 	};
 
 }

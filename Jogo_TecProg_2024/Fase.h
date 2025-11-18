@@ -1,11 +1,12 @@
 #pragma once
+
 #include "Ente.h"
 #include "Lista_Entidades.h"
 #include "Plataforma.h"
 #include "Inimigo_Medio.h"
 #include "Jogador.h"
 #include "Gerenciador_Colisoes.h"
-#include <List>
+#include <list>
 
 namespace Fases {
 	class Fase : public Ente
@@ -40,16 +41,16 @@ namespace Fases {
 			void Setar_Jogadores_Colisoes(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
 			void Setar_Jogadores_Inimigos(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
 
+			void Cria_Inimigo_Pirata(float x, float y);
+
+			bool get_Ganhou();
 
 			virtual void Executar();
 			virtual void Cria_Piso();
 			virtual void Cria_Plataforma();
-			virtual void Cria_Inimigos_Piratas(float x, float y);
-
-			bool get_Ganhou();
-
-			virtual void Cria_Inimigos() = 0;
+			virtual void Cria_Inimigos() = 0;	
 			virtual void Cria_Obstaculos() = 0;
+
 			void criar_cenario();
 			void verifica_Inimigos_Neutralizados();
 

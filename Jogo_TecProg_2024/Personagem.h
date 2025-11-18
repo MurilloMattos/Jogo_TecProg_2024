@@ -18,7 +18,7 @@ namespace Entidades {
 			~Personagem();
 
 			void setar_Vitalidade(int vida);
-			void diminuir_Vitalidade(int dano);
+			virtual void diminuir_Vitalidade(int dano);
 			int get_Vitalidade();
 			int danificar();
 

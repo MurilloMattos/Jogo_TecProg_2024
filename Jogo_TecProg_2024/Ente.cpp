@@ -4,7 +4,7 @@ Ente::Ente()
 {
 	pGG = Gerenciadores::Gerenciador_Grafico::getInstance();
 
-	id_contador++;
+	operator++();
 
 	id = id_contador;
 	pFigura = new sf::RectangleShape;
@@ -12,7 +12,7 @@ Ente::Ente()
 
 Ente::~Ente(){
 
-	id_contador--;
+	operator--();
 	delete pFigura;
 }
 
@@ -28,10 +28,12 @@ int Ente::getId() const {
 	return id;
 }
 
-/*
-sf::RectangleShape* Ente::getFigura() {
-	return pFigura;
+void Ente::operator++() {
+	id_contador++;
 }
-*/
+
+void Ente::operator--() {
+	id_contador--;
+}
 
 int Ente::id_contador = 0;

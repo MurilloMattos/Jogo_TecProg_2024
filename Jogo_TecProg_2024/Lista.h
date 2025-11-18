@@ -41,6 +41,7 @@ namespace Listas
 
 	private:
 
+		int tamanho_da_lista;
 		Elemento<TL>* pontPrimeiro;
 		Elemento<TL>* pontUltimo;
 		
@@ -63,6 +64,10 @@ namespace Listas
 		void aterrar();
 		void incluiInfoNaLista(TL* info);
 		void deletaLista();
+		int get_Tamanho_Da_Lista() const;
+		
+		// remove o elemento que contém o ponteiro info. Retorna true se removido.
+		bool removeInfo(TL* info);
 
 		//percorrer a lista, deverá ser implementada por outra classe, no caso, já possuí dentor do UML básico do jogo o listaEntidades
 		//poís é necessário saber oque deve ser buscado.
@@ -71,11 +76,13 @@ namespace Listas
 	template<class TL>
 	Lista<TL>::Lista() {
 		aterrar();
+		tamanho_da_lista = 0;
 	}
 
 	template<class TL>
 	Lista<TL>::~Lista() {
 		deletaLista();
+		tamanho_da_lista = 0;
 	}
 
 	template<class TL>
@@ -103,23 +110,35 @@ namespace Listas
 	}
 
 	template<class TL>
+	int Lista<TL>::get_Tamanho_Da_Lista() const {
+		return tamanho_da_lista;
+	}
+
+	template<class TL>
 	void Lista<TL>::deletaLista() {
 
 		Elemento<TL>* aux = nullptr;
 		Elemento<TL>* aux1 = nullptr;
 		
 		aux = getPrimeiro();
-		aux1 = getPrimeiro()->getProx();
+		if (aux == nullptr) {
+			// lista vazia
+			aterrar();
+			return;
+		}
+		aux1 = aux->getProx();
 
 		if (aux != nullptr) {
 
 			while (aux1 != nullptr) {
 
+				tamanho_da_lista--;
 				delete aux;
 				aux = aux1;
 				aux1 = aux->getProx();
 			}
 
+			tamanho_da_lista--;
 			delete aux;
 		}
 		aux = nullptr;
@@ -132,6 +151,8 @@ namespace Listas
 
 		if (novoElemento != nullptr) {
 
+			tamanho_da_lista++;
+
 			if (pontPrimeiro == nullptr) {
 
 				pontPrimeiro = novoElemento;
@@ -143,7 +164,6 @@ namespace Listas
 				pontUltimo->setProximo(novoElemento);
 				pontUltimo = novoElemento;
 				novoElemento->setProximo(nullptr);
-
 			}
 		}
 		else {
@@ -151,5 +171,47 @@ namespace Listas
 			std::cout << "Erro, elemento nullo, não adicionado na lista!";
 		}
 
+	}
+
+	// Implementação do método de remoção por ponteiro de info.
+	template<class TL>
+	bool Lista<TL>::removeInfo(TL* info) {
+
+		if (info == nullptr || pontPrimeiro == nullptr) {
+			return false;
+		}
+
+		Elemento<TL>* anterior = nullptr;
+		Elemento<TL>* atual = pontPrimeiro;
+
+		while (atual != nullptr) {
+
+			if (atual->getInfo() == info) {
+				// remove atual
+
+				if (anterior == nullptr) {
+					// removendo o primeiro elemento
+					pontPrimeiro = atual->getProx();
+					if (pontPrimeiro == nullptr) {
+						pontUltimo = nullptr;
+					}
+				}
+				else {
+					anterior->setProximo(atual->getProx());
+					if (atual == pontUltimo) {
+						pontUltimo = anterior;
+					}
+				}
+
+				tamanho_da_lista--;
+				delete atual; // deleta apenas o elemento da lista (não o objeto info em si)
+				return true;
+			}
+
+			anterior = atual;
+			atual = atual->getProx();
+		}
+
+		return false; // não encontrado
 	}
 }

@@ -47,7 +47,7 @@ Projetil::Projetil(float saida_x, float saida_y, int direcao) : direita(1),cima(
 	tempo_ativo = 0;
 	tempo_de_vida = 180;
 
-	velocidade.x = 5.f;
+	velocidade.x = 0.f;
 	velocidade.y = 0.f;
 
 	x = saida_x;
