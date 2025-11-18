@@ -11,14 +11,14 @@ class Jogo
 		Gerenciadores::Gerenciador_Grafico* Ger_Graf;
 
 		Entidades::Personagens::Jogador jogador_1;
-		//Entidades::Personagens::Jogador jogador_2;
+		Entidades::Personagens::Jogador jogador_2;
 
 		//Fases::Fase_1 fase1;
 		Fases::Fase_2 fase2;
 
 		bool fase_1_ativa;
 		bool fase_2_ativa;
-		bool acabou;
+		
 
 	public:
 		Jogo();
@@ -29,6 +29,5 @@ class Jogo
 		void setar_Fase();
 		void atualiza_Camera();
 		void Atualiza();
-		void verifica_Fim_De_Jogo();
 
 };

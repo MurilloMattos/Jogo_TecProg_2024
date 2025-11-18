@@ -50,7 +50,7 @@ void Fases::Fase_2::Executar(){
 
 void Fases::Fase_2::Cria_Inimigos(){
 
-	Cria_Inimigo_Pirata(400.0f, 200.0f);
+	Cria_Inimigo_Pirata(100.0f, 200.0f);
 	Cria_Inimigo_Capitao(600.f,159.f);
 }
 

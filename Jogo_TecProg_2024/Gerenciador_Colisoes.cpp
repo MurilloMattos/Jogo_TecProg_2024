@@ -67,7 +67,7 @@ void Gerenciadores::Gerenciador_colisoes::projetil_Destruido(Projetil* pProj)
 }
 
 
-
+// Definitivamente uma melhor solução seria colocar essa fução na classe fase
 Entidade* Gerenciador_colisoes::Inimigo_neutralizado(Inimigo* inimigo_eliminado)
 {
 	int i;
@@ -152,7 +152,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Projeteis(Jogador* p_Jogador)
 
 				if (lado != 0) {
 
-					p_Jogador->diminuir_Vitalidade((*itr)->get_Dano());
+					//p_Jogador->diminuir_Vitalidade((*itr)->get_Dano());
 					(*itr)->setar_Ativo(false);
 					projetil_Destruido(*itr);
 					break;

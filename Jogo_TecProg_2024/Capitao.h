@@ -13,6 +13,8 @@ namespace Entidades {
 
 			sf::Vector2f velocidade_proj;
 
+			sf::Vector2f velocidade_proj;
+
 
 			std::vector<Entidades::Projetil*> disparos;
 
