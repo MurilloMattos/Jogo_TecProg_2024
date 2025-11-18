@@ -15,6 +15,7 @@ namespace Entidades{
 				void setar_Figura();
 
 				bool estado_pulando;
+				bool estado_caindo;
 				bool acelerando;
 				
 				float forca_de_impulso;
@@ -34,7 +35,6 @@ namespace Entidades{
 				void setar_Estado(bool estado);
 
 				int danificar();
-				void receber_dano(int dan);
 
 				void Executar();
 				void Salvar();

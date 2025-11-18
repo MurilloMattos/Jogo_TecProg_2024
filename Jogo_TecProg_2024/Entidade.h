@@ -41,6 +41,7 @@ namespace Entidades
 		float get_X() const;
 		float get_Y() const;
 		void setar_Pos(float pos_x, float pos_y);
+		void setar_velocidade(float vel_x, float vel_y);
 
 		virtual void Executar() = 0;
 		virtual void Salvar() = 0;

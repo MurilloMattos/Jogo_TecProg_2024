@@ -1,30 +1,25 @@
 #pragma once
 #include "Fase.h"
-#include "Capitao.h"
-#include "Projetil.h"
 
-namespace Fases{
-
+namespace Fases {
 	class Fase_1 : public Fase
 	{
-	private:
+		private:
+			const int max_inimigos_medios;
 
-		std::vector<Entidades::Personagens::Capitao*> lista_cap;
-		int num_max_Capitoes;
-		int i,j;
+		public:
 
-	public:
+			Fase_1();
+			~Fase_1();
 
-		Fase_1();
-		~Fase_1();
-
-
-		void Cria_Obstaculos();
-		void Executar();
-		void Cria_Inimigos();
-		void Cria_Inimigos_Capitao();
-		Entidades::Projetil* Cria_Projetil();
-		void verifica_Projeteis_Destroidos();
-
+			void cria_Obstaculos_Dificeis();
+			void cria_Inimigos_Medios();
+			
+			virtual void Executar();
+			virtual void Cria_Piso();
+			virtual void Cria_Plataforma();
+			virtual void Criar_Inimigos();
+			virtual void Criar_Obstaculos();
 	};
+
 }

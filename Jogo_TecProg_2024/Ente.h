@@ -23,5 +23,7 @@ public:
 	void Desenhar();
 	void setId(int semente);
 	int getId() const;
+	void operator++();
+	void operator--();
 
 };

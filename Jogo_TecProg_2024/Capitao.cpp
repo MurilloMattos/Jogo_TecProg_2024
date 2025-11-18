@@ -23,6 +23,9 @@ Capitao::Capitao(): recarga(0){
 
 	velocidade.x = 2.0f;
 
+	velocidade_proj.x = 3.0f;
+	velocidade_proj.y = 0.0f;
+
 	pFigura->setFillColor(sf::Color::Magenta);
 
 	pFigura->setSize(tamanho);
@@ -48,6 +51,7 @@ void Entidades::Personagens::Capitao::incluir_Projetil(Projetil* projet) {
 	projet->setar_Direcao(direcao);
 	projet->setar_Dano(dano_do_balote);
 	projet->setar_Capitao(this);
+	projet->setar_velocidade(velocidade_proj.x, velocidade_proj.y);
 
 
 	if (direcao == esquerda) {
@@ -80,9 +84,9 @@ void Capitao::remover_Projetil(Projetil* projet) {
 	}
 }
 
-std::vector<Projetil*>& Capitao::get_Vetor_De_Projetis()
-{
-	return disparos;
+std::vector<Projetil*>* Capitao::get_Vetor_De_Projetis(){
+
+	return &disparos;
 }
 
 void Capitao::Executar() {
@@ -91,7 +95,7 @@ void Capitao::Executar() {
 
 	if (pode_disparar) {
 
-		if (recarga < 180) {
+		if (recarga < 240) {
 			recarga++;
 		}
 		else {

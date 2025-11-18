@@ -38,10 +38,10 @@ namespace Gerenciadores {
 
 		const int verifica_Tipo_De_Colisao(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
 		const bool verifica_Mesma_Pos(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
-		const bool verifica_Colisao_Cima(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
-		const bool verifica_Colisao_Esquerda(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
-		const bool verifica_Colisao_Baixo(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
-		const bool verifica_Colisao_Direita(Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
+		const bool verifica_Colisao_Cima (Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
+		const bool verifica_Colisao_Esquerda (Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
+		const bool verifica_Colisao_Baixo (Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
+		const bool verifica_Colisao_Direita (Entidades::Entidade* pEntidade_Ref, Entidades::Entidade* pEntidade2);
 
 	public:
 
@@ -54,7 +54,7 @@ namespace Gerenciadores {
 		void Setar_Jogador(Entidades::Personagens::Jogador* p_Jogador1, Entidades::Personagens::Jogador* p_Jogador2);
 
 		void projetil_Destruido(Entidades::Projetil* pProj);
-		Entidades::Entidade* Inimigo_neutralizado();
+		Entidades::Entidade* Inimigo_neutralizado(Entidades::Personagens::Inimigo* inimigo_eliminado);
 		bool verifica_Lista_Inimigos_Vazia();
 
 		void Executar();

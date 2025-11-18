@@ -11,8 +11,12 @@ Jogo::Jogo()
     jogador_2.setar_Dois_Jogadores(false);
 
     Ger_Graf = Gerenciador_Grafico::getInstance();
-    fase1.Setar_Jogadores_Colisoes(&jogador_1, &jogador_2);
 
+	//mudar para a fase que for ser utilizada, a principio o menu é para alternar essas boleanas e chamar a função setar_Fase();
+    fase_1_ativa = false;
+    fase_2_ativa = true;
+
+    setar_Fase();
 }
 
 Jogo::~Jogo()
@@ -21,6 +25,8 @@ Jogo::~Jogo()
 
 void Jogo::Executar()
 {
+
+    setar_Fase();
 
     while (Ger_Graf->getJanela()->isOpen())
     {
@@ -51,15 +57,33 @@ void Jogo::Executar()
 
         Ger_Graf->getJanela()->display();
 
-        if (fase1.get_Ganhou()) {
-            Ger_Graf->getJanela()->close();
+        if(fase_1_ativa) {
+			//com a fase 1 implementada, pode descomentar esse bloco;
+            //if (fase1.get_Ganhou()) {
+              //  Ger_Graf->getJanela()->close();
+            //}
+        }
+        else if (fase_2_ativa) {
+
+            if (fase2.get_Ganhou()) {
+                Ger_Graf->getJanela()->close();
+            }
         }
     }
 }
 
 void Jogo::Atualiza() {
 
-    fase1.Executar();
+    //fase1.Executar();
+
+    if (fase_1_ativa) {
+		//fase_1.executar();
+    }
+    else if(fase_2_ativa) {
+        fase2.Executar();
+	}
+
+
     jogador_1.Executar();
 
     if (jogador_2.get_Dois_Jogadores()) {
@@ -68,6 +92,18 @@ void Jogo::Atualiza() {
 
     atualiza_Camera();
 
+}
+
+void Jogo::setar_Fase()
+{
+
+	//com a fase_1 implementada, pode descomentar esse bloco;
+    if (fase_1_ativa) {
+        //fase1.Setar_Jogadores(&jogador_1, &jogador_2);
+	}
+    else if (fase_2_ativa) {
+        fase2.Setar_Jogadores(&jogador_1, &jogador_2);
+	}
 }
 
 void Jogo::atualiza_Camera() {

@@ -10,6 +10,8 @@ Jogador::Jogador() : semente_id_entidade(10) {
 
 	segundo_jogador = false;
 	estado_pulando = false;
+	estado_caindo = true;
+
 	num_vitalidade = 100;
 
 	dano = 100;
@@ -28,6 +30,7 @@ Jogador::Jogador() : semente_id_entidade(10) {
 
 	forca_de_impulso = -7.0;
 	acelerando = false;
+	
 	//altura_de_pulo = 50.0;
 	
 	velocidade.y = -5.0;

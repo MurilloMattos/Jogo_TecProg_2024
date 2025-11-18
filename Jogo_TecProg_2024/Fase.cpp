@@ -27,8 +27,6 @@ Fase::Fase() {
 
 
 	Cria_Piso();
-	Cria_Plataforma();
-	//Cria_Inimigos();
 }
 
 Fase::~Fase() {
@@ -115,7 +113,7 @@ void Fases::Fase::Cria_Plataforma() {
 	
 }
 
-void Fases::Fase::Cria_Inimigos_Piratas(float x, float y){
+void Fases::Fase::Cria_Inimigo_Pirata(float x, float y){
 	Inimigo_Medio* pirata;
 
 	pirata = new Inimigo_Medio;
@@ -138,38 +136,49 @@ void Fases::Fase::criar_cenario()
 
 }
 
-void Fases::Fase::verifica_Inimigos_Neutralizados(){
 
+void Fases::Fase::verifica_Inimigos_Neutralizados() {
 
-	Entidade* pInimigo_Neutralizado = gerenciador_colisoes.Inimigo_neutralizado();
+	auto itr = lista_id_inimigos.begin();
 
-	std::list<int>::iterator itr;
+    while (itr != lista_id_inimigos.end() && !(lista_id_inimigos.empty())) {
 
-	itr = lista_id_inimigos.begin();
+        int id = *itr;
+        Entidade* ent = lista_Entidades.get_Entidade_Por_Id(id);
 
-	while(itr != lista_id_inimigos.end()) {
-		if (*itr == pInimigo_Neutralizado->getId()) {
-			lista_id_inimigos.erase(itr);
-			break;
-		}
+        // id inválido -> remover da lista de ids
+        if (ent == nullptr) {
+            itr = lista_id_inimigos.erase(itr);
+            continue;
+        }
 
-		itr++;
-	}
+        // garantir que é um inimigo (mais seguro que static_cast)
+        Inimigo* inim = dynamic_cast<Inimigo*>(ent);
+        if (inim == nullptr) {
+            ++itr;
+            continue;
+        }
 
-	lista_Entidades.Remover(pInimigo_Neutralizado);
+        if (inim->get_Vitalidade() <= 0) {
+            // remove entidade do gerenciador/lista de entidades
+            lista_Entidades.Remover(ent);
+			gerenciador_colisoes.Inimigo_neutralizado(inim);
 
-	if (gerenciador_colisoes.verifica_Lista_Inimigos_Vazia()) {
+            // também remover o id da lista de inimigos para não iterar sobre ele novamente
+            itr = lista_id_inimigos.erase(itr);
+        } else {
+            ++itr;
+        }
+    }
 
-		std::cout << "todos os inimigos foram eliminados!" << std::endl;
-		ganhou = true;
-	}
-
+    if (gerenciador_colisoes.verifica_Lista_Inimigos_Vazia() && lista_id_inimigos.empty()) {
+        std::cout << "todos os inimigos foram eliminados!" << std::endl;
+        ganhou = true;
+    }
 }
 
 void Fases::Fase::Executar() {
 
-
-	
 
 	verifica_Inimigos_Neutralizados();
 	gerenciador_colisoes.Executar();

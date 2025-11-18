@@ -88,3 +88,9 @@ void Entidade::setar_Pos(float pos_x, float pos_y)
 	pFigura->setPosition(x, y);
 }
 
+void Entidades::Entidade::setar_velocidade(float vel_x, float vel_y)
+{
+	velocidade.x = vel_x;
+	velocidade.y = vel_y;
+}
+

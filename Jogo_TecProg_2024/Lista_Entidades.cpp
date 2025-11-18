@@ -15,46 +15,19 @@ Lista_Entidades::~Lista_Entidades() {
 
 void Lista_Entidades::Remover(Entidade* pE) {
 
-	Lista<Entidade>::Elemento<Entidade>* aux_anterior, * aux_proximo, *aux_atual;
+	if (pE != nullptr) {
 
+		// Usa rotina segura do template Lista para remover o elemento que contém o ponteiro pE
+		bool removido = lista_Ent.removeInfo(pE);
 
-	aux_anterior = nullptr;
-	aux_atual = nullptr;
-	aux_proximo = nullptr;
-
-	aux_anterior = lista_Ent.getPrimeiro();
-	aux_atual = aux_anterior->getProx();
-
-	if (aux_anterior != nullptr && pE != nullptr) {
-
-		//para evitar que no primeiro loop ele acesse memoria já alocada.
-		if (aux_atual != nullptr) {
-			while (aux_atual->getInfo()->getId() != pE->getId() || aux_atual != nullptr )
-			{
-
-				aux_anterior = aux_atual;
-				aux_atual = aux_anterior->getProx();
-
-				if (aux_atual->getInfo()->getId() == pE->getId()){
-					break;
-				}
-			}
-		}
-
-		if (aux_atual != nullptr) {
-
-			std::cout << "eliminando a Entidade " << aux_atual->getInfo()->getId() << std::endl;
-
-			aux_anterior->setProximo(aux_atual->getProx());
-			delete aux_atual;
+		if (removido) {
+			std::cout << "eliminando a Entidade " << pE->getId() << std::endl;
+			delete pE;
 		}
 		else {
-
 			std::cout << "Nao encontrado" << std::endl;
 		}
 	}
-
-
 }
 
 void Lista_Entidades::Incluir(Entidade* pE) {
@@ -105,7 +78,7 @@ void Listas::Lista_Entidades::imprimir_Ids()
 
 		while (aux1 != nullptr)
 		{
-			std::cout << aux->getInfo()->getId() << std::endl;
+			std::cout << "ID:" << aux->getInfo()->getId() << " prox:" << aux->getProx()->getInfo()->getId()<< " " << std::endl;
 
 			aux = aux1;
 			aux1 = aux->getProx();
@@ -163,3 +136,6 @@ Entidade* Lista_Entidades::get_Entidade_Por_Id(int id_busca) {
 	return nullptr;
 }
 
+const int Lista_Entidades::get_Tamanho_Da_Lista() const {
+	return lista_Ent.get_Tamanho_Da_Lista();
+}
