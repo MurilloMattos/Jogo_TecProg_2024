@@ -14,6 +14,7 @@ Fases::Fase_2::Fase_2():num_max_Capitoes(1), i(0){
 
 	Cria_Inimigos();
 	Cria_Esteira();
+	Cria_Jogador(100.0f, piso->get_Y() - 40.0f);
 }
 
 Fases::Fase_2::~Fase_2(){
@@ -28,7 +29,7 @@ void Fases::Fase_2::Cria_Obstaculos()
 }
 
 void Fases::Fase_2::Cria_Esteira(){
-	esteira = new Entidades::Obstaculos::Esteira(1.5f, sf::Vector2f(-1.0f, 0.f));
+	esteira = new Entidades::Obstaculos::Esteira(-1.5f, sf::Vector2f(-1.0f, 0.f));
 	esteira->setar_Pos(300.f, piso->get_Y()); // Posiciona a esteira um pouco acima do piso
 
 	gerenciador_colisoes.Incluir_Obstaculo(static_cast<Entidades::Obstaculos::Obstaculo*>(esteira));
@@ -53,6 +54,25 @@ void Fases::Fase_2::Executar(){
 		}
 	}
 
+}
+
+void Fases::Fase_2::Cria_Jogador(float x, float y){
+
+	Entidades::Personagens::Jogador* jogador1;
+	jogador1 = new Entidades::Personagens::Jogador;
+
+	jogador1->setar_Pos(x, y);
+	gerenciador_colisoes.Setar_Jogador(jogador1, nullptr);
+	lista_Entidades.Incluir(static_cast<Entidade*>(jogador1));
+
+	if(jogador1->get_Dois_Jogadores()){
+		Entidades::Personagens::Jogador* jogador2;
+		jogador2 = new Entidades::Personagens::Jogador;
+
+		jogador2->setar_Pos(x + 50.0f, y);
+		gerenciador_colisoes.Setar_Jogador(nullptr, jogador2);
+		lista_Entidades.Incluir(static_cast<Entidade*>(jogador2));
+	}
 }
 
 

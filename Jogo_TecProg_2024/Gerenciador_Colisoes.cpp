@@ -97,15 +97,20 @@ bool Gerenciador_colisoes::verifica_Lista_Inimigos_Vazia()
 //colisão do jogador com os obstáculos
 void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(Jogador* p_Jogador) {
 
-	list<Obstaculo*>::iterator itr;
-
-	itr = lista_Obstaculos.begin();
-
+	list<Obstaculo*>::iterator itr = lista_Obstaculos.begin();
 
 	//verifica o tipo de colisão especificamente com objetos.
 	while (itr != lista_Obstaculos.end()) {
 
 		int lado = verifica_Tipo_De_Colisao(static_cast<Entidade*>(p_Jogador), static_cast<Entidade*>(*itr));
+
+		if(lado != 0){
+
+			(*itr)->obstacular(p_Jogador);
+			itr++;
+			continue;
+			
+		}
 
 		//direita
 		if (lado == 1) {

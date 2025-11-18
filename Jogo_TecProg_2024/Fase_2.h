@@ -21,7 +21,7 @@ namespace Fases{
 		Fase_2();
 		~Fase_2();
 
-
+		void Cria_Jogador(float x, float y);
 		void Cria_Obstaculos();
 		void Cria_Esteira();
 		void Cria_Inimigos();

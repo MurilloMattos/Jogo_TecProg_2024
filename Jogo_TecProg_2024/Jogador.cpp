@@ -140,8 +140,6 @@ void Jogador::setar_Dois_Jogadores(bool jogador_dois) {
 }
 
 bool Jogador::get_Dois_Jogadores() {
-
-
 	return segundo_jogador;
 }
 
