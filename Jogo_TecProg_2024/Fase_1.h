@@ -1,5 +1,6 @@
 #pragma once
 #include "Fase.h"
+#include "Inimigo_Esmagador.h"
 
 namespace Fases {
 	class Fase_1 : public Fase

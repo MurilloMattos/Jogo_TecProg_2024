@@ -25,7 +25,6 @@ estado(Estado::MENU)
 
     setar_Fase();
 
-    setar_Fase();
 }
 
 Jogo::~Jogo()
@@ -39,6 +38,14 @@ void Jogo::setEstado(Estado novoEstado) {
 
 Estado Jogo::getEstado() const {
     return estado;
+}
+
+void Jogo::set_pJog2_Dois_Jogadores(bool valor) {
+    jogador_2.setar_Dois_Jogadores(valor);
+}
+
+bool Jogo::get_pJog2_Dois_Jogadores() {
+    return jogador_2.get_Dois_Jogadores();
 }
 
 void Jogo::Executar()
@@ -95,20 +102,20 @@ void Jogo::Atualiza() {
     if(estado == Estado::MENU) {
 
         menu->Executar();
-        if (menu->getFase_1()) {
-            estado = Estado::FASE_1;
+        if (menu->getFase_2()) {
+            estado = Estado::FASE_2;
         }
 
     }
 
-    if(estado == Estado::FASE_1) {
+    if(estado == Estado::FASE_2) {
 
-        fase1.Executar();
         atualiza_Camera();
         jogador_1.Executar();
         if (jogador_2.get_Dois_Jogadores()) {
             jogador_2.Executar();
         }
+        fase2.Executar();
 
         verifica_Fim_De_Jogo();
 

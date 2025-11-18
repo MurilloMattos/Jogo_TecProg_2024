@@ -8,6 +8,8 @@ class Menu : public Ente {
 	private:
 		int posicaoMenu;
 		bool pressionado, selecionado;
+		bool fase_1_ativa;
+		bool fase_2_ativa;
 
 		Jogo *pJogo;
 		
@@ -46,7 +48,9 @@ class Menu : public Ente {
 		void setPosicaoMenu(int pos);
 		int getPosicaoMenu();
 		std::vector<sf::Text>* getTextos();
-		bool setFase_1(bool valor);
+		void setFase_1(bool valor);
 		bool getFase_1();
+		void setFase_2(bool valor);
+		bool getFase_2();
 		Jogo* get_pJogo(); 
 };

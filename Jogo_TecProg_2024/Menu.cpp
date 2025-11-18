@@ -2,14 +2,19 @@
 #include "Menu.h"
 
 Menu::Menu(Jogo *pJogo) : Ente(){
+
+	fase_1_ativa = false;
+	fase_2_ativa = false;
+
 	// armazena a referência para o jogo para que possamos mudar o estado
 	this->pJogo = pJogo;
-	//menu = pGG->getJanela("Menu", 500, 500);
+
 	exitMenu = new sf::RectangleShape();
  	fonte = new sf::Font();
 	bg = new sf::Sprite();
 	imagem = new sf::Texture();
 	atribuir();	
+
 }
 Menu::~Menu() {
 	pJogo = NULL;
@@ -122,12 +127,13 @@ void Menu::Atualizar() {
 				switch(posicaoMenu) {
 					case 0://1 Jogador
 						std::cout << "Opção '1 Jogador' selecionada." << std::endl;
-						pJogo->setEstado(Estado::FASE_1);
+						setFase_1(true);
+						pJogo->setEstado(Estado::FASE_2);
 						break;
 					case 1://2 Jogadores
 						std::cout << "Opção '2 Jogadores' selecionada." << std::endl;
 						pJogo->set_pJog2_Dois_Jogadores(true);
-						pJogo->setEstado(Estado::FASE_1);
+						pJogo->setEstado(Estado::FASE_2);
 						break;
 					case 2://Sair
 						std::cout << "Opção 'Sair' selecionada. Fechando o jogo..." << std::endl;
@@ -179,12 +185,15 @@ bool Menu::getSelecionado() {
 sf::Vector2i Menu::getPosicaoMouse() {
 	return posicaoMouse;
 }
+
 void Menu::setPosicaoMouse(sf::Vector2i pos) {
 	posicaoMouse = pos;
 }
+
 sf::Vector2f  Menu::getCoordsMouse() {
 	return coordMouse;
 }
+
 void Menu::setCoordsMouse(sf::Vector2f coords) {
 	coordMouse = coords;
 }
@@ -192,25 +201,50 @@ void Menu::setCoordsMouse(sf::Vector2f coords) {
 void Menu::setPosicaoMenu(int pos) {
 	posicaoMenu  = pos;
 }
+
 int Menu::getPosicaoMenu() {
 	return posicaoMenu;
 }
+
 std::vector<sf::Text>* Menu::getTextos() {
 	return &textos;
 }
-bool Menu::setFase_1(bool valor) {
+
+void Menu::setFase_1(bool valor) {
+
 	// Define se o menu deve iniciar a Fase 1
 	// Implementação simples para exemplo
 	if(valor) {
 		std::cout << "Iniciando Fase 1..." << std::endl;
 	}
-	return valor;
+	fase_1_ativa = valor;
 }
+
 bool Menu::getFase_1() {
+
 	// Retorna se a Fase 1 deve ser iniciada
 	// Implementação simples para exemplo
 	return (posicaoMenu == 1 && pressionado);
+
 }
+
+void Menu::setFase_2(bool valor) {
+
+	// Define se o menu deve iniciar a Fase 2
+	// Implementação simples para exemplo
+	if(valor) {
+		std::cout << "Iniciando Fase 2..." << std::endl;
+	}
+	fase_2_ativa = valor;
+}
+
+bool Menu::getFase_2() {
+
+	// Retorna se a Fase 2 deve ser iniciada
+	// Implementação simples para exemplo
+	return (posicaoMenu == 2 && pressionado);
+}
+
 Jogo* Menu::get_pJogo() {
 return pJogo;
 }

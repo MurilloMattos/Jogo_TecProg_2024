@@ -2,8 +2,6 @@
 
 using namespace Entidades;
 using namespace Personagens;
-using namespace Entidades;
-using namespace Personagens;
 using namespace Fases;
 
 Fases::Fase_2::Fase_2():num_max_Capitoes(1), i(0){
@@ -52,7 +50,7 @@ void Fases::Fase_2::Executar(){
 
 void Fases::Fase_2::Cria_Inimigos(){
 
-	Cria_Inimigo_Pirata(100.0f, 200.0f);
+	Cria_Inimigo_Pirata(400.0f, 200.0f);
 	Cria_Inimigo_Capitao(600.f,159.f);
 }
 
@@ -99,7 +97,7 @@ void Fases::Fase_2::verifica_Projeteis_Destroidos()
 
 
 				if (projetil_deletado) {
-					//remove da lista de colis�es
+					//remove da lista de colisões
 					gerenciador_colisoes.projetil_Destruido(projetil_deletado);
 
 				}
@@ -108,58 +106,7 @@ void Fases::Fase_2::verifica_Projeteis_Destroidos()
 				}
 
 				if (projetil_deletado) {
-					//remove do capit�o
-					lista_cap[i]->remover_Projetil(projetil_deletado);
-				}
-				else {
-					std::cout << "Erro ao remover projetil (Capitao)" << std::endl;
-				}
-
-				if (projetil_deletado) {
-					//remove da lista de entidades
-					lista_Entidades.Remover(static_cast<Entidade*>(projetil_deletado));
-				}
-				else {
-					std::cout << "Erro ao remover projetil (Lista_Entidades)" << std::endl;
-				}
-
-			}
-		}
-
-		projetil_deletado = nullptr;
-	}
-
-	
-
-}
-
-void Fases::Fase_2::verifica_Projeteis_Destroidos()
-{
-	
-	Projetil* projetil_deletado;
-
-	for(i=0;i<lista_cap.size(); i++) {
-
-		for(j = 0; j < lista_cap[i]->get_Vetor_De_Projetis()->size(); j++) {
-
-
-			// conteudo apontado pelo ponteiro do vetor de projeteis do capitao
-			if (!((*lista_cap[i]->get_Vetor_De_Projetis())[j]->get_Ativo())) {
-
-				projetil_deletado = (*(lista_cap[i]->get_Vetor_De_Projetis()))[j];
-
-
-				if (projetil_deletado) {
-					//remove da lista de colis�es
-					gerenciador_colisoes.projetil_Destruido(projetil_deletado);
-
-				}
-				else {
-					std::cout << "Erro ao remover projetil (Gerenciador_colisoes)" << std::endl;
-				}
-
-				if (projetil_deletado) {
-					//remove do capit�o
+					//remove do capitão
 					lista_cap[i]->remover_Projetil(projetil_deletado);
 				}
 				else {

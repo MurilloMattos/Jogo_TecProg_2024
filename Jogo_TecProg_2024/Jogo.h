@@ -6,7 +6,7 @@
 #include "Fase_2.h"
 #include "Menu.h"
 
-enum class Estado { MENU, FASE_1 };
+enum class Estado { MENU, FASE_1, FASE_2 };
 
 class Jogo
 {
@@ -34,7 +34,7 @@ class Jogo
 		void setEstado(Estado novoEstado);
 		Estado getEstado() const;
 		void set_pJog2_Dois_Jogadores(bool valor);
-		bool get_pJog2_Dois_Jogadores() const;
+		bool get_pJog2_Dois_Jogadores();
 		void setar_Fase();
 		void atualiza_Camera();
 		void Atualiza();

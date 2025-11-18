@@ -267,4 +267,5 @@ CMakeFiles/JogoTecProg.dir/Jogo_TecProg_2024/Fase_1.cpp.o: \
  /usr/include/c++/13/bits/allocated_ptr.h \
  /usr/include/c++/13/bits/list.tcc /usr/include/c++/13/set \
  /usr/include/c++/13/bits/stl_set.h \
- /usr/include/c++/13/bits/stl_multiset.h
+ /usr/include/c++/13/bits/stl_multiset.h \
+ /media/kaueicuta2001/HD\ comum1/pessoal/kaue/TecProg/PROJETO\ JOGO/Jogo_TecProg_2024/Jogo_TecProg_2024/Inimigo_Esmagador.h
