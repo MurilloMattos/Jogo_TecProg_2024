@@ -46,3 +46,7 @@ void Entidades::Obstaculos::Obstaculo_Esteira::obstacular(Entidades::Personagens
         p->setar_Pos(p->get_X() + (velocidadeTransporte * direcao.x), p->get_Y());
     }
 }
+
+sf::Vector2f Entidades::Obstaculos::Obstaculo_Esteira::get_Tamanho_Esteira() {
+    return tamanhoEsteira;
+}

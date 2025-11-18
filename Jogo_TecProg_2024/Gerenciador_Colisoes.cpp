@@ -153,6 +153,11 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(Jogador* p_Jogador)
 
 		int lado = verifica_Tipo_De_Colisao(static_cast<Entidade*>(p_Jogador), static_cast<Entidade*>(*itr));
 
+		if(lado != 0) {
+			std::cout << "Colisao detectada entre jogador e obstaculo, lado: " << lado << std::endl;
+			(*itr)->obstacular(p_Jogador);
+		}
+
 		//direita
 		if (lado == 1) {
 			

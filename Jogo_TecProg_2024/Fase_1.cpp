@@ -51,11 +51,14 @@ void Fases::Fase_1::Cria_Piso() {
 
 void Fases::Fase_1::Cria_Esteiras() {
 
-	/*esteira = new Obstaculos::Obstaculo_Esteira(100.f, sf::Vector2f(1.f, 0.f));
-	esteira->setar_Pos(200.f, 100.f);
+	esteira = new Obstaculos::Obstaculo_Esteira(2.f, sf::Vector2f(-1.f, 0.f));//velocidade e direc
+	sf::Vector2f altura_esteira = esteira->get_Tamanho_Esteira();
+	float altura_base = pos_Piso.y - (tam_Piso_Fase.y / 2);
+	altura_esteira.y = altura_base - (altura_esteira.y / 2);
+	esteira->setar_Pos(200.f, static_cast<float>(altura_esteira.y));
 
 	gerenciador_colisoes.Incluir_Obstaculo(static_cast<Entidades::Obstaculos::Obstaculo*>(esteira));
-	lista_Entidades.Incluir(static_cast<Entidade*>(esteira));*/
+	lista_Entidades.Incluir(static_cast<Entidade*>(esteira));
 }
 
 void Fases::Fase_1::Cria_Inimigos(){
