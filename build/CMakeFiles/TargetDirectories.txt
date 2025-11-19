@@ -1,4 +1,0 @@
-/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build/CMakeFiles/JogoTecProg.dir
-/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build/CMakeFiles/run.dir
-/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build/CMakeFiles/edit_cache.dir
-/media/kaueicuta2001/HD comum1/pessoal/kaue/TecProg/PROJETO JOGO/Jogo_TecProg_2024/build/CMakeFiles/rebuild_cache.dir
