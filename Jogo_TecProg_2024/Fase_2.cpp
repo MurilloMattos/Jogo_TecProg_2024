@@ -13,7 +13,8 @@ Fases::Fase_2::Fase_2():num_max_Capitoes(1), i(0){
 
 
 	Cria_Inimigos();
-	Cria_Esteira();
+	Cria_Obstaculos();
+	//Cria_Esteira();
 }
 
 Fases::Fase_2::~Fase_2(){
@@ -27,13 +28,13 @@ void Fases::Fase_2::Cria_Obstaculos()
 	Cria_Plataforma();
 }
 
-void Fases::Fase_2::Cria_Esteira(){
+/*void Fases::Fase_2::Cria_Esteira(){
 	esteira = new Entidades::Obstaculos::Esteira(-1.5f, sf::Vector2f(1.0f, 0.f));
 	esteira->setar_Pos(300.f, piso->get_Y()-10.f); // Posiciona a esteira um pouco acima do piso
 
 	gerenciador_colisoes.Incluir_Obstaculo(static_cast<Entidades::Obstaculos::Obstaculo*>(esteira));
 	lista_Entidades.Incluir(static_cast<Entidade*>(esteira));
-}
+}*/
 
 void Fases::Fase_2::Executar(){
 

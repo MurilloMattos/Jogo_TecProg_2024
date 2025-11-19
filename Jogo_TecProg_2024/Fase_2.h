@@ -1,6 +1,5 @@
 #pragma once
 #include "Fase.h"
-#include "Obstaculo_Esteira.h"
 #include "Capitao.h"
 #include "Projetil.h"
 
@@ -12,7 +11,7 @@ namespace Fases{
 		int num_max_Capitoes;
 		int i,j;
 
-		Entidades::Obstaculos::Esteira* esteira;
+		//Entidades::Obstaculos::Esteira* esteira;
 
 		std::vector<Entidades::Personagens::Inimigo_Capitao*> lista_cap;
 
@@ -23,7 +22,7 @@ namespace Fases{
 
 		void Cria_Jogador(float x, float y);
 		void Cria_Obstaculos();
-		void Cria_Esteira();
+		//void Cria_Esteira();
 		void Cria_Inimigos();
 		void Cria_Capitao(float x, float y);
 		void Executar();
