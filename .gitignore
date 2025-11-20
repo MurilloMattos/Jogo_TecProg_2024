@@ -97,6 +97,9 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+build/
+SFML-2.5.1/
+.vscode/
 
 # Chutzpah Test files
 _Chutzpah*

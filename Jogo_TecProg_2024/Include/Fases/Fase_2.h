@@ -1,0 +1,37 @@
+#pragma once
+<<<<<<< HEAD:Jogo_TecProg_2024/Fase_2.h
+#include "Fase.h"
+#include "Capitao.h"
+#include "Projetil.h"
+=======
+#include "Fases/Fase.h"
+#include "Entidades/Obstaculos/Obstaculo_Esteira.h"
+#include "Entidades/Personagens/Inimigos/Capitao.h"
+#include "Entidades/Projetil.h"
+>>>>>>> 1adcf81 (Refatora estrutura de pastas do projeto):Jogo_TecProg_2024/Include/Fases/Fase_2.h
+
+namespace Fases{
+
+	class Fase_2 : public Fase
+	{
+	private:
+		int num_max_Capitoes;
+		int i,j;
+
+		std::vector<Entidades::Personagens::Inimigo_Capitao*> lista_cap;
+
+	public:
+
+		Fase_2();
+		~Fase_2();
+
+		void Cria_Jogador(float x, float y);
+		void Cria_Obstaculos();
+		void Cria_Inimigos();
+		void Cria_Capitao(float x, float y);
+		void Executar();
+		Entidades::Projetil* Cria_Projetil();
+		void verifica_Projeteis_Destroidos();
+
+	};
+}

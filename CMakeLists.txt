@@ -8,11 +8,22 @@ project(JogoTecProg LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# --- Encontrar Arquivos do Jogo ---
+# --- Encontrar TODOS os .cpp e .h recursivamente ---
 
-include_directories(Jogo_TecProg_2024)
-file(GLOB SOURCES "Jogo_TecProg_2024/*.cpp")
-file(GLOB HEADERS "Jogo_TecProg_2024/*.h")
+file(GLOB_RECURSE SOURCES
+    "${CMAKE_CURRENT_SOURCE_DIR}/Jogo_TecProg_2024/Sorce/*.cpp"
+)
+
+file(GLOB_RECURSE HEADERS
+    "${CMAKE_CURRENT_SOURCE_DIR}/Jogo_TecProg_2024/Include/*.h"
+)
+
+add_executable(JogoTecProg ${SOURCES} ${HEADERS})
+
+# Diz pro compilador onde estão os .h
+target_include_directories(JogoTecProg PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/Jogo_TecProg_2024/Include
+)
 
 # --- Configuração do SFML (Pasta Única) ---
 
@@ -29,7 +40,7 @@ find_package(SFML 2.5 REQUIRED COMPONENTS system window graphics audio network)
 
 # --- Criar o Executável ---
 
-add_executable(JogoTecProg ${SOURCES} ${HEADERS})
+#add_executable(JogoTecProg ${SOURCES} ${HEADERS})
 
 target_link_libraries(JogoTecProg PRIVATE sfml-graphics sfml-window sfml-system sfml-audio sfml-network)
 
@@ -62,14 +73,29 @@ file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/assets DESTINATION ${CMAKE_CURRENT_BINARY_
 
 # Esta é a "condição do windows" que mantivemos.
 # Ela só roda no Windows e copia as .dll necessárias para junto do .exe
+# --- Específico para Windows: Copiar DLLs ---
+
+# --- Específico para Windows: Copiar DLLs SFML pro lado do .exe ---
+
 if(WIN32)
-    file(GLOB SFML_DLLS "${SFML_DIR}/bin/*.dll")
-    
-    add_custom_command(TARGET JogoTecProg POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${SFML_DLLS}
-        $<TARGET_FILE_DIR:JogoTecProg>
-    )
+    # SFML_DIR normalmente é algo como: .../SFML-2.5.1/lib/cmake/SFML
+    # Vamos subir 3 níveis pra chegar na raiz .../SFML-2.5.1
+    get_filename_component(SFML_ROOT "${SFML_DIR}" DIRECTORY)  # .../lib/cmake
+    get_filename_component(SFML_ROOT "${SFML_ROOT}" DIRECTORY) # .../lib
+    get_filename_component(SFML_ROOT "${SFML_ROOT}" DIRECTORY) # .../SFML-2.5.1
+
+    # Agora procuramos as DLLs em <raiz>/bin
+    file(GLOB SFML_DLLS "${SFML_ROOT}/bin/*.dll")
+
+    if(SFML_DLLS)
+        add_custom_command(TARGET JogoTecProg POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                ${SFML_DLLS}
+                $<TARGET_FILE_DIR:JogoTecProg>
+        )
+    else()
+        message(WARNING "Nenhuma DLL SFML encontrada em ${SFML_ROOT}/bin/*.dll")
+    endif()
 endif()
 
 # Em sistemas POSIX (Linux) copiamos as .so localmente para o diretório do executável
