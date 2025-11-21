@@ -100,11 +100,19 @@ void Jogo::Executar()
 void Jogo::Atualiza() {
 
     if(estado == Estado::MENU) {
-
         menu->Executar();
-        if (menu->getFase_2()) {
-            estado = Estado::FASE_2;
+    }
+
+    if(estado == Estado::FASE_1) {
+
+        atualiza_Camera();
+        jogador_1.Executar();
+        if(jogador_2.get_Dois_Jogadores()) {
+            jogador_2.Executar();
         }
+        fase1.Executar();
+
+        verifica_Fim_De_Jogo();
 
     }
 

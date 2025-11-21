@@ -5,11 +5,17 @@
 
 class Jogo;
 class Menu : public Ente {
+
 	private:
+
+		enum class Selecao { ESCOLHE_JOGADOR, ESCOLHE_FASE };
+
+		Selecao selecaoAtual;
 		int posicaoMenu;
 		bool pressionado, selecionado;
-		bool fase_1_ativa;
-		bool fase_2_ativa;
+		bool fase_1_selecionado;
+		bool fase_2_selecionado;
+		bool jogador_2_selecionado;
 
 		Jogo *pJogo;
 		
@@ -32,25 +38,20 @@ class Menu : public Ente {
 	public:
 		Menu(Jogo *pJogo);
 		~Menu();
-		void atribuir();
+		void Inicializar();
 		void Executar();
-		void Atualizar();
+		void EscolheJogador();
+		void EscolheFase();
 		void desenhar();
-		sf::RenderWindow * getJanelaMenu();
-		bool getPressionado();
-		void setPressionado(bool valor);
-		void setSelecionado(bool valor);
-		bool getSelecionado();
 		sf::Vector2i getPosicaoMouse();
 		void setPosicaoMouse(sf::Vector2i pos);
 		sf::Vector2f getCoordsMouse();
 		void setCoordsMouse(sf::Vector2f coords);
 		void setPosicaoMenu(int pos);
 		int getPosicaoMenu();
+		bool getJogador2Selecionado();
+		bool getFase1Selecionado();
+		bool getFase2Selecionado();
 		std::vector<sf::Text>* getTextos();
-		void setFase_1(bool valor);
-		bool getFase_1();
-		void setFase_2(bool valor);
-		bool getFase_2();
 		Jogo* get_pJogo(); 
 };
