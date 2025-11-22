@@ -108,7 +108,7 @@ void Jogo::Atualiza() {
 
         atualiza_Camera();
         jogador_1.Executar();
-        if(jogador_2.get_Dois_Jogadores()) {
+        if (jogador_2.get_Dois_Jogadores()) {
             jogador_2.Executar();
         }
         fase1.Executar();

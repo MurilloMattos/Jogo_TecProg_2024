@@ -179,10 +179,10 @@ void Fases::Fase::verifica_Inimigos_Neutralizados() {
 
 void Fases::Fase::Executar() {
 
-
 	verifica_Inimigos_Neutralizados();
 	gerenciador_colisoes.Executar();
 	lista_Entidades.Percorrer();
+	
 }
 
 

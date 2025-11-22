@@ -1,29 +1,36 @@
 #pragma once
-#include "Fases/Fase.h"
-#include "Entidades/Personagens/Inimigos/Inimigo_Esmagador.h"
 
-namespace Fases {
+#include "Fases/Fase.h"
+#include "Entidades/Obstaculos/Obstaculo_Esteira.h"
+#include "Entidades/Personagens/Inimigos/Capitao.h"
+#include "Entidades/Projetil.h"
+
+namespace Fases{
+
 	class Fase_1 : public Fase
 	{
-		private:
-			const int max_inimigos_medios;
+	private:
+		int num_max_Capitoes;
+		int i,j;
 
-		public:
+		std::vector<Entidades::Personagens::Inimigo_Capitao*> lista_cap;
 
-			Fase_1();
-			~Fase_1();
+	public:
 
-			void cria_Obstaculos_Dificeis();
-			void cria_Inimigos_Medios();
-			
-			void Executar();
-			void Cria_Piso();
-			void Cria_Plataforma();
-			void Cria_Inimigos();
-			void Cria_Obstaculos();
+		Fase_1();
+		~Fase_1();
 
-			void atualiza_Camera_Fase(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
-			void setar_Camera_Fase();
+		void Cria_Jogador(float x, float y);
+		void Cria_Obstaculos();
+		void Cria_Inimigos();
+		void Cria_Capitao(float x, float y);
+		void Executar();
+		Entidades::Projetil* Cria_Projetil();
+		void verifica_Projeteis_Destroidos();
+
+
+		void atualiza_Camera_Fase(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
+		void setar_Camera_Fase();
+
 	};
-
 }
