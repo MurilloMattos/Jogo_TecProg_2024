@@ -4,7 +4,7 @@ using namespace Entidades;
 using namespace Personagens;
 using namespace Fases;
 
-Fases::Fase_2::Fase_2():num_max_Capitoes(1), i(0){
+Fases::Fase_2::Fase_2():num_max_Capitoes(3), i(0){
 
 	i = 0;
 	j = 0;
@@ -79,14 +79,16 @@ void Fases::Fase_2::Cria_Inimigos(){
 //cria o inimigo dificil (Boss)
 void Fase_2::Cria_Capitao(float x, float y){
 
-	Inimigo_Capitao* capitao;
-	capitao = new Inimigo_Capitao;
+	for(int k = 0; k < num_max_Capitoes; k++){
+		Inimigo_Capitao* capitao;
+		capitao = new Inimigo_Capitao;
 
-	capitao->setar_Pos(x, y);
-	gerenciador_colisoes.Incluir_Inimigo(capitao);
-	lista_Entidades.Incluir(static_cast<Entidade*>(capitao));
-	lista_cap.push_back(capitao);
-	lista_id_inimigos.push_front(capitao->getId());
+		capitao->setar_Pos(x + k * 50.0f, y);
+		gerenciador_colisoes.Incluir_Inimigo(capitao);
+		lista_Entidades.Incluir(static_cast<Entidade*>(capitao));
+		lista_cap.push_back(capitao);
+		lista_id_inimigos.push_front(capitao->getId());
+	}
 }
 
 //auto explicativo
