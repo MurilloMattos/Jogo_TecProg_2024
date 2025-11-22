@@ -11,6 +11,7 @@ jogador_1(),
 jogador_2(),
 fase1(),
 menu(new Menu(this)),
+fase2(),
 estado(Estado::MENU)
 {
 
@@ -20,8 +21,8 @@ estado(Estado::MENU)
     Ger_Graf = Gerenciador_Grafico::getInstance();
 
 	//mudar para a fase que for ser utilizada, a principio o menu � para alternar essas boleanas e chamar a fun��o setar_Fase();
-    fase_1_ativa = false;
-    fase_2_ativa = true;
+    fase_1_ativa = true;
+    fase_2_ativa = false;
 
     setar_Fase();
 
@@ -51,7 +52,7 @@ bool Jogo::get_pJog2_Dois_Jogadores() {
 void Jogo::Executar()
 {
 
-    setar_Fase();
+
 
     while (Ger_Graf->getJanela()->isOpen())
     {

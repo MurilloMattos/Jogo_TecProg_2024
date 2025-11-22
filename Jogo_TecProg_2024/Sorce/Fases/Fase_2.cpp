@@ -48,6 +48,7 @@ void Fases::Fase_2::Executar(){
 
 }
 
+/*
 void Fases::Fase_2::Cria_Jogador(float x, float y){
 
 	Entidades::Personagens::Jogador* jogador1;
@@ -66,6 +67,7 @@ void Fases::Fase_2::Cria_Jogador(float x, float y){
 		lista_Entidades.Incluir(static_cast<Entidade*>(jogador2));
 	}
 }
+	*/
 
 
 void Fases::Fase_2::Cria_Inimigos(){

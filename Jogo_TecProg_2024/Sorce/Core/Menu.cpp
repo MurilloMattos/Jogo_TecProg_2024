@@ -210,7 +210,7 @@ void Menu::EscolheFase() {
 
 		textos[i].setFont(*fonte);
 		textos[i].setString(opcoes[i]);
-		textos[i].setCharacterSize((tam[i]));
+		textos[i].setCharacterSize(static_cast<unsigned int>(tam[i]));
 		// Tornar textos visíveis mesmo em fundo claro: preenchimento preto + contorno vermelho
 		textos[i].setFillColor(sf::Color::Black);
 		textos[i].setOutlineColor(sf::Color::Red);

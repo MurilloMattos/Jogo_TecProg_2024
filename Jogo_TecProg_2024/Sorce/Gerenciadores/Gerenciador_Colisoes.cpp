@@ -522,11 +522,11 @@ const bool Gerenciador_colisoes::verifica_Colisao_Direita(Entidade* pEntidade_Re
 
 void Gerenciador_colisoes::Executar(){
 
-	if (pJogador1) {
+	if (pJogador1 && !(pJogador1->get_Eliminado())) {
 		tratar_Colisoes_Jogador_Obstaculo(pJogador1);
 		tratar_Colisoes_Jogador_Projeteis(pJogador1);
 	}
-	if (pJogador2->get_Dois_Jogadores()) {
+	if (pJogador2->get_Dois_Jogadores() && !(pJogador2->get_Eliminado())) {
 		tratar_Colisoes_Jogador_Obstaculo(pJogador2);
 		tratar_Colisoes_Jogador_Projeteis(pJogador2);
 	}
