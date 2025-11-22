@@ -14,6 +14,7 @@ Fases::Fase_2::Fase_2():num_max_Capitoes(1), i(0){
 
 	Cria_Inimigos();
 	Cria_Obstaculos();
+	setar_Camera_Fase();
 }
 
 Fases::Fase_2::~Fase_2(){
@@ -147,5 +148,17 @@ void Fases::Fase_2::verifica_Projeteis_Destroidos()
 	}
 
 	
+
+}
+
+void Fases::Fase_2::setar_Camera_Fase()
+{
+	pGG->getCamera()->zoom(1.3f);
+}
+
+void Fases::Fase_2::atualiza_Camera_Fase(Jogador* p_jogador1, Jogador* p_jogador2)
+{
+	//centraliza a camera no jogador 1
+	pGG->getCamera()->setCenter(p_jogador1->get_Centro());
 
 }

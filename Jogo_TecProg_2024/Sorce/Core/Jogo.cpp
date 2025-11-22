@@ -148,7 +148,6 @@ void Jogo::verifica_Fim_De_Jogo()
 void Jogo::setar_Fase()
 {
 
-	//com a fase_1 implementada, pode descomentar esse bloco;
     if (fase_1_ativa) {
         fase1.Setar_Jogadores(&jogador_1, &jogador_2);
 	}
@@ -159,6 +158,15 @@ void Jogo::setar_Fase()
 
 void Jogo::atualiza_Camera() {
     Ger_Graf->getJanela()->setView(*Ger_Graf->getCamera());
-    Ger_Graf->getCamera()->setCenter(jogador_1.get_Centro());
+
+    if(fase_1_ativa){
+        fase1.atualiza_Camera_Fase(&jogador_1, &jogador_2);
+    }
+    else if(fase_2_ativa){
+        fase2.atualiza_Camera_Fase(&jogador_1, &jogador_2);
+    }
+
+    //isso deve ser passado para a fase, que deve ajustar a camera conforme o jogador se move pelo mapa.
+    //Ger_Graf->getCamera()->setCenter(jogador_1.get_Centro());
 
 }

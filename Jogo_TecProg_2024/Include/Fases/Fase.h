@@ -52,6 +52,9 @@ namespace Fases {
 			virtual void Cria_Inimigos() = 0;	
 			virtual void Cria_Obstaculos() = 0;
 
+			virtual void atualiza_Camera_Fase(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2) = 0;
+			virtual void setar_Camera_Fase() = 0;
+
 			void criar_cenario();
 			void verifica_Inimigos_Neutralizados();
 

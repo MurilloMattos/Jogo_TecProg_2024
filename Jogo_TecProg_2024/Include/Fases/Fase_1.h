@@ -21,6 +21,9 @@ namespace Fases {
 			void Cria_Plataforma();
 			void Cria_Inimigos();
 			void Cria_Obstaculos();
+
+			void atualiza_Camera_Fase(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
+			void setar_Camera_Fase();
 	};
 
 }
