@@ -20,7 +20,7 @@ namespace Entidades {
 			void setar_Vitalidade(int vida);
 			virtual void diminuir_Vitalidade(int dano);
 			int get_Vitalidade();
-			int danificar();
+			virtual void danificar(Personagem* pAtacado);
 
 			virtual void Salvar() = 0;
 			virtual void Executar() = 0;

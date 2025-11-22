@@ -21,8 +21,8 @@ estado(Estado::MENU)
     Ger_Graf = Gerenciador_Grafico::getInstance();
 
 	//mudar para a fase que for ser utilizada, a principio o menu � para alternar essas boleanas e chamar a fun��o setar_Fase();
-    fase_1_ativa = true;
-    fase_2_ativa = false;
+    fase_1_ativa = false;
+    fase_2_ativa = true;
 
     setar_Fase();
 

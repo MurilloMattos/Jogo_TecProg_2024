@@ -31,6 +31,6 @@ int Entidades::Personagens::Personagem::get_Vitalidade()
 	return num_vitalidade;
 }
 
-int Personagem::danificar() {
-	return dano;
+void Personagem::danificar(Personagem* pAtacado) {
+	pAtacado->diminuir_Vitalidade(dano);
 }

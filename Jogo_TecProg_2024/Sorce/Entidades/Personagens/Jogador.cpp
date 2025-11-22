@@ -157,9 +157,14 @@ void Jogador::Salvar(){
 
 }
 
-int Jogador::danificar() {
-	return dano;
+
+void Jogador::danificar(Personagem* pAtacado) {
+
+	pAtacado->diminuir_Vitalidade(dano);
+	setar_Estado(false);
+	executando_Pulo();
 }
+
 
 void Jogador::diminuir_Vitalidade(int dano) {
 

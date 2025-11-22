@@ -149,7 +149,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Projeteis(Jogador* p_Jogador)
 
 				if (lado != 0) {
 
-					p_Jogador->diminuir_Vitalidade((*itr)->get_Dano());
+					(*itr)->Atingiu_Jogador(p_Jogador);
 					(*itr)->setar_Ativo(false);
 					projetil_Destruido(*itr);
 					break;
@@ -250,14 +250,10 @@ void Gerenciador_colisoes::tratar_Colisoes_Inimigos(){
 			tratar_Colisoes_Jogador_Inimigos(pJogador1, lista_Inimigos[i]);
 			tratar_Colisoes_Jogador_Inimigos(pJogador2, lista_Inimigos[i]);
 
-			lista_Inimigos[i]->andar_ate(pJogador1->get_Centro().x, pJogador1->get_Centro().y);
-			lista_Inimigos[i]->andar_ate(pJogador2->get_Centro().x, pJogador2->get_Centro().y);
 		}
 		else {
 			tratar_Colisoes_Obstaculo(static_cast<Entidade*>(lista_Inimigos[i]));
 			tratar_Colisoes_Jogador_Inimigos(pJogador1, lista_Inimigos[i]);
-
-			lista_Inimigos[i]->andar_ate(pJogador1->get_Centro().x, pJogador1->get_Centro().y);
 
 		}
 
@@ -274,28 +270,25 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Inimigos(Jogador* pJogador, I
 	if (lado == 1) {
 
 		pJogador->setar_Pos((pInimigo->get_X() - pJogador->get_Largura() - empurrao), pJogador->get_Y());
-		pJogador->diminuir_Vitalidade(pInimigo->danificar());
+		pInimigo->verifica_Acao_de_Colisao(lado, pJogador);
 	}
 	//cima
 	else if (lado == 2) {
 
 		pJogador->setar_Pos(pJogador->get_X(), pInimigo->get_Comprimento_A() + empurrao);
-		pJogador->diminuir_Vitalidade(pInimigo->danificar());
-		pJogador->setar_Estado(false);
+		pInimigo->verifica_Acao_de_Colisao(lado, pJogador);
 	}
 	//esquerda
 	else if (lado == 3) {
 
 		pJogador->setar_Pos(pInimigo->get_Comprimento_L() + empurrao, pJogador->get_Y());
-		pJogador->diminuir_Vitalidade(pInimigo->danificar());
+		pInimigo->verifica_Acao_de_Colisao(lado, pJogador);
 	}
 	//baixo
 	else if (lado == 4) {
 
 		pJogador->setar_Pos(pJogador->get_X(), (pInimigo->get_Y() - pJogador->get_Altura()));
-		pJogador->setar_Estado(false);
-		pJogador->executando_Pulo();
-		pInimigo->diminuir_Vitalidade(pJogador->danificar());
+		pInimigo->verifica_Acao_de_Colisao(lado, pJogador);
 	}
 
 }

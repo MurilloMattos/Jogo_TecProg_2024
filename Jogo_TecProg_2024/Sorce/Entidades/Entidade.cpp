@@ -2,7 +2,7 @@
 
 using namespace Entidades;
 
-Entidade::Entidade() : Ente()
+Entidade::Entidade() : Ente(), direita(1), cima(2), esquerda(3), baixo(4)
 {
 	x = 0;
 	y = 0;

@@ -14,8 +14,7 @@ namespace Entidades {
 				Jogador* ponteiro_jogador2;
 
 				int direcao;
-
-				int direita, esquerda;
+				int lado_fraco;
 
 
 				//int dano
@@ -28,12 +27,14 @@ namespace Entidades {
 				~Inimigo();
 
 				void setar_Jogador_No_Inimigo(Entidades::Personagens::Jogador* pJogador1, Entidades::Personagens::Jogador* pJogador2);
+				void setar_direcao();
 
 				virtual void andar_ate(float em_x, float em_y);
 				virtual void Salvar() = 0;
-				//virtual void Danificar() = 0;
-				virtual void Executar();
 
+				virtual void Executar();
+				virtual void verifica_Acao_de_Colisao(int lado, Entidades::Personagens::Jogador* pJogador);
+				
 		};
 	}
 }

@@ -92,6 +92,7 @@ std::vector<Projetil*>* Inimigo_Capitao::get_Vetor_De_Projetis(){
 void Inimigo_Capitao::Executar() {
 
 	disparou = false;
+	setar_direcao();
 
 	if (pode_disparar) {
 

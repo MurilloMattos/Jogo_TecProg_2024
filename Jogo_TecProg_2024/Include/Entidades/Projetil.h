@@ -6,6 +6,9 @@ namespace Entidades {
 	namespace Personagens {
 		class Inimigo_Capitao;
 	}
+	namespace Personagens {
+		class Jogador;
+	}
 
 
 	class Projetil : public Entidade
@@ -16,11 +19,12 @@ namespace Entidades {
 		int dano;
 		int tempo_de_vida;
 		int tempo_ativo;
+		bool atingiu_jogador;
 
 		
 		Entidades::Personagens::Inimigo_Capitao* cap;
 
-		const int direita, cima, esquerda, baixo;
+		//const int direita, cima, esquerda, baixo;
 
 	public:
 
@@ -37,6 +41,7 @@ namespace Entidades {
 
 		int get_Dano();
 		bool get_Ativo();
+		void Atingiu_Jogador(Entidades::Personagens::Jogador* pJogador);
 
 		void executar_Gravidade();
 		void Executar();

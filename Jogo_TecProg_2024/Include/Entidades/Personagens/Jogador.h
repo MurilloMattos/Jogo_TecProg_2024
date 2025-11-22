@@ -39,7 +39,7 @@ namespace Entidades{
 				bool get_Eliminado() const;
 
 				void diminuir_Vitalidade(int dano);
-				int danificar();
+				void danificar(Personagem* pAtacado);
 
 				void Executar();
 				void Salvar();

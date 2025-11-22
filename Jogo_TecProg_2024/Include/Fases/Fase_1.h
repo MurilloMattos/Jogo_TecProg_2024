@@ -17,8 +17,8 @@ namespace Fases {
 			void cria_Inimigos_Medios();
 			
 			void Executar();
-			void Cria_Piso();
-			void Cria_Plataforma();
+			//void Cria_Piso();
+			//void Cria_Plataforma();
 			void Cria_Inimigos();
 			void Cria_Obstaculos();
 

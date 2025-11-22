@@ -24,7 +24,7 @@ namespace Gerenciadores {
 
 
 		// contador setado, pra evitar ser criado varias vezes durante a execu�ao do programa.
-		const int cima, baixo, esquerda, direita;
+		const int direita, cima, esquerda, baixo;
 
 	private:
 

@@ -37,7 +37,7 @@ void Fase_1::Executar() {
 	}
 }
 
-
+/*
 void Fase_1::Cria_Piso() {
 
 	piso = new Plataforma;
@@ -76,6 +76,7 @@ void Fase_1::Cria_Plataforma() {
 	}
 	
 }
+*/
 
 void Fase_1::Cria_Inimigos() {
 

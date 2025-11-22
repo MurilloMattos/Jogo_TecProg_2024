@@ -28,6 +28,7 @@ namespace Fases {
 			sf::Vector2f pos_Piso;
 
 			int num_plataformas;
+			int num_inimigos;
 
 			sf::Vector2f tam_plataforma;
 

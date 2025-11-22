@@ -10,6 +10,9 @@ Fase::Fase() {
 	srand(static_cast<unsigned int>(time(0)));
 	num_plataformas = rand() % 7;
 
+	srand(static_cast<unsigned int>(time(0)));
+	num_inimigos = rand() % 8;
+
 	lista_id_inimigos.clear();
 
 	ganhou = false;
@@ -24,9 +27,7 @@ Fase::Fase() {
 
 	pos_original.x = 10;
 	pos_original.y = 80;
-
-
-	Cria_Piso();
+	
 }
 
 Fase::~Fase() {

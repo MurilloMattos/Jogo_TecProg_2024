@@ -12,6 +12,7 @@ namespace Fases{
 	private:
 		int num_max_Capitoes;
 		int i,j;
+		float zoom_camera;
 
 		std::vector<Entidades::Personagens::Inimigo_Capitao*> lista_cap;
 
@@ -19,14 +20,16 @@ namespace Fases{
 
 		Fase_2();
 		~Fase_2();
-
-		void Cria_Jogador(float x, float y);
+		
 		void Cria_Obstaculos();
 		void Cria_Inimigos();
 		void Cria_Capitao(float x, float y);
+
 		void Executar();
 		Entidades::Projetil* Cria_Projetil();
 		void verifica_Projeteis_Destroidos();
+		void Cria_Plataforma();
+		void Cria_Piso();
 
 
 		void atualiza_Camera_Fase(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);

@@ -12,6 +12,8 @@ namespace Entidades
 		//const int semente_id_jogador;
 		//const int id_set;
 
+		int direita, cima, esquerda, baixo;
+
 
 		//est� faltando o ostream para escrever em arquivos, utilizado para salvar e carregar um bloco de notas por exemplo.
 

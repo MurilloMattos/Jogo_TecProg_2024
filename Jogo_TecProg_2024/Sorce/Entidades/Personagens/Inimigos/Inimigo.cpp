@@ -4,11 +4,13 @@ using namespace Entidades;
 using namespace Personagens;
 
 
-Inimigo::Inimigo() :semente_id_entidade(100), direita(1), esquerda(3), direcao(0){
+Inimigo::Inimigo() :semente_id_entidade(100), direcao(0){
 	
 	setId(semente_id_entidade);
 	ponteiro_jogador1 = nullptr;
 	ponteiro_jogador2 = nullptr;
+
+	lado_fraco = cima;
 
 	nivel_raiva = -1;
 	//dano = -1;
@@ -43,6 +45,40 @@ void Inimigo::Executar() {
 
 }
 
+void Inimigo::setar_direcao() {
+
+	if (ponteiro_jogador2 == nullptr) {
+
+		if (ponteiro_jogador1->get_X() > x) {
+			direcao = direita;
+		}
+		else {
+			direcao = esquerda;
+		}
+	}
+	else {
+
+		if (ponteiro_jogador1->get_X() > ponteiro_jogador2->get_X()) {
+
+			if (ponteiro_jogador1->get_X() > x) {
+				direcao = direita;
+			}
+			else {
+				direcao = esquerda;
+			}
+		}
+		else {
+
+			if (ponteiro_jogador2->get_X() > x) {
+				direcao = direita;
+			}
+			else {
+				direcao = esquerda;
+			}
+		}
+	}
+}
+
 
 void Inimigo::setar_Jogador_No_Inimigo(Jogador* pJogador1, Jogador* pJogador2) {
 
@@ -60,5 +96,15 @@ void Inimigo::setar_Jogador_No_Inimigo(Jogador* pJogador1, Jogador* pJogador2) {
 			ponteiro_jogador1 = pJogador1;
 			ponteiro_jogador2 = pJogador2;
 		}
+	}
+}
+
+void Inimigo::verifica_Acao_de_Colisao(int lado, Jogador* pJogador) {
+
+	if (lado == lado_fraco) {
+		pJogador->danificar(static_cast<Personagem*>(this));
+	}
+	else {
+		danificar(static_cast<Personagem*>(pJogador));
 	}
 }

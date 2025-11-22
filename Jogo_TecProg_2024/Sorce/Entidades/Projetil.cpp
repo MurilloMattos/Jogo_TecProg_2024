@@ -3,7 +3,7 @@
 
 using namespace Entidades;
 
-Projetil::Projetil(): direita(1),cima(2),esquerda(3),baixo(4), semente_id_entidade(10000) {
+Projetil::Projetil(): semente_id_entidade(10000) {
 
 	setId(semente_id_entidade);
 	dano = 0;
@@ -14,6 +14,7 @@ Projetil::Projetil(): direita(1),cima(2),esquerda(3),baixo(4), semente_id_entida
 	tamanho.x = 10.f;
 	tamanho.y = 15.f;
 
+	atingiu_jogador = false;
 
 	tempo_ativo = 0;
 	tempo_de_vida = 180;
@@ -33,7 +34,7 @@ Projetil::Projetil(): direita(1),cima(2),esquerda(3),baixo(4), semente_id_entida
 }
 
 
-Projetil::Projetil(float saida_x, float saida_y, int direcao) : direita(1),cima(2),esquerda(3),baixo(4), semente_id_entidade(10000) {
+Projetil::Projetil(float saida_x, float saida_y, int direcao) : semente_id_entidade(10000) {
 
 	setId(semente_id_entidade);
 	dano = 0;
@@ -100,7 +101,6 @@ void Projetil::executar_Gravidade() {
 void Projetil::Executar() {
 
 	setar_Pos(x, y);
-	
 
 	if (ativo) {
 
@@ -136,4 +136,11 @@ void Projetil::Executar() {
 
 void Projetil::Salvar() {
 
+}
+
+void Projetil::Atingiu_Jogador(Entidades::Personagens::Jogador* pJogador)
+{
+	if(ativo){
+		pJogador->diminuir_Vitalidade(dano);
+	}
 }
