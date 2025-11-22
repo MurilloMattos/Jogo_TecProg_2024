@@ -6,14 +6,9 @@ namespace Entidades {
 		class Plataforma : public Obstaculo
 		{
 		private:
-			//int boo;
-			//float altura;
-			//float largura;
-
 			sf::Vector2f tamanho;
 
 		public:
-			float boo;
 
 			Plataforma();
 			~Plataforma();

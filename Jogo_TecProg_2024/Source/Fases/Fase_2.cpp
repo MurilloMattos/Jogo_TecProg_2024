@@ -6,7 +6,7 @@ using namespace Fases;
 using namespace Obstaculos;
 using namespace Gerenciadores;
 
-Fases::Fase_2::Fase_2():num_max_Capitoes(3), i(0){
+Fases::Fase_2::Fase_2():num_max_Capitoes(1) {
 
 	i = 0;
 	j = 0;
@@ -155,9 +155,7 @@ void Fases::Fase_2::atualiza_Camera_Fase(Jogador* p_jogador1, Jogador* p_jogador
 	pos_camera.x = 0.f;
 	pos_camera.y = -200.f;
 
-
-
-	//centraliza a camera no jogador 1
+	//trava a camera;
 	pGG->getCamera()->setCenter(pos_camera);
 
 }
@@ -168,16 +166,37 @@ void Fases::Fase_2::Cria_Plataforma() {
 		num_plataformas = 4;
 	}
 
+	srand(static_cast<unsigned int>(time(0)));
+
+	int n_plataformas_por_nível;
+	n_plataformas_por_nível = rand() % 2 + 2;
+
+	float tamanho_da_tela = pGG->getCamera()->getSize().x * zoom_camera;
+
+
+	sf::Vector2f pos_plataforma;
+	pos_plataforma.x = (tamanho_da_tela / n_plataformas_por_nível);
+	pos_plataforma.y = pos_Piso.y - 120.f;
+
 	/*
+	sf::Vector2f distancia_maxima_entre_plataformas;
+	distancia_maxima_entre_plataformas.x = 400.f;
+	distancia_maxima_entre_plataformas.y = pos_Piso.y - 50.f;
+	*/
+	
+
+	//tem que setar como vai colocar as plataformas na fase
+	//aparentemente vão ter que ter andares, se nao cabe mais em pos_Piso.y - 120.f 
+	//vai ter que ser pos_Piso.y - 1 * 120.f e assim por diante;
 	for(i=0; i < num_plataformas; i++) {
 
 		plataforma = new Plataforma;
-		plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x,);
+		plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x,0.f,pos_plataforma.y);
 
 		gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(plataforma));
 		lista_Entidades.Incluir(static_cast<Entidade*>(plataforma));
 	}
-	*/
+	
 
 }
 

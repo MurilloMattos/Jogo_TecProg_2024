@@ -6,7 +6,6 @@ using namespace Personagens;
 
 Plataforma::Plataforma()
 {
-	boo = 0;
 
 	tamanho.x = 0;
 	tamanho.y = 0;

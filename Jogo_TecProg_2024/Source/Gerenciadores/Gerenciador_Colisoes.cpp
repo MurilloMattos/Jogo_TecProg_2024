@@ -264,8 +264,36 @@ void Gerenciador_colisoes::tratar_Colisoes_Inimigos(){
 //trata as colisões entre o jogador e os inimigos
 void Gerenciador_colisoes::tratar_Colisoes_Jogador_Inimigos(Jogador* pJogador, Inimigo* pInimigo) {
 
-	int lado = verifica_Tipo_De_Colisao(pJogador, pInimigo);
+	int lado = verifica_Tipo_De_Colisao(pInimigo, pJogador);
 
+
+	//direita
+	if (lado == 1) {
+
+		pJogador->setar_Pos(pInimigo->get_Comprimento_L() + empurrao, pJogador->get_Y());
+		pInimigo->verifica_Acao_de_Colisao(lado, pJogador);
+	}
+	//cima
+	else if (lado == 2) {
+
+		pJogador->setar_Pos(pJogador->get_X(), (pInimigo->get_Y() - pJogador->get_Altura()));
+		pInimigo->verifica_Acao_de_Colisao(lado, pJogador);
+		
+	}
+	//esquerda
+	else if (lado == 3) {
+
+		pJogador->setar_Pos((pInimigo->get_X() - pJogador->get_Largura() - empurrao), pJogador->get_Y());
+		pInimigo->verifica_Acao_de_Colisao(lado, pJogador);
+	}
+	//baixo
+	else if (lado == 4) {
+
+		pJogador->setar_Pos(pJogador->get_X(), pInimigo->get_Comprimento_A() + empurrao);
+		pInimigo->verifica_Acao_de_Colisao(lado, pJogador);
+	}
+
+	/*
 	//direita
 	if (lado == 1) {
 
@@ -290,6 +318,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Inimigos(Jogador* pJogador, I
 		pJogador->setar_Pos(pJogador->get_X(), (pInimigo->get_Y() - pJogador->get_Altura()));
 		pInimigo->verifica_Acao_de_Colisao(lado, pJogador);
 	}
+		*/
 
 }
 

@@ -10,6 +10,8 @@ Inimigo_Capitao::Inimigo_Capitao(): recarga(0){
 	dano = 20;
 	dano_do_balote = 15;
 
+	lado_fraco = cima;
+
 	disparou = false;
 	pode_disparar = true;
 
