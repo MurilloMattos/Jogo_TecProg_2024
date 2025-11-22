@@ -11,12 +11,12 @@ Fases::Fase_2::Fase_2():num_max_Capitoes(1) {
 	i = 0;
 	j = 0;
 
-	zoom_camera = 1.6f;
+	zoom_camera = 1.4f;
 
 	tam_Piso_Fase.x = pGG->getCamera()->getSize().x * zoom_camera;
-	tam_Piso_Fase.y = pGG->getCamera()->getSize().y / 4.f;
+	tam_Piso_Fase.y = pGG->getCamera()->getSize().y / 3.f;
 
-	pos_Piso.x = tam_Piso_Fase.x / -2.f;
+	pos_Piso.x = 0.f;
 	pos_Piso.y = tam_Piso_Fase.y;
 
 	lista_cap.clear();
@@ -152,8 +152,8 @@ void Fases::Fase_2::atualiza_Camera_Fase(Jogador* p_jogador1, Jogador* p_jogador
 {
 	sf::Vector2f pos_camera;
 
-	pos_camera.x = 0.f;
-	pos_camera.y = -200.f;
+	pos_camera.x = tam_Piso_Fase.x/2;
+	pos_camera.y = -250.f;
 
 	//trava a camera;
 	pGG->getCamera()->setCenter(pos_camera);
