@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Fases/Fase.h"
 #include "Entidades/Obstaculos/Obstaculo_Esteira.h"
 #include "Entidades/Personagens/Inimigos/Capitao.h"
