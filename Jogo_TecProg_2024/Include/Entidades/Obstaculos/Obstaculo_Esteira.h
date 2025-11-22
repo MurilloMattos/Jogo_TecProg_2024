@@ -23,7 +23,7 @@ namespace Entidades {
             void Salvar();
             
             // Método específico da esteira: empurra o jogador
-            void obstacular(Entidades::Personagens::Jogador* p);
+            void obstacular(Entidades::Personagens::Jogador* p, int lado);
 
             sf::Vector2f get_Tamanho_Esteira();
             

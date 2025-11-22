@@ -14,7 +14,7 @@ namespace Entidades {
 
 				void Salvar();
 				void Executar();
-				void obstacular(Entidades::Personagens::Jogador* p);
+				void obstacular(Entidades::Personagens::Jogador* p, int lado);
 		};
 	}
 }

@@ -108,23 +108,27 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Obstaculo(Jogador* p_Jogador)
 		if (lado == 1) {
 
 			p_Jogador->setar_Pos(((*itr)->get_X() - p_Jogador->get_Largura()), p_Jogador->get_Y());
+			(*itr)->obstacular(p_Jogador, lado);
 		}
 		//cima
 		else if (lado == 2) {
 
 			p_Jogador->setar_Pos(p_Jogador->get_X(), (*itr)->get_Comprimento_A());
 			p_Jogador->setar_Estado(false);
+			(*itr)->obstacular(p_Jogador, lado);
 		}
 		//esquerda
 		else if (lado == 3) {
 
 			p_Jogador->setar_Pos((*itr)->get_Comprimento_L(), p_Jogador->get_Y());
+			(*itr)->obstacular(p_Jogador, lado);
 		}
 		//baixo
 		else if (lado == 4) {
 
 			p_Jogador->setar_Pos(p_Jogador->get_X(), ((*itr)->get_Y() - p_Jogador->get_Altura()));
 			p_Jogador->setar_Estado(false);
+			(*itr)->obstacular(p_Jogador, lado);
 		}
 
 		itr++;

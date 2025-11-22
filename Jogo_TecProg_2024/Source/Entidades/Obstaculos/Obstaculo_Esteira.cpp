@@ -27,7 +27,7 @@ void Entidades::Obstaculos::Esteira::Salvar() {
 }
 
 // assinatura totalmente qualificada (corrige erro de 'has not been declared')
-void Entidades::Obstaculos::Esteira::obstacular(Entidades::Personagens::Jogador* p) {
+void Entidades::Obstaculos::Esteira::obstacular(Entidades::Personagens::Jogador* p, int lado) {
     if (p == nullptr) return;
 
     float margemErro = 1.0f;

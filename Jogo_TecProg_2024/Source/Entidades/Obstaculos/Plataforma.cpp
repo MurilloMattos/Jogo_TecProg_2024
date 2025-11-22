@@ -37,6 +37,6 @@ void Plataforma::Executar() {
 	Desenhar();
 }
 
-void Plataforma::obstacular(Jogador* p) {
+void Plataforma::obstacular(Jogador* p, int lado) {
 
 }

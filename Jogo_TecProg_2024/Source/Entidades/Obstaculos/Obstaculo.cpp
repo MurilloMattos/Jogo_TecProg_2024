@@ -20,3 +20,5 @@ void Obstaculo::executar_Gravidade(){
 	y += gravidade;
 	y -= gravidade;
 }
+
+

@@ -21,7 +21,7 @@ void Obstaculo_Dificil::Executar() {
 
 }
 
-void Obstaculo_Dificil::obstacular(Jogador* p) {
+void Obstaculo_Dificil::obstacular(Jogador* p, int lado) {
 
 }
 

@@ -153,7 +153,7 @@ void Fases::Fase_2::atualiza_Camera_Fase(Jogador* p_jogador1, Jogador* p_jogador
 	sf::Vector2f pos_camera;
 
 	pos_camera.x = tam_Piso_Fase.x/2;
-	pos_camera.y = -250.f;
+	pos_camera.y = -tam_Piso_Fase.y/2;
 
 	//trava a camera;
 	pGG->getCamera()->setCenter(pos_camera);

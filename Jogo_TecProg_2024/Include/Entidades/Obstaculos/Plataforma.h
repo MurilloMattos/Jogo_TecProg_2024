@@ -15,7 +15,7 @@ namespace Entidades {
 
 			void seta_Plataforma(float alt, float larg, float origem_x, float origem_y);
 			void Executar();
-			void obstacular(Entidades::Personagens::Jogador* p);
+			void obstacular(Entidades::Personagens::Jogador* p, int lado);
 			void Salvar();
 
 		};

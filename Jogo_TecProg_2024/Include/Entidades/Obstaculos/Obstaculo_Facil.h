@@ -15,6 +15,7 @@ namespace Entidades {
 
 				void executar();
 				void danificar(Entidades::Personagens::Jogador* p);
+				void Obstacular(Entidades::Personagens::Jogador* p, int lado);
 		};
 	}
 }
