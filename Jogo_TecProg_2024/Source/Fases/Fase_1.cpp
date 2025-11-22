@@ -4,7 +4,7 @@ using namespace Entidades;
 using namespace Personagens;
 using namespace Fases;
 
-Fases::Fase_1::Fase_1():num_max_Capitoes(2), i(0){
+Fases::Fase_1::Fase_1():num_max_Capitoes(2) {
 
 	i = 0;
 	j = 0;
@@ -25,6 +25,7 @@ Fases::Fase_1::~Fase_1(){
 
 void Fases::Fase_1::Cria_Obstaculos()
 {
+	Cria_Piso();
 	Cria_Plataforma();
 }
 
@@ -47,28 +48,6 @@ void Fases::Fase_1::Executar(){
 	}
 
 }
-
-/*
-void Fases::Fase_2::Cria_Jogador(float x, float y){
-
-	Entidades::Personagens::Jogador* jogador1;
-	jogador1 = new Entidades::Personagens::Jogador;
-
-	jogador1->setar_Pos(x, y);
-	gerenciador_colisoes.Setar_Jogador(jogador1, nullptr);
-	lista_Entidades.Incluir(static_cast<Entidade*>(jogador1));
-
-	if(jogador1->get_Dois_Jogadores()){
-		Entidades::Personagens::Jogador* jogador2;
-		jogador2 = new Entidades::Personagens::Jogador;
-
-		jogador2->setar_Pos(x + 50.0f, y);
-		gerenciador_colisoes.Setar_Jogador(nullptr, jogador2);
-		lista_Entidades.Incluir(static_cast<Entidade*>(jogador2));
-	}
-}
-	*/
-
 
 void Fases::Fase_1::Cria_Inimigos(){
 

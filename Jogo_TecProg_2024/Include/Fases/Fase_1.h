@@ -17,14 +17,21 @@ namespace Fases{
 
 	public:
 
-			void cria_Obstaculos_Dificeis();
-			void cria_Inimigos_Medios();
+		Fase_1();
+		~Fase_1();
+		void cria_Obstaculos_Dificeis();
+		void cria_Inimigos_Medios();
 			
-			void Executar();
-			//void Cria_Piso();
-			//void Cria_Plataforma();
-			void Cria_Inimigos();
-			void Cria_Obstaculos();
+		void Executar();
+		//void Cria_Piso();
+		//void Cria_Plataforma();
+		void Cria_Inimigos();
+		void Cria_Obstaculos();
+		void Cria_Capitao(float x, float y);
+		void atualiza_Camera_Fase(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
+		void setar_Camera_Fase();
+		Entidades::Projetil* Cria_Projetil();
+		void verifica_Projeteis_Destroidos();
 
 	};
 }
