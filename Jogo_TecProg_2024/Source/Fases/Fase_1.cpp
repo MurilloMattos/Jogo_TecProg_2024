@@ -142,6 +142,15 @@ void Fases::Fase_1::setar_Camera_Fase()
 void Fases::Fase_1::atualiza_Camera_Fase(Jogador* p_jogador1, Jogador* p_jogador2)
 {
 	//centraliza a camera no jogador 1
-	pGG->getCamera()->setCenter(p_jogador1->get_Centro());
+	if(!p_jogador1->get_Eliminado()){
+		pGG->getCamera()->setCenter(p_jogador1->get_Centro());
+	}
+	else if(!p_jogador2->get_Eliminado()){
+		pGG->getCamera()->setCenter(p_jogador2->get_Centro());
+	}
+	else{
+		std::cout << "Erro ao atualizar camera fase 1" << std::endl;
+	}
+	//pGG->getCamera()->setCenter(p_jogador1->get_Centro());
 
 }

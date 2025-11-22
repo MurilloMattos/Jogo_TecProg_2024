@@ -80,7 +80,7 @@ void Jogo::Executar()
         Ger_Graf->getJanela()->display();
 
         if(fase_1_ativa) {
-			//com a fase 1 implementada, pode descomentar esse bloco;
+            
             if (fase1.get_Ganhou()) {
                 Ger_Graf->getJanela()->close();
             }
