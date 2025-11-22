@@ -6,6 +6,7 @@ using namespace Personagens;
 using namespace Fases;
 
 Jogo::Jogo() :
+
 Ger_Graf(),
 jogador_1(),
 jogador_2(),
@@ -13,18 +14,16 @@ fase1(),
 menu(new Menu(this)),
 fase2(),
 estado(Estado::MENU)
+
 {
 
     jogador_2.setar_Dois_Jogadores(false);
 
-
     Ger_Graf = Gerenciador_Grafico::getInstance();
 
-	//mudar para a fase que for ser utilizada, a principio o menu � para alternar essas boleanas e chamar a fun��o setar_Fase();
-    fase_1_ativa = true;
+	//inicialação das fases corrigida, agora função Atualiza chama setar_Fase quando necessário
+    fase_1_ativa = false;
     fase_2_ativa = false;
-
-    setar_Fase();
 
 }
 
@@ -51,8 +50,6 @@ bool Jogo::get_pJog2_Dois_Jogadores() {
 
 void Jogo::Executar()
 {
-
-
 
     while (Ger_Graf->getJanela()->isOpen())
     {
@@ -98,7 +95,7 @@ void Jogo::Executar()
     }
 }
 
-void Jogo::Atualiza() {
+void Jogo::EstadoDoJogo() {//executa o estado atual do jogo
 
     if(estado == Estado::MENU) {
         menu->Executar();
@@ -106,12 +103,9 @@ void Jogo::Atualiza() {
 
     if(estado == Estado::FASE_1) {
 
+        fase_1_ativa = true;
         atualiza_Camera();
-        jogador_1.Executar();
-        if (jogador_2.get_Dois_Jogadores()) {
-            jogador_2.Executar();
-        }
-        fase1.Executar();
+        setar_Fase();
 
         verifica_Fim_De_Jogo();
 
@@ -119,12 +113,9 @@ void Jogo::Atualiza() {
 
     if(estado == Estado::FASE_2) {
 
+        fase_2_ativa = true;
         atualiza_Camera();
-        jogador_1.Executar();
-        if (jogador_2.get_Dois_Jogadores()) {
-            jogador_2.Executar();
-        }
-        fase2.Executar();
+        setar_Fase();
 
         verifica_Fim_De_Jogo();
 
@@ -156,12 +147,20 @@ void Jogo::verifica_Fim_De_Jogo()
 
 void Jogo::setar_Fase()
 {
+    //garante que os jogadores sejam setados
+    jogador_1.Executar();
+    if (jogador_2.get_Dois_Jogadores()) {
+        jogador_2.Executar();
+    }
 
+    //seta os jogadores na fase ativa
     if (fase_1_ativa) {
         fase1.Setar_Jogadores(&jogador_1, &jogador_2);
+        fase1.Executar();
 	}
     else if (fase_2_ativa) {
         fase2.Setar_Jogadores(&jogador_1, &jogador_2);
+        fase2.Executar();
 	}
 }
 
