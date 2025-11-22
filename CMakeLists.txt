@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # --- Encontrar TODOS os .cpp e .h recursivamente ---
 
 file(GLOB_RECURSE SOURCES
-    "${CMAKE_CURRENT_SOURCE_DIR}/Jogo_TecProg_2024/Sorce/*.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Jogo_TecProg_2024/Source/*.cpp"
 )
 
 file(GLOB_RECURSE HEADERS

@@ -75,7 +75,7 @@ void Jogo::Executar()
         Ger_Graf->getJanela()->clear();
 
 
-        Atualiza();
+        EstadoDoJogo();
 
         Ger_Graf->getJanela()->display();
 
