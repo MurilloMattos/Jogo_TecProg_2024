@@ -1,44 +1,34 @@
-#include "Fases/Fase_2.h"
+#include "Fases/Fase_1.h"
 
 using namespace Entidades;
 using namespace Personagens;
 using namespace Fases;
-using namespace Obstaculos;
-using namespace Gerenciadores;
 
-Fases::Fase_2::Fase_2():num_max_Capitoes(3), i(0){
+Fases::Fase_1::Fase_1():num_max_Capitoes(2), i(0){
 
 	i = 0;
 	j = 0;
 
-	zoom_camera = 1.6f;
-
-	tam_Piso_Fase.x = pGG->getCamera()->getSize().x * zoom_camera;
-	tam_Piso_Fase.y = pGG->getCamera()->getSize().y / 4.f;
-
-	pos_Piso.x = tam_Piso_Fase.x / -2.f;
-	pos_Piso.y = tam_Piso_Fase.y;
-
 	lista_cap.clear();
 
-	setar_Camera_Fase();
+
 	Cria_Inimigos();
 	Cria_Obstaculos();
+	setar_Camera_Fase();
 }
 
-Fases::Fase_2::~Fase_2(){
+Fases::Fase_1::~Fase_1(){
 
 	lista_cap.clear();
 }
 
 
-void Fases::Fase_2::Cria_Obstaculos(){
-
-	Cria_Piso();
+void Fases::Fase_1::Cria_Obstaculos()
+{
 	Cria_Plataforma();
 }
 
-void Fases::Fase_2::Executar(){
+void Fases::Fase_1::Executar(){
 
 	verifica_Inimigos_Neutralizados();
 
@@ -58,27 +48,51 @@ void Fases::Fase_2::Executar(){
 
 }
 
-void Fases::Fase_2::Cria_Inimigos(){
+/*
+void Fases::Fase_2::Cria_Jogador(float x, float y){
 
-	//Cria_Inimigo_Pirata(300.0f, pos_Piso.y - Pirata().get_Altura());
-	Cria_Capitao(300.f,pos_Piso.y - Inimigo_Capitao().get_Altura());
+	Entidades::Personagens::Jogador* jogador1;
+	jogador1 = new Entidades::Personagens::Jogador;
+
+	jogador1->setar_Pos(x, y);
+	gerenciador_colisoes.Setar_Jogador(jogador1, nullptr);
+	lista_Entidades.Incluir(static_cast<Entidade*>(jogador1));
+
+	if(jogador1->get_Dois_Jogadores()){
+		Entidades::Personagens::Jogador* jogador2;
+		jogador2 = new Entidades::Personagens::Jogador;
+
+		jogador2->setar_Pos(x + 50.0f, y);
+		gerenciador_colisoes.Setar_Jogador(nullptr, jogador2);
+		lista_Entidades.Incluir(static_cast<Entidade*>(jogador2));
+	}
+}
+	*/
+
+
+void Fases::Fase_1::Cria_Inimigos(){
+
+	Cria_Inimigo_Pirata(400.0f, 200.0f);
+	Cria_Capitao(600.f,159.f);
 }
 
 //cria o inimigo dificil (Boss)
-void Fase_2::Cria_Capitao(float x, float y){
+void Fase_1::Cria_Capitao(float x, float y){
 
+	for(int k = 0; k < num_max_Capitoes; k++){
 	Inimigo_Capitao* capitao;
 	capitao = new Inimigo_Capitao;
 
-	capitao->setar_Pos(x, y);
+	capitao->setar_Pos(x + k * 50.0f, y);
 	gerenciador_colisoes.Incluir_Inimigo(capitao);
 	lista_Entidades.Incluir(static_cast<Entidade*>(capitao));
 	lista_cap.push_back(capitao);
 	lista_id_inimigos.push_front(capitao->getId());
+	}
 }
 
 //auto explicativo
-Projetil* Fases::Fase_2::Cria_Projetil()
+Projetil* Fases::Fase_1::Cria_Projetil()
 {
 
 	Projetil* proj;
@@ -90,7 +104,7 @@ Projetil* Fases::Fase_2::Cria_Projetil()
 	return proj;
 }
 
-void Fases::Fase_2::verifica_Projeteis_Destroidos()
+void Fases::Fase_1::verifica_Projeteis_Destroidos()
 {
 	
 	Projetil* projetil_deletado;
@@ -141,49 +155,14 @@ void Fases::Fase_2::verifica_Projeteis_Destroidos()
 
 }
 
-void Fases::Fase_2::setar_Camera_Fase()
+void Fases::Fase_1::setar_Camera_Fase()
 {
-	pGG->getCamera()->zoom(zoom_camera);
+	pGG->getCamera()->zoom(1.3f);
 }
 
-void Fases::Fase_2::atualiza_Camera_Fase(Jogador* p_jogador1, Jogador* p_jogador2)
+void Fases::Fase_1::atualiza_Camera_Fase(Jogador* p_jogador1, Jogador* p_jogador2)
 {
-	sf::Vector2f pos_camera;
-
-	pos_camera.x = 0.f;
-	pos_camera.y = -200.f;
-
-
-
 	//centraliza a camera no jogador 1
-	pGG->getCamera()->setCenter(pos_camera);
+	pGG->getCamera()->setCenter(p_jogador1->get_Centro());
 
-}
-
-void Fases::Fase_2::Cria_Plataforma() {
-
-	if (num_plataformas < 4) {
-		num_plataformas = 4;
-	}
-
-	/*
-	for(i=0; i < num_plataformas; i++) {
-
-		plataforma = new Plataforma;
-		plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x,);
-
-		gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(plataforma));
-		lista_Entidades.Incluir(static_cast<Entidade*>(plataforma));
-	}
-	*/
-
-}
-
-void Fases::Fase_2::Cria_Piso() {
-
-	piso = new Plataforma;
-	piso->seta_Plataforma(tam_Piso_Fase.y, tam_Piso_Fase.x, pos_Piso.x, pos_Piso.y);
-
-	gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(piso));
-	lista_Entidades.Incluir(static_cast<Entidade*>(piso));
 }

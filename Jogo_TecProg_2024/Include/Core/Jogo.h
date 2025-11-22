@@ -37,7 +37,7 @@ class Jogo
 		bool get_pJog2_Dois_Jogadores();
 		void setar_Fase();
 		void atualiza_Camera();
-		void Atualiza();
+		void EstadoDoJogo();
 		void verifica_Fim_De_Jogo();
 
 };
