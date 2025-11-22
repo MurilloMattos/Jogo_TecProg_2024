@@ -53,6 +53,7 @@ void Fases::Fase_1::Cria_Inimigos(){
 
 	Cria_Inimigo_Pirata(400.0f, 200.0f);
 	Cria_Capitao(600.f,159.f);
+
 }
 
 //cria o inimigo dificil (Boss)
@@ -136,7 +137,7 @@ void Fases::Fase_1::verifica_Projeteis_Destroidos()
 
 void Fases::Fase_1::setar_Camera_Fase()
 {
-	pGG->getCamera()->zoom(1.3f);
+	pGG->getCamera()->zoom(2.0f);
 }
 
 void Fases::Fase_1::atualiza_Camera_Fase(Jogador* p_jogador1, Jogador* p_jogador2)
