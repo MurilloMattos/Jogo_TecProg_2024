@@ -75,45 +75,6 @@ void Fases::Fase::Setar_Jogadores_Inimigos(Jogador* p_jogador1, Jogador* p_jogad
 
 }
 
-void Fase::Cria_Piso() {
-
-	piso = new Plataforma;
-	piso->seta_Plataforma(tam_Piso_Fase.y, tam_Piso_Fase.x, pos_Piso.x, pos_Piso.y);
-
-	gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(piso));
-	lista_Entidades.Incluir(static_cast<Entidade*>(piso));
-}
-
-void Fases::Fase::Cria_Plataforma() {
-
-	
-	if (num_plataformas_totais < 4){
-		num_plataformas_totais = 4;
-	}
-
-
-	std::cout << num_plataformas_totais << std::endl;
-
-	int i;
-	float espaco = static_cast<float>(rand() % 100);
-
-	for (i = 0; i < num_plataformas_totais; i++) {
-
-		plataforma = new Plataforma;
-		plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x, pos_original.x + espaco, pos_original.y);
-
-		
-		espaco += (tam_plataforma.x*2.5f + rand()%200);
-		if (espaco > tam_Piso_Fase.x) {
-			espaco = tam_Piso_Fase.x;
-		}
-
-		gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(plataforma));
-		lista_Entidades.Incluir(static_cast<Entidade*>(plataforma));
-	}
-	
-}
-
 void Fases::Fase::Cria_Inimigo_Pirata(float x, float y){
 	Pirata* pirata;
 

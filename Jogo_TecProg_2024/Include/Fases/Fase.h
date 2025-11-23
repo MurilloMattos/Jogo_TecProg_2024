@@ -48,8 +48,8 @@ namespace Fases {
 			bool get_Ganhou();
 
 			virtual void Executar();
-			virtual void Cria_Piso();
-			virtual void Cria_Plataforma();
+			virtual void Cria_Piso() = 0;
+			virtual void Cria_Plataforma() = 0;
 			virtual void Cria_Inimigos() = 0;	
 			virtual void Cria_Obstaculos() = 0;
 
