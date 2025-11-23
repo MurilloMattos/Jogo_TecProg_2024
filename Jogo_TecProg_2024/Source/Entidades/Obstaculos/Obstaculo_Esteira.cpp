@@ -1,7 +1,7 @@
 #include "Entidades/Obstaculos/Obstaculo_Esteira.h"
 
 // Implementações usando qualificação completa de namespace
-Entidades::Obstaculos::Esteira::Esteira(float vel, sf::Vector2f dir) :
+Entidades::Obstaculos::Esteira::Esteira(float vel, float dir) :
 Obstaculo(), velocidadeTransporte(vel), direcao(dir) {
 
     agressivo = false;
@@ -15,7 +15,19 @@ Entidades::Obstaculos::Esteira::~Esteira() {
 
 void Entidades::Obstaculos::Esteira::Executar() {
 
-    pFigura->setFillColor(sf::Color::Cyan); // Cor indicativa da esteira
+    if(colideAtual && !colideAnterior){
+        direcao = -direcao;
+    }
+
+    if(direcao > 0){
+        pFigura->setFillColor(sf::Color::Cyan); // Direita
+    } else {
+        pFigura->setFillColor(sf::Color::Blue); // Esquerda
+    }
+
+    colideAnterior = colideAtual;
+    colideAtual = false;
+
     pFigura->setSize(tamanhoEsteira);
     pFigura->setPosition(x, y);
     this->Desenhar();
@@ -31,7 +43,9 @@ void Entidades::Obstaculos::Esteira::obstacular(Entidades::Personagens::Jogador*
     
     if (p == nullptr) return;
 
-    if(lado == 2){
+    if(lado == 4){
+
+        colideAtual = true;
 
         float margemErro = 1.0f;//
 
@@ -50,8 +64,7 @@ void Entidades::Obstaculos::Esteira::obstacular(Entidades::Personagens::Jogador*
 
         if (overlapX && pertoTopo) {
             // 1. Aplica o movimento da esteira (Empurrão lateral)
-            p->setar_velocidade(direcao.x * velocidadeTransporte, 0.0f);
-
+            p->setar_Pos(p->get_X() + (direcao * velocidadeTransporte), p->get_Y());
         }
 
     }

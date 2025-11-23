@@ -109,7 +109,7 @@ void Fases::Fase_1::Cria_Plataforma() {
 
 void Fases::Fase_1::Cria_Esteira() {
 
-	esteira = new Esteira(50.0f, sf::Vector2f(1.0f, 0.0f));
+	esteira = new Esteira(5.0f, 1.0f); // Velocidade 5.0f, direção para a direita (1)
 
 	esteira->setar_Pos(50.0f,tam_Piso_Fase.y);
 
