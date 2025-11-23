@@ -1,4 +1,4 @@
-#include "Entidades/Obstaculos/Obstaculo_Esteira.h"
+#include "Entidades/Obstaculos/Esteira.h"
 
 // Implementações usando qualificação completa de namespace
 Entidades::Obstaculos::Esteira::Esteira(float vel, float dir) :
