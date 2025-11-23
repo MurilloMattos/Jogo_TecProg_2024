@@ -64,10 +64,10 @@ void Entidades::Personagens::Inimigo_Capitao::incluir_Projetil(Projetil* projet)
 		projet->setar_Pos((x + this->get_Largura()), (this->get_Centro().y - projet->get_Centro().y));
 	}
 
-	std::cout << "Incluiu projetil ID " << projet->getId() << " na pos (" << projet->get_X() << "," << projet->get_Y() << ")" << std::endl;
+	//std::cout << "Incluiu projetil ID " << projet->getId() << " na pos (" << projet->get_X() << "," << projet->get_Y() << ")" << std::endl;
 
 	disparos.push_back(projet);
-	imprime_Projeteis_Ids_Ativos_e_Pos();
+	//imprime_Projeteis_Ids_Ativos_e_Pos();
 }
 
 void Inimigo_Capitao::remover_Projetil(Projetil* projet) {
@@ -104,7 +104,7 @@ void Inimigo_Capitao::Executar() {
 		else {
 
 			disparou = true;
-			std::cout << "Disparou, pos (" << x << "," << y << ") direcao " << direcao << std::endl;
+			// << "Disparou, pos (" << x << "," << y << ") direcao " << direcao << std::endl;
 
 			recarga = 0;
 		}

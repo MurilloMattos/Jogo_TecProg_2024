@@ -11,8 +11,14 @@ namespace Fases{
 	{
 	private:
 		int num_max_Capitoes;
+		int num_max_andares;
 		int i,j;
 		float zoom_camera;
+		float tamanho_da_tela_x;
+		float espaco_vazio_x;
+		int num_max_plataformas;
+
+		std::vector<int> num_plataformas_por_andar;
 
 		std::vector<Entidades::Personagens::Inimigo_Capitao*> lista_cap;
 
@@ -28,6 +34,9 @@ namespace Fases{
 		void Executar();
 		Entidades::Projetil* Cria_Projetil();
 		void verifica_Projeteis_Destroidos();
+
+		void seta_Tamanho_Plataformas(int n_plataformas);
+		void seta_Num_Plataformas();
 		void Cria_Plataforma();
 		void Cria_Piso();
 

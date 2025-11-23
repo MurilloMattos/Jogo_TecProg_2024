@@ -11,7 +11,13 @@ Fases::Fase_2::Fase_2():num_max_Capitoes(1) {
 	i = 0;
 	j = 0;
 
-	zoom_camera = 1.4f;
+	zoom_camera = 1.0f;
+
+	srand(static_cast<unsigned int>(time(0)));
+
+	num_plataformas_totais = rand() % 10;
+
+	num_max_andares = 4;
 
 	tam_Piso_Fase.x = pGG->getCamera()->getSize().x * zoom_camera;
 	tam_Piso_Fase.y = pGG->getCamera()->getSize().y / 3.f;
@@ -19,7 +25,16 @@ Fases::Fase_2::Fase_2():num_max_Capitoes(1) {
 	pos_Piso.x = 0.f;
 	pos_Piso.y = tam_Piso_Fase.y;
 
+
 	lista_cap.clear();
+
+	tamanho_da_tela_x = pGG->getCamera()->getSize().x * zoom_camera;
+	espaco_vazio_x = 0;
+
+	num_max_plataformas = 10;
+
+	
+	
 
 	setar_Camera_Fase();
 	Cria_Inimigos();
@@ -61,7 +76,7 @@ void Fases::Fase_2::Executar(){
 void Fases::Fase_2::Cria_Inimigos(){
 
 	//Cria_Inimigo_Pirata(300.0f, pos_Piso.y - Pirata().get_Altura());
-	Cria_Capitao(300.f,pos_Piso.y - Inimigo_Capitao().get_Altura());
+	Cria_Capitao(0.f,pos_Piso.y - Inimigo_Capitao().get_Altura());
 }
 
 //cria o inimigo dificil (Boss)
@@ -153,48 +168,118 @@ void Fases::Fase_2::atualiza_Camera_Fase(Jogador* p_jogador1, Jogador* p_jogador
 	sf::Vector2f pos_camera;
 
 	pos_camera.x = tam_Piso_Fase.x/2;
-	pos_camera.y = -tam_Piso_Fase.y/2;
+	pos_camera.y = -tam_Piso_Fase.y/3;
 
 	//trava a camera;
 	pGG->getCamera()->setCenter(pos_camera);
 
 }
 
-void Fases::Fase_2::Cria_Plataforma() {
+void Fases::Fase_2::seta_Tamanho_Plataformas(int n_plataformas) {
 
-	if (num_plataformas < 4) {
-		num_plataformas = 4;
+	if(n_plataformas == 1){
+
+		//70% do tamanho da tela.
+		tam_plataforma.x = tamanho_da_tela_x*0.7f;
+		espaco_vazio_x = static_cast<float>((tamanho_da_tela_x*0.3)/2);
+	}
+	else if(n_plataformas == 2){
+
+		//35% do tamanho da tela
+		tam_plataforma.x = tamanho_da_tela_x*0.35f;
+		espaco_vazio_x = static_cast<float>((tamanho_da_tela_x*0.3)/3);
+	}
+	else if(n_plataformas == 3){
+
+		//25% do tamanho da tela
+		tam_plataforma.x = tamanho_da_tela_x*0.25f;
+		espaco_vazio_x = static_cast<float>((tamanho_da_tela_x*0.25)/4);
+	}
+	else if(n_plataformas == 4){
+
+		//15% do tamanho da tela
+		tam_plataforma.x = tamanho_da_tela_x*0.15f;
+		espaco_vazio_x = static_cast<float>((tamanho_da_tela_x*0.4)/5);
+	}
+	else {
+
+		tam_plataforma.x = 0.0;
+		espaco_vazio_x = 0.0;
+	}
+}
+
+void Fases::Fase_2::seta_Num_Plataformas(){
+
+	if (num_plataformas_totais < 5) {
+		num_plataformas_totais = 5;
 	}
 
-	srand(static_cast<unsigned int>(time(0)));
+	std::cout << "numero de plataformas "<< num_plataformas_totais << std::endl;
 
-	int n_plataformas_por_nível;
-	n_plataformas_por_nível = rand() % 2 + 2;
+	int plataformas = 0;
+	int plataformas_restantes = num_plataformas_totais;
 
-	float tamanho_da_tela = pGG->getCamera()->getSize().x * zoom_camera;
+	tam_plataforma.x = 0.f;
 
+	//pode ter andares vazios, des que sejam os ultimos.
+	int num_min_plataformas_andar = 1;
+
+	for (i = 0; i<num_max_andares;i++) {
+
+		//verifica se ainda tem plataformas para por
+		if(plataformas_restantes > 0) {
+
+			plataformas = num_min_plataformas_andar + (rand() % 3);
+
+			//verifica se as plataformas que for por não são maiores do que as permitidas
+			if(plataformas >= plataformas_restantes) {
+
+				plataformas = plataformas_restantes; 
+			}
+			
+		}
+		else {
+			//zera todos os valores do vetor então.
+			plataformas = 0;
+		}
+
+		num_plataformas_por_andar.push_back(plataformas);
+		plataformas_restantes -= plataformas;
+	}
+
+
+}
+
+void Fases::Fase_2::Cria_Plataforma() {
+
+    seta_Num_Plataformas();
 
 	sf::Vector2f pos_plataforma;
-	pos_plataforma.x = (tamanho_da_tela / n_plataformas_por_nível);
-	pos_plataforma.y = pos_Piso.y - 120.f;
-
-	/*
-	sf::Vector2f distancia_maxima_entre_plataformas;
-	distancia_maxima_entre_plataformas.x = 400.f;
-	distancia_maxima_entre_plataformas.y = pos_Piso.y - 50.f;
-	*/
+	float posicao_da_ultima_plataforma = 0.f;
 	
+	for(i=0; i < num_max_andares; i++) {
 
-	//tem que setar como vai colocar as plataformas na fase
-	//aparentemente vão ter que ter andares, se nao cabe mais em pos_Piso.y - 120.f 
-	//vai ter que ser pos_Piso.y - 1 * 120.f e assim por diante;
-	for(i=0; i < num_plataformas; i++) {
+		for (j = 0; j < num_plataformas_por_andar[i]; j++){
 
-		plataforma = new Plataforma;
-		plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x,0.f,pos_plataforma.y);
+			seta_Tamanho_Plataformas(num_plataformas_por_andar[i]);
 
-		gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(plataforma));
-		lista_Entidades.Incluir(static_cast<Entidade*>(plataforma));
+			pos_plataforma.y = pos_Piso.y - ((i + 1)* 180.f);
+			pos_plataforma.x = posicao_da_ultima_plataforma + espaco_vazio_x;
+			posicao_da_ultima_plataforma = pos_plataforma.x + tam_plataforma.x;
+
+
+			std::cout << "andar : " << i << " " <<"Criando plataforma: " << pos_plataforma.x << " " << pos_plataforma.y << std::endl;
+
+			plataforma = new Plataforma;
+			plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x,pos_plataforma.x,pos_plataforma.y);
+
+			gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(plataforma));
+			lista_Entidades.Incluir(static_cast<Entidade*>(plataforma));
+		}
+
+		pos_plataforma.x = 0.f;
+		posicao_da_ultima_plataforma = 0.f;
+		
 	}
 	
 

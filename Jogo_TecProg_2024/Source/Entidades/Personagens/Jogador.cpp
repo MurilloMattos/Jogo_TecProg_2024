@@ -14,7 +14,7 @@ Jogador::Jogador() : semente_id_entidade(10) , eliminado(false) {
 
 	num_vitalidade = 100;
 
-	dano = 100;
+	dano = 50;
 
 	gravidade = 6.0f;
 
@@ -28,7 +28,7 @@ Jogador::Jogador() : semente_id_entidade(10) , eliminado(false) {
 	setar_Figura();
 	setar_Pos(x,y);
 
-	forca_de_impulso = -7.0;
+	forca_de_impulso = -9.0;
 	acelerando = false;
 	
 	//altura_de_pulo = 50.0;
@@ -68,7 +68,7 @@ void Jogador::Executar() {
 			}
 
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-				y += 5.0f;
+				//y += 5.0f;
 			}
 
 		}

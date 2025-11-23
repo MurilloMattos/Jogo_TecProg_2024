@@ -8,7 +8,7 @@ using namespace Personagens;
 Fase::Fase() {
 
 	srand(static_cast<unsigned int>(time(0)));
-	num_plataformas = rand() % 7;
+	num_plataformas_totais = rand() % 7;
 
 	srand(static_cast<unsigned int>(time(0)));
 	num_inimigos = rand() % 8;
@@ -87,17 +87,17 @@ void Fase::Cria_Piso() {
 void Fases::Fase::Cria_Plataforma() {
 
 	
-	if (num_plataformas < 4){
-		num_plataformas = 4;
+	if (num_plataformas_totais < 4){
+		num_plataformas_totais = 4;
 	}
 
 
-	std::cout << num_plataformas << std::endl;
+	std::cout << num_plataformas_totais << std::endl;
 
 	int i;
 	float espaco = static_cast<float>(rand() % 100);
 
-	for (i = 0; i < num_plataformas; i++) {
+	for (i = 0; i < num_plataformas_totais; i++) {
 
 		plataforma = new Plataforma;
 		plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x, pos_original.x + espaco, pos_original.y);

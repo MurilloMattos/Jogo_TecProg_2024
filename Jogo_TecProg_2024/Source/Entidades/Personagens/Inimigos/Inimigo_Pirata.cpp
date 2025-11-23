@@ -5,8 +5,17 @@ using namespace Personagens;
 
 Pirata::Pirata() {
 
+	srand(static_cast<unsigned int>(time(0)));
+
+	nivel_maldade = (rand() % 6);
+
+	raiva = 0;
+
 	num_vitalidade = 100;
 	dano = 20;
+
+	patrulha_esq_concluida = false;
+	patrulha_dir_concluida = true;
 
 	tamanho.x = 25.0;
 	tamanho.y = 55.0;
@@ -17,6 +26,8 @@ Pirata::Pirata() {
 	pos_final = pos_inicial;
 
 	velocidade.x = 2.0f;
+
+	velocidade_maxima = 2 * velocidade.x;
 
 	pFigura->setFillColor(sf::Color::Red);
 
@@ -31,8 +42,9 @@ Pirata::~Pirata() {
 
 void Pirata::Executar() {
 
-	Desenhar();
+	
 	setar_Pos(x, y);
+	
 
 	if ((pos_final.x != x) && (pos_final.y != y)) {
 
@@ -44,11 +56,14 @@ void Pirata::Executar() {
 		}
 
 	}
+
+	bonus_De_Irritabilidade();
+	Desenhar();
 }
 
+void Pirata::Danificar(Personagem* pAtacado){
 
-void Pirata::Danificar(){
-
+	pAtacado->diminuir_Vitalidade(dano);
 }
 
 void Pirata::andar_ate(float em_x, float em_y){
@@ -60,4 +75,59 @@ void Pirata::andar_ate(float em_x, float em_y){
 
 void Pirata::Salvar() {
 
+}
+
+void Pirata::verifica_Acao_de_Colisao(int lado, Jogador* pJogador) {
+
+	if (lado == lado_fraco) {
+		pJogador->danificar(static_cast<Personagem*>(this));
+	}
+	else {
+
+		danificar(static_cast<Personagem*>(pJogador));
+		raiva += 5;
+	}
+}
+
+void Pirata::bonus_De_Irritabilidade(){
+
+	dano += raiva;
+	setar_Vitalidade(get_Vitalidade() + (5 * raiva));
+	velocidade.x += (nivel_maldade*0,1);
+
+	if(velocidade.x >= velocidade_maxima){
+		velocidade.x = velocidade_maxima;
+	}
+
+	raiva = 0;
+	regeneracao = 0;
+}
+
+void Pirata::setar_Patrulha(float patrulha_esq, float patrulha_dir){
+
+	patrulha_esquerda = patrulha_esq;
+	patrulha_direita = patrulha_dir;
+}
+
+void Pirata::patrulhar(){
+
+	if(!patrulha_esq_concluida && patrulha_dir_concluida){
+
+		pos_final.x = patrulha_esquerda;
+	}
+	else if(patrulha_esq_concluida && !patrulha_dir_concluida){
+
+		pos_final.x = patrulha_direita;
+	}
+
+	if(x <= patrulha_esquerda){
+
+		patrulha_esq_concluida = true;
+		patrulha_dir_concluida = false;
+	}
+	else if(x >= patrulha_direita ){
+		
+		patrulha_esq_concluida = false;
+		patrulha_dir_concluida = true;
+	}
 }

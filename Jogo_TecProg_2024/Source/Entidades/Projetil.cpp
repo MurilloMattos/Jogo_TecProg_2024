@@ -123,7 +123,7 @@ void Projetil::Executar() {
 	}
 	else {
 
-		std::cout << "Projetil ID " << getId() << " inativo na pos (" << x << "," << y << ")" << std::endl;
+		//std::cout << "Projetil ID " << getId() << " inativo na pos (" << x << "," << y << ")" << std::endl;
 	}
 
 	/*

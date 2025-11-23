@@ -8,7 +8,7 @@ namespace Entidades {
 		class Inimigo : public Personagem
 		{
 			protected:
-				int nivel_raiva;
+				int nivel_maldade;
 				const int semente_id_entidade;
 				Jogador* ponteiro_jogador1;
 				Jogador* ponteiro_jogador2;

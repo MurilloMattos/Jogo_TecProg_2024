@@ -7,18 +7,30 @@ namespace Entidades {
         class Pirata : public Inimigo
         {
             private:
-                //definir var�aveis distintas dos outros inimigos
-                //int boo;
+                int raiva;
+                int regeneracao;
+
+                bool patrulha_esq_concluida;
+                bool patrulha_dir_concluida;
+
+                float patrulha_esquerda;
+                float patrulha_direita;
+
+                float velocidade_maxima;
 
             public:
                 Pirata();
-                //Inimigo_Medio(float pos_x, float pos_y);
                 ~Pirata();
             
                 void andar_ate(float em_x, float em_y);
                 void Salvar();
                 void Executar();
-                void Danificar();
+                void Danificar(Entidades::Personagens::Personagem* pAtacado);
+
+                void setar_Patrulha(float patrulha_esq, float patrulha_dir);
+                void patrulhar();
+                void bonus_De_Irritabilidade();
+                void verifica_Acao_de_Colisao(int lado, Entidades::Personagens::Jogador* pJogador);
 
         };
     }

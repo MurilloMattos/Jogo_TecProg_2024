@@ -12,7 +12,7 @@ Inimigo::Inimigo() :semente_id_entidade(100), direcao(0){
 
 	lado_fraco = cima;
 
-	nivel_raiva = -1;
+	nivel_maldade = -1;
 	//dano = -1;
 
 	pos_inicial.x = 0;
