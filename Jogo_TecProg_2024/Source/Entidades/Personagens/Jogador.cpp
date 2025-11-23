@@ -163,6 +163,7 @@ void Jogador::danificar(Personagem* pAtacado) {
 	pAtacado->diminuir_Vitalidade(dano);
 	setar_Estado(false);
 	executando_Pulo();
+	
 }
 
 

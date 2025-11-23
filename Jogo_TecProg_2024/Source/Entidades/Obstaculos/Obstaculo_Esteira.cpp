@@ -5,7 +5,7 @@ Entidades::Obstaculos::Esteira::Esteira(float vel, sf::Vector2f dir) :
 Obstaculo(), velocidadeTransporte(vel), direcao(dir) {
 
     agressivo = false;
-    tamanhoEsteira = sf::Vector2f(100.0f, 10.0f); // Exemplo de tamanho
+        tamanhoEsteira = sf::Vector2f(100.0f, 10.0f); // Exemplo de tamanho
 
 }
 
@@ -28,35 +28,32 @@ void Entidades::Obstaculos::Esteira::Salvar() {
 
 // assinatura totalmente qualificada (corrige erro de 'has not been declared')
 void Entidades::Obstaculos::Esteira::obstacular(Entidades::Personagens::Jogador* p, int lado) {
+    
     if (p == nullptr) return;
 
-    float margemErro = 1.0f;
+    if(lado == 2){
 
-    float playerLeft   = p->get_X();
-    float playerRight  = p->get_Comprimento_L();
-    float playerBottom = p->get_Y() + p->get_Altura();
+        float margemErro = 1.0f;//
 
-    float obstLeft  = this->get_X();
-    float obstRight = this->get_Comprimento_L();
-    float obstTop   = this->get_Y(); // A parte de cima da esteira
+        float playerLeft   = p->get_X();
+        float playerRight  = p->get_Comprimento_L();
+        float playerBottom = p->get_Y() + p->get_Altura();
 
-    bool overlapX = (playerRight > obstLeft) && (playerLeft < obstRight);
-    
-    // Verifica se os pés do jogador estão tocando o topo da esteira
-    bool pertoTopo = (playerBottom >= obstTop - margemErro) && (playerBottom <= obstTop + margemErro);
+        float obstLeft  = this->get_X();
+        float obstRight = this->get_Comprimento_L();
+        float obstTop   = this->get_Y(); // A parte de cima da esteira
 
-    if (overlapX && pertoTopo) {
-        // 1. Aplica o movimento da esteira (Empurrão lateral)
-        p->setar_Pos(p->get_X() + (velocidadeTransporte * direcao.x), p->get_Y());
+        bool overlapX = (playerRight > obstLeft) && (playerLeft < obstRight);// Verifica sobreposição horizontal
+        
+        // Verifica se os pés do jogador estão tocando o topo da esteira
+        bool pertoTopo = (playerBottom >= obstTop - margemErro) && (playerBottom <= obstTop + margemErro);
 
-        // --- CORREÇÃO AQUI ---
-        // 2. Impede que o jogador atravesse a esteira para baixo (Simula chão sólido)
-        // Define a posição Y do jogador exatamente em cima da esteira
-        p->setar_Pos(p->get_X(), this->get_Comprimento_A()); // get_Comprimento_A deve retornar o topo Y do obstáculo
+        if (overlapX && pertoTopo) {
+            // 1. Aplica o movimento da esteira (Empurrão lateral)
+            p->setar_velocidade(direcao.x * velocidadeTransporte, 0.0f);
 
-        // 3. Avisa o jogador que ele está no chão (para resetar a gravidade/pulo)
-        p->setar_Estado(false); 
-        // ---------------------
+        }
+
     }
 }
 
