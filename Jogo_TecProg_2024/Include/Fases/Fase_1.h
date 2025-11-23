@@ -3,6 +3,7 @@
 #include "Fases/Fase.h"
 #include "Entidades/Obstaculos/Esteira.h"
 #include "Entidades/Personagens/Inimigos/Capitao.h"
+#include "Entidades/Personagens/Inimigos/Esmagador.h"
 #include "Entidades/Projetil.h"
 
 namespace Fases{
@@ -16,6 +17,7 @@ namespace Fases{
 		float zoom_camera;
 
 		std::vector<Entidades::Personagens::Inimigo_Capitao*> lista_cap;
+		std::vector<Entidades::Personagens::Esmagador*> lista_esm;
 		Entidades::Obstaculos::Esteira* esteira;
 
 	public:
@@ -33,6 +35,7 @@ namespace Fases{
 		void Cria_Esteira();
 
 		void Cria_Capitao(float x, float y);
+		void Cria_Esmagador(float x, float y);
 
 		void atualiza_Camera_Fase(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
 		void setar_Camera_Fase();

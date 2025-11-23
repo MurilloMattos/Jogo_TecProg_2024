@@ -137,6 +137,18 @@ void Fase_1::Cria_Capitao(float x, float y){
 
 }
 
+void Fases::Fase_1::Cria_Esmagador(float x, float y){
+
+	Esmagador* esmagador;
+	esmagador = new Esmagador;
+
+	esmagador->setar_Pos(x, y);
+	gerenciador_colisoes.Incluir_Inimigo(esmagador);
+	lista_Entidades.Incluir(static_cast<Entidade*>(esmagador));
+	lista_id_inimigos.push_front(esmagador->getId());
+
+}
+
 //auto explicativo
 Projetil* Fases::Fase_1::Cria_Projetil()
 {
