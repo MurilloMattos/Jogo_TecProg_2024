@@ -10,6 +10,7 @@ Jogador::Jogador() : semente_id_entidade(10) {
 
 	segundo_jogador = false;
 	estado_pulando = false;
+	no_ar = false;
 	estado_caindo = true;
 
 	num_vitalidade = 100;
@@ -84,7 +85,7 @@ void Jogador::Executar() {
 	
 }
 
-void Jogador::setar_Estado(bool estado){
+void Jogador::setar_Estado_Pulando(bool estado){
 	estado_pulando = estado;
 }
 
@@ -130,6 +131,7 @@ void Jogador::setar_Dois_Jogadores(bool jogador_dois) {
 		setar_Pos(x + 25, y);
 		eliminado = false;
 		estado_pulando = false;
+		no_ar = false;
 	}
 	else {
 		eliminado = true;
@@ -142,10 +144,12 @@ bool Jogador::get_Dois_Jogadores() {
 
 void Entidades::Personagens::Jogador::executando_Pulo()
 {
-	if (!estado_pulando) {
+	if (!estado_pulando && !no_ar) {
 
 		velocidade.y = forca_de_impulso + 3.0f;
 		estado_pulando = true;
+		no_ar = true;
+
 		acelerando = true;
 	}
 }
@@ -158,9 +162,9 @@ void Jogador::Salvar(){
 void Jogador::danificar(Personagem* pAtacado) {
 
 	pAtacado->diminuir_Vitalidade(dano);
-	setar_Estado(false);
+	setar_Estado_Pulando(false);
+	setar_No_Ar(false);
 	executando_Pulo();
-	
 }
 
 
@@ -193,4 +197,19 @@ void Jogador::aumentar_Pontuacao(int pontos_a_adicionar){
 int Jogador::get_Pontuacao() const {
 
 	return pontos;
+}
+
+void Jogador::setar_Caindo(bool caindo){
+	estado_caindo = caindo;
+}
+
+void Jogador::setar_No_Ar(bool no_meio_do_ar){
+
+	no_ar = no_meio_do_ar;
+}
+
+void Jogador::setar_Bateu_A_Cabeca(){
+	
+	velocidade.y = 0;
+	acelerando = false;
 }

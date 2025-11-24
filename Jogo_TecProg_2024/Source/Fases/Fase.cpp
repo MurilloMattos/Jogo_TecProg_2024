@@ -41,8 +41,10 @@ void Fases::Fase::Setar_Jogadores(Jogador* p_jogador1,Jogador* p_jogador2)
 {
 	Setar_Jogadores_Colisoes(p_jogador1, p_jogador2);
 	Setar_Jogadores_Inimigos(p_jogador1, p_jogador2);
+	
 	p_jogador1->setar_Pos(pos_Piso.x, pos_Piso.y - p_jogador1->get_Altura());
 	p_jogador2->setar_Pos(pos_Piso.x, pos_Piso.y - p_jogador2->get_Altura());
+
 }
 
 void Fases::Fase::Setar_Jogadores_Colisoes(Jogador* p_jogador1, Jogador* p_jogador2){

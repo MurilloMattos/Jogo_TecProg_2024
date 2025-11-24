@@ -172,7 +172,7 @@ void Capitao::setar_Pontos_Por_Eliminacao(int pontos){
 
 void Capitao::sondando_Por_Jogadores(){
 
-	//verifica se está dentro da visão em X
+	//verifica se está dentro da visão em X 
 	if((ponteiro_jogador1->get_X() > (get_Centro().x - visao.x)) && (ponteiro_jogador1->get_X() < (get_Centro().x + visao.x))){
 
 		// verifica se está na mesma altura, apartir do seu pé até o alcance de visão em Y para cima.

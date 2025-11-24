@@ -19871,7 +19871,7 @@
 											"top": 1066,
 											"width": 159,
 											"height": 11,
-											"text": "Obstaculo_Dificil"
+											"text": "Espinhos"
 										},
 										{
 											"_type": "LabelView",
@@ -29111,7 +29111,7 @@
 					"_parent": {
 						"$ref": "IoH8RzmxEE6xOc9zvj2jawAA"
 					},
-					"name": "Obstaculo_Dificil",
+					"name": "Espinhos",
 					"stereotype": "Obstaculo Difícii",
 					"attributes": [
 						{

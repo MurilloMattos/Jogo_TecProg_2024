@@ -12,6 +12,8 @@ namespace Entidades {
 				bool agressivo;
 				const int semente_id_entidade;
 
+				sf::Vector2f tamanho;
+
 			public:
 				Obstaculo();
 				~Obstaculo();
