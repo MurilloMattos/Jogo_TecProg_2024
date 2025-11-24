@@ -43,8 +43,7 @@ void Menu::Inicializar() {
 		std::cerr << "[ERRO] Nao foi possivel encontrar ou carregar a fonte '../assets/menu_principal/Jersey25-Regular.ttf'" << std::endl;
 	}
 	
-	if (imagem->loadFromFile("../assets/menu_principal/menuPrincipal.png")) { 
-		// imagem carregada
+	if (imagem->loadFromFile("../assets/menu_principal/menuPrincipal.jpg")) { 
 
 		// Aplica a textura ao RectangleShape e reseta o rect para mapear corretamente
 		pFigura->setTexture(imagem, true);
@@ -210,7 +209,8 @@ void Menu::EscolheFase() {
 	titulo.setFillColor(sf::Color::Black);
 	titulo.setOutlineColor(sf::Color::Red);
 	titulo.setOutlineThickness(2.f);
-	titulo.setPosition(150, 150);
+	titulo.setPosition(150
+		, 150);
 
 	opcoes = {"Fase 1","Fase 2", "Voltar"};
 	coordsOpcoes = {{200, 225},{200, 275},{200, 320}};
