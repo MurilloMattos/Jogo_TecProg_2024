@@ -21,8 +21,8 @@ Jogador::Jogador() : semente_id_entidade(10) {
 	tamanho.x = 20;
 	tamanho.y = 40;
 
-	x = 50.0;
-	y = 100.0;
+	x = 0.f;
+	y = (pGG->getCamera()->getSize().y/3);
 
 	setar_Vitalidade(100);
 	setar_Figura();

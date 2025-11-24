@@ -3,7 +3,7 @@
 using namespace Entidades;
 using namespace Personagens;
 
-Capitao::Capitao(): recarga(0){
+Capitao::Capitao(): recarga(0), espera(240){
 
 	num_vitalidade = 200;
 	
@@ -18,8 +18,8 @@ Capitao::Capitao(): recarga(0){
 	tamanho.x = 35.0;
 	tamanho.y = 65.0;
 
-	pos_inicial.x = 600.f;
-	pos_inicial.y = 159.f;
+	pos_inicial.x = 0.f;
+	pos_inicial.y = 0.f;
 
 	pos_final = pos_inicial;
 
@@ -27,6 +27,9 @@ Capitao::Capitao(): recarga(0){
 
 	velocidade_proj.x = 3.0f;
 	velocidade_proj.y = 0.0f;
+
+	visao.x = 200.f;
+	visao.y = (tamanho.y*1.5f);
 
 	pFigura->setFillColor(sf::Color::Magenta);
 
@@ -37,15 +40,6 @@ Capitao::Capitao(): recarga(0){
 }
 
 Capitao::~Capitao(){
-
-	/*
-	int i;
-
-	for(i=0; i<disparos.size();i++){
-
-		disparos[i]->setar_Ativo(false);
-	}
-	*/
 
 	disparos.clear();
 	pode_disparar = false;
@@ -104,15 +98,18 @@ std::vector<Projetil*>* Capitao::get_Vetor_De_Projetis(){
 
 void Capitao::Executar() {
 
+	Desenhar();
+
 	disparou = false;
-	setar_direcao();
+
+	setar_Pos(x,y);
 
 	if (pode_disparar) {
 
-		if (recarga < 240) {
+		if (recarga < espera) {
 			recarga++;
 		}
-		else {
+		else if (recarga >= espera && !disparou){
 
 			disparou = true;
 			// << "Disparou, pos (" << x << "," << y << ") direcao " << direcao << std::endl;
@@ -121,7 +118,21 @@ void Capitao::Executar() {
 		}
 	}
 
-	Desenhar();
+	if(!parar){
+		if ((pos_final.x != x) && (pos_final.y != y)) {
+
+			if (pos_final.x > x) {
+				x += velocidade.x;
+			}
+			else if (pos_final.x < x) {
+				x -= velocidade.x;
+			}
+
+		}
+	}
+
+	sondando_Por_Jogadores();
+	
 }
 
 void Capitao::imprime_Projeteis_Ids_Ativos_e_Pos() {
@@ -157,4 +168,57 @@ void Capitao::verifica_Acao_de_Colisao(int lado, Jogador* pJogador){
 void Capitao::setar_Pontos_Por_Eliminacao(int pontos){
 
 	pontos_de_eliminacao = pontos;
+}
+
+void Capitao::sondando_Por_Jogadores(){
+
+	if((ponteiro_jogador1->get_X() > (get_Centro().x - visao.x)) && (ponteiro_jogador1->get_X() < (get_Centro().x + visao.x))){
+
+		if((ponteiro_jogador1->get_Y() > (get_Centro().y - visao.y)) && (ponteiro_jogador1->get_Y() < (get_Centro().y + tamanho.y/2)))
+		{
+			setar_direcao();
+			pode_disparar = true;
+			this->andar_ate(ponteiro_jogador1->get_Centro().x, ponteiro_jogador1->get_Centro().y);
+			parar = false;
+		}
+
+		/*
+		if((ponteiro_jogador1->get_Y() > (get_Centro().y - visao.y)) && (ponteiro_jogador1->get_Y() < (get_Centro().y + visao.y)))
+		{
+			setar_direcao();
+			pode_disparar = true;
+			this->andar_ate(ponteiro_jogador1->get_Centro().x, ponteiro_jogador1->get_Centro().y);
+			parar = false;
+		}
+		*/
+	}
+
+	else if((ponteiro_jogador2->get_X() > (get_Centro().x - visao.x)) && (ponteiro_jogador2->get_X() < (get_Centro().x + visao.x))){
+
+		if((ponteiro_jogador2->get_Y() > (get_Centro().y - visao.y)) && (ponteiro_jogador2->get_Y() < (get_Centro().y + tamanho.y/2)))
+		{
+			setar_direcao();
+			pode_disparar = true;
+			this->andar_ate(ponteiro_jogador2->get_Centro().x, ponteiro_jogador2->get_Centro().y);
+			parar = false;
+		}
+
+		/*
+		if((ponteiro_jogador2->get_Y() > (get_Centro().y - visao.y)) && (ponteiro_jogador2->get_Y() < (get_Centro().y + visao.y)))
+		{
+			setar_direcao();
+			pode_disparar = true;
+			andar_ate(ponteiro_jogador2->get_Centro().x, ponteiro_jogador2->get_Centro().y);
+			parar = false;
+		}
+		*/
+	}
+
+	else {
+
+		parar = true;
+		pode_disparar = false;
+		andar_ate(x,y);
+	}
+	
 }

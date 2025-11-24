@@ -14,6 +14,8 @@ namespace Entidades {
 				Jogador* ponteiro_jogador2;
 				bool perseguir;
 
+				bool parar;
+
 				int pontos_de_eliminacao;
 
 				int direcao;

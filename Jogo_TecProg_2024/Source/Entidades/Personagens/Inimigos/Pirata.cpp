@@ -44,24 +44,24 @@ Pirata::~Pirata() {
 
 void Pirata::Executar() {
 
-	
+	Desenhar();
 	setar_Pos(x, y);
-	
 
-	if ((pos_final.x != x) && (pos_final.y != y)) {
+	if(!parar){
+		if ((pos_final.x != x) && (pos_final.y != y)) {
 
-		if (pos_final.x > x) {
-			x += velocidade.x;
+			if (pos_final.x > x) {
+				x += velocidade.x;
+			}
+			else if (pos_final.x < x) {
+				x -= velocidade.x;
+			}
+
 		}
-		else if (pos_final.x < x) {
-			x -= velocidade.x;
-		}
-
 	}
 
 	patrulhar();
 	bonus_De_Irritabilidade();
-	Desenhar();
 }
 
 void Pirata::Danificar(Personagem* pAtacado){
@@ -124,6 +124,7 @@ void Pirata::setar_Patrulha(float patrulha_esq, float patrulha_dir){
 	patrulha_esquerda = patrulha_esq;
 	patrulha_direita = patrulha_dir - get_Largura();
 	patrulhando = true;
+	parar = false;
 }
 
 void Pirata::patrulhar(){
