@@ -10,7 +10,11 @@ namespace Entidades {
 
 			bool disparou;
 			int recarga;
+			int espera;
 			bool pode_disparar;
+			bool parar;
+
+			sf::Vector2f visao;
 
 			sf::Vector2f velocidade_proj;
 
@@ -35,6 +39,9 @@ namespace Entidades {
 				void Salvar();
 				void verifica_Acao_de_Colisao(int lado, Entidades::Personagens::Jogador* pJogador);
 				void setar_Pontos_Por_Eliminacao(int pontos);
+
+				void sondando_Por_Jogadores();
+
 		};
 	}
 }

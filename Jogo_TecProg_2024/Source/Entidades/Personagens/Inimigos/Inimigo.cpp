@@ -10,6 +10,8 @@ Inimigo::Inimigo() :semente_id_entidade(100), direcao(0){
 	ponteiro_jogador1 = nullptr;
 	ponteiro_jogador2 = nullptr;
 
+	parar = true;
+
 	pontos_de_eliminacao = 0;
 
 	lado_fraco = cima;
@@ -38,8 +40,8 @@ void Inimigo::andar_ate(float em_x, float em_y){
 		direcao = esquerda;
 	}
 
-	pos_final.x = x;
-	pos_final.y = y;
+	pos_final.x = em_x;
+	pos_final.y = em_y;
 }
 
 void Inimigo::Executar() {
