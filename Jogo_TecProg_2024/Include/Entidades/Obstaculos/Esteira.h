@@ -15,7 +15,6 @@ namespace Entidades {
             sf::Vector2f tamanhoEsteira; // Tamanho da esteira para cálculos de colisão
             bool colideAtual;
             bool colideAnterior;
-            float x, y;
             
         public:
 

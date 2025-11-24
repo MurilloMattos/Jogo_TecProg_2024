@@ -91,11 +91,6 @@ void Menu::Inicializar() {
 		bg->setScale(1.0f, 1.0f);
 	}
 
-
-	// Define um tamanho absoluto para o retângulo que exibirá a textura.
-	// Antes usávamos setScale em um RectangleShape sem size definido (0,0),
-	// o que resulta em nada sendo desenhado. Agora usamos setSize.
-
 	// Posiciona o fundo no canto superior esquerdo para ocupar a janela
 	pFigura->setPosition(0.0f, 0.0f);//posicao do menu na janela
 	
@@ -116,9 +111,17 @@ void Menu::Executar() {
 
 void Menu::EscolheJogador() {
 
+	titulo.setFont(*fonte);
+	titulo.setString("A Ilha Amaldicoada");
+	titulo.setCharacterSize(40);
+	titulo.setFillColor(sf::Color::Black);
+	titulo.setOutlineColor(sf::Color::Red);
+	titulo.setOutlineThickness(2.f);
+	titulo.setPosition(100, 150);
+
 	opcoes = {"1 Jogador","2 Jogadores", "Sair"};
-	coordsOpcoes = {{200, 250},{200, 300},{200, 350}};
-	tam = {36, 36, 36};// Aumenta os tamanhos das opções principais para melhor legibilidade
+	coordsOpcoes = {{175, 225},{175, 275},{175, 320}};
+	tam = {36, 34, 36};// Aumenta os tamanhos das opções principais para melhor legibilidade
 	textos.resize(3);
 
     for(std::size_t i{}; i < textos.size(); i++) {
@@ -201,8 +204,16 @@ void Menu::EscolheJogador() {
 
 void Menu::EscolheFase() {
 
+	titulo.setFont(*fonte);
+	titulo.setString("Escolha a Fase");	
+	titulo.setCharacterSize(40);
+	titulo.setFillColor(sf::Color::Black);
+	titulo.setOutlineColor(sf::Color::Red);
+	titulo.setOutlineThickness(2.f);
+	titulo.setPosition(150, 150);
+
 	opcoes = {"Fase 1","Fase 2", "Voltar"};
-	coordsOpcoes = {{200, 250},{200, 300},{200, 350}};
+	coordsOpcoes = {{200, 225},{200, 275},{200, 320}};
 	tam = {36, 36, 36};// Aumenta os tamanhos das opções principais para melhor legibilidade
 	textos.resize(3);
 
@@ -297,7 +308,7 @@ void Menu::desenhar() {//desenha o menu
 	for (size_t i = 0; i < textos.size(); i++) {
 		pGG->getJanela()->draw(textos[i]);
 	}
-
+	pGG->getJanela()->draw(titulo);
 	// Fim do desenho do menu (fundo + textos)
 }
 

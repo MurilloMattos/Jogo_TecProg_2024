@@ -4,10 +4,15 @@ using namespace Entidades;
 using namespace Obstaculos;
 
 Entidades::Obstaculos::Esteira::Esteira(float vel, float pos_x, float pos_y) :
-Obstaculo(), velocidadeTransporte(vel), direcao(1), x(pos_x), y(pos_y) {
+Obstaculo(), velocidadeTransporte(vel), direcao(1) {
 
     agressivo = false;
     tamanhoEsteira = sf::Vector2f(100.0f, 10.0f);
+    colideAtual = false;
+    colideAnterior = false;
+
+    // Posiciona usando a API da classe base (fundamental para as colisões)
+    setar_Pos(pos_x, pos_y);
 
 }
 
@@ -31,7 +36,6 @@ void Entidades::Obstaculos::Esteira::Executar() {
     colideAtual = false;
 
     pFigura->setSize(tamanhoEsteira);
-    pFigura->setPosition(x, y);
     this->Desenhar();
 
 }
