@@ -32,9 +32,20 @@ Inimigo_Capitao::Inimigo_Capitao(): recarga(0){
 
 	pFigura->setSize(tamanho);
 	pFigura->setPosition(pos_inicial);
+
+	setar_Pontos_Por_Eliminacao(400);
 }
 
 Inimigo_Capitao::~Inimigo_Capitao(){
+
+	/*
+	int i;
+
+	for(i=0; i<disparos.size();i++){
+
+		disparos[i]->setar_Ativo(false);
+	}
+	*/
 
 	disparos.clear();
 	pode_disparar = false;
@@ -115,10 +126,6 @@ void Inimigo_Capitao::Executar() {
 
 void Inimigo_Capitao::imprime_Projeteis_Ids_Ativos_e_Pos() {
 
-	//std::cout << "Projetis Ativos do Capitao ID " << id << " :" << std::endl;
-	//std::cout << "projetis totais: " << disparos.size() << std::endl;
-	//std::cout << "Projetis do Capitao ID " << id << " :" << std::endl;
-
 	for (int i = 0; i < disparos.size(); i++) {
 		if (disparos[i]->get_Ativo()) {
 			std::cout << "  Projetil ID: " << disparos[i]->getId() << " Pos (" << disparos[i]->get_X() << "," << disparos[i]->get_Y() << ")" << std::endl;
@@ -129,4 +136,21 @@ void Inimigo_Capitao::imprime_Projeteis_Ids_Ativos_e_Pos() {
 
 void Inimigo_Capitao::Salvar() {
 
+}
+
+
+void Inimigo_Capitao::verifica_Acao_de_Colisao(int lado, Jogador* pJogador){
+
+	if(lado == lado_fraco){
+		pJogador->danificar(static_cast<Personagem*>(this));
+	}
+	else {
+		danificar(static_cast<Personagem*>(pJogador));
+	}
+
+}
+
+void Inimigo_Capitao::setar_Pontos_Por_Eliminacao(int pontos){
+
+	pontos_de_eliminacao = pontos;
 }

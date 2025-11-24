@@ -132,6 +132,10 @@ void Jogo::verifica_Fim_De_Jogo()
     if(fase_1_ativa){
         if (fase1.get_Ganhou() || (jogador_1.get_Eliminado() && jogador_2.get_Eliminado()))
         {
+            
+            std::cout << "pontuacao jogador 1:" << jogador_1.get_Pontuacao() << std::endl;
+            std::cout << "pontuacao jogador 2:" << jogador_2.get_Pontuacao() << std::endl;
+
             Ger_Graf->getJanela()->close();
             acabou = true;
         }
@@ -139,6 +143,9 @@ void Jogo::verifica_Fim_De_Jogo()
     else  if(fase_2_ativa){
         if (fase2.get_Ganhou() || (jogador_1.get_Eliminado() && jogador_2.get_Eliminado()))
         {
+            std::cout << "pontuacao jogador 1:" << jogador_1.get_Pontuacao() << std::endl;
+            std::cout << "pontuacao jogador 2:" << jogador_2.get_Pontuacao() << std::endl;
+
             Ger_Graf->getJanela()->close();
 			acabou = true;
         }

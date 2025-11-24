@@ -43,7 +43,7 @@ namespace Fases {
 			void Setar_Jogadores_Colisoes(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
 			void Setar_Jogadores_Inimigos(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
 
-			void Cria_Inimigo_Pirata(float x, float y);
+			void Cria_Inimigo_Pirata(float x, float y, float patrulha_ate_a, float patrulha_ate_b);
 
 			bool get_Ganhou();
 

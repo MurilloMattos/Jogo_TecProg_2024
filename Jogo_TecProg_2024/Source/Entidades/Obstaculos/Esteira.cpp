@@ -2,10 +2,10 @@
 
 // Implementações usando qualificação completa de namespace
 Entidades::Obstaculos::Esteira::Esteira(float vel, float dir) :
-Obstaculo(), velocidadeTransporte(vel), direcao(dir) {
+Obstaculo(), velocidadeTransporte(vel), direcao(static_cast<int>(dir)) {
 
     agressivo = false;
-        tamanhoEsteira = sf::Vector2f(100.0f, 10.0f); // Exemplo de tamanho
+    tamanhoEsteira = sf::Vector2f(100.0f, 10.0f); // Exemplo de tamanho
 
 }
 

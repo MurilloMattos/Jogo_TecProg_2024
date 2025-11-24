@@ -12,6 +12,7 @@ namespace Entidades {
 
                 bool patrulha_esq_concluida;
                 bool patrulha_dir_concluida;
+                bool patrulhando;
 
                 float patrulha_esquerda;
                 float patrulha_direita;
@@ -32,6 +33,7 @@ namespace Entidades {
                 void bonus_De_Irritabilidade();
                 void verifica_Acao_de_Colisao(int lado, Entidades::Personagens::Jogador* pJogador);
 
+                void setar_Pontos_Por_Eliminacao(int pontos);
         };
     }
 }

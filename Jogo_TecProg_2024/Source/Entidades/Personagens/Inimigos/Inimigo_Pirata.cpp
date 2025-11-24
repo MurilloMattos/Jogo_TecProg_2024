@@ -16,6 +16,7 @@ Pirata::Pirata() {
 
 	patrulha_esq_concluida = false;
 	patrulha_dir_concluida = true;
+	patrulhando = true;
 
 	tamanho.x = 25.0;
 	tamanho.y = 55.0;
@@ -25,7 +26,7 @@ Pirata::Pirata() {
 
 	pos_final = pos_inicial;
 
-	velocidade.x = 2.0f;
+	velocidade.x = 1.0f;
 
 	velocidade_maxima = 2 * velocidade.x;
 
@@ -34,6 +35,7 @@ Pirata::Pirata() {
 	pFigura->setSize(tamanho);
 	pFigura->setPosition(pos_inicial);
 
+	setar_Pontos_Por_Eliminacao(250);
 }
 
 Pirata::~Pirata() {
@@ -57,6 +59,7 @@ void Pirata::Executar() {
 
 	}
 
+	patrulhar();
 	bonus_De_Irritabilidade();
 	Desenhar();
 }
@@ -105,29 +108,48 @@ void Pirata::bonus_De_Irritabilidade(){
 
 void Pirata::setar_Patrulha(float patrulha_esq, float patrulha_dir){
 
+	if(rand()%2 == 1){
+		patrulha_dir_concluida = false;
+		patrulha_esq_concluida = true;
+	}
+	else{
+		patrulha_dir_concluida = true;
+		patrulha_esq_concluida = false;
+	}
+
 	patrulha_esquerda = patrulha_esq;
-	patrulha_direita = patrulha_dir;
+	patrulha_direita = patrulha_dir - get_Largura();
+	patrulhando = true;
 }
 
 void Pirata::patrulhar(){
 
-	if(!patrulha_esq_concluida && patrulha_dir_concluida){
+	
+	if(patrulhando) {
 
-		pos_final.x = patrulha_esquerda;
-	}
-	else if(patrulha_esq_concluida && !patrulha_dir_concluida){
+		if(!patrulha_esq_concluida && patrulha_dir_concluida){
 
-		pos_final.x = patrulha_direita;
-	}
+			pos_final.x = patrulha_esquerda;
+		}
+		else if(patrulha_esq_concluida && !patrulha_dir_concluida){
 
-	if(x <= patrulha_esquerda){
+			pos_final.x = patrulha_direita;
+		}
 
-		patrulha_esq_concluida = true;
-		patrulha_dir_concluida = false;
+		if(x <= patrulha_esquerda){
+
+			patrulha_esq_concluida = true;
+			patrulha_dir_concluida = false;
+		}
+		else if(x >= patrulha_direita ){
+			
+			patrulha_esq_concluida = false;
+			patrulha_dir_concluida = true;
+		}
 	}
-	else if(x >= patrulha_direita ){
-		
-		patrulha_esq_concluida = false;
-		patrulha_dir_concluida = true;
-	}
+}
+
+void Pirata::setar_Pontos_Por_Eliminacao(int pontos){
+	
+	pontos_de_eliminacao = pontos;
 }

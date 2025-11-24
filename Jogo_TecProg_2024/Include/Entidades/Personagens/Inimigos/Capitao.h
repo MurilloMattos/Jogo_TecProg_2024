@@ -33,7 +33,8 @@ namespace Entidades {
 
 				void Executar();
 				void Salvar();
-
+				void verifica_Acao_de_Colisao(int lado, Entidades::Personagens::Jogador* pJogador);
+				void setar_Pontos_Por_Eliminacao(int pontos);
 		};
 	}
 }

@@ -10,6 +10,8 @@ Inimigo::Inimigo() :semente_id_entidade(100), direcao(0){
 	ponteiro_jogador1 = nullptr;
 	ponteiro_jogador2 = nullptr;
 
+	pontos_de_eliminacao = 0;
+
 	lado_fraco = cima;
 
 	nivel_maldade = -1;
@@ -23,7 +25,7 @@ Inimigo::Inimigo() :semente_id_entidade(100), direcao(0){
 }
 
 Inimigo::~Inimigo() {
-
+	
 }
 
 void Inimigo::andar_ate(float em_x, float em_y){
@@ -42,7 +44,7 @@ void Inimigo::andar_ate(float em_x, float em_y){
 
 void Inimigo::Executar() {
 
-
+	
 }
 
 void Inimigo::setar_direcao() {
@@ -107,4 +109,15 @@ void Inimigo::verifica_Acao_de_Colisao(int lado, Jogador* pJogador) {
 	else {
 		danificar(static_cast<Personagem*>(pJogador));
 	}
+}
+
+void Inimigo::dar_Pontuacao_a_Jogadores() {
+
+	if(!ponteiro_jogador1->get_Eliminado()){
+		ponteiro_jogador1->aumentar_Pontuacao(pontos_de_eliminacao);
+	}
+	if(!ponteiro_jogador2->get_Eliminado()){
+		ponteiro_jogador2->aumentar_Pontuacao(pontos_de_eliminacao);
+	}
+	
 }

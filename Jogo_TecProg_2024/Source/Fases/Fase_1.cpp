@@ -62,8 +62,8 @@ void Fases::Fase_1::Cria_Obstaculos() {
 
 void Fases::Fase_1::Cria_Inimigos() {
 
-	Cria_Inimigo_Pirata(400.0f, 200.0f);
-	Cria_Capitao(600.f,159.f);
+	//Cria_Inimigo_Pirata(400.0f, 200.0f);
+	//Cria_Capitao(600.f,159.f);
 
 }
 
@@ -80,17 +80,17 @@ void Fases::Fase_1::Cria_Piso() {
 void Fases::Fase_1::Cria_Plataforma() {
 
 	
-	if (num_plataformas < 4){
-		num_plataformas = 4;
+	if (num_plataformas_totais < 4){
+		num_plataformas_totais = 4;
 	}
 
 
-	std::cout << num_plataformas << std::endl;
+	std::cout << num_plataformas_totais << std::endl;
 
 	int i;
 	float espaco = static_cast<float>(rand() % 100);
 
-	for (i = 0; i < num_plataformas; i++) {
+	for (i = 0; i < num_plataformas_totais; i++) {
 
 		plataforma = new Plataforma;
 		plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x, pos_original.x + espaco, pos_original.y + -10.f);

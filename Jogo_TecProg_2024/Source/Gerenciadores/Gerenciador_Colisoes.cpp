@@ -258,7 +258,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Inimigos(){
 		else {
 			tratar_Colisoes_Obstaculo(static_cast<Entidade*>(lista_Inimigos[i]));
 			tratar_Colisoes_Jogador_Inimigos(pJogador1, lista_Inimigos[i]);
-
+			
 		}
 
 	}

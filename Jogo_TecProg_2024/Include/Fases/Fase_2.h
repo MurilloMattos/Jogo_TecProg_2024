@@ -10,11 +10,17 @@ namespace Fases{
 	class Fase_2 : public Fase
 	{
 	private:
-		int num_max_Capitoes;
-		int num_max_andares;
+		int num_capitoes;
+		int num_piratas;
+		int num_restante_piratas;
+		int num_restante_capitoes;
+
 		int i,j;
+
 		float zoom_camera;
 		float tamanho_da_tela_x;
+
+		int num_max_andares;
 		float espaco_vazio_x;
 		int num_max_plataformas;
 
@@ -43,6 +49,7 @@ namespace Fases{
 
 		void atualiza_Camera_Fase(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
 		void setar_Camera_Fase();
+		virtual void cria_Inimigos_Nas_Plataformas(float ponta_esq_plataforma, float ponta_dir_plataforma, sf::Vector2f pos_plat);
 
 	};
 }

@@ -39,4 +39,8 @@ void Plataforma::Executar() {
 
 void Plataforma::obstacular(Jogador* p, int lado) {
 
+	if(lado == baixo){
+		p->setar_Estado(false);
+	}
+	
 }

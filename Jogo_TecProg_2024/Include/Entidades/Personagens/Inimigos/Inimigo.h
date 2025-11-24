@@ -12,6 +12,9 @@ namespace Entidades {
 				const int semente_id_entidade;
 				Jogador* ponteiro_jogador1;
 				Jogador* ponteiro_jogador2;
+				bool perseguir;
+
+				int pontos_de_eliminacao;
 
 				int direcao;
 				int lado_fraco;
@@ -34,7 +37,10 @@ namespace Entidades {
 
 				virtual void Executar();
 				virtual void verifica_Acao_de_Colisao(int lado, Entidades::Personagens::Jogador* pJogador);
-				
+
+				virtual void setar_Pontos_Por_Eliminacao(int pontos) = 0;
+				virtual void dar_Pontuacao_a_Jogadores();
+
 		};
 	}
 }

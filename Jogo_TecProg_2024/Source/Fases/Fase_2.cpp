@@ -6,14 +6,28 @@ using namespace Fases;
 using namespace Obstaculos;
 using namespace Gerenciadores;
 
-Fases::Fase_2::Fase_2():num_max_Capitoes(1) {
+Fases::Fase_2::Fase_2() {
 
+	srand(static_cast<unsigned int>(time(0)));
+	
 	i = 0;
 	j = 0;
 
+	// entre 3 e 6
+	num_capitoes = (rand() % 3) + 3;
+	//num_capitoes = 1;
+
+	//entre 3 e 8
+	num_piratas = (rand() % 5) + 3;
+	//num_piratas = 0;
+
+	num_restante_capitoes = num_capitoes;
+	num_restante_piratas = num_piratas;
+	
+
 	zoom_camera = 1.0f;
 
-	srand(static_cast<unsigned int>(time(0)));
+	
 
 	num_plataformas_totais = rand() % 10;
 
@@ -35,15 +49,18 @@ Fases::Fase_2::Fase_2():num_max_Capitoes(1) {
 
 	
 	
-
+	
 	setar_Camera_Fase();
-	Cria_Inimigos();
 	Cria_Obstaculos();
+
+	// precisa ser antes que Cria Obstaculos, justamente pq precisa ser setado os inimigos nas plataformas primeiro.
+	Cria_Inimigos();
 }
 
 Fases::Fase_2::~Fase_2(){
 
 	lista_cap.clear();
+	num_plataformas_por_andar.clear();
 }
 
 
@@ -64,7 +81,7 @@ void Fases::Fase_2::Executar(){
 
 		for (i = 0; i < lista_cap.size(); i++) {
 
-			if (lista_cap[i]->get_Disparou()) {
+			if (lista_cap[i]->get_Disparou() && !(lista_cap[i]->get_Eliminado())) {
 
 				lista_cap[i]->incluir_Projetil(Cria_Projetil());
 			}
@@ -75,23 +92,39 @@ void Fases::Fase_2::Executar(){
 
 void Fases::Fase_2::Cria_Inimigos(){
 
-	//Cria_Inimigo_Pirata(300.0f, pos_Piso.y - Pirata().get_Altura());
-	Cria_Capitao(0.f,pos_Piso.y - Inimigo_Capitao().get_Altura());
+
+	sf::Vector2f aux;
+	Inimigo_Capitao aux_cap;
+	Pirata aux_pirat;
+
+	for(i=0;i<num_restante_capitoes;i++){
+
+		aux.x = pos_Piso.x + (rand() % static_cast<int>(tam_Piso_Fase.x));
+		aux.y = pos_Piso.y;
+
+		Cria_Capitao(aux.x, aux.y);
+	}
+
+	for(i = 0; i<num_restante_piratas; i++){
+
+		aux.x = pos_Piso.x + (rand() % static_cast<int>(tam_Piso_Fase.x));
+		aux.y = pos_Piso.y;
+
+		Cria_Inimigo_Pirata(aux.x, aux.y, pos_Piso.x, tam_Piso_Fase.x);
+	}
 }
 
 //cria o inimigo dificil (Boss)
 void Fase_2::Cria_Capitao(float x, float y){
 
-	for(int k = 0; k < num_max_Capitoes; k++){
-		Inimigo_Capitao* capitao;
-		capitao = new Inimigo_Capitao;
+	Inimigo_Capitao* capitao;
+	capitao = new Inimigo_Capitao;
 
-		capitao->setar_Pos(x + k * 50.0f, y);
-		gerenciador_colisoes.Incluir_Inimigo(capitao);
-		lista_Entidades.Incluir(static_cast<Entidade*>(capitao));
-		lista_cap.push_back(capitao);
-		lista_id_inimigos.push_front(capitao->getId());
-	}
+	capitao->setar_Pos(x, y - capitao->get_Altura());
+	gerenciador_colisoes.Incluir_Inimigo(capitao);
+	lista_Entidades.Incluir(static_cast<Entidade*>(capitao));
+	lista_cap.push_back(capitao);
+	lista_id_inimigos.push_front(capitao->getId());
 }
 
 //auto explicativo
@@ -271,10 +304,14 @@ void Fases::Fase_2::Cria_Plataforma() {
 			std::cout << "andar : " << i << " " <<"Criando plataforma: " << pos_plataforma.x << " " << pos_plataforma.y << std::endl;
 
 			plataforma = new Plataforma;
-			plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x,pos_plataforma.x,pos_plataforma.y);
+			plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x, pos_plataforma.x, pos_plataforma.y);
+
+			cria_Inimigos_Nas_Plataformas(pos_plataforma.x, (pos_plataforma.x + tam_plataforma.x), pos_plataforma);
 
 			gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(plataforma));
 			lista_Entidades.Incluir(static_cast<Entidade*>(plataforma));
+
+
 		}
 
 		pos_plataforma.x = 0.f;
@@ -292,4 +329,34 @@ void Fases::Fase_2::Cria_Piso() {
 
 	gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(piso));
 	lista_Entidades.Incluir(static_cast<Entidade*>(piso));
+}
+
+
+void Fases::Fase_2::cria_Inimigos_Nas_Plataformas(float ponta_esq_plataforma, float ponta_dir_plataforma, sf::Vector2f pos_plat){
+
+	int gerar_ou_nao = (rand() % 100);
+	int gerar_cap_ou_pirata = (rand() % 100);
+
+
+	//50% de chance
+	int gerar_cap = 50;
+
+	//70% de chance
+	if(gerar_ou_nao<= 70) {
+
+		//gera cap
+		if(gerar_cap_ou_pirata < gerar_cap && num_restante_capitoes > 0) {
+
+			//precisa ser a posição a direita da plataforma, para que o inimigo possa ser gerado dentro dela.
+			Cria_Capitao(pos_plat.x + ((ponta_dir_plataforma - ponta_esq_plataforma)/2), pos_plat.y);
+			num_restante_capitoes--;
+		}
+		//gera pirata
+		else if(gerar_cap_ou_pirata >= gerar_cap && num_restante_piratas > 0){
+
+			//precisa ser a posição a direita da plataforma, para que o inimigo possa ser gerado dentro dela.
+			Cria_Inimigo_Pirata(pos_plat.x + ((ponta_dir_plataforma - ponta_esq_plataforma)/2), pos_plat.y, ponta_esq_plataforma, ponta_dir_plataforma);
+			num_restante_piratas--;
+		}
+	}
 }

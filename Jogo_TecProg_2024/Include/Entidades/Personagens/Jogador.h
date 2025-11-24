@@ -11,8 +11,6 @@ namespace Entidades{
 				int pontos;
 				const int semente_id_entidade;
 
-				bool eliminado;
-
 				bool segundo_jogador;
 				void setar_Figura();
 
@@ -37,9 +35,12 @@ namespace Entidades{
 				void setar_Estado(bool estado);
 
 				bool get_Eliminado() const;
+				int get_Pontuacao() const;
 
 				void diminuir_Vitalidade(int dano);
 				void danificar(Personagem* pAtacado);
+
+				void aumentar_Pontuacao(int pontos_a_adicionar);
 
 				void Executar();
 				void Salvar();

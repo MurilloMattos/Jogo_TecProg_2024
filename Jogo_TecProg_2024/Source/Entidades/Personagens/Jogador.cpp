@@ -3,7 +3,7 @@
 using namespace Entidades;
 using namespace Personagens;
 
-Jogador::Jogador() : semente_id_entidade(10) , eliminado(false) {
+Jogador::Jogador() : semente_id_entidade(10) {
 
 	//arrumar isso posteriormente
 	setId(semente_id_entidade);
@@ -14,7 +14,7 @@ Jogador::Jogador() : semente_id_entidade(10) , eliminado(false) {
 
 	num_vitalidade = 100;
 
-	dano = 50;
+	dano = 70;
 
 	gravidade = 6.0f;
 
@@ -65,10 +65,6 @@ void Jogador::Executar() {
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 
 				executando_Pulo();
-			}
-
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-				//y += 5.0f;
 			}
 
 		}
@@ -133,6 +129,7 @@ void Jogador::setar_Dois_Jogadores(bool jogador_dois) {
 		pFigura->setFillColor(sf::Color::Cyan);
 		setar_Pos(x + 25, y);
 		eliminado = false;
+		estado_pulando = false;
 	}
 	else {
 		eliminado = true;
@@ -186,4 +183,14 @@ void Jogador::setar_Figura() {
 
 	pFigura->setSize(tamanho);
 	pFigura->setFillColor(sf::Color::Blue);
+}
+
+void Jogador::aumentar_Pontuacao(int pontos_a_adicionar){
+
+	pontos += pontos_a_adicionar;
+}
+
+int Jogador::get_Pontuacao() const {
+
+	return pontos;
 }

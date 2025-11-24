@@ -75,15 +75,17 @@ void Fases::Fase::Setar_Jogadores_Inimigos(Jogador* p_jogador1, Jogador* p_jogad
 
 }
 
-void Fases::Fase::Cria_Inimigo_Pirata(float x, float y){
+void Fases::Fase::Cria_Inimigo_Pirata(float x, float y, float patrulha_ate_a, float patrula_ate_b){
 	Pirata* pirata;
 
 	pirata = new Pirata;
-	pirata->setar_Pos(x, y);
+	pirata->setar_Pos(x, y - pirata->get_Altura());
+	pirata->setar_Patrulha(patrulha_ate_a, patrula_ate_b);
 
 	lista_id_inimigos.push_front(pirata->getId());
 	gerenciador_colisoes.Incluir_Inimigo(pirata);
 	lista_Entidades.Incluir(static_cast<Entidade*>(pirata));
+
 }
 
 bool Fases::Fase::get_Ganhou()
@@ -121,8 +123,10 @@ void Fases::Fase::verifica_Inimigos_Neutralizados() {
             continue;
         }
 
-        if (inim->get_Vitalidade() <= 0) {
+        if (inim->get_Eliminado()) {
+
             // remove entidade do gerenciador/lista de entidades
+			inim->dar_Pontuacao_a_Jogadores();
             lista_Entidades.Remover(ent);
 			gerenciador_colisoes.Inimigo_neutralizado(inim);
 
@@ -146,6 +150,4 @@ void Fases::Fase::Executar() {
 	lista_Entidades.Percorrer();
 	
 }
-
-
 
