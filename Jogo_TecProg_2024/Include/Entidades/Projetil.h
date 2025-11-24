@@ -4,7 +4,7 @@
 namespace Entidades {
 
 	namespace Personagens {
-		class Inimigo_Capitao;
+		class Capitao;
 	}
 	namespace Personagens {
 		class Jogador;
@@ -22,7 +22,7 @@ namespace Entidades {
 		bool atingiu_jogador;
 
 		
-		Entidades::Personagens::Inimigo_Capitao* cap;
+		Entidades::Personagens::Capitao* cap;
 
 		//const int direita, cima, esquerda, baixo;
 
@@ -37,7 +37,7 @@ namespace Entidades {
 		void setar_Ativo(bool atv);
 		void setar_Dano(int dan);
 		void setar_Direcao(int direcao);
-		void setar_Capitao(Entidades::Personagens::Inimigo_Capitao* capitao);
+		void setar_Capitao(Entidades::Personagens::Capitao* capitao);
 
 		int get_Dano();
 		bool get_Ativo();

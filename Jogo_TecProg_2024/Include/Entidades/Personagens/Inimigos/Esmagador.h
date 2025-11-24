@@ -48,6 +48,7 @@ namespace Entidades {
             
             void set_Estado(EstadoEsmagador novo_estado);
             EstadoEsmagador get_Estado();
+            virtual void setar_Pontos_Por_Eliminacao(int pontos);
             //void IniciarPreparacao(); // Muda o estado e reinicia o relógio
             //void Atacar(); // Muda o estado para ATACANDO
         };

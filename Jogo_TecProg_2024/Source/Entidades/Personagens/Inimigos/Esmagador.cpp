@@ -10,6 +10,8 @@ Esmagador::Esmagador() :
     raio_deteccao(60.f), 
     raio_ataque(60.f) 
 {
+
+    setar_Pontos_Por_Eliminacao(300);
     
     num_vitalidade = 150;
     dano = 40;
@@ -177,6 +179,11 @@ void Esmagador::set_Estado(EstadoEsmagador novo_estado) {
 
 EstadoEsmagador Esmagador::get_Estado() {
     return estado_atual;
+}
+
+void Esmagador::setar_Pontos_Por_Eliminacao(int pontos){
+	
+	pontos_de_eliminacao = pontos;
 }
 
 /*float Esmagador::get_RaioDeteccao() {

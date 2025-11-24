@@ -111,6 +111,8 @@ void Inimigo::verifica_Acao_de_Colisao(int lado, Jogador* pJogador) {
 	}
 }
 
+//sem uso por hora.
+/*
 void Inimigo::dar_Pontuacao_a_Jogadores() {
 
 	if(!ponteiro_jogador1->get_Eliminado()){
@@ -120,4 +122,4 @@ void Inimigo::dar_Pontuacao_a_Jogadores() {
 		ponteiro_jogador2->aumentar_Pontuacao(pontos_de_eliminacao);
 	}
 	
-}
+}*/

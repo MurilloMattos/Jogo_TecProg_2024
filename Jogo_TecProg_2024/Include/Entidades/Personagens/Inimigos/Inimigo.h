@@ -39,7 +39,9 @@ namespace Entidades {
 				virtual void verifica_Acao_de_Colisao(int lado, Entidades::Personagens::Jogador* pJogador);
 
 				virtual void setar_Pontos_Por_Eliminacao(int pontos) = 0;
-				virtual void dar_Pontuacao_a_Jogadores();
+
+				//sem utilidade por hora.
+				//virtual void dar_Pontuacao_a_Jogadores();
 
 		};
 	}

@@ -75,7 +75,7 @@ void Fases::Fase::Setar_Jogadores_Inimigos(Jogador* p_jogador1, Jogador* p_jogad
 
 }
 
-void Fases::Fase::Cria_Inimigo_Pirata(float x, float y, float patrulha_ate_a, float patrula_ate_b){
+void Fases::Fase::Cria_Pirata(float x, float y, float patrulha_ate_a, float patrula_ate_b){
 	Pirata* pirata;
 
 	pirata = new Pirata;
@@ -126,7 +126,6 @@ void Fases::Fase::verifica_Inimigos_Neutralizados() {
         if (inim->get_Eliminado()) {
 
             // remove entidade do gerenciador/lista de entidades
-			inim->dar_Pontuacao_a_Jogadores();
             lista_Entidades.Remover(ent);
 			gerenciador_colisoes.Inimigo_neutralizado(inim);
 

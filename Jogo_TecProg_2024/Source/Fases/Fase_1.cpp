@@ -62,7 +62,7 @@ void Fases::Fase_1::Cria_Obstaculos() {
 
 void Fases::Fase_1::Cria_Inimigos() {
 
-	//Cria_Inimigo_Pirata(400.0f, 200.0f);
+	//Cria_Pirata(400.0f, 200.0f);
 	//Cria_Capitao(600.f,159.f);
 
 }
@@ -125,8 +125,8 @@ void Fases::Fase_1::Cria_Esteira() {
 void Fase_1::Cria_Capitao(float x, float y){
 
 	for(int k = 0; k < num_max_Capitoes; k++){
-	Inimigo_Capitao* capitao;
-	capitao = new Inimigo_Capitao;
+	Capitao* capitao;
+	capitao = new Capitao;
 
 	capitao->setar_Pos(x + k * 50.0f, y);
 	gerenciador_colisoes.Incluir_Inimigo(capitao);

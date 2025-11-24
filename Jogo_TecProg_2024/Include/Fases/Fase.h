@@ -4,7 +4,7 @@
 #include "Listas/Lista_Entidades.h"
 #include "Entidades/Obstaculos/Obstaculo.h"
 #include "Entidades/Obstaculos/Plataforma.h"
-#include "Entidades/Personagens/Inimigos/Inimigo_Pirata.h"
+#include "Entidades/Personagens/Inimigos/Pirata.h"
 #include "Entidades/Personagens/Jogador.h"
 #include "Gerenciadores/Gerenciador_Colisoes.h"
 #include <list>
@@ -43,7 +43,7 @@ namespace Fases {
 			void Setar_Jogadores_Colisoes(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
 			void Setar_Jogadores_Inimigos(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);
 
-			void Cria_Inimigo_Pirata(float x, float y, float patrulha_ate_a, float patrulha_ate_b);
+			void Cria_Pirata(float x, float y, float patrulha_ate_a, float patrulha_ate_b);
 
 			bool get_Ganhou();
 

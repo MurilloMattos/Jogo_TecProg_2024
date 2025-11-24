@@ -16,7 +16,7 @@ namespace Fases{
 		int i,j;
 		float zoom_camera;
 
-		std::vector<Entidades::Personagens::Inimigo_Capitao*> lista_cap;
+		std::vector<Entidades::Personagens::Capitao*> lista_cap;
 		std::vector<Entidades::Personagens::Esmagador*> lista_esm;
 		Entidades::Obstaculos::Esteira* esteira;
 

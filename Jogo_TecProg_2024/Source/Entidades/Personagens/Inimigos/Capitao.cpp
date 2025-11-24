@@ -3,7 +3,7 @@
 using namespace Entidades;
 using namespace Personagens;
 
-Inimigo_Capitao::Inimigo_Capitao(): recarga(0){
+Capitao::Capitao(): recarga(0){
 
 	num_vitalidade = 200;
 	
@@ -36,7 +36,7 @@ Inimigo_Capitao::Inimigo_Capitao(): recarga(0){
 	setar_Pontos_Por_Eliminacao(400);
 }
 
-Inimigo_Capitao::~Inimigo_Capitao(){
+Capitao::~Capitao(){
 
 	/*
 	int i;
@@ -52,13 +52,13 @@ Inimigo_Capitao::~Inimigo_Capitao(){
 	disparou = false;
 }
 
-const bool Inimigo_Capitao::get_Disparou()
+const bool Capitao::get_Disparou()
 {
 	return disparou;
 }
 
 
-void Entidades::Personagens::Inimigo_Capitao::incluir_Projetil(Projetil* projet) {
+void Entidades::Personagens::Capitao::incluir_Projetil(Projetil* projet) {
 
 	projet->setar_Ativo(true);
 	projet->setar_Direcao(direcao);
@@ -81,7 +81,7 @@ void Entidades::Personagens::Inimigo_Capitao::incluir_Projetil(Projetil* projet)
 	//imprime_Projeteis_Ids_Ativos_e_Pos();
 }
 
-void Inimigo_Capitao::remover_Projetil(Projetil* projet) {
+void Capitao::remover_Projetil(Projetil* projet) {
 
 	std::vector<Entidades::Projetil*>::iterator itr;
 	itr = disparos.begin();
@@ -97,12 +97,12 @@ void Inimigo_Capitao::remover_Projetil(Projetil* projet) {
 	}
 }
 
-std::vector<Projetil*>* Inimigo_Capitao::get_Vetor_De_Projetis(){
+std::vector<Projetil*>* Capitao::get_Vetor_De_Projetis(){
 
 	return &disparos;
 }
 
-void Inimigo_Capitao::Executar() {
+void Capitao::Executar() {
 
 	disparou = false;
 	setar_direcao();
@@ -124,7 +124,7 @@ void Inimigo_Capitao::Executar() {
 	Desenhar();
 }
 
-void Inimigo_Capitao::imprime_Projeteis_Ids_Ativos_e_Pos() {
+void Capitao::imprime_Projeteis_Ids_Ativos_e_Pos() {
 
 	for (int i = 0; i < disparos.size(); i++) {
 		if (disparos[i]->get_Ativo()) {
@@ -134,15 +134,19 @@ void Inimigo_Capitao::imprime_Projeteis_Ids_Ativos_e_Pos() {
 }
 
 
-void Inimigo_Capitao::Salvar() {
+void Capitao::Salvar() {
 
 }
 
 
-void Inimigo_Capitao::verifica_Acao_de_Colisao(int lado, Jogador* pJogador){
+void Capitao::verifica_Acao_de_Colisao(int lado, Jogador* pJogador){
 
 	if(lado == lado_fraco){
 		pJogador->danificar(static_cast<Personagem*>(this));
+
+		if(get_Eliminado()){
+			pJogador->aumentar_Pontuacao(pontos_de_eliminacao);
+		}
 	}
 	else {
 		danificar(static_cast<Personagem*>(pJogador));
@@ -150,7 +154,7 @@ void Inimigo_Capitao::verifica_Acao_de_Colisao(int lado, Jogador* pJogador){
 
 }
 
-void Inimigo_Capitao::setar_Pontos_Por_Eliminacao(int pontos){
+void Capitao::setar_Pontos_Por_Eliminacao(int pontos){
 
 	pontos_de_eliminacao = pontos;
 }

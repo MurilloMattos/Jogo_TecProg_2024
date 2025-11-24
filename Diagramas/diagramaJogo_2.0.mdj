@@ -13143,7 +13143,7 @@
 											"top": 1042,
 											"width": 204.30126953125,
 											"height": 11,
-											"text": "Inimigo_Pirata"
+											"text": "Pirata"
 										},
 										{
 											"_type": "LabelView",
@@ -28354,7 +28354,7 @@
 							"_parent": {
 								"$ref": "WmMPnOmkFUaEn4CHmyLHQAAA"
 							},
-							"name": "Inimigo_Pirata",
+							"name": "Pirata",
 							"ownedElements": [
 								{
 									"_type": "UMLAssociation",

@@ -1,4 +1,4 @@
-#include "Entidades/Personagens/Inimigos/Inimigo_Pirata.h"
+#include "Entidades/Personagens/Inimigos/Pirata.h"
 
 using namespace Entidades;
 using namespace Personagens;
@@ -35,7 +35,7 @@ Pirata::Pirata() {
 	pFigura->setSize(tamanho);
 	pFigura->setPosition(pos_inicial);
 
-	setar_Pontos_Por_Eliminacao(250);
+	setar_Pontos_Por_Eliminacao(200);
 }
 
 Pirata::~Pirata() {
@@ -84,6 +84,10 @@ void Pirata::verifica_Acao_de_Colisao(int lado, Jogador* pJogador) {
 
 	if (lado == lado_fraco) {
 		pJogador->danificar(static_cast<Personagem*>(this));
+
+		if(get_Eliminado()){
+			pJogador->aumentar_Pontuacao(pontos_de_eliminacao);
+		}
 	}
 	else {
 

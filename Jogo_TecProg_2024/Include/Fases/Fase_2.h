@@ -26,7 +26,7 @@ namespace Fases{
 
 		std::vector<int> num_plataformas_por_andar;
 
-		std::vector<Entidades::Personagens::Inimigo_Capitao*> lista_cap;
+		std::vector<Entidades::Personagens::Capitao*> lista_cap;
 
 	public:
 

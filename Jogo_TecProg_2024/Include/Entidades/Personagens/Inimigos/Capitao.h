@@ -5,7 +5,7 @@
 namespace Entidades {
 	namespace Personagens {
 
-		class Inimigo_Capitao : public Inimigo
+		class Capitao : public Inimigo
 		{
 
 			bool disparou;
@@ -20,8 +20,8 @@ namespace Entidades {
 			int dano_do_balote;
 
 			public:
-				Inimigo_Capitao();
-				~Inimigo_Capitao();
+				Capitao();
+				~Capitao();
 				
 				const bool get_Disparou();
 

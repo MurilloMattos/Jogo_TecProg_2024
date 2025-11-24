@@ -79,7 +79,7 @@ void Projetil::setar_Direcao(int direcao) {
 	lado = direcao;
 }
 
-void Entidades::Projetil::setar_Capitao(Entidades::Personagens::Inimigo_Capitao* capitao)
+void Entidades::Projetil::setar_Capitao(Entidades::Personagens::Capitao* capitao)
 {
 	cap = capitao;
 }
