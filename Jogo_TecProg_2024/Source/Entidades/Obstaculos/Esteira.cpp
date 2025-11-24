@@ -1,11 +1,18 @@
 #include "Entidades/Obstaculos/Esteira.h"
 
-// Implementações usando qualificação completa de namespace
-Entidades::Obstaculos::Esteira::Esteira(float vel, float dir) :
-Obstaculo(), velocidadeTransporte(vel), direcao(static_cast<int>(dir)) {
+using namespace Entidades;
+using namespace Obstaculos;
+
+Entidades::Obstaculos::Esteira::Esteira(float vel, float pos_x, float pos_y) :
+Obstaculo(), velocidadeTransporte(vel), direcao(1) {
 
     agressivo = false;
-    tamanhoEsteira = sf::Vector2f(100.0f, 10.0f); // Exemplo de tamanho
+    tamanhoEsteira = sf::Vector2f(100.0f, 10.0f);
+    colideAtual = false;
+    colideAnterior = false;
+
+    // Posiciona usando a API da classe base (fundamental para as colisões)
+    setar_Pos(pos_x, pos_y);
 
 }
 
@@ -29,7 +36,6 @@ void Entidades::Obstaculos::Esteira::Executar() {
     colideAtual = false;
 
     pFigura->setSize(tamanhoEsteira);
-    pFigura->setPosition(x, y);
     this->Desenhar();
 
 }
@@ -65,12 +71,8 @@ void Entidades::Obstaculos::Esteira::obstacular(Entidades::Personagens::Jogador*
         if (overlapX && pertoTopo) {
             // 1. Aplica o movimento da esteira (Empurrão lateral)
             p->setar_Pos(p->get_X() + (direcao * velocidadeTransporte), p->get_Y());
+            
         }
 
     }
-}
-
-// CORREÇÃO: Adicione Entidades::Obstaculos:: antes de Esteira
-sf::Vector2f Entidades::Obstaculos::Esteira::get_Tamanho_Esteira() {
-    return tamanhoEsteira;
 }

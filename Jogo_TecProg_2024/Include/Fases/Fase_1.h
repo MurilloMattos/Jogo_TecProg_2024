@@ -12,12 +12,11 @@ namespace Fases{
 	{
 	private:
 	
-		int num_max_Capitoes;
 		int i,j;
 		float zoom_camera;
-
-		std::vector<Entidades::Personagens::Capitao*> lista_cap;
-		std::vector<Entidades::Personagens::Esmagador*> lista_esm;
+		
+		std::vector<Entidades::Obstaculos::Plataforma*> lista_plat;
+		
 		Entidades::Obstaculos::Esteira* esteira;
 
 	public:
@@ -34,7 +33,6 @@ namespace Fases{
 		void Cria_Plataforma();
 		void Cria_Esteira();
 
-		void Cria_Capitao(float x, float y);
 		void Cria_Esmagador(float x, float y);
 
 		void atualiza_Camera_Fase(Entidades::Personagens::Jogador* p_jogador1, Entidades::Personagens::Jogador* p_jogador2);

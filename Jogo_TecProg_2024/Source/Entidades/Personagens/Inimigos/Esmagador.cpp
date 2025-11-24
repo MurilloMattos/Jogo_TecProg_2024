@@ -6,8 +6,8 @@ using namespace Personagens;
 Esmagador::Esmagador() : 
     estado_atual(EstadoEsmagador::PATRULHANDO), 
     tempo_preparacao_seg(1.5f),
-    tempo_ataque_seg(1.0f),
-    raio_deteccao(60.f), 
+    tempo_ataque_seg(0.0005f),
+    raio_deteccao(100.f), 
     raio_ataque(60.f) 
 {
 
@@ -26,16 +26,15 @@ Esmagador::Esmagador() :
 
     velocidade.x = 0.5f; // Anda devagar
 
-    if (pFigura != nullptr) {
-        // IMPORTANTE: Remove qualquer textura herdada para que a cor funcione
-        pFigura->setTexture(nullptr); 
         
-        pFigura->setFillColor(sf::Color::Blue);
-        pFigura->setSize(tamanho);
+    pFigura->setTexture(nullptr); 
+        
+    pFigura->setFillColor(sf::Color::Blue);
+    pFigura->setSize(tamanho);
         // A posição será atualizada pelo setar_Pos, mas é bom garantir aqui também
-        pFigura->setPosition(pos_inicial); 
+    pFigura->setPosition(pos_inicial); 
         
-    }
+    
 }
 
 Esmagador::~Esmagador() {
@@ -106,7 +105,24 @@ void Esmagador::Mover() {
         jogador_alvo = ponteiro_jogador1;
     }
 
-    andar_ate(jogador_alvo->get_X(), jogador_alvo->get_Y());
+    if (dist_alvo <= raio_deteccao) {
+        estado_atual = EstadoEsmagador::PREPARANDO;
+        relogio_ataque.restart();
+        return; 
+    }
+
+    if (jogador_alvo) {
+        // Define a direção 
+        andar_ate(jogador_alvo->get_X(), jogador_alvo->get_Y());
+
+        // Aplica a velocidade à posição 
+        if (direcao == 1) { // Supondo 1 para direita
+             x += velocidade.x;
+        } else {            // Supondo 0 ou -1 para esquerda
+             x -= velocidade.x;
+        }
+        
+    }
 
 }
 
@@ -184,12 +200,5 @@ EstadoEsmagador Esmagador::get_Estado() {
 void Esmagador::setar_Pontos_Por_Eliminacao(int pontos){
 	
 	pontos_de_eliminacao = pontos;
-}
 
-/*float Esmagador::get_RaioDeteccao() {
-    return raio_deteccao;
 }
-
-float Esmagador::get_RaioAtaque() {
-    return raio_ataque;
-}*/

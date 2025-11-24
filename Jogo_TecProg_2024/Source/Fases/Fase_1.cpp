@@ -6,29 +6,28 @@ using namespace Fases;
 using namespace Obstaculos;
 using namespace Gerenciadores;
 
-Fases::Fase_1::Fase_1():num_max_Capitoes(2) {
+Fases::Fase_1::Fase_1() {
 
 	i = 0;
 	j = 0;
 
-	lista_cap.clear();
+	lista_plat.clear();
 
-	tam_Piso_Fase.x = pGG->getCamera()->getSize().x * 20.f;
-	tam_Piso_Fase.y = pGG->getCamera()->getSize().y / 3.f;
+	tam_Piso_Fase.x = 1500.f;
+	tam_Piso_Fase.y = pGG->getCamera()->getSize().y ;
 
-	pos_Piso.x = 0.f;
+	pos_Piso.x = -750.f;
 	pos_Piso.y = tam_Piso_Fase.y;
 
-
-	Cria_Inimigos();
 	Cria_Obstaculos();
+	Cria_Inimigos();
 	setar_Camera_Fase();
 
 }
 
 Fases::Fase_1::~Fase_1(){
 
-	lista_cap.clear();
+	lista_plat.clear();
 
 }
 
@@ -37,17 +36,8 @@ void Fases::Fase_1::Executar(){
 	verifica_Inimigos_Neutralizados();
 
 	if (!ganhou) {
-		verifica_Projeteis_Destroidos();
 		gerenciador_colisoes.Executar();
 		lista_Entidades.Percorrer();
-
-		for (i = 0; i < lista_cap.size(); i++) {
-
-			if (lista_cap[i]->get_Disparou()) {
-
-				lista_cap[i]->incluir_Projetil(Cria_Projetil());
-			}
-		}
 	}
 	
 }
@@ -62,9 +52,42 @@ void Fases::Fase_1::Cria_Obstaculos() {
 
 void Fases::Fase_1::Cria_Inimigos() {
 
-	Cria_Esmagador(500.f, 200.f);
-	Cria_Pirata(400.0f, 200.0f, 300.0f, 500.0f);
-	//Cria_Capitao(600.f,159.f);
+	int i = 0;
+	int num_max_esmagadores = rand() % 3 + 3;
+
+	while (i < num_max_esmagadores) {
+
+		int sorteio = rand() % 6;
+
+		if(sorteio == 0){
+			Cria_Esmagador(100.f, pos_Piso.y);
+		}
+		else if(sorteio == 1){
+			Cria_Esmagador(300.f, pos_Piso.y);
+		}
+		else if(sorteio == 2){
+			Cria_Esmagador(500.f, pos_Piso.y);
+		}
+		else if (sorteio == 3){
+			Cria_Esmagador(-100.f, pos_Piso.y);
+		}
+		else if(sorteio == 4){
+			Cria_Esmagador(-300.f, pos_Piso.y);
+		}
+		else {
+			Cria_Esmagador(-500.f, pos_Piso.y);
+		}
+
+		i++;
+	}
+
+	int num_piratas = lista_plat.size();
+
+	for(int i = 0; i < num_piratas; i++){
+		Cria_Pirata(lista_plat[i]->get_X() + 10.f, lista_plat[i]->get_Y() - 40.f, lista_plat[i]->get_X(), lista_plat[i]->get_X() + lista_plat[i]->get_Largura() - 20.f);
+	}
+
+	Cria_Pirata(400.0f, pos_Piso.y, -400.f, 401.f);
 
 }
 
@@ -80,26 +103,57 @@ void Fases::Fase_1::Cria_Piso() {
 
 void Fases::Fase_1::Cria_Plataforma() {
 
-	
-	if (num_plataformas_totais < 4){
-		num_plataformas_totais = 4;
-	}
+	int num_plataformas = rand() % 5 + 3; // entre 3 e 5 plataformas
 
+	std::cout << num_plataformas << std::endl;
 
-	std::cout << num_plataformas_totais << std::endl;
+	int i = 0;
+	int sorteio;
 
-	int i;
 	float espaco = static_cast<float>(rand() % 100);
 
-	for (i = 0; i < num_plataformas_totais; i++) {
+	while(i <= num_plataformas) {
 
-		plataforma = new Plataforma;
-		plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x, pos_original.x + espaco, pos_original.y + -10.f);
+		sorteio = rand() % 5;//
 
-		
-		espaco += (tam_plataforma.x*2.5f + rand()%200);
-		if (espaco > tam_Piso_Fase.x) {
-			espaco = tam_Piso_Fase.x;
+		if(sorteio == 0){
+			plataforma = new Plataforma;
+			plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x, -400.f, piso->get_Y() - 100.f);
+			lista_plat.push_back(plataforma);
+
+			i++;
+		}
+
+		else if(sorteio == 1){
+			plataforma = new Plataforma;
+			plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x, -200.f, piso->get_Y() - 120.f);
+			lista_plat.push_back(plataforma);
+
+			i++;
+		}
+
+		else if(sorteio == 2){
+			plataforma = new Plataforma;
+			plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x, 0.f, piso->get_Y() - 140.f);
+			lista_plat.push_back(plataforma);
+
+			i++;
+		}
+
+		else if (sorteio == 3){
+			plataforma = new Plataforma;
+			plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x, 200.f, piso->get_Y() - 120.f);
+			lista_plat.push_back(plataforma);
+
+			i++;
+		}
+
+		else if(sorteio == 4){
+			plataforma = new Plataforma;
+			plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x, 400.f, piso->get_Y() - 100.f);
+			lista_plat.push_back(plataforma);
+
+			i++;
 		}
 
 		gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(plataforma));
@@ -110,35 +164,43 @@ void Fases::Fase_1::Cria_Plataforma() {
 
 void Fases::Fase_1::Cria_Esteira() {
 
-	esteira = new Esteira(5.0f, 1.0f); // Velocidade 5.0f, direção para a direita (1)
+	int i = 0;
+	int num_total_esteira = lista_plat.size() - 1;
 
-	esteira->setar_Pos(50.0f,tam_Piso_Fase.y);
+	while (i <= num_total_esteira) {
+		
+		int sorteio = rand() % 6;
 
+		if(sorteio == 0){
+			esteira = new Esteira(5.0f, lista_plat[i]->get_X() + 25, lista_plat[i]->get_Y()-1.f);
+		}
+		else if(sorteio == 1){
+			esteira = new Esteira(6.0f, lista_plat[i]->get_X() + 25, lista_plat[i]->get_Y()-1.f);
+		}
+		else if(sorteio == 2){
+			esteira = new Esteira(4.0f, lista_plat[i]->get_X() + 25, lista_plat[i]->get_Y()-1.f); 
+		}
+		else if(sorteio == 3){
+			esteira = new Esteira(7.0f, lista_plat[i]->get_X() + 25, lista_plat[i]->get_Y()-1.f); 
+		}
+		else if(sorteio == 4){
+			esteira = new Esteira(3.0f, lista_plat[i]->get_X() + 25, lista_plat[i]->get_Y()-1.f); 
+		}
+		else{
+			esteira = new Esteira(9.0f, lista_plat[i]->get_X() + 25, lista_plat[i]->get_Y()-1.f); 
+		}
+		gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(esteira));
+		lista_Entidades.Incluir(static_cast<Entidade*>(esteira));
+		i++;
+	}
+
+	esteira = new Esteira(5.0f, piso->get_X() + 25.f, piso->get_Y() - 1.f);
 	gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(esteira));
 	lista_Entidades.Incluir(static_cast<Entidade*>(esteira));
 
-    std::cout << "[Fase_1] Esteira criada em (" << 50.0f << "," << (tam_Piso_Fase.y - 20.0f) << ")" << std::endl;
-
 }
 
-
-//cria o inimigo dificil (Boss)
-void Fase_1::Cria_Capitao(float x, float y){
-
-	for(int k = 0; k < num_max_Capitoes; k++){
-	Capitao* capitao;
-	capitao = new Capitao;
-
-	capitao->setar_Pos(x + k * 50.0f, y);
-	gerenciador_colisoes.Incluir_Inimigo(capitao);
-	lista_Entidades.Incluir(static_cast<Entidade*>(capitao));
-	lista_cap.push_back(capitao);
-	lista_id_inimigos.push_front(capitao->getId());
-	}
-
-}
-
-void Fases::Fase_1::Cria_Esmagador(float x, float y){
+void Fases::Fase_1::Cria_Esmagador(float x, float y) {
 
 	Esmagador* esmagador;
 	esmagador = new Esmagador();
@@ -151,73 +213,9 @@ void Fases::Fase_1::Cria_Esmagador(float x, float y){
 }
 
 
-//auto explicativo
-Projetil* Fases::Fase_1::Cria_Projetil()
-{
-
-	Projetil* proj;
-	proj = new Projetil;
-	
-	lista_Entidades.Incluir(static_cast<Entidade*>(proj));
-	gerenciador_colisoes.Incluir_Projetil(proj);
-
-	return proj;
-}
-
-void Fases::Fase_1::verifica_Projeteis_Destroidos()
-{
-	
-	Projetil* projetil_deletado;
-
-	for(i=0;i<lista_cap.size(); i++) {
-
-		for(j = 0; j < lista_cap[i]->get_Vetor_De_Projetis()->size(); j++) {
-
-
-			// conteudo apontado pelo ponteiro do vetor de projeteis do capitao
-			if (!((*lista_cap[i]->get_Vetor_De_Projetis())[j]->get_Ativo())) {
-
-				projetil_deletado = (*(lista_cap[i]->get_Vetor_De_Projetis()))[j];
-
-
-				if (projetil_deletado) {
-					//remove da lista de colisões
-					gerenciador_colisoes.projetil_Destruido(projetil_deletado);
-
-				}
-				else {
-					std::cout << "Erro ao remover projetil (Gerenciador_colisoes)" << std::endl;
-				}
-
-				if (projetil_deletado) {
-					//remove do capitão
-					lista_cap[i]->remover_Projetil(projetil_deletado);
-				}
-				else {
-					std::cout << "Erro ao remover projetil (Capitao)" << std::endl;
-				}
-
-				if (projetil_deletado) {
-					//remove da lista de entidades
-					lista_Entidades.Remover(static_cast<Entidade*>(projetil_deletado));
-				}
-				else {
-					std::cout << "Erro ao remover projetil (Lista_Entidades)" << std::endl;
-				}
-
-			}
-		}
-
-		projetil_deletado = nullptr;
-	}
-
-	
-
-}
-
 void Fases::Fase_1::setar_Camera_Fase()
 {
-	pGG->getCamera()->zoom(2.0f);
+	pGG->getCamera()->zoom(1.5f);
 }
 
 void Fases::Fase_1::atualiza_Camera_Fase(Jogador* p_jogador1, Jogador* p_jogador2)

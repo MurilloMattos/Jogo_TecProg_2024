@@ -27,6 +27,7 @@ class Menu : public Ente {
 		sf::Vector2i posicaoMouse;
 		sf::Vector2f coordMouse;
 
+		sf::Text titulo;
 		std::vector<const char*> opcoes;
 		std::vector<sf::Vector2f> coordsOpcoes;
 		std::vector<sf::Text> textos;
