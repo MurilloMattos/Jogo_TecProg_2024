@@ -62,7 +62,8 @@ void Fases::Fase_1::Cria_Obstaculos() {
 
 void Fases::Fase_1::Cria_Inimigos() {
 
-	//Cria_Pirata(400.0f, 200.0f);
+	Cria_Esmagador(500.f, 200.f);
+	Cria_Pirata(400.0f, 200.0f, 300.0f, 500.0f);
 	//Cria_Capitao(600.f,159.f);
 
 }
@@ -140,7 +141,7 @@ void Fase_1::Cria_Capitao(float x, float y){
 void Fases::Fase_1::Cria_Esmagador(float x, float y){
 
 	Esmagador* esmagador;
-	esmagador = new Esmagador;
+	esmagador = new Esmagador();
 
 	esmagador->setar_Pos(x, y);
 	gerenciador_colisoes.Incluir_Inimigo(esmagador);
@@ -148,6 +149,7 @@ void Fases::Fase_1::Cria_Esmagador(float x, float y){
 	lista_id_inimigos.push_front(esmagador->getId());
 
 }
+
 
 //auto explicativo
 Projetil* Fases::Fase_1::Cria_Projetil()
