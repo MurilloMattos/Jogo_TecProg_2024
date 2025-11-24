@@ -172,8 +172,10 @@ void Capitao::setar_Pontos_Por_Eliminacao(int pontos){
 
 void Capitao::sondando_Por_Jogadores(){
 
+	//verifica se está dentro da visão em X
 	if((ponteiro_jogador1->get_X() > (get_Centro().x - visao.x)) && (ponteiro_jogador1->get_X() < (get_Centro().x + visao.x))){
 
+		// verifica se está na mesma altura, apartir do seu pé até o alcance de visão em Y para cima.
 		if((ponteiro_jogador1->get_Y() > (get_Centro().y - visao.y)) && (ponteiro_jogador1->get_Y() < (get_Centro().y + tamanho.y/2)))
 		{
 			setar_direcao();
@@ -181,20 +183,12 @@ void Capitao::sondando_Por_Jogadores(){
 			this->andar_ate(ponteiro_jogador1->get_Centro().x, ponteiro_jogador1->get_Centro().y);
 			parar = false;
 		}
-
-		/*
-		if((ponteiro_jogador1->get_Y() > (get_Centro().y - visao.y)) && (ponteiro_jogador1->get_Y() < (get_Centro().y + visao.y)))
-		{
-			setar_direcao();
-			pode_disparar = true;
-			this->andar_ate(ponteiro_jogador1->get_Centro().x, ponteiro_jogador1->get_Centro().y);
-			parar = false;
-		}
-		*/
 	}
 
+	//verifica se está dentro da visão em X
 	else if((ponteiro_jogador2->get_X() > (get_Centro().x - visao.x)) && (ponteiro_jogador2->get_X() < (get_Centro().x + visao.x))){
 
+		// verifica se está na mesma altura, apartir do seu pé até o alcance de visão em Y para cima.
 		if((ponteiro_jogador2->get_Y() > (get_Centro().y - visao.y)) && (ponteiro_jogador2->get_Y() < (get_Centro().y + tamanho.y/2)))
 		{
 			setar_direcao();
@@ -202,16 +196,6 @@ void Capitao::sondando_Por_Jogadores(){
 			this->andar_ate(ponteiro_jogador2->get_Centro().x, ponteiro_jogador2->get_Centro().y);
 			parar = false;
 		}
-
-		/*
-		if((ponteiro_jogador2->get_Y() > (get_Centro().y - visao.y)) && (ponteiro_jogador2->get_Y() < (get_Centro().y + visao.y)))
-		{
-			setar_direcao();
-			pode_disparar = true;
-			andar_ate(ponteiro_jogador2->get_Centro().x, ponteiro_jogador2->get_Centro().y);
-			parar = false;
-		}
-		*/
 	}
 
 	else {

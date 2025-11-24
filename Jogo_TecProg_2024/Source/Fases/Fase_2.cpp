@@ -15,11 +15,11 @@ Fases::Fase_2::Fase_2() {
 
 	// entre 3 e 6
 	num_capitoes = (rand() % 3) + 3;
-	//num_capitoes = 1;
+	num_capitoes = 1;
 
 	//entre 3 e 8
 	num_piratas = (rand() % 5) + 3;
-	//num_piratas = 0;
+	num_piratas = 0;
 
 	num_restante_capitoes = num_capitoes;
 	num_restante_piratas = num_piratas;

@@ -59,5 +59,7 @@ namespace Fases {
 			void criar_cenario();
 			void verifica_Inimigos_Neutralizados();
 
+			bool verifica_Se_Caiu_No_Abismo(Entidades::Entidade* pEntidade);
+
 	};
 }

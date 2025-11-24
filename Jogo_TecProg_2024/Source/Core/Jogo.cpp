@@ -25,6 +25,10 @@ estado(Estado::MENU)
     fase_1_ativa = false;
     fase_2_ativa = false;
 
+    fase1.Setar_Jogadores(&jogador_1, &jogador_2);
+    fase2.Setar_Jogadores(&jogador_1, &jogador_2);
+
+
 }
 
 Jogo::~Jogo()
@@ -162,12 +166,27 @@ void Jogo::setar_Fase()
 
     //seta os jogadores na fase ativa
     if (fase_1_ativa) {
-        fase1.Setar_Jogadores(&jogador_1, &jogador_2);
+       //fase1.Setar_Jogadores(&jogador_1, &jogador_2);
         fase1.Executar();
+
+        if(fase1.verifica_Se_Caiu_No_Abismo(static_cast<Entidade*>(&jogador_1))){
+            jogador_1.diminuir_Vitalidade(200);
+        }
+        if(fase1.verifica_Se_Caiu_No_Abismo(static_cast<Entidade*>(&jogador_2))){
+            jogador_2.diminuir_Vitalidade(200);
+        }
+        
 	}
     else if (fase_2_ativa) {
-        fase2.Setar_Jogadores(&jogador_1, &jogador_2);
+        //fase2.Setar_Jogadores(&jogador_1, &jogador_2);
         fase2.Executar();
+
+        if(fase2.verifica_Se_Caiu_No_Abismo(static_cast<Entidade*>(&jogador_1))){
+            jogador_1.diminuir_Vitalidade(200);
+        }
+        if(fase2.verifica_Se_Caiu_No_Abismo(static_cast<Entidade*>(&jogador_2))){
+            jogador_2.diminuir_Vitalidade(200);
+        }
 	}
 }
 
