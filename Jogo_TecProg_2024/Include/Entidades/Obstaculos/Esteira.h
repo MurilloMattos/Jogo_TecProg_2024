@@ -15,13 +15,14 @@ namespace Entidades {
             sf::Vector2f tamanhoEsteira; // Tamanho da esteira para cálculos de colisão
             bool colideAtual;
             bool colideAnterior;
+            float x, y;
             
         public:
 
-            Esteira(float vel, float dir);
+            Esteira(float vel, float pos_x, float pos_y);
             ~Esteira();
 
-            void Executar(); // Pode animar a textura aqui
+            void Executar();
             void Salvar();
             
             // Método específico da esteira: empurra o jogador

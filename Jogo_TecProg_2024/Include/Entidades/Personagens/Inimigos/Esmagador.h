@@ -40,9 +40,9 @@ namespace Entidades {
             
             void Executar(); // Vai gerenciar a máquina de estados
             void Salvar();
-            void Danificar(); // Pode ser usado para a animação do ataque
+            void Danificar();
 
-            void Mover(); // Lógica de movimento de patrulha
+            void Mover(); 
             void AtualizarAnimacao(); // Lógica de transição de estados
             void VerificaAtaqueEmArea(); // Aplica dano se jogadores estiverem perto
             
