@@ -8,6 +8,9 @@ Obstaculo::Obstaculo() : semente_id_entidade(1000)
 {
 	agressivo = false;
 	setId(semente_id_entidade);
+
+	tamanho.x = 0.f;
+	tamanho.y = 0.f;
 	
 }
 

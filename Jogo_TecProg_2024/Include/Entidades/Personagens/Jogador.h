@@ -15,7 +15,9 @@ namespace Entidades{
 				void setar_Figura();
 
 				bool estado_pulando;
+				bool no_ar;
 				bool estado_caindo;
+
 				bool acelerando;
 				
 				float forca_de_impulso;
@@ -32,7 +34,11 @@ namespace Entidades{
 				bool get_Dois_Jogadores();
 				void executando_Pulo();
 				void executar_Gravidade();
-				void setar_Estado(bool estado);
+
+				void setar_No_Ar(bool no_meio_do_ar);
+				void setar_Estado_Pulando(bool estado_pulando);
+				void setar_Caindo(bool caindo);
+				void setar_Bateu_A_Cabeca();
 
 				bool get_Eliminado() const;
 				int get_Pontuacao() const;

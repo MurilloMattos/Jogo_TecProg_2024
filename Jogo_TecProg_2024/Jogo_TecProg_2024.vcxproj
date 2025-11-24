@@ -160,7 +160,7 @@
     <ClInclude Include="Lista.h" />
     <ClInclude Include="Lista_Entidades.h" />
     <ClInclude Include="Obstaculo.h" />
-    <ClInclude Include="Obstaculo_Dificil.h" />
+    <ClInclude Include="Espinhos.h" />
     <ClInclude Include="Obstaculo_Medio.h" />
     <ClInclude Include="Personagem.h" />
     <ClInclude Include="Plataforma.h" />
@@ -182,7 +182,7 @@
     <ClCompile Include="Jogo_TecProg_2024.cpp" />
     <ClCompile Include="Lista_Entidades.cpp" />
     <ClCompile Include="Obstaculo.cpp" />
-    <ClCompile Include="Obstaculo_Dificil.cpp" />
+    <ClCompile Include="Espinhos.cpp" />
     <ClCompile Include="Obstaculo_Medio.cpp" />
     <ClCompile Include="Ente.cpp" />
     <ClCompile Include="Personagem.cpp" />

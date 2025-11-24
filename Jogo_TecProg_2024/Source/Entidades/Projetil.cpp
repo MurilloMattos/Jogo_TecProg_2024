@@ -144,3 +144,8 @@ void Projetil::Atingiu_Jogador(Entidades::Personagens::Jogador* pJogador)
 		pJogador->diminuir_Vitalidade(dano);
 	}
 }
+
+void Projetil::setar_Cor(sf::Color cor){
+
+	pFigura->setFillColor(cor);
+}

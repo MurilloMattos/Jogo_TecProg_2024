@@ -10947,7 +10947,7 @@
 											"top": 2453,
 											"width": 177.67431640625,
 											"height": 13,
-											"text": "«create»+Obstaculo_Dificil()",
+											"text": "«create»+Espinhos()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -10966,7 +10966,7 @@
 											"top": 2468,
 											"width": 177.67431640625,
 											"height": 13,
-											"text": "«destroy»+Obstaculo_Dificil()",
+											"text": "«destroy»+Espinhos()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -24225,7 +24225,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGTh3UVc8eO0xs="
 							},
-							"name": "Obstaculo_Dificil",
+							"name": "Espinhos",
 							"stereotype": "create"
 						},
 						{
@@ -24234,7 +24234,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGTh3UVc8eO0xs="
 							},
-							"name": "Obstaculo_Dificil",
+							"name": "Espinhos",
 							"stereotype": "destroy"
 						},
 						{

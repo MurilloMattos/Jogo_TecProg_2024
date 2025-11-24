@@ -6,6 +6,11 @@ using namespace Personagens;
 
 Plataforma::Plataforma()
 {
+	se_move = false;
+	ativa = true;
+
+	pos_final.x = x;
+	pos_final.y = y;
 
 	tamanho.x = 0;
 	tamanho.y = 0;
@@ -34,13 +39,34 @@ void Plataforma::Salvar(){
 
 void Plataforma::Executar() {
 
-	Desenhar();
+	if(ativa){
+		
+		if(se_move){
+
+
+		}
+
+		Desenhar();
+	}
+	
 }
 
 void Plataforma::obstacular(Jogador* p, int lado) {
 
+	if(lado == cima){
+		p->setar_Bateu_A_Cabeca();
+		p->setar_Estado_Pulando(true );
+		p->setar_No_Ar(true);
+	}
 	if(lado == baixo){
-		p->setar_Estado(false);
+		
+		p->setar_Estado_Pulando(false);
+		p->setar_No_Ar(false);
 	}
 	
+}
+
+void Plataforma::seta_Movimento(float x_esq, float x_dir, float y_cima, float y_baixo){
+
+
 }

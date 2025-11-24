@@ -21,9 +21,13 @@ Fases::Fase_2::Fase_2() {
 	num_piratas = (rand() % 5) + 3;
 	num_piratas = 0;
 
+	//entre 3 a 4
+	num_espinhos = (rand()%1) + 3;
+	//num_espinhos = 0;
+
 	num_restante_capitoes = num_capitoes;
 	num_restante_piratas = num_piratas;
-	
+	num_restante_espinhos = num_espinhos;
 
 	zoom_camera = 1.0f;
 
@@ -84,6 +88,14 @@ void Fases::Fase_2::Executar(){
 			if (lista_cap[i]->get_Disparou() && !(lista_cap[i]->get_Eliminado())) {
 
 				lista_cap[i]->incluir_Projetil(Cria_Projetil());
+			}
+		}
+
+		for(i = 0; i<lista_espinhos.size(); i++){
+
+			if(lista_espinhos[i]->get_Soltar_Espinho()){
+
+				lista_espinhos[i]->setar_Espinho(Cria_Projetil());
 			}
 		}
 	}
@@ -307,6 +319,7 @@ void Fases::Fase_2::Cria_Plataforma() {
 			plataforma->seta_Plataforma(tam_plataforma.y, tam_plataforma.x, pos_plataforma.x, pos_plataforma.y);
 
 			cria_Inimigos_Nas_Plataformas(pos_plataforma.x, (pos_plataforma.x + tam_plataforma.x), pos_plataforma);
+			cria_Espinhos_na_Plataforma(tam_plataforma,pos_plataforma);
 
 			gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(plataforma));
 			lista_Entidades.Incluir(static_cast<Entidade*>(plataforma));
@@ -330,7 +343,6 @@ void Fases::Fase_2::Cria_Piso() {
 	gerenciador_colisoes.Incluir_Obstaculo(static_cast<Obstaculo*>(piso));
 	lista_Entidades.Incluir(static_cast<Entidade*>(piso));
 }
-
 
 void Fases::Fase_2::cria_Inimigos_Nas_Plataformas(float ponta_esq_plataforma, float ponta_dir_plataforma, sf::Vector2f pos_plat){
 
@@ -357,6 +369,43 @@ void Fases::Fase_2::cria_Inimigos_Nas_Plataformas(float ponta_esq_plataforma, fl
 			//precisa ser a posição a direita da plataforma, para que o inimigo possa ser gerado dentro dela.
 			Cria_Pirata(pos_plat.x + ((ponta_dir_plataforma - ponta_esq_plataforma)/2), pos_plat.y, ponta_esq_plataforma, ponta_dir_plataforma);
 			num_restante_piratas--;
+		}
+	}
+}
+
+void Fases::Fase_2::Cria_Espinhos(float pos_plat_x, float pos_embaixo_plat_y, float tam_plat_x){
+
+	Espinhos* espinhos;
+	espinhos = new Espinhos;
+
+	espinhos->setar_Espinhos(pos_plat_x, pos_embaixo_plat_y, tam_plat_x);
+	lista_espinhos.push_back(espinhos);
+	gerenciador_colisoes.Incluir_Obstaculo(espinhos);
+	lista_Entidades.Incluir(static_cast<Entidade*>(espinhos));
+}
+
+void Fases::Fase_2::cria_Espinhos_na_Plataforma(sf::Vector2f tam_plat, sf::Vector2f pos_plat){
+
+	int gerar_ou_nao = rand() % 100;
+	int chance = 100;
+
+	/*
+	if( > 4) {
+		//70% so
+		chance = 70;
+	}
+	else {
+		//100% de chance
+		chance = 100;
+	}
+	*/
+
+	if(num_restante_espinhos > 0) {
+
+		if(gerar_ou_nao < chance){
+
+			Cria_Espinhos(pos_plat.x,(pos_plat.y+tam_plat.y),tam_plat.x);
+			num_restante_espinhos--;
 		}
 	}
 }
