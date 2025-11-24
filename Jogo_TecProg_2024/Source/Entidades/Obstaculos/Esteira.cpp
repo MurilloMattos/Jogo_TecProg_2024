@@ -27,9 +27,9 @@ void Entidades::Obstaculos::Esteira::Executar() {
     }
 
     if(direcao > 0){
-        pFigura->setFillColor(sf::Color::Cyan); // Direita
+        pFigura->setFillColor(sf::Color(128, 128, 128)); // Direita
     } else {
-        pFigura->setFillColor(sf::Color::Blue); // Esquerda
+        pFigura->setFillColor(sf::Color(211, 211, 211)); // Esquerda
     }
 
     colideAnterior = colideAtual;

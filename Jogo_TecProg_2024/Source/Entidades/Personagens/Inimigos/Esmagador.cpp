@@ -43,8 +43,9 @@ Esmagador::~Esmagador() {
 
 // Executar apenas gerencia o estado ATUAL
 void Esmagador::Executar() {
-
+    
     pFigura->setPosition(x, y);
+    Desenhar();
 
     switch (estado_atual) {
     
@@ -73,9 +74,8 @@ void Esmagador::Executar() {
             }
             break;
 
-    }   
-    Desenhar();
-    setar_Pos(x, y);
+        }   
+        setar_Pos(x, y);
 }
 
 void Esmagador::Mover() {
@@ -170,10 +170,10 @@ void Esmagador::VerificaAtaqueEmArea() {
 void Esmagador::AtualizarAnimacao() {
 
     if (estado_atual == EstadoEsmagador::PATRULHANDO) {
-        pFigura->setFillColor(sf::Color::Blue);
+        pFigura->setFillColor(sf::Color::Yellow);
     }
     else if (estado_atual == EstadoEsmagador::PREPARANDO) {
-        pFigura->setFillColor(sf::Color::Yellow);
+        pFigura->setFillColor(sf::Color(222, 120, 31));
     }
     else if (estado_atual == EstadoEsmagador::ATACANDO) {
         pFigura->setFillColor(sf::Color::Red);
