@@ -12,6 +12,7 @@ Ente::Ente()
 
 Ente::~Ente(){
 
+	id = -1;
 	operator--();
 	delete pFigura;
 }

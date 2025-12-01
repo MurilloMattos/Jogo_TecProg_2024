@@ -16,7 +16,7 @@ namespace Entidades {
 
 			public:
 				Obstaculo();
-				~Obstaculo();
+				virtual ~Obstaculo();
 
 				virtual void executar_Gravidade();
 				virtual void Salvar() = 0;

@@ -8,7 +8,7 @@ Projetil::Projetil(): semente_id_entidade(10000) {
 	setId(semente_id_entidade);
 	dano = 0;
 
-	cap = nullptr;
+	entidade_pertencedoura = nullptr;
 
 	sf::Vector2f tamanho;
 	tamanho.x = 10.f;
@@ -25,7 +25,7 @@ Projetil::Projetil(): semente_id_entidade(10000) {
 	ativo = false;
 	lado = 0;
 	velocidade.x = 0.5f;
-	velocidade.y = 0.f;
+	velocidade.y = 0.5f;
 	
 
 	pFigura->setFillColor(sf::Color(222, 120, 31));
@@ -39,7 +39,7 @@ Projetil::Projetil(float saida_x, float saida_y, int direcao) : semente_id_entid
 	setId(semente_id_entidade);
 	dano = 0;
 
-	cap = nullptr;
+	entidade_pertencedoura = nullptr;
 
 	sf::Vector2f tamanho;
 	tamanho.x = 5.f;
@@ -79,9 +79,9 @@ void Projetil::setar_Direcao(int direcao) {
 	lado = direcao;
 }
 
-void Entidades::Projetil::setar_Capitao(Entidades::Personagens::Capitao* capitao)
+void Entidades::Projetil::setar_Entidade(Entidade* entidad)
 {
-	cap = capitao;
+	entidade_pertencedoura = entidad;
 }
 
 int Projetil::get_Dano() {
@@ -138,7 +138,7 @@ void Projetil::Salvar() {
 
 }
 
-void Projetil::Atingiu_Jogador(Entidades::Personagens::Jogador* pJogador)
+void Projetil::atingiu_Jogador(Entidades::Personagens::Jogador* pJogador)
 {
 	if(ativo){
 		pJogador->diminuir_Vitalidade(dano);

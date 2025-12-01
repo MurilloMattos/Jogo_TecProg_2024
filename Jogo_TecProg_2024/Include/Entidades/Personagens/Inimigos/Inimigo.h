@@ -29,7 +29,7 @@ namespace Entidades {
 
 			public:
 				Inimigo();
-				~Inimigo();
+				virtual ~Inimigo();
 
 				void setar_Jogador_No_Inimigo(Entidades::Personagens::Jogador* pJogador1, Entidades::Personagens::Jogador* pJogador2);
 				void setar_direcao();

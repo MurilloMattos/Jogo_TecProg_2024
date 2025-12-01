@@ -12,7 +12,7 @@ namespace Entidades{
 				const int semente_id_entidade;
 
 				bool segundo_jogador;
-				void setar_Figura();
+				
 
 				bool estado_pulando;
 				bool no_ar;
@@ -22,9 +22,8 @@ namespace Entidades{
 				
 				float forca_de_impulso;
 				float gravidade;
-				//float altura_de_pulo;
 
-				//sf::Clock tempo;
+				void setar_Figura();
 
 			public:
 				Jogador();
@@ -39,8 +38,7 @@ namespace Entidades{
 				void setar_Estado_Pulando(bool estado_pulando);
 				void setar_Caindo(bool caindo);
 				void setar_Bateu_A_Cabeca();
-
-				bool get_Eliminado() const;
+				
 				int get_Pontuacao() const;
 
 				void diminuir_Vitalidade(int dano);

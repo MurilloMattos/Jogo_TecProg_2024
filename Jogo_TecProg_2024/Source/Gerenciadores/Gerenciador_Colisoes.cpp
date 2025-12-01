@@ -156,7 +156,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Jogador_Projeteis(Jogador* p_Jogador)
 
 				if (lado != 0) {
 
-					(*itr)->Atingiu_Jogador(p_Jogador);
+					(*itr)->atingiu_Jogador(p_Jogador);
 					(*itr)->setar_Ativo(false);
 					projetil_Destruido(*itr);
 					break;
@@ -226,7 +226,7 @@ void Gerenciador_colisoes::tratar_Colisoes_Projeteis(){
 			if (lado != 0) {
 
 				(*itr_proj)->setar_Ativo(false);
-				projetil_Destruido(*itr_proj);
+				break;
 			}
 
 			itr_obst++;

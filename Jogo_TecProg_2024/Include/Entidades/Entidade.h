@@ -24,7 +24,7 @@ namespace Entidades
 
 	public:
 		Entidade();
-		~Entidade();
+		virtual ~Entidade();
 
 		float get_Gravidade() const;
 		void setar_Gravidade(float grav);

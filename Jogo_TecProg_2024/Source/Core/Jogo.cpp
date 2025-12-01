@@ -45,6 +45,7 @@ Estado Jogo::getEstado() const {
 }
 
 void Jogo::set_pJog2_Dois_Jogadores(bool valor) {
+
     jogador_2.setar_Dois_Jogadores(valor);
 }
 

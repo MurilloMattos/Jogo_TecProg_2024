@@ -10,11 +10,13 @@ Espinhos::Espinhos() {
 
     dano = 10;
     dano_sangramento = 1;
+    dano_espinho = 15;
 
     empurrar = 15.f;
 
     sangramento = false;
     soltar_espinho = false;
+    //espinho_ativo = true;
 
     duracao_sangramento = 10;
 
@@ -23,6 +25,10 @@ Espinhos::Espinhos() {
 
     tamanho.x = 0.f;
     tamanho.y = 5.f;
+
+
+    espinho = nullptr;
+    
 }
 
 Espinhos::~Espinhos() {
@@ -42,18 +48,21 @@ void Espinhos::Executar() {
     Desenhar();
 
     soltar_espinho = false;
-    
-    if(fragilidade_espinho < tempo_para_cair_espinho){
 
-        fragilidade_espinho++;
+    bool temEspinhoAtivo = (espinho != nullptr && espinho->get_Ativo());
+
+    if(!temEspinhoAtivo){
+        if(fragilidade_espinho < tempo_para_cair_espinho){
+
+            fragilidade_espinho++;
+        }
+        else if(fragilidade_espinho >= tempo_para_cair_espinho && !soltar_espinho){
+
+            soltar_espinho = true;
+
+            fragilidade_espinho = 0;
+        }
     }
-    else if(fragilidade_espinho >= tempo_para_cair_espinho && !soltar_espinho){
-
-        soltar_espinho = true;
-
-        fragilidade_espinho = 0;
-    }
-
 }
 
 void Espinhos::setar_Espinhos(float pos_plat_x, float pos_embaixo_plat_y, float tam_plat_x){
@@ -72,6 +81,13 @@ void Espinhos::setar_Espinhos(float pos_plat_x, float pos_embaixo_plat_y, float 
 void Espinhos::setar_Espinho(Projetil* esp){
 
     espinho = esp;
+
+    espinho->setar_Ativo(true);
+    espinho->setar_Direcao(baixo);
+    espinho->setar_Pos(get_Centro().x, y + espinho->get_Altura());
+    espinho->setar_Entidade(static_cast<Entidade*>(this));
+    espinho->setar_Dano(dano_espinho);
+
     espinho->setar_Cor(sf::Color(192, 192, 192));
 }
 
@@ -99,5 +115,15 @@ void Espinhos::obstacular(Jogador* p, int lado) {
     
 }
 
+void Espinhos::desativar_Espinho(){
+
+    espinho->setar_Ativo(false);
+    espinho = nullptr;
+}
+
+Entidades::Projetil* Espinhos::get_Espinho(){
+
+    return espinho;
+}
 
 

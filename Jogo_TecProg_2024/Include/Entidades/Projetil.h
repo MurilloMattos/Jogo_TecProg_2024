@@ -22,9 +22,7 @@ namespace Entidades {
 		bool atingiu_jogador;
 
 		
-		Entidades::Personagens::Capitao* cap;
-
-		//const int direita, cima, esquerda, baixo;
+		Entidades::Entidade* entidade_pertencedoura;
 
 	public:
 
@@ -37,11 +35,11 @@ namespace Entidades {
 		void setar_Ativo(bool atv);
 		void setar_Dano(int dan);
 		void setar_Direcao(int direcao);
-		void setar_Capitao(Entidades::Personagens::Capitao* capitao);
+		void setar_Entidade(Entidades::Entidade* entedad);
 
 		int get_Dano();
 		bool get_Ativo();
-		void Atingiu_Jogador(Entidades::Personagens::Jogador* pJogador);
+		void atingiu_Jogador(Entidades::Personagens::Jogador* pJogador);
 
 		void executar_Gravidade();
 		void Executar();

@@ -40,11 +40,12 @@ void Personagem::danificar(Personagem* pAtacado) {
 
 const bool Personagem::get_Eliminado(){
 
-	if(get_Vitalidade()>=0){
-		return false;
+	if(get_Vitalidade()<=0){
+		eliminado = true;
 	}
 	else{
-		eliminado = true;
-		return true;
+		eliminado = false;
 	}
+	
+	return eliminado;
 }

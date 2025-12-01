@@ -17,7 +17,7 @@ namespace Entidades {
 
 		public:
 			Personagem();
-			~Personagem();
+			virtual ~Personagem();
 
 			const bool get_Eliminado();
 

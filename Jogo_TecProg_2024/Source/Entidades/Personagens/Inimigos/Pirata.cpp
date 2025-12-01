@@ -64,7 +64,7 @@ void Pirata::Executar() {
 	bonus_De_Irritabilidade();
 }
 
-void Pirata::Danificar(Personagem* pAtacado){
+void Pirata::danificar(Personagem* pAtacado){
 
 	pAtacado->diminuir_Vitalidade(dano);
 }

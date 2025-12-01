@@ -15,15 +15,15 @@ Fases::Fase_2::Fase_2() {
 
 	// entre 3 e 6
 	num_capitoes = (rand() % 3) + 3;
-	//num_capitoes = 1;
+	num_capitoes = 0;
 
 	//entre 3 e 8
 	num_piratas = (rand() % 5) + 3;
-	//num_piratas = 0;
+	num_piratas = 1;
 
 	//entre 3 a 4
 	num_espinhos = (rand()%1) + 3;
-	//num_espinhos = 0;
+	num_espinhos = 1;
 
 	num_restante_capitoes = num_capitoes;
 	num_restante_piratas = num_piratas;
@@ -44,7 +44,7 @@ Fases::Fase_2::Fase_2() {
 	pos_Piso.y = tam_Piso_Fase.y;
 
 
-	lista_cap.clear();
+	lista_ids_cap.clear();
 
 	tamanho_da_tela_x = pGG->getCamera()->getSize().x * zoom_camera;
 	espaco_vazio_x = 0;
@@ -63,7 +63,7 @@ Fases::Fase_2::Fase_2() {
 
 Fases::Fase_2::~Fase_2(){
 
-	lista_cap.clear();
+	lista_ids_cap.clear();
 	num_plataformas_por_andar.clear();
 }
 
@@ -77,29 +77,44 @@ void Fases::Fase_2::Cria_Obstaculos(){
 void Fases::Fase_2::Executar(){
 
 	verifica_Inimigos_Neutralizados();
+	Capitao* cap;
+	Espinhos* esp;
 
 	if (!ganhou) {
+		
 		verifica_Projeteis_Destroidos();
 		gerenciador_colisoes.Executar();
 		lista_Entidades.Percorrer();
 
-		for (i = 0; i < lista_cap.size(); i++) {
+		for (i = 0; i < lista_ids_cap.size(); i++) {
 
-			if (lista_cap[i]->get_Disparou() && !(lista_cap[i]->get_Eliminado())) {
+			cap = busca_Cap(lista_ids_cap[i]);
 
-				lista_cap[i]->incluir_Projetil(Cria_Projetil());
+			if (cap->get_Disparou() && !(cap->get_Eliminado())) {
+
+				cap->incluir_Projetil(Cria_Projetil());
 			}
 		}
 
-		for(i = 0; i<lista_espinhos.size(); i++){
+		for (i = 0; i < lista_ids_espinhos.size(); i++) {
 
-			if(lista_espinhos[i]->get_Soltar_Espinho()){
+			esp = busca_Esp(lista_ids_espinhos[i]);
+			if (!esp) continue;
 
-				lista_espinhos[i]->setar_Espinho(Cria_Projetil());
+			if (esp->get_Soltar_Espinho()) {
+
+				Projetil* proj = esp->get_Espinho();
+
+				if (!proj) {
+					proj = Cria_Projetil();
+					esp->setar_Espinho(proj);
+				}
+				else if (!proj->get_Ativo()) {
+					esp->setar_Espinho(proj);
+				}
 			}
 		}
 	}
-
 }
 
 void Fases::Fase_2::Cria_Inimigos(){
@@ -127,7 +142,7 @@ void Fases::Fase_2::Cria_Inimigos(){
 }
 
 //cria o inimigo dificil (Boss)
-void Fase_2::Cria_Capitao(float x, float y){
+void Fases::Fase_2::Cria_Capitao(float x, float y){
 
 	Capitao* capitao;
 	capitao = new Capitao;
@@ -135,7 +150,7 @@ void Fase_2::Cria_Capitao(float x, float y){
 	capitao->setar_Pos(x, y - capitao->get_Altura());
 	gerenciador_colisoes.Incluir_Inimigo(capitao);
 	lista_Entidades.Incluir(static_cast<Entidade*>(capitao));
-	lista_cap.push_back(capitao);
+	lista_ids_cap.push_back(capitao->getId());
 	lista_id_inimigos.push_front(capitao->getId());
 }
 
@@ -155,17 +170,25 @@ Projetil* Fases::Fase_2::Cria_Projetil()
 void Fases::Fase_2::verifica_Projeteis_Destroidos()
 {
 	
+	Capitao* cap;
+	Espinhos* esp;
 	Projetil* projetil_deletado;
 
-	for(i=0;i<lista_cap.size(); i++) {
+	for(i=0;i<lista_ids_cap.size(); i++) {
 
-		for(j = 0; j < lista_cap[i]->get_Vetor_De_Projetis()->size(); j++) {
+		cap = busca_Cap(lista_ids_cap[i]);
 
+		if(cap == nullptr){
+			lista_ids_cap.erase(lista_ids_cap.begin()+i);
+			continue;
+		}
+
+		for(j = 0; j < cap->get_Vetor_De_Projetis()->size(); j++) {
 
 			// conteudo apontado pelo ponteiro do vetor de projeteis do capitao
-			if (!((*lista_cap[i]->get_Vetor_De_Projetis())[j]->get_Ativo())) {
+			if (!((*cap->get_Vetor_De_Projetis())[j]->get_Ativo())) {
 
-				projetil_deletado = (*(lista_cap[i]->get_Vetor_De_Projetis()))[j];
+				projetil_deletado = (*(cap->get_Vetor_De_Projetis()))[j];
 
 
 				if (projetil_deletado) {
@@ -179,7 +202,7 @@ void Fases::Fase_2::verifica_Projeteis_Destroidos()
 
 				if (projetil_deletado) {
 					//remove do capitão
-					lista_cap[i]->remover_Projetil(projetil_deletado);
+					cap->remover_Projetil(projetil_deletado);
 				}
 				else {
 					std::cout << "Erro ao remover projetil (Capitao)" << std::endl;
@@ -199,8 +222,30 @@ void Fases::Fase_2::verifica_Projeteis_Destroidos()
 		projetil_deletado = nullptr;
 	}
 
-	
+	for(i = 0; i<lista_ids_espinhos.size(); i++){
 
+		esp = busca_Esp(lista_ids_espinhos[i]);
+
+		if(esp == nullptr){
+
+			lista_ids_espinhos.erase(lista_ids_espinhos.begin()+i);
+			continue;
+		}
+
+		projetil_deletado = esp->get_Espinho();
+
+		if(projetil_deletado){
+
+			if(!projetil_deletado->get_Ativo()){
+
+				esp->desativar_Espinho();
+				gerenciador_colisoes.projetil_Destruido(projetil_deletado);
+				lista_Entidades.Remover(static_cast<Entidade*>(projetil_deletado));
+			}
+		}
+
+		projetil_deletado = nullptr;
+	}
 }
 
 void Fases::Fase_2::setar_Camera_Fase()
@@ -379,7 +424,7 @@ void Fases::Fase_2::Cria_Espinhos(float pos_plat_x, float pos_embaixo_plat_y, fl
 	espinhos = new Espinhos;
 
 	espinhos->setar_Espinhos(pos_plat_x, pos_embaixo_plat_y, tam_plat_x);
-	lista_espinhos.push_back(espinhos);
+	lista_ids_espinhos.push_back(espinhos->getId());
 	gerenciador_colisoes.Incluir_Obstaculo(espinhos);
 	lista_Entidades.Incluir(static_cast<Entidade*>(espinhos));
 }
@@ -408,4 +453,19 @@ void Fases::Fase_2::cria_Espinhos_na_Plataforma(sf::Vector2f tam_plat, sf::Vecto
 			num_restante_espinhos--;
 		}
 	}
+}
+
+
+Entidades::Personagens::Capitao* Fases::Fase_2::busca_Cap(int id){
+
+	Capitao* cap = static_cast<Capitao*>(lista_Entidades.get_Entidade_Por_Id(id));
+
+	return cap;
+}
+
+Entidades::Obstaculos::Espinhos* Fases::Fase_2::busca_Esp(int id){
+
+	Espinhos* esp = static_cast<Espinhos*>(lista_Entidades.get_Entidade_Por_Id(id));
+
+	return esp;
 }

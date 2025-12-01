@@ -89,11 +89,6 @@ void Jogador::setar_Estado_Pulando(bool estado){
 	estado_pulando = estado;
 }
 
-bool Jogador::get_Eliminado() const
-{
-	return eliminado;
-}
-
 void Entidades::Personagens::Jogador::executar_Gravidade() {
 
 	if (velocidade.y <= forca_de_impulso) {
@@ -134,6 +129,7 @@ void Jogador::setar_Dois_Jogadores(bool jogador_dois) {
 		no_ar = false;
 	}
 	else {
+		setar_Vitalidade(0);
 		eliminado = true;
 	}
 }

@@ -15,7 +15,7 @@ class Jogo
 
 		Entidades::Personagens::Jogador jogador_1;
 		Entidades::Personagens::Jogador jogador_2;
-		Menu *menu;
+		Menu* menu;
 		Estado estado;
 
 		Fases::Fase_1 fase1;

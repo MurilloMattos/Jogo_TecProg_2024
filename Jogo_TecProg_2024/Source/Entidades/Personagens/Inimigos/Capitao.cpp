@@ -57,7 +57,7 @@ void Entidades::Personagens::Capitao::incluir_Projetil(Projetil* projet) {
 	projet->setar_Ativo(true);
 	projet->setar_Direcao(direcao);
 	projet->setar_Dano(dano_do_balote);
-	projet->setar_Capitao(this);
+	projet->setar_Entidade(static_cast<Entidade*>(this));
 	projet->setar_velocidade(velocidade_proj.x, velocidade_proj.y);
 
 

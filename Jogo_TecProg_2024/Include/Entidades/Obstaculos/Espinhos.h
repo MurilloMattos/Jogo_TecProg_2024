@@ -12,8 +12,10 @@ namespace Entidades {
 
 				int dano;
 				int dano_sangramento;
+				int dano_espinho;
 
 				bool soltar_espinho;
+				//bool espinho_ativo;
 
 				bool sangramento;
 				int duracao_sangramento;
@@ -40,6 +42,9 @@ namespace Entidades {
 				void setar_Espinho(Entidades::Projetil* esp);
 				bool get_Soltar_Espinho();
 
+				void desativar_Espinho();
+				Entidades::Projetil* get_Espinho();
+				
 		};
 	}
 }

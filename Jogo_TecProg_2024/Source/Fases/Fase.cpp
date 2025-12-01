@@ -134,8 +134,8 @@ void Fases::Fase::verifica_Inimigos_Neutralizados() {
         if (inim->get_Eliminado()) {
 
             // remove entidade do gerenciador/lista de entidades
-            lista_Entidades.Remover(ent);
 			gerenciador_colisoes.Inimigo_neutralizado(inim);
+            lista_Entidades.Remover(ent);
 
             // tamb�m remover o id da lista de inimigos para n�o iterar sobre ele novamente
             itr = lista_id_inimigos.erase(itr);

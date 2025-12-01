@@ -29,8 +29,8 @@ namespace Fases{
 
 		std::vector<int> num_plataformas_por_andar;
 
-		std::vector<Entidades::Personagens::Capitao*> lista_cap;
-		std::vector<Entidades::Obstaculos::Espinhos*> lista_espinhos;
+		std::vector<int> lista_ids_cap;
+		std::vector<int> lista_ids_espinhos;
 
 	public:
 
@@ -56,6 +56,9 @@ namespace Fases{
 		void setar_Camera_Fase();
 		void cria_Inimigos_Nas_Plataformas(float ponta_esq_plataforma, float ponta_dir_plataforma, sf::Vector2f pos_plat);
 		void cria_Espinhos_na_Plataforma(sf::Vector2f tam_plat, sf::Vector2f pos_plat);
+
+		Entidades::Personagens::Capitao* busca_Cap(int id);
+		Entidades::Obstaculos::Espinhos* busca_Esp(int id);
 
 	};
 }
